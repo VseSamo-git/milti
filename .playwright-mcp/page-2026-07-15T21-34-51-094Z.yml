@@ -1,0 +1,672 @@
+- generic [active] [ref=f67e1]:
+  - generic [ref=f67e7]:
+    - link "Перейти к содержимому" [ref=f67e8] [cursor=pointer]:
+      - /url: "#content"
+    - banner [ref=f67e9]:
+      - link "mos.ru – Официальный сайт Мэра Москвы" [ref=f67e11] [cursor=pointer]:
+        - /url: https://www.mos.ru/
+      - generic [ref=f67e15]:
+        - generic [ref=f67e16]:
+          - generic [ref=f67e18]:
+            - link "Новости" [ref=f67e19] [cursor=pointer]:
+              - /url: https://www.mos.ru/news/
+            - button "Меню раздела Новости"
+          - generic [ref=f67e21]:
+            - link "Услуги" [ref=f67e22] [cursor=pointer]:
+              - /url: https://www.mos.ru/uslugi/
+            - button "Меню раздела Услуги"
+          - link "Мосбилет" [ref=f67e24] [cursor=pointer]:
+            - /url: https://bilet.mos.ru/
+          - generic [ref=f67e28]:
+            - link "Мэр" [ref=f67e29] [cursor=pointer]:
+              - /url: https://www.mos.ru/mayor/
+            - button "Меню раздела Мэр"
+          - generic [ref=f67e31]:
+            - link "Власть" [ref=f67e32] [cursor=pointer]:
+              - /url: https://www.mos.ru/authority/
+            - button "Меню раздела Власть"
+          - link "Мосфото" [ref=f67e34] [cursor=pointer]:
+            - /url: https://foto.mos.ru/
+          - link "Мой район" [ref=f67e36] [cursor=pointer]:
+            - /url: https://www.mos.ru/moi-raion/
+          - generic [ref=f67e38]:
+            - link "Помощь" [ref=f67e39] [cursor=pointer]:
+              - /url: https://www.mos.ru/feedback/
+            - button "Меню раздела Помощь"
+        - button "Поиск по сайту" [ref=f67e43] [cursor=pointer]
+  - generic [ref=f67e52]:
+    - generic [ref=f67e55]:
+      - heading [level=2] [ref=f67e63]:
+        - link "Департамент экономической политики и развития города Москвы" [ref=f67e64] [cursor=pointer]:
+          - /url: /depr/
+      - generic [ref=f67e66]:
+        - complementary [ref=f67e69]:
+          - generic [ref=f67e70]:
+            - list [ref=f67e71]:
+              - listitem [ref=f67e72]:
+                - link "Главная" [ref=f67e73] [cursor=pointer]:
+                  - /url: /depr/
+              - listitem [ref=f67e74]:
+                - link "Деятельность" [ref=f67e75] [cursor=pointer]:
+                  - /url: /depr/function/
+              - listitem [ref=f67e76]:
+                - link "Руководство" [ref=f67e77] [cursor=pointer]:
+                  - /url: /depr/structure/
+              - listitem [ref=f67e78]:
+                - link "Новости" [ref=f67e79] [cursor=pointer]:
+                  - /url: /depr/news/
+              - listitem [ref=f67e80]:
+                - link "Документы" [ref=f67e81] [cursor=pointer]:
+                  - /url: /depr/documents/
+              - listitem [ref=f67e82]:
+                - link "Инвестпрограммы субъектов электроэнергетики" [ref=f67e83] [cursor=pointer]:
+                  - /url: https://www.mos.ru/depr/documents/ipse/
+              - listitem [ref=f67e84]:
+                - link "Учреждения" [ref=f67e85] [cursor=pointer]:
+                  - /url: /depr/organizations/
+              - listitem [ref=f67e86]:
+                - link "Контакты" [ref=f67e87] [cursor=pointer]:
+                  - /url: /depr/contacts/
+            - list [ref=f67e88]:
+              - listitem [ref=f67e89]:
+                - link "Электронная приемная" [ref=f67e90] [cursor=pointer]:
+                  - /url: /feedback/reception/?department=19565090
+              - listitem [ref=f67e91]:
+                - link "Противодействие коррупции" [ref=f67e92] [cursor=pointer]:
+                  - /url: /depr/anticorruption/
+        - main [ref=f67e93]:
+          - generic [ref=f67e96]:
+            - generic [ref=f67e97] [cursor=pointer]: назад
+            - heading "Налог от кадастровой стоимости. Объекты налогообложения. Перечни прошлых лет" [level=2] [ref=f67e98]
+            - generic [ref=f67e99]:
+              - paragraph [ref=f67e100]
+              - paragraph [ref=f67e101]:
+                - strong [ref=f67e102]: ПЕРЕЧЕНЬ НА 2021 ГОД
+              - paragraph [ref=f67e103]:
+                - text: Определен
+                - link "постановлением Правительства Москвы от 28.11.2014 № 700-ПП" [ref=f67e104] [cursor=pointer]:
+                  - /url: https://www.mos.ru/depr/documents/normativno-pravovye-akty-po-uplate-naloga-na-imushchestvo-organizatcii-ot-kadastrovoi-stoimosti/view/159226220/
+                - text: «Об определении перечня объектов недвижимого имущества, в отношении которых налоговая база определяется как их кадастровая стоимость» с изменениями, внесенными постановлением Правительства Москвы от 24.11.2020 № 2044-ПП и вступившими в силу с 1 января 2021 года.
+              - paragraph [ref=f67e105]
+              - paragraph [ref=f67e106]: "В Перечень на 2021 год включены:"
+              - list [ref=f67e107]:
+                - listitem [ref=f67e108]:
+                  - paragraph [ref=f67e109]: 20 554 нежилых здания любой площади на земельных участках с видом разрешенного использования для размещения офисных объектов или объектов торговли, общепита и (или) бытового обслуживания;
+                - listitem [ref=f67e110]:
+                  - paragraph [ref=f67e111]: "15 101 объект с видом фактического использования для размещения офисных объектов или объектов торговли, общепита и (или) бытового обслуживания:"
+              - list [ref=f67e112]:
+                - listitem [ref=f67e113]:
+                  - list [ref=f67e114]:
+                    - listitem [ref=f67e115]: 3 347 нежилых зданий (и помещений в них) площадью свыше 1 тыс. м²;
+                    - listitem [ref=f67e116]: 11 754 нежилых помещения, расположенных в многоквартирных домах, общая площадь нежилых помещений в которых превышает 3 тыс. м²;
+                - listitem [ref=f67e117]:
+                  - paragraph [ref=f67e118]:
+                    - text: 426 нежилых зданий и нежилых помещений в зданиях, включенных в Перечень пешеходных зон (утвержден
+                    - link "постановлением Правительства Москвы от 16.03.2016 № 78-ПП" [ref=f67e119] [cursor=pointer]:
+                      - /url: https://www.mos.ru/depr/documents/normativno-pravovye-akty-goroda-moskvy/view/160111220
+                    - text: ), с видом фактического использования или назначением по документам БТИ для размещения офисных объектов или объектов торговли, общепита и (или) бытового обслуживания.
+              - paragraph [ref=f67e120]
+              - paragraph [ref=f67e121]: "Всего в Перечне на 2021 год:"
+              - list [ref=f67e122]:
+                - listitem [ref=f67e123]:
+                  - paragraph [ref=f67e124]: 36 081 объект;
+                - listitem [ref=f67e125]:
+                  - paragraph [ref=f67e126]: 95,9 млн м².
+              - paragraph [ref=f67e127]
+              - paragraph [ref=f67e128]:
+                - strong [ref=f67e129]: ПЕРЕЧЕНЬ НА 2020 ГОД
+              - paragraph [ref=f67e130]:
+                - text: Определен
+                - link "постановлением Правительства Москвы от 28.11.2014 № 700-ПП" [ref=f67e131] [cursor=pointer]:
+                  - /url: https://www.mos.ru/depr/documents/normativno-pravovye-akty-po-uplate-naloga-na-imushchestvo-organizatcii-ot-kadastrovoi-stoimosti/view/159226220/
+                - text: «Об определении перечня объектов недвижимого имущества, в отношении которых налоговая база определяется как их кадастровая стоимость» с изменениями, внесенными
+                - link "постановлением Правительства Москвы от 26.11.2019 № 1574-ПП" [ref=f67e132] [cursor=pointer]:
+                  - /url: https://www.mos.ru/authority/documents/doc/42701220/
+                - text: и вступившими в силу с 1 января 2020 года.
+              - paragraph [ref=f67e133]
+              - paragraph [ref=f67e134]: "В Перечень на 2020 год включены:"
+              - list [ref=f67e135]:
+                - listitem [ref=f67e136]:
+                  - paragraph [ref=f67e137]: 19 942 нежилых здания любой площади на земельных участках с видом разрешенного использования для размещения офисных объектов или объектов торговли, общепита и (или) бытового обслуживания;
+                - listitem [ref=f67e138]:
+                  - paragraph [ref=f67e139]: "11 978 объектов с видом фактического использования для размещения офисных объектов или объектов торговли, общепита и (или) бытового обслуживания:"
+              - list [ref=f67e140]:
+                - listitem [ref=f67e141]:
+                  - list [ref=f67e142]:
+                    - listitem [ref=f67e143]: 3 582 нежилых здания (и помещений в них) площадью свыше 1 тыс. м²;
+                    - listitem [ref=f67e144]: 8 396 нежилых помещений, расположенных в многоквартирных домах, общая площадь нежилых помещений в которых превышает 3 тыс. м²;
+                - listitem [ref=f67e145]:
+                  - paragraph [ref=f67e146]:
+                    - text: 355 нежилых зданий и нежилых помещений в зданиях, включенных в Перечень пешеходных зон (утвержден
+                    - link "постановлением Правительства Москвы от 16.03.2016 № 78-ПП" [ref=f67e147] [cursor=pointer]:
+                      - /url: https://www.mos.ru/depr/documents/normativno-pravovye-akty-goroda-moskvy/view/160111220
+                    - text: ), с видом фактического использования или назначения по документам БТИ для размещения офисных объектов или объектов торговли, общепита и (или) бытового обслуживания.
+              - paragraph [ref=f67e148]
+              - paragraph [ref=f67e149]: "Всего в Перечне на 2020 год:"
+              - list [ref=f67e150]:
+                - listitem [ref=f67e151]:
+                  - paragraph [ref=f67e152]: 32 275 объектов;
+                - listitem [ref=f67e153]:
+                  - paragraph [ref=f67e154]: 93,4 млн м².
+              - paragraph [ref=f67e155]
+              - paragraph [ref=f67e156]:
+                - strong [ref=f67e157]: ПЕРЕЧЕНЬ НА 2019 ГОД
+              - paragraph [ref=f67e158]:
+                - text: Определен
+                - link "постановлением Правительства Москвы от 28.11.2014 № 700-ПП" [ref=f67e159] [cursor=pointer]:
+                  - /url: https://www.mos.ru/depr/documents/normativno-pravovye-akty-po-uplate-naloga-na-imushchestvo-organizatcii-ot-kadastrovoi-stoimosti/view/159226220/
+                - text: «Об определении перечня объектов недвижимого имущества, в отношении которых налоговая база определяется как их кадастровая стоимость» с изменениями, внесенными
+                - link "постановлением Правительства Москвы от 27.11.2018 № 1425-ПП" [ref=f67e160] [cursor=pointer]:
+                  - /url: https://www.mos.ru/authority/documents/doc/39988220/
+                - text: и вступившими в силу с 1 января 2019 года.
+              - paragraph [ref=f67e161]
+              - paragraph [ref=f67e162]: "В Перечень на 2019 год включены:"
+              - list [ref=f67e163]:
+                - listitem [ref=f67e164]:
+                  - paragraph [ref=f67e165]: 20 637 нежилых зданий любой площади на земельных участках с видом разрешенного использования для размещения офисных объектов или объектов торговли, общепита и (или) бытового обслуживания;
+                - listitem [ref=f67e166]:
+                  - paragraph [ref=f67e167]: "7 955 объектов с видом фактического использования для размещения офисных объектов или объектов торговли, общепита и (или) бытового обслуживания:"
+              - list [ref=f67e168]:
+                - listitem [ref=f67e169]:
+                  - list [ref=f67e170]:
+                    - listitem [ref=f67e171]: 3 435 нежилых зданий (и помещений в них) площадью свыше 1 тыс. м²;
+                    - listitem [ref=f67e172]: 4 520 нежилых помещений, расположенных в многоквартирных домах, общая площадь нежилых помещений в которых превышает 3 тыс. м²;
+                - listitem [ref=f67e173]:
+                  - paragraph [ref=f67e174]:
+                    - text: 216 нежилых зданий и нежилых помещений в зданиях, включенных в Перечень пешеходных зон (утвержден
+                    - link "постановлением Правительства Москвы от 16.03.2016 № 78-ПП" [ref=f67e175] [cursor=pointer]:
+                      - /url: https://www.mos.ru/depr/documents/normativno-pravovye-akty-goroda-moskvy/view/160111220
+                    - text: ), с видом фактического использования или назначения по документам БТИ для размещения офисных объектов или объектов торговли, общепита и (или) бытового обслуживания.
+              - paragraph [ref=f67e176]
+              - paragraph [ref=f67e177]: "Всего в Перечне на 2019 год:"
+              - list [ref=f67e178]:
+                - listitem [ref=f67e179]:
+                  - paragraph [ref=f67e180]: 28 808 объектов;
+                - listitem [ref=f67e181]:
+                  - paragraph [ref=f67e182]: 92,5 млн м².
+              - paragraph [ref=f67e183]
+              - paragraph [ref=f67e184]:
+                - strong [ref=f67e185]: ПЕРЕЧЕНЬ НА 2018 ГОД
+              - paragraph [ref=f67e186]:
+                - text: Определен
+                - link "постановлением Правительства Москвы от 28.11.2014 № 700-ПП" [ref=f67e187] [cursor=pointer]:
+                  - /url: https://www.mos.ru/depr/documents/normativno-pravovye-akty-po-uplate-naloga-na-imushchestvo-organizatcii-ot-kadastrovoi-stoimosti/view/159226220/
+                - text: «Об определении перечня объектов недвижимого имущества, в отношении которых налоговая база определяется как их кадастровая стоимость» с изменениями, внесенными
+                - link "постановлением Правительства Москвы от 28.11.2017 № 911-ПП" [ref=f67e188] [cursor=pointer]:
+                  - /url: https://www.mos.ru/authority/documents/doc/37505220/
+                - text: и вступившими в силу с 1 января 2018 года.
+              - paragraph [ref=f67e189]
+              - paragraph [ref=f67e190]: "В Перечень на 2018 год включены:"
+              - list [ref=f67e191]:
+                - listitem [ref=f67e192]:
+                  - paragraph [ref=f67e193]: 19 391 нежилое здание любой площади на земельных участках с видом разрешенного использования для размещения офисных объектов или объектов торговли, общепита и (или) бытового обслуживания;
+                - listitem [ref=f67e194]:
+                  - paragraph [ref=f67e195]: "5 033 объекта с видом фактического использования для размещения офисных объектов или объектов торговли, общепита и (или) бытового обслуживания:"
+              - list [ref=f67e196]:
+                - listitem [ref=f67e197]:
+                  - list [ref=f67e198]:
+                    - listitem [ref=f67e199]: 3 793 нежилых здания (и помещений в них) площадью свыше 1 тыс. м²;
+                    - listitem [ref=f67e200]: 1 240 нежилых помещений, расположенных в многоквартирных домах, общая площадь нежилых помещений в которых превышает 3 тыс. м²;
+                - listitem [ref=f67e201]:
+                  - paragraph [ref=f67e202]:
+                    - text: 232 нежилых здания и нежилых помещения в зданиях, включенных в Перечень пешеходных зон (утвержден
+                    - link "постановлением Правительства Москвы от 16.03.2016 № 78-ПП" [ref=f67e203] [cursor=pointer]:
+                      - /url: https://www.mos.ru/depr/documents/normativno-pravovye-akty-goroda-moskvy/view/160111220
+                    - text: ), с видом фактического использования или назначения по документам БТИ для размещения офисных объектов или объектов торговли, общепита и (или) бытового обслуживания.
+              - paragraph [ref=f67e204]
+              - paragraph [ref=f67e205]: "Всего в Перечне на 2018 год:"
+              - list [ref=f67e206]:
+                - listitem [ref=f67e207]:
+                  - paragraph [ref=f67e208]: 24 656 объектов;
+                - listitem [ref=f67e209]:
+                  - paragraph [ref=f67e210]: 88,5 млн м².
+              - paragraph [ref=f67e211]
+              - paragraph [ref=f67e212]:
+                - strong [ref=f67e213]: ПЕРЕЧЕНЬ НА 2017 ГОД
+              - paragraph [ref=f67e214]:
+                - text: Определен
+                - link "постановлением Правительства Москвы от 28.11.2014 № 700-ПП" [ref=f67e215] [cursor=pointer]:
+                  - /url: https://www.mos.ru/depr/documents/normativno-pravovye-akty-po-uplate-naloga-na-imushchestvo-organizatcii-ot-kadastrovoi-stoimosti/view/159226220/
+                - text: «Об определении перечня объектов недвижимого имущества, в отношении которых налоговая база определяется как их кадастровая стоимость» с изменениями, внесенными постановлением Правительства Москвы от 29.11.2016 № 789-ПП и вступившими в силу с 1 января 2017 года.
+              - paragraph [ref=f67e216]
+              - paragraph [ref=f67e217]: "В Перечень на 2017 год включены:"
+              - list [ref=f67e218]:
+                - listitem [ref=f67e219]:
+                  - paragraph [ref=f67e220]: 18 967 нежилых зданий любой площади на земельных участках с видом разрешенного использования для размещения офисных объектов или объектов торговли, общепита и (или) бытового обслуживания;
+                - listitem [ref=f67e221]:
+                  - paragraph [ref=f67e222]: "4 619 объектов с видом фактического использования для размещения офисных объектов или объектов торговли, общепита и (или) бытового обслуживания:"
+                  - list [ref=f67e223]:
+                    - listitem [ref=f67e224]: нежилые здания (и помещения в них) площадью свыше 1 тыс. м²;
+                    - listitem [ref=f67e225]: нежилые помещения совокупной площадью свыше 3 тыс. м² в жилых домах;
+                - listitem [ref=f67e226]:
+                  - paragraph [ref=f67e227]:
+                    - text: 205 нежилых зданий и нежилых помещений в зданиях, включенных в Перечень пешеходных зон (утвержден
+                    - link "постановлением Правительства Москвы от 16.03.2016 № 78-ПП" [ref=f67e228] [cursor=pointer]:
+                      - /url: https://www.mos.ru/depr/documents/normativno-pravovye-akty-goroda-moskvy/view/160111220
+                    - text: ), с видом фактического использования или назначения по документам БТИ для размещения офисных объектов или объектов торговли, общепита и (или) бытового обслуживания.
+              - paragraph [ref=f67e229]
+              - paragraph [ref=f67e230]: "Всего в Перечне на 2017 год:"
+              - list [ref=f67e231]:
+                - listitem [ref=f67e232]:
+                  - paragraph [ref=f67e233]: 23 791 объектов;
+                - listitem [ref=f67e234]:
+                  - paragraph [ref=f67e235]: 86,3 млн м².
+              - paragraph [ref=f67e236]
+              - paragraph [ref=f67e237]:
+                - strong [ref=f67e238]: ПЕРЕЧЕНЬ НА 2016 ГОД
+              - paragraph [ref=f67e239]:
+                - text: Определен
+                - link "постановлением Правительства Москвы от 28.11.2014 № 700-ПП" [ref=f67e240] [cursor=pointer]:
+                  - /url: https://www.mos.ru/depr/documents/normativno-pravovye-akty-po-uplate-naloga-na-imushchestvo-organizatcii-ot-kadastrovoi-stoimosti/view/159226220/
+                - text: «Об определении перечня объектов недвижимого имущества, в отношении которых налоговая база определяется как их кадастровая стоимость» с изменениями, внесенными постановлением Правительства Москвы от 26.11.2015 № 786-ПП и вступившими в силу с 1 января 2016 года.
+              - paragraph [ref=f67e241]
+              - paragraph [ref=f67e242]: "В Перечень на 2016 год включены:"
+              - list [ref=f67e243]:
+                - listitem [ref=f67e244]:
+                  - paragraph [ref=f67e245]: 3 841 объект недвижимости площадью свыше 3 тыс. м², расположенный на земельных участках с видом разрешенного использования для размещения офисных объектов или объектов торговли, общепита и (или) бытового обслуживания;
+                - listitem [ref=f67e246]:
+                  - paragraph [ref=f67e247]: "3 342 объекта недвижимости, фактически используемые для размещения офисных объектов или объектов торговли, общепита и (или) бытового обслуживания, из них:"
+                  - list [ref=f67e248]:
+                    - listitem [ref=f67e249]: 3 239 нежилых зданий (и помещений в них) площадью свыше 2 тыс. м²;
+                    - listitem [ref=f67e250]: 103 нежилых помещения площадью свыше 3 тыс. м² в жилых домах.
+              - paragraph [ref=f67e251]
+              - paragraph [ref=f67e252]: "Всего в Перечне на 2016 год:"
+              - list [ref=f67e253]:
+                - listitem [ref=f67e254]:
+                  - paragraph [ref=f67e255]: 7 183 объекта;
+                - listitem [ref=f67e256]:
+                  - paragraph [ref=f67e257]: 70,3 млн м².
+              - paragraph [ref=f67e258]
+              - paragraph [ref=f67e259]:
+                - strong [ref=f67e260]: ПЕРЕЧЕНЬ НА 2015 ГОД
+              - paragraph [ref=f67e261]:
+                - text: Определен
+                - link "постановлением Правительства Москвы от 28.11.2014 № 700-ПП" [ref=f67e262] [cursor=pointer]:
+                  - /url: https://www.mos.ru/depr/documents/normativno-pravovye-akty-po-uplate-naloga-na-imushchestvo-organizatcii-ot-kadastrovoi-stoimosti/view/159226220/
+                - text: «Об определении Перечня объектов недвижимого имущества, в отношении которых налоговая база определяется как их кадастровая стоимость», на 2015 год и последующие налоговые периоды.
+              - paragraph [ref=f67e263]
+              - paragraph [ref=f67e264]: "В Перечень на 2015 год включены:"
+              - list [ref=f67e265]:
+                - listitem [ref=f67e266]:
+                  - paragraph [ref=f67e267]: 1 679 объектов недвижимости площадью свыше 3 тыс. м², расположенных на земельных участках с видом разрешенного использования для размещения офисных объектов или объектов торговли, общепита и (или) бытового обслуживания;
+                - listitem [ref=f67e268]:
+                  - paragraph [ref=f67e269]: "3 707 объектов недвижимости, фактически используемых для размещения офисных объектов или объектов торговли, общепита и (или) бытового обслуживания, из них:"
+                  - list [ref=f67e270]:
+                    - listitem [ref=f67e271]: 3 610 нежилых зданий (и помещений в них) площадью свыше 2 тыс. м²;
+                    - listitem [ref=f67e272]: 97 нежилых помещений площадью свыше 3 тыс. м² в жилых домах.
+              - paragraph [ref=f67e273]
+              - paragraph [ref=f67e274]: "Всего в Перечне на 2015 год:"
+              - list [ref=f67e275]:
+                - listitem [ref=f67e276]:
+                  - paragraph [ref=f67e277]: 5 386 объектов;
+                - listitem [ref=f67e278]:
+                  - paragraph [ref=f67e279]: 54,6 млн м².
+              - paragraph [ref=f67e280]
+              - paragraph [ref=f67e281]:
+                - strong [ref=f67e282]: ПЕРЕЧЕНЬ НА 2014 ГОД
+              - paragraph [ref=f67e283]:
+                - text: Определен
+                - link "постановлением Правительства Москвы от 29.11.2013 № 772-ПП" [ref=f67e284] [cursor=pointer]:
+                  - /url: https://www.mos.ru/depr/documents/normativno-pravovye-akty-po-uplate-naloga-na-imushchestvo-organizatcii-ot-kadastrovoi-stoimosti/view/159227220/
+                - text: «Об определении Перечня объектов недвижимого имущества, в отношении которых налоговая база определяется как их кадастровая стоимость, на 2014 год».
+              - paragraph [ref=f67e285]
+              - paragraph [ref=f67e286]: "В Перечень на 2014 год включены:"
+              - list [ref=f67e287]:
+                - listitem [ref=f67e288]:
+                  - paragraph [ref=f67e289]: 1 816 объектов недвижимости площадью свыше 5 тыс. м², расположенных на земельных участках с видом разрешенного использования для размещения офисных объектов или объектов торговли, общепита и (или) бытового обслуживания.
+              - paragraph [ref=f67e290]
+              - paragraph [ref=f67e291]: "Всего в Перечне на 2014 год:"
+              - list [ref=f67e292]:
+                - listitem [ref=f67e293]:
+                  - paragraph [ref=f67e294]: 1 816 объектов;
+                - listitem [ref=f67e295]:
+                  - paragraph [ref=f67e296]: 30,4 млн м².
+              - table [ref=f67e298]:
+                - rowgroup [ref=f67e299]:
+                  - row [ref=f67e300]:
+                    - cell [ref=f67e301]
+              - table [ref=f67e303]:
+                - rowgroup [ref=f67e304]:
+                  - row [ref=f67e305]:
+                    - cell [ref=f67e306]:
+                      - link [ref=f67e307] [cursor=pointer]:
+                        - /url: https://vk.com/moscoweconomy
+                    - cell [ref=f67e308]:
+                      - link [ref=f67e309] [cursor=pointer]:
+                        - /url: https://ok.ru/moscoweconomy
+                    - cell [ref=f67e310]:
+                      - link [ref=f67e311] [cursor=pointer]:
+                        - /url: https://www.youtube.com/c/%D0%94%D0%B5%D0%BF%D0%B0%D1%80%D1%82%D0%B0%D0%BC%D0%B5%D0%BD%D1%82%D1%8D%D0%BA%D0%BE%D0%BD%D0%BE%D0%BC%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%B9%D0%BF%D0%BE%D0%BB%D0%B8%D1%82%D0%B8%D0%BA%D0%B8%D0%B8%D1%80%D0%B0%D0%B7%D0%B2%D0%B8%D1%82%D0%B8%D1%8F/videos
+    - generic [ref=f67e315]:
+      - iframe [ref=f67e317]:
+        - button "Проект. История и новая жизнь памятников архитектуры. Изучайте вместе с медиабанком «Мосфото»." [ref=f72e2] [cursor=pointer]:
+          - generic [ref=f72e4]:
+            - generic "Проект." [ref=f72e5]: Проект
+            - generic "История и новая жизнь памятников архитектуры." [ref=f72e6]: История и новая жизнь памятников архитектуры
+            - generic "Изучайте вместе с медиабанком «Мосфото»." [ref=f72e7]: Изучайте вместе с медиабанком «Мосфото»
+      - iframe [ref=f67e319]:
+        - button "Новость. Москва развивает высокие технологии для защиты суверенитета страны." [ref=f70e2] [cursor=pointer]:
+          - generic [ref=f70e5]:
+            - generic "Новость." [ref=f70e6]: Новость
+            - generic "Москва развивает высокие технологии для защиты суверенитета страны." [ref=f70e7]: Москва развивает высокие технологии для защиты суверенитета страны
+      - iframe [ref=f67e321]:
+        - generic [ref=f74e3] [cursor=pointer]:
+          - generic [ref=f74e4]:
+            - generic "Проект." [ref=f74e5]: Проект
+            - generic "Панды, манул и даже медоед." [ref=f74e6]: Панды, манул и даже медоед
+            - generic "Наблюдайте за обитателями зоопарка онлайн." [ref=f74e7]: Наблюдайте за обитателями зоопарка онлайн
+          - button "Смотреть" [ref=f74e8]
+      - iframe [ref=f67e323]:
+        - generic [ref=f73e3] [cursor=pointer]:
+          - generic [ref=f73e4]: Услуга
+          - generic [ref=f73e5]: Переезд — проще, чем кажется!
+          - generic [ref=f73e6]: Получите персональную инструкцию
+  - contentinfo [ref=f67e325]:
+    - generic [ref=f67e326]:
+      - generic [ref=f67e327]:
+        - generic [ref=f67e328]:
+          - generic [ref=f67e329]:
+            - text: Официальный портал Мэра и Правительства Москвы
+            - button [ref=f67e330] [cursor=pointer]:
+              - img "Показать дополнительную информацию" [ref=f67e331]
+          - generic [ref=f67e334]: 125032, Москва, ул. Тверская, 13
+          - generic [ref=f67e335]: Социальные сети портала Москвы
+          - list [ref=f67e336]:
+            - listitem [ref=f67e337]:
+              - link "MaxMessenger портала Москвы" [ref=f67e338] [cursor=pointer]:
+                - /url: https://max.ru/mosru
+            - listitem [ref=f67e341]:
+              - link "VK.com портала Москвы" [ref=f67e342] [cursor=pointer]:
+                - /url: https://vk.com/mos
+            - listitem [ref=f67e345]:
+              - link "Telegram портала Москвы" [ref=f67e346] [cursor=pointer]:
+                - /url: https://t.me/mosrutop
+            - listitem [ref=f67e349]:
+              - link "OK.ru портала Москвы" [ref=f67e350] [cursor=pointer]:
+                - /url: https://ok.ru/moscow
+            - listitem [ref=f67e353]:
+              - link "RSS портала Москвы" [ref=f67e354] [cursor=pointer]:
+                - /url: https://www.mos.ru/rss
+        - navigation [ref=f67e357]:
+          - generic [ref=f67e358]:
+            - link "Новости" [ref=f67e360] [cursor=pointer]:
+              - /url: https://www.mos.ru/news/
+            - list [ref=f67e361]:
+              - listitem [ref=f67e362]:
+                - link "Здравоохранение" [ref=f67e363] [cursor=pointer]:
+                  - /url: https://www.mos.ru/search/newsfeed?page=1&q=&spheres=18299
+              - listitem [ref=f67e364]:
+                - link "Транспорт" [ref=f67e365] [cursor=pointer]:
+                  - /url: https://www.mos.ru/search/newsfeed?page=1&q=&spheres=2299
+              - listitem [ref=f67e366]:
+                - link "Социальная сфера" [ref=f67e367] [cursor=pointer]:
+                  - /url: https://www.mos.ru/search/newsfeed?page=1&q=&spheres=1299
+              - listitem [ref=f67e368]:
+                - link "Образование" [ref=f67e369] [cursor=pointer]:
+                  - /url: https://www.mos.ru/search/newsfeed?page=1&q=&spheres=15299
+              - listitem [ref=f67e370]:
+                - link "Строительство и реконструкция" [ref=f67e371] [cursor=pointer]:
+                  - /url: https://www.mos.ru/search/newsfeed?page=1&q=&spheres=4299
+              - listitem [ref=f67e372]:
+                - link "Культура" [ref=f67e373] [cursor=pointer]:
+                  - /url: https://www.mos.ru/search/newsfeed?page=1&q=&spheres=3299
+              - listitem [ref=f67e374]:
+                - link "Благоустройство и ЖКХ" [ref=f67e375] [cursor=pointer]:
+                  - /url: https://www.mos.ru/search/newsfeed?page=1&q=&spheres=5299%252C350299
+              - listitem [ref=f67e376]:
+                - link "Экономика и предпринимательство" [ref=f67e377] [cursor=pointer]:
+                  - /url: https://www.mos.ru/search/newsfeed?page=1&q=&spheres=12299
+              - listitem [ref=f67e378]:
+                - link "Спорт" [ref=f67e379] [cursor=pointer]:
+                  - /url: https://www.mos.ru/search/newsfeed?page=1&q=&spheres=6299
+              - listitem [ref=f67e380]:
+                - link "Все новости" [ref=f67e381] [cursor=pointer]:
+                  - /url: https://www.mos.ru/news/
+          - generic [ref=f67e382]:
+            - link "Услуги" [ref=f67e384] [cursor=pointer]:
+              - /url: https://www.mos.ru/uslugi/
+            - list [ref=f67e385]:
+              - listitem [ref=f67e386]:
+                - link "Для жителей" [ref=f67e387] [cursor=pointer]:
+                  - /url: https://www.mos.ru/uslugi/
+              - listitem [ref=f67e388]:
+                - link "Образование" [ref=f67e389] [cursor=pointer]:
+                  - /url: https://www.mos.ru/uslugi/obrazovanie/
+              - listitem [ref=f67e390]:
+                - link "Жилье, недвижимость, земля" [ref=f67e391] [cursor=pointer]:
+                  - /url: https://www.mos.ru/uslugi/zhile-nedvizhimost-zemlya/
+              - listitem [ref=f67e392]:
+                - link "Социальная поддержка" [ref=f67e393] [cursor=pointer]:
+                  - /url: https://www.mos.ru/uslugi/socialnaya-podderzhka/
+              - listitem [ref=f67e394]:
+                - link "Все услуги" [ref=f67e395] [cursor=pointer]:
+                  - /url: https://www.mos.ru/uslugi/
+              - listitem [ref=f67e396]:
+                - link "Центры госуслуг" [ref=f67e397] [cursor=pointer]:
+                  - /url: https://www.mos.ru/services/centry-gosudarstvennyh-uslug/
+              - listitem [ref=f67e398]:
+                - link "Для бизнеса" [ref=f67e399] [cursor=pointer]:
+                  - /url: https://www.mos.ru/biznes/
+              - listitem [ref=f67e400]:
+                - link "Мои платежи" [ref=f67e401] [cursor=pointer]:
+                  - /url: https://pay.mos.ru/mospaynew/newportal/charges
+          - generic [ref=f67e402]:
+            - link "Мэр" [ref=f67e404] [cursor=pointer]:
+              - /url: https://www.mos.ru/mayor/
+            - list [ref=f67e405]:
+              - listitem [ref=f67e406]:
+                - link "Деятельность" [ref=f67e407] [cursor=pointer]:
+                  - /url: https://www.mos.ru/mayor/
+              - listitem [ref=f67e408]:
+                - link "Биография" [ref=f67e409] [cursor=pointer]:
+                  - /url: https://www.mos.ru/mayor/biography/
+              - listitem [ref=f67e410]:
+                - link "Интервью" [ref=f67e411] [cursor=pointer]:
+                  - /url: https://www.mos.ru/mayor/interviews/
+              - listitem [ref=f67e412]:
+                - link "Телеграммы" [ref=f67e413] [cursor=pointer]:
+                  - /url: https://www.mos.ru/mayor/telegrams/
+              - listitem [ref=f67e414]:
+                - link "Медиа" [ref=f67e415] [cursor=pointer]:
+                  - /url: https://www.mos.ru/mayor/media/
+              - generic [ref=f67e416]: Социальные сети мэра Москвы
+              - list [ref=f67e417]:
+                - listitem [ref=f67e418]:
+                  - link "MaxMessenger мэра Москвы" [ref=f67e419] [cursor=pointer]:
+                    - /url: https://max.ru/mossobyanin
+                - listitem [ref=f67e422]:
+                  - link "VK.com мэра Москвы" [ref=f67e423] [cursor=pointer]:
+                    - /url: https://vk.com/mossobyanin
+                - listitem [ref=f67e426]:
+                  - link "Telegram мэра Москвы" [ref=f67e427] [cursor=pointer]:
+                    - /url: https://t.me/mos_sobyanin
+          - generic [ref=f67e430]:
+            - link "Власть" [ref=f67e432] [cursor=pointer]:
+              - /url: https://www.mos.ru/authority/
+            - list [ref=f67e433]:
+              - listitem [ref=f67e434]:
+                - link "Структура" [ref=f67e435] [cursor=pointer]:
+                  - /url: https://www.mos.ru/authority/
+              - listitem [ref=f67e436]:
+                - link "Органы власти" [ref=f67e437] [cursor=pointer]:
+                  - /url: https://www.mos.ru/authority/list/
+              - listitem [ref=f67e438]:
+                - link "Префектуры и управы" [ref=f67e439] [cursor=pointer]:
+                  - /url: https://www.mos.ru/authority/territory/
+              - listitem [ref=f67e440]:
+                - link "Документы" [ref=f67e441] [cursor=pointer]:
+                  - /url: https://www.mos.ru/authority/documents/
+          - generic [ref=f67e442]:
+            - link "Мой район" [ref=f67e444] [cursor=pointer]:
+              - /url: https://www.mos.ru/moi-raion/
+            - list [ref=f67e445]:
+              - listitem [ref=f67e446]:
+                - link "Найти свой район" [ref=f67e447] [cursor=pointer]:
+                  - /url: https://www.mos.ru/moi-raion/
+              - listitem [ref=f67e448]:
+                - link "Центры госуслуг" [ref=f67e449] [cursor=pointer]:
+                  - /url: https://www.mos.ru/services/centry-gosudarstvennyh-uslug/
+              - listitem [ref=f67e450]:
+                - link "Культурно-исторические объекты" [ref=f67e451] [cursor=pointer]:
+                  - /url: https://www.mos.ru/map/?screens=%5B%22objectsList%22%5D&categories=%5B%2266%22%5D&mapParams=%7B%22cp%22%3A%7B%22lat%22%3A55.751288%2C%22lng%22%3A37.617928%7D%2C%22p1%22%3A%7B%22lat%22%3A55.83252950925928%2C%22lng%22%3A37.83760070800782%7D%2C%22p2%22%3A%7B%22lat%22%3A55.66984035430873%2C%22lng%22%3A37.39814758300782%7D%2C%22z%22%3A12%7D&kindTitle=Исторические+объекты
+              - listitem [ref=f67e452]:
+                - link "Поликлиники и больницы" [ref=f67e453] [cursor=pointer]:
+                  - /url: https://www.mos.ru/map/?screens=%5B%22objectsList%22%5D&categories=%5B%2240%22%5D&kind=20&mapParams=%7B%22cp%22%3A%7B%22lat%22%3A55.77261442958424%2C%22lng%22%3A37.63710021972657%7D%2C%22p1%22%3A%7B%22lat%22%3A55.855853098804744%2C%22lng%22%3A37.75211334228516%7D%2C%22p2%22%3A%7B%22lat%22%3A55.68919762233934%2C%22lng%22%3A37.522087097167976%7D%2C%22z%22%3A12%7D&kindTitle=Поликлиники+взрослые
+              - listitem [ref=f67e454]:
+                - link "Детские сады" [ref=f67e455] [cursor=pointer]:
+                  - /url: https://www.mos.ru/map/?screens=%5B%22objectsList%22%5D&categories=%5B%2237%22%5D&kind=48&mapParams=%7B%22cp%22%3A%7B%22lat%22%3A55.77261442958424%2C%22lng%22%3A37.63710021972657%7D%2C%22p1%22%3A%7B%22lat%22%3A55.855853098804744%2C%22lng%22%3A37.75211334228516%7D%2C%22p2%22%3A%7B%22lat%22%3A55.68919762233934%2C%22lng%22%3A37.522087097167976%7D%2C%22z%22%3A12%7D&kindTitle=Детские+сады
+              - listitem [ref=f67e456]:
+                - link "Школы" [ref=f67e457] [cursor=pointer]:
+                  - /url: https://www.mos.ru/map/?screens=%5B%22objectsList%22%5D&categories=%5B%2237%22%5D&kind=21&mapParams=%7B%22cp%22%3A%7B%22lat%22%3A55.77261442958424%2C%22lng%22%3A37.63710021972657%7D%2C%22p1%22%3A%7B%22lat%22%3A55.855853098804744%2C%22lng%22%3A37.75211334228516%7D%2C%22p2%22%3A%7B%22lat%22%3A55.68919762233934%2C%22lng%22%3A37.522087097167976%7D%2C%22z%22%3A12%7D&kindTitle=Школы
+              - listitem [ref=f67e458]:
+                - link "Ярмарки выходного дня" [ref=f67e459] [cursor=pointer]:
+                  - /url: https://www.mos.ru/map/?screens=%5B%22objectsList%22%5D&categories=%5B%2231%22%5D&kind=67&mapParams=%7B%22cp%22%3A%7B%22lat%22%3A55.84681815422685%2C%22lng%22%3A37.597323500000016%7D%2C%22p1%22%3A%7B%22lat%22%3A55.87949971647212%2C%22lng%22%3A37.65229225158692%7D%2C%22p2%22%3A%7B%22lat%22%3A55.81406311282012%2C%22lng%22%3A37.54242897033692%7D%2C%22z%22%3A14%7D&kindTitle=Ярмарки+выходного+дня
+              - listitem [ref=f67e460]:
+                - link "Транспортная инфраструктура" [ref=f67e461] [cursor=pointer]:
+                  - /url: https://www.mos.ru/map/?screens=%5B%22objectsList%22%5D&categories=%5B%2273%22%5D&mapParams=%7B%22cp%22%3A%7B%22lat%22%3A55.74956513355559%2C%22lng%22%3A37.62297975%7D%2C%22p1%22%3A%7B%22lat%22%3A55.75998770672451%2C%22lng%22%3A37.637357711792%7D%2C%22p2%22%3A%7B%22lat%22%3A55.739143464522186%2C%22lng%22%3A37.60860443115235%7D%2C%22z%22%3A15%7D&kindTitle=Транспортная+инфраструктура
+              - listitem [ref=f67e462]:
+                - link "Все объекты" [ref=f67e463] [cursor=pointer]:
+                  - /url: https://www.mos.ru/map/?screens=%5B%5D&categories=%5B%5D&mapParams=%7B%22cp%22%3A%7B%22lat%22%3A55.751288%2C%22lng%22%3A37.617928%7D%2C%22p1%22%3A%7B%22lat%22%3A55.79298239140481%2C%22lng%22%3A37.67538070678712%7D%2C%22p2%22%3A%7B%22lat%22%3A55.70960915707037%2C%22lng%22%3A37.56036758422852%7D%2C%22z%22%3A13%7D
+          - generic [ref=f67e464]:
+            - link "Помощь" [ref=f67e466] [cursor=pointer]:
+              - /url: https://www.mos.ru/feedback/
+            - list [ref=f67e467]:
+              - listitem [ref=f67e468]:
+                - link "Инструкции" [ref=f67e469] [cursor=pointer]:
+                  - /url: https://www.mos.ru/otvet/
+              - listitem [ref=f67e470]:
+                - link "Написать в техподдержку" [ref=f67e471] [cursor=pointer]:
+                  - /url: https://www.mos.ru/feedback/form/
+              - listitem [ref=f67e472]:
+                - link "Предложить идею" [ref=f67e473] [cursor=pointer]:
+                  - /url: https://www.mos.ru/feedback/idea/
+              - listitem [ref=f67e474]:
+                - link "Электронная приемная" [ref=f67e475] [cursor=pointer]:
+                  - /url: https://www.mos.ru/feedback/reception/
+              - listitem [ref=f67e476]:
+                - link "Телефонный справочник" [ref=f67e477] [cursor=pointer]:
+                  - /url: https://www.mos.ru/feedback/phones/
+              - listitem [ref=f67e478]:
+                - link "Обзоры обращений" [ref=f67e479] [cursor=pointer]:
+                  - /url: https://www.mos.ru/feedback/reviews/
+          - generic [ref=f67e480]:
+            - link "Проекты" [ref=f67e482] [cursor=pointer]:
+              - /url: https://www.mos.ru/city/projects/
+            - list [ref=f67e483]:
+              - listitem [ref=f67e484]:
+                - link "Мобильные приложения Москвы" [ref=f67e485] [cursor=pointer]:
+                  - /url: https://www.mos.ru/city/projects/mosapps/
+              - listitem [ref=f67e486]:
+                - link "МЭШ" [ref=f67e487] [cursor=pointer]:
+                  - /url: https://www.mos.ru/city/projects/mesh/
+              - listitem [ref=f67e488]:
+                - link "Электронная медицинская карта" [ref=f67e489] [cursor=pointer]:
+                  - /url: https://www.mos.ru/city/projects/medcarta/
+              - listitem [ref=f67e490]:
+                - link "Парки Москвы" [ref=f67e491] [cursor=pointer]:
+                  - /url: https://www.mos.ru/city/projects/parks/
+              - listitem [ref=f67e492]:
+                - link "Безопасность в Интернете" [ref=f67e493] [cursor=pointer]:
+                  - /url: https://www.mos.ru/city/projects/personaldata/
+              - listitem [ref=f67e494]:
+                - link "Московские центральные диаметры" [ref=f67e495] [cursor=pointer]:
+                  - /url: https://www.mos.ru/city/projects/diametry/
+              - listitem [ref=f67e496]:
+                - link "Моспитомец" [ref=f67e497] [cursor=pointer]:
+                  - /url: https://pets.mos.ru/
+              - listitem [ref=f67e498]:
+                - link "Московский стандарт реновации" [ref=f67e499] [cursor=pointer]:
+                  - /url: https://www.mos.ru/city/projects/renovation/
+              - listitem [ref=f67e500]:
+                - link "Все проекты" [ref=f67e501] [cursor=pointer]:
+                  - /url: https://www.mos.ru/city/projects/
+          - generic [ref=f67e502]:
+            - link "Мосбилет" [ref=f67e504] [cursor=pointer]:
+              - /url: https://bilet.mos.ru/
+            - list [ref=f67e505]:
+              - listitem [ref=f67e506]:
+                - link "Спектакли" [ref=f67e507] [cursor=pointer]:
+                  - /url: https://bilet.mos.ru/spektakli/
+              - listitem [ref=f67e508]:
+                - link "Зоопарк" [ref=f67e509] [cursor=pointer]:
+                  - /url: https://bilet.mos.ru/zoopark/
+              - listitem [ref=f67e510]:
+                - link "Для детей" [ref=f67e511] [cursor=pointer]:
+                  - /url: https://bilet.mos.ru/dlya-detey/
+              - listitem [ref=f67e512]:
+                - link "Музеи" [ref=f67e513] [cursor=pointer]:
+                  - /url: https://bilet.mos.ru/museums/
+              - listitem [ref=f67e514]:
+                - link "Лекции" [ref=f67e515] [cursor=pointer]:
+                  - /url: https://bilet.mos.ru/lekcii/
+              - listitem [ref=f67e516]:
+                - link "Концерты" [ref=f67e517] [cursor=pointer]:
+                  - /url: https://bilet.mos.ru/koncerty/
+              - listitem [ref=f67e518]:
+                - link "Экскурсии" [ref=f67e519] [cursor=pointer]:
+                  - /url: https://bilet.mos.ru/ekskursii/
+              - generic [ref=f67e520]: Телегам-канал Мосбилет
+              - list [ref=f67e521]:
+                - listitem [ref=f67e522]:
+                  - link "Telegram мосбилет" [ref=f67e523] [cursor=pointer]:
+                    - /url: https://t.me/mosbilet
+                - listitem [ref=f67e526]:
+                  - link "VK.com мосбилет" [ref=f67e527] [cursor=pointer]:
+                    - /url: https://vk.com/biletmosru
+      - generic [ref=f67e530]:
+        - link "Мобильное приложение Моя Москва" [ref=f67e532] [cursor=pointer]:
+          - /url: https://www.mos.ru/mobile/
+        - list [ref=f67e533]:
+          - listitem [ref=f67e534]:
+            - link "Мобильное приложение в App Store" [ref=f67e535] [cursor=pointer]:
+              - /url: https://apps.apple.com/ru/app/моя-москва-приложение-mos-ru/id1390518510
+          - listitem [ref=f67e537]:
+            - link "Мобильное приложение в Huawey AppGallery" [ref=f67e538] [cursor=pointer]:
+              - /url: https://appgallery.huawei.com/app/C102906941
+          - listitem [ref=f67e540]:
+            - link "Мобильное приложение в RuStore" [ref=f67e541] [cursor=pointer]:
+              - /url: https://www.rustore.ru/catalog/app/ru.mos.app
+          - listitem [ref=f67e543]:
+            - link "Мобильное приложение в RuMarket" [ref=f67e544] [cursor=pointer]:
+              - /url: https://ruplay.market/apps/category/Gorodskie_servisy/ru.mos.app/
+      - generic [ref=f67e546]:
+        - navigation [ref=f67e547]:
+          - generic [ref=f67e548]:
+            - link "Цифровая доступность" [ref=f67e549] [cursor=pointer]:
+              - /url: https://www.mos.ru/dostupnost/
+            - link "Техническая поддержка" [ref=f67e550] [cursor=pointer]:
+              - /url: https://www.mos.ru/feedback/support/
+          - generic [ref=f67e551]:
+            - button "Сайты Москвы" [ref=f67e552] [cursor=pointer]
+            - button "Сайты России" [ref=f67e553] [cursor=pointer]
+          - generic [ref=f67e554]:
+            - link "Информация о госзаказе" [ref=f67e555] [cursor=pointer]:
+              - /url: https://zakupki.mos.ru/purchase/list
+              - text: Инф. о госзаказе
+            - link "Портал поставщиков" [ref=f67e556] [cursor=pointer]:
+              - /url: https://zakupki.mos.ru/
+          - button "Карта сайта" [ref=f67e558] [cursor=pointer]
+        - generic [ref=f67e559]:
+          - paragraph [ref=f67e560]:
+            - link "14 490уникальных посетителей сегодня" [ref=f67e561] [cursor=pointer]:
+              - /url: https://www.mos.ru/dit/function/o-departamente/stats/
+          - paragraph [ref=f67e562]:
+            - link "21 281всего посетили порталы Москвы" [ref=f67e563] [cursor=pointer]:
+              - /url: https://www.mos.ru/dit/function/o-departamente/stats/
+    - generic [ref=f67e564]:
+      - generic [ref=f67e565]:
+        - link "Соглашение о пользовании информационными системами и ресурсами города Москвы" [ref=f67e566] [cursor=pointer]:
+          - /url: https://www.mos.ru/legal/rules/
+        - link "Политика в отношении обработки персональных данных" [ref=f67e567] [cursor=pointer]:
+          - /url: https://www.mos.ru/dit/documents/informatcionnaia-bezopasnost/view/274898220/
+        - generic [ref=f67e568]: Свидетельство на товарный знак № 681231 от 09.11.2018
+      - link "English" [ref=f67e570] [cursor=pointer]:
+        - /url: https://www.mos.ru/en
+  - dialog [ref=f67e572]:
+    - generic [ref=f67e573]:
+      - generic [ref=f67e574]:
+        - text: Продолжая пользоваться Порталом Мэра и Правительства Москвы, вы соглашаетесь на обработку файлов cookie с использованием метрических программ. Это поможет сделать портал еще более удобным и полезным для миллионов пользователей.
+        - link "Подробнее" [ref=f67e575] [cursor=pointer]:
+          - /url: https://www.mos.ru/legal/rules
+      - button "Принять" [ref=f67e577] [cursor=pointer]
+  - button "Кнопка. Открыть чат" [ref=f67e581] [cursor=pointer]

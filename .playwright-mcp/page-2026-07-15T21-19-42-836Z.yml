@@ -1,0 +1,448 @@
+- generic [active] [ref=f38e1]:
+  - generic [ref=f38e7]:
+    - link "Перейти к содержимому" [ref=f38e8] [cursor=pointer]:
+      - /url: "#content"
+    - banner [ref=f38e9]:
+      - link "mos.ru – Официальный сайт Мэра Москвы" [ref=f38e11] [cursor=pointer]:
+        - /url: https://www.mos.ru/
+      - generic [ref=f38e15]:
+        - generic [ref=f38e16]:
+          - generic [ref=f38e18]:
+            - link "Новости" [ref=f38e19] [cursor=pointer]:
+              - /url: https://www.mos.ru/news/
+            - button "Меню раздела Новости"
+          - generic [ref=f38e21]:
+            - link "Услуги" [ref=f38e22] [cursor=pointer]:
+              - /url: https://www.mos.ru/uslugi/
+            - button "Меню раздела Услуги"
+          - link "Мосбилет" [ref=f38e24] [cursor=pointer]:
+            - /url: https://bilet.mos.ru/
+          - generic [ref=f38e28]:
+            - link "Мэр" [ref=f38e29] [cursor=pointer]:
+              - /url: https://www.mos.ru/mayor/
+            - button "Меню раздела Мэр"
+          - generic [ref=f38e31]:
+            - link "Власть" [ref=f38e32] [cursor=pointer]:
+              - /url: https://www.mos.ru/authority/
+            - button "Меню раздела Власть"
+          - link "Мосфото" [ref=f38e34] [cursor=pointer]:
+            - /url: https://foto.mos.ru/
+          - link "Мой район" [ref=f38e36] [cursor=pointer]:
+            - /url: https://www.mos.ru/moi-raion/
+          - generic [ref=f38e38]:
+            - link "Помощь" [ref=f38e39] [cursor=pointer]:
+              - /url: https://www.mos.ru/feedback/
+            - button "Меню раздела Помощь"
+        - button "Поиск по сайту" [ref=f38e43] [cursor=pointer]
+      - button "Вход/Регистрация" [ref=f38e47] [cursor=pointer]
+  - generic [ref=f38e52]:
+    - generic [ref=f38e55]:
+      - heading [level=2] [ref=f38e63]:
+        - link "Департамент экономической политики и развития города Москвы" [ref=f38e64] [cursor=pointer]:
+          - /url: /depr/
+      - generic [ref=f38e66]:
+        - complementary [ref=f38e69]:
+          - generic [ref=f38e70]:
+            - list [ref=f38e71]:
+              - listitem [ref=f38e72]:
+                - link "Главная" [ref=f38e73] [cursor=pointer]:
+                  - /url: /depr/
+              - listitem [ref=f38e74]:
+                - link "Деятельность" [ref=f38e75] [cursor=pointer]:
+                  - /url: /depr/function/
+              - listitem [ref=f38e76]:
+                - link "Руководство" [ref=f38e77] [cursor=pointer]:
+                  - /url: /depr/structure/
+              - listitem [ref=f38e78]:
+                - link "Новости" [ref=f38e79] [cursor=pointer]:
+                  - /url: /depr/news/
+              - listitem [ref=f38e80]:
+                - link "Документы" [ref=f38e81] [cursor=pointer]:
+                  - /url: /depr/documents/
+              - listitem [ref=f38e82]:
+                - link "Инвестпрограммы субъектов электроэнергетики" [ref=f38e83] [cursor=pointer]:
+                  - /url: https://www.mos.ru/depr/documents/ipse/
+              - listitem [ref=f38e84]:
+                - link "Учреждения" [ref=f38e85] [cursor=pointer]:
+                  - /url: /depr/organizations/
+              - listitem [ref=f38e86]:
+                - link "Контакты" [ref=f38e87] [cursor=pointer]:
+                  - /url: /depr/contacts/
+            - list [ref=f38e88]:
+              - listitem [ref=f38e89]:
+                - link "Электронная приемная" [ref=f38e90] [cursor=pointer]:
+                  - /url: /feedback/reception/?department=19565090
+              - listitem [ref=f38e91]:
+                - link "Противодействие коррупции" [ref=f38e92] [cursor=pointer]:
+                  - /url: /depr/anticorruption/
+        - main [ref=f38e93]:
+          - heading "Включен ли ваш объект в утвержденный перечень объектов недвижимости?" [level=1] [ref=f38e94]
+          - iframe [ref=f38e98]:
+            - generic [ref=f46e2]:
+              - generic [ref=f46e3]:
+                - heading "Включен ли ваш объект в утвержденный перечень объектов недвижимости" [level=1] [ref=f46e4]
+                - paragraph [ref=f46e5]: Сервис для поиска объектов недвижимого имущества, по которым налог на имущество исчисляется от кадастровой стоимости
+                - paragraph [ref=f46e6]: Уважаемые налогоплательщики!
+                - paragraph [ref=f46e7]: Данный сервис предназначен для поиска объектов недвижимого имущества, включенных в Перечень торговых, офисных объектов, объектов общественного питания и (или) бытового обслуживания, облагаемых налогом на имущество от кадастровой стоимости.
+                - paragraph [ref=f46e8]: "В случае если Вам принадлежит:"
+                - paragraph [ref=f46e9]:
+                  - list [ref=f46e10]:
+                    - listitem [ref=f46e11]: • нежилое здание, поиск осуществляется по кадастровому номеру здания;
+                    - listitem [ref=f46e12]: • нежилое помещение в нежилом здании, поиск осуществляется по кадастровому номеру здания, в котором расположено данное помещение;
+                    - listitem [ref=f46e13]: • встроенно-пристроенное нежилое помещение в многоквартирном доме, поиск осуществляется по кадастровому номеру помещения.
+                - paragraph [ref=f46e14]: В настоящее время в данном сервисе содержатся утвержденные Перечни на 2014 – 2026 годы.
+                - paragraph [ref=f46e15]:
+                  - text: Ознакомиться с критериями, по которым объекты недвижимости включаются в Перечень, порядком налогообложения, ставками, льготами по налогу на имущество от кадастровой стоимости можно на официальном сайте Мэра Москвы в разделе
+                  - link "Власть // Органы власти // Департамент экономической политики и развития города Москвы // Деятельность // Налог на имущество организаций от кадастровой стоимости" [ref=f46e16] [cursor=pointer]:
+                    - /url: https://www.mos.ru/depr/function/nalogovaya-politika/nalog-ot-kadastrovoj-stoimosti/
+                - paragraph [ref=f46e17]:
+                  - text: Актуальные вопросы и практика применения налога на имущество, уплачиваемого от кадастровой стоимости, обобщены в брошюре, опубликованной
+                  - link "здесь" [ref=f46e18] [cursor=pointer]:
+                    - /url: https://www.mos.ru/upload/content/files/Noviiporyadokraschetanaloganaimyshestvo_31-01-2021(2).pdf
+                  - text: .
+                - paragraph [ref=f46e19]: Проверьте, находится ли Ваш объект в Перечне на 2026 год! Ваши возможные дальнейшие действия в этой связи см. ниже.
+                - generic [ref=f46e20] [cursor=pointer]: Перейти к поиску
+                - generic [ref=f46e21]:
+                  - heading "Часто задаваемые вопросы" [level=3] [ref=f46e22]
+                  - list [ref=f46e23]:
+                    - listitem [ref=f46e24]: Как пользоваться сервисом?
+                    - listitem [ref=f46e25]: Какие объекты включены в Перечень на 2026 год? • • •
+                    - listitem [ref=f46e26]: Как определить, по какому критерию объект был включен в Перечень на 2026 год?
+                    - listitem [ref=f46e27]: Что делать, если Вы не согласны с включением объекта недвижимости в Перечень на 2026 год? • • • • •
+                    - listitem [ref=f46e28]: Какими льготами я могу воспользоваться в отношении объектов, включенных в Перечень?
+              - blockquote [ref=f46e29]:
+                - generic [ref=f46e31]:
+                  - generic [ref=f46e32]: Справочный сервис разработан по заказу Департамента экономической политики и развития города Москвы.
+                  - text: Информация, предоставленная в сервисе, не является официальным разъяснением налогового законодательства.
+    - generic [ref=f38e102]:
+      - iframe [ref=f38e104]:
+        - generic [ref=f41e3] [cursor=pointer]:
+          - generic [ref=f41e4]:
+            - generic "Проект." [ref=f41e5]: Проект
+            - generic "Заберите животное из приюта." [ref=f41e6]: Заберите животное из приюта
+            - generic "Найти верного друга поможет «Моспитомец»." [ref=f41e7]: Найти верного друга поможет «Моспитомец»
+          - button "Подробнее" [ref=f41e8]
+      - iframe [ref=f38e106]:
+        - generic [ref=f44e5] [cursor=pointer]:
+          - generic "Новость." [ref=f44e6]: Новость
+          - generic "В Москве растет ожидаемая продолжительность жизни." [ref=f44e7]: В Москве растет ожидаемая продолжительность жизни
+      - iframe [ref=f38e108]:
+        - button "Проект. Смотрите в самую глубь!. Полное погружение — в онлайн-трансляциях из «Москвариума»." [ref=f43e2] [cursor=pointer]:
+          - generic [ref=f43e4]:
+            - generic "Проект." [ref=f43e5]: Проект
+            - generic "Смотрите в самую глубь!." [ref=f43e6]: Смотрите в самую глубь!
+            - generic "Полное погружение — в онлайн-трансляциях из «Москвариума»." [ref=f43e7]: Полное погружение — в онлайн-трансляциях из «Москвариума»
+      - iframe [ref=f38e110]:
+        - generic [ref=f45e3] [cursor=pointer]:
+          - generic [ref=f45e4]: Проект
+          - generic [ref=f45e5]: Защитите свои права
+          - generic [ref=f45e6]: Вместе с Порталом потребителя
+  - contentinfo [ref=f38e112]:
+    - generic [ref=f38e113]:
+      - generic [ref=f38e114]:
+        - generic [ref=f38e115]:
+          - generic [ref=f38e116]:
+            - text: Официальный портал Мэра и Правительства Москвы
+            - button [ref=f38e117] [cursor=pointer]:
+              - img "Показать дополнительную информацию" [ref=f38e118]
+          - generic [ref=f38e121]: 125032, Москва, ул. Тверская, 13
+          - generic [ref=f38e122]: Социальные сети портала Москвы
+          - list [ref=f38e123]:
+            - listitem [ref=f38e124]:
+              - link "MaxMessenger портала Москвы" [ref=f38e125] [cursor=pointer]:
+                - /url: https://max.ru/mosru
+            - listitem [ref=f38e128]:
+              - link "VK.com портала Москвы" [ref=f38e129] [cursor=pointer]:
+                - /url: https://vk.com/mos
+            - listitem [ref=f38e132]:
+              - link "Telegram портала Москвы" [ref=f38e133] [cursor=pointer]:
+                - /url: https://t.me/mosrutop
+            - listitem [ref=f38e136]:
+              - link "OK.ru портала Москвы" [ref=f38e137] [cursor=pointer]:
+                - /url: https://ok.ru/moscow
+            - listitem [ref=f38e140]:
+              - link "RSS портала Москвы" [ref=f38e141] [cursor=pointer]:
+                - /url: https://www.mos.ru/rss
+        - navigation [ref=f38e144]:
+          - generic [ref=f38e145]:
+            - link "Новости" [ref=f38e147] [cursor=pointer]:
+              - /url: https://www.mos.ru/news/
+            - list [ref=f38e148]:
+              - listitem [ref=f38e149]:
+                - link "Здравоохранение" [ref=f38e150] [cursor=pointer]:
+                  - /url: https://www.mos.ru/search/newsfeed?page=1&q=&spheres=18299
+              - listitem [ref=f38e151]:
+                - link "Транспорт" [ref=f38e152] [cursor=pointer]:
+                  - /url: https://www.mos.ru/search/newsfeed?page=1&q=&spheres=2299
+              - listitem [ref=f38e153]:
+                - link "Социальная сфера" [ref=f38e154] [cursor=pointer]:
+                  - /url: https://www.mos.ru/search/newsfeed?page=1&q=&spheres=1299
+              - listitem [ref=f38e155]:
+                - link "Образование" [ref=f38e156] [cursor=pointer]:
+                  - /url: https://www.mos.ru/search/newsfeed?page=1&q=&spheres=15299
+              - listitem [ref=f38e157]:
+                - link "Строительство и реконструкция" [ref=f38e158] [cursor=pointer]:
+                  - /url: https://www.mos.ru/search/newsfeed?page=1&q=&spheres=4299
+              - listitem [ref=f38e159]:
+                - link "Культура" [ref=f38e160] [cursor=pointer]:
+                  - /url: https://www.mos.ru/search/newsfeed?page=1&q=&spheres=3299
+              - listitem [ref=f38e161]:
+                - link "Благоустройство и ЖКХ" [ref=f38e162] [cursor=pointer]:
+                  - /url: https://www.mos.ru/search/newsfeed?page=1&q=&spheres=5299%252C350299
+              - listitem [ref=f38e163]:
+                - link "Экономика и предпринимательство" [ref=f38e164] [cursor=pointer]:
+                  - /url: https://www.mos.ru/search/newsfeed?page=1&q=&spheres=12299
+              - listitem [ref=f38e165]:
+                - link "Спорт" [ref=f38e166] [cursor=pointer]:
+                  - /url: https://www.mos.ru/search/newsfeed?page=1&q=&spheres=6299
+              - listitem [ref=f38e167]:
+                - link "Все новости" [ref=f38e168] [cursor=pointer]:
+                  - /url: https://www.mos.ru/news/
+          - generic [ref=f38e169]:
+            - link "Услуги" [ref=f38e171] [cursor=pointer]:
+              - /url: https://www.mos.ru/uslugi/
+            - list [ref=f38e172]:
+              - listitem [ref=f38e173]:
+                - link "Для жителей" [ref=f38e174] [cursor=pointer]:
+                  - /url: https://www.mos.ru/uslugi/
+              - listitem [ref=f38e175]:
+                - link "Образование" [ref=f38e176] [cursor=pointer]:
+                  - /url: https://www.mos.ru/uslugi/obrazovanie/
+              - listitem [ref=f38e177]:
+                - link "Жилье, недвижимость, земля" [ref=f38e178] [cursor=pointer]:
+                  - /url: https://www.mos.ru/uslugi/zhile-nedvizhimost-zemlya/
+              - listitem [ref=f38e179]:
+                - link "Социальная поддержка" [ref=f38e180] [cursor=pointer]:
+                  - /url: https://www.mos.ru/uslugi/socialnaya-podderzhka/
+              - listitem [ref=f38e181]:
+                - link "Все услуги" [ref=f38e182] [cursor=pointer]:
+                  - /url: https://www.mos.ru/uslugi/
+              - listitem [ref=f38e183]:
+                - link "Центры госуслуг" [ref=f38e184] [cursor=pointer]:
+                  - /url: https://www.mos.ru/services/centry-gosudarstvennyh-uslug/
+              - listitem [ref=f38e185]:
+                - link "Для бизнеса" [ref=f38e186] [cursor=pointer]:
+                  - /url: https://www.mos.ru/biznes/
+              - listitem [ref=f38e187]:
+                - link "Мои платежи" [ref=f38e188] [cursor=pointer]:
+                  - /url: https://pay.mos.ru/mospaynew/newportal/charges
+          - generic [ref=f38e189]:
+            - link "Мэр" [ref=f38e191] [cursor=pointer]:
+              - /url: https://www.mos.ru/mayor/
+            - list [ref=f38e192]:
+              - listitem [ref=f38e193]:
+                - link "Деятельность" [ref=f38e194] [cursor=pointer]:
+                  - /url: https://www.mos.ru/mayor/
+              - listitem [ref=f38e195]:
+                - link "Биография" [ref=f38e196] [cursor=pointer]:
+                  - /url: https://www.mos.ru/mayor/biography/
+              - listitem [ref=f38e197]:
+                - link "Интервью" [ref=f38e198] [cursor=pointer]:
+                  - /url: https://www.mos.ru/mayor/interviews/
+              - listitem [ref=f38e199]:
+                - link "Телеграммы" [ref=f38e200] [cursor=pointer]:
+                  - /url: https://www.mos.ru/mayor/telegrams/
+              - listitem [ref=f38e201]:
+                - link "Медиа" [ref=f38e202] [cursor=pointer]:
+                  - /url: https://www.mos.ru/mayor/media/
+              - generic [ref=f38e203]: Социальные сети мэра Москвы
+              - list [ref=f38e204]:
+                - listitem [ref=f38e205]:
+                  - link "MaxMessenger мэра Москвы" [ref=f38e206] [cursor=pointer]:
+                    - /url: https://max.ru/mossobyanin
+                - listitem [ref=f38e209]:
+                  - link "VK.com мэра Москвы" [ref=f38e210] [cursor=pointer]:
+                    - /url: https://vk.com/mossobyanin
+                - listitem [ref=f38e213]:
+                  - link "Telegram мэра Москвы" [ref=f38e214] [cursor=pointer]:
+                    - /url: https://t.me/mos_sobyanin
+          - generic [ref=f38e217]:
+            - link "Власть" [ref=f38e219] [cursor=pointer]:
+              - /url: https://www.mos.ru/authority/
+            - list [ref=f38e220]:
+              - listitem [ref=f38e221]:
+                - link "Структура" [ref=f38e222] [cursor=pointer]:
+                  - /url: https://www.mos.ru/authority/
+              - listitem [ref=f38e223]:
+                - link "Органы власти" [ref=f38e224] [cursor=pointer]:
+                  - /url: https://www.mos.ru/authority/list/
+              - listitem [ref=f38e225]:
+                - link "Префектуры и управы" [ref=f38e226] [cursor=pointer]:
+                  - /url: https://www.mos.ru/authority/territory/
+              - listitem [ref=f38e227]:
+                - link "Документы" [ref=f38e228] [cursor=pointer]:
+                  - /url: https://www.mos.ru/authority/documents/
+          - generic [ref=f38e229]:
+            - link "Мой район" [ref=f38e231] [cursor=pointer]:
+              - /url: https://www.mos.ru/moi-raion/
+            - list [ref=f38e232]:
+              - listitem [ref=f38e233]:
+                - link "Найти свой район" [ref=f38e234] [cursor=pointer]:
+                  - /url: https://www.mos.ru/moi-raion/
+              - listitem [ref=f38e235]:
+                - link "Центры госуслуг" [ref=f38e236] [cursor=pointer]:
+                  - /url: https://www.mos.ru/services/centry-gosudarstvennyh-uslug/
+              - listitem [ref=f38e237]:
+                - link "Культурно-исторические объекты" [ref=f38e238] [cursor=pointer]:
+                  - /url: https://www.mos.ru/map/?screens=%5B%22objectsList%22%5D&categories=%5B%2266%22%5D&mapParams=%7B%22cp%22%3A%7B%22lat%22%3A55.751288%2C%22lng%22%3A37.617928%7D%2C%22p1%22%3A%7B%22lat%22%3A55.83252950925928%2C%22lng%22%3A37.83760070800782%7D%2C%22p2%22%3A%7B%22lat%22%3A55.66984035430873%2C%22lng%22%3A37.39814758300782%7D%2C%22z%22%3A12%7D&kindTitle=Исторические+объекты
+              - listitem [ref=f38e239]:
+                - link "Поликлиники и больницы" [ref=f38e240] [cursor=pointer]:
+                  - /url: https://www.mos.ru/map/?screens=%5B%22objectsList%22%5D&categories=%5B%2240%22%5D&kind=20&mapParams=%7B%22cp%22%3A%7B%22lat%22%3A55.77261442958424%2C%22lng%22%3A37.63710021972657%7D%2C%22p1%22%3A%7B%22lat%22%3A55.855853098804744%2C%22lng%22%3A37.75211334228516%7D%2C%22p2%22%3A%7B%22lat%22%3A55.68919762233934%2C%22lng%22%3A37.522087097167976%7D%2C%22z%22%3A12%7D&kindTitle=Поликлиники+взрослые
+              - listitem [ref=f38e241]:
+                - link "Детские сады" [ref=f38e242] [cursor=pointer]:
+                  - /url: https://www.mos.ru/map/?screens=%5B%22objectsList%22%5D&categories=%5B%2237%22%5D&kind=48&mapParams=%7B%22cp%22%3A%7B%22lat%22%3A55.77261442958424%2C%22lng%22%3A37.63710021972657%7D%2C%22p1%22%3A%7B%22lat%22%3A55.855853098804744%2C%22lng%22%3A37.75211334228516%7D%2C%22p2%22%3A%7B%22lat%22%3A55.68919762233934%2C%22lng%22%3A37.522087097167976%7D%2C%22z%22%3A12%7D&kindTitle=Детские+сады
+              - listitem [ref=f38e243]:
+                - link "Школы" [ref=f38e244] [cursor=pointer]:
+                  - /url: https://www.mos.ru/map/?screens=%5B%22objectsList%22%5D&categories=%5B%2237%22%5D&kind=21&mapParams=%7B%22cp%22%3A%7B%22lat%22%3A55.77261442958424%2C%22lng%22%3A37.63710021972657%7D%2C%22p1%22%3A%7B%22lat%22%3A55.855853098804744%2C%22lng%22%3A37.75211334228516%7D%2C%22p2%22%3A%7B%22lat%22%3A55.68919762233934%2C%22lng%22%3A37.522087097167976%7D%2C%22z%22%3A12%7D&kindTitle=Школы
+              - listitem [ref=f38e245]:
+                - link "Ярмарки выходного дня" [ref=f38e246] [cursor=pointer]:
+                  - /url: https://www.mos.ru/map/?screens=%5B%22objectsList%22%5D&categories=%5B%2231%22%5D&kind=67&mapParams=%7B%22cp%22%3A%7B%22lat%22%3A55.84681815422685%2C%22lng%22%3A37.597323500000016%7D%2C%22p1%22%3A%7B%22lat%22%3A55.87949971647212%2C%22lng%22%3A37.65229225158692%7D%2C%22p2%22%3A%7B%22lat%22%3A55.81406311282012%2C%22lng%22%3A37.54242897033692%7D%2C%22z%22%3A14%7D&kindTitle=Ярмарки+выходного+дня
+              - listitem [ref=f38e247]:
+                - link "Транспортная инфраструктура" [ref=f38e248] [cursor=pointer]:
+                  - /url: https://www.mos.ru/map/?screens=%5B%22objectsList%22%5D&categories=%5B%2273%22%5D&mapParams=%7B%22cp%22%3A%7B%22lat%22%3A55.74956513355559%2C%22lng%22%3A37.62297975%7D%2C%22p1%22%3A%7B%22lat%22%3A55.75998770672451%2C%22lng%22%3A37.637357711792%7D%2C%22p2%22%3A%7B%22lat%22%3A55.739143464522186%2C%22lng%22%3A37.60860443115235%7D%2C%22z%22%3A15%7D&kindTitle=Транспортная+инфраструктура
+              - listitem [ref=f38e249]:
+                - link "Все объекты" [ref=f38e250] [cursor=pointer]:
+                  - /url: https://www.mos.ru/map/?screens=%5B%5D&categories=%5B%5D&mapParams=%7B%22cp%22%3A%7B%22lat%22%3A55.751288%2C%22lng%22%3A37.617928%7D%2C%22p1%22%3A%7B%22lat%22%3A55.79298239140481%2C%22lng%22%3A37.67538070678712%7D%2C%22p2%22%3A%7B%22lat%22%3A55.70960915707037%2C%22lng%22%3A37.56036758422852%7D%2C%22z%22%3A13%7D
+          - generic [ref=f38e251]:
+            - link "Помощь" [ref=f38e253] [cursor=pointer]:
+              - /url: https://www.mos.ru/feedback/
+            - list [ref=f38e254]:
+              - listitem [ref=f38e255]:
+                - link "Инструкции" [ref=f38e256] [cursor=pointer]:
+                  - /url: https://www.mos.ru/otvet/
+              - listitem [ref=f38e257]:
+                - link "Написать в техподдержку" [ref=f38e258] [cursor=pointer]:
+                  - /url: https://www.mos.ru/feedback/form/
+              - listitem [ref=f38e259]:
+                - link "Предложить идею" [ref=f38e260] [cursor=pointer]:
+                  - /url: https://www.mos.ru/feedback/idea/
+              - listitem [ref=f38e261]:
+                - link "Электронная приемная" [ref=f38e262] [cursor=pointer]:
+                  - /url: https://www.mos.ru/feedback/reception/
+              - listitem [ref=f38e263]:
+                - link "Телефонный справочник" [ref=f38e264] [cursor=pointer]:
+                  - /url: https://www.mos.ru/feedback/phones/
+              - listitem [ref=f38e265]:
+                - link "Обзоры обращений" [ref=f38e266] [cursor=pointer]:
+                  - /url: https://www.mos.ru/feedback/reviews/
+          - generic [ref=f38e267]:
+            - link "Проекты" [ref=f38e269] [cursor=pointer]:
+              - /url: https://www.mos.ru/city/projects/
+            - list [ref=f38e270]:
+              - listitem [ref=f38e271]:
+                - link "Мобильные приложения Москвы" [ref=f38e272] [cursor=pointer]:
+                  - /url: https://www.mos.ru/city/projects/mosapps/
+              - listitem [ref=f38e273]:
+                - link "МЭШ" [ref=f38e274] [cursor=pointer]:
+                  - /url: https://www.mos.ru/city/projects/mesh/
+              - listitem [ref=f38e275]:
+                - link "Электронная медицинская карта" [ref=f38e276] [cursor=pointer]:
+                  - /url: https://www.mos.ru/city/projects/medcarta/
+              - listitem [ref=f38e277]:
+                - link "Парки Москвы" [ref=f38e278] [cursor=pointer]:
+                  - /url: https://www.mos.ru/city/projects/parks/
+              - listitem [ref=f38e279]:
+                - link "Безопасность в Интернете" [ref=f38e280] [cursor=pointer]:
+                  - /url: https://www.mos.ru/city/projects/personaldata/
+              - listitem [ref=f38e281]:
+                - link "Московские центральные диаметры" [ref=f38e282] [cursor=pointer]:
+                  - /url: https://www.mos.ru/city/projects/diametry/
+              - listitem [ref=f38e283]:
+                - link "Моспитомец" [ref=f38e284] [cursor=pointer]:
+                  - /url: https://pets.mos.ru/
+              - listitem [ref=f38e285]:
+                - link "Московский стандарт реновации" [ref=f38e286] [cursor=pointer]:
+                  - /url: https://www.mos.ru/city/projects/renovation/
+              - listitem [ref=f38e287]:
+                - link "Все проекты" [ref=f38e288] [cursor=pointer]:
+                  - /url: https://www.mos.ru/city/projects/
+          - generic [ref=f38e289]:
+            - link "Мосбилет" [ref=f38e291] [cursor=pointer]:
+              - /url: https://bilet.mos.ru/
+            - list [ref=f38e292]:
+              - listitem [ref=f38e293]:
+                - link "Спектакли" [ref=f38e294] [cursor=pointer]:
+                  - /url: https://bilet.mos.ru/spektakli/
+              - listitem [ref=f38e295]:
+                - link "Зоопарк" [ref=f38e296] [cursor=pointer]:
+                  - /url: https://bilet.mos.ru/zoopark/
+              - listitem [ref=f38e297]:
+                - link "Для детей" [ref=f38e298] [cursor=pointer]:
+                  - /url: https://bilet.mos.ru/dlya-detey/
+              - listitem [ref=f38e299]:
+                - link "Музеи" [ref=f38e300] [cursor=pointer]:
+                  - /url: https://bilet.mos.ru/museums/
+              - listitem [ref=f38e301]:
+                - link "Лекции" [ref=f38e302] [cursor=pointer]:
+                  - /url: https://bilet.mos.ru/lekcii/
+              - listitem [ref=f38e303]:
+                - link "Концерты" [ref=f38e304] [cursor=pointer]:
+                  - /url: https://bilet.mos.ru/koncerty/
+              - listitem [ref=f38e305]:
+                - link "Экскурсии" [ref=f38e306] [cursor=pointer]:
+                  - /url: https://bilet.mos.ru/ekskursii/
+              - generic [ref=f38e307]: Телегам-канал Мосбилет
+              - list [ref=f38e308]:
+                - listitem [ref=f38e309]:
+                  - link "Telegram мосбилет" [ref=f38e310] [cursor=pointer]:
+                    - /url: https://t.me/mosbilet
+                - listitem [ref=f38e313]:
+                  - link "VK.com мосбилет" [ref=f38e314] [cursor=pointer]:
+                    - /url: https://vk.com/biletmosru
+      - generic [ref=f38e317]:
+        - link "Мобильное приложение Моя Москва" [ref=f38e319] [cursor=pointer]:
+          - /url: https://www.mos.ru/mobile/
+        - list [ref=f38e320]:
+          - listitem [ref=f38e321]:
+            - link "Мобильное приложение в App Store" [ref=f38e322] [cursor=pointer]:
+              - /url: https://apps.apple.com/ru/app/моя-москва-приложение-mos-ru/id1390518510
+          - listitem [ref=f38e324]:
+            - link "Мобильное приложение в Huawey AppGallery" [ref=f38e325] [cursor=pointer]:
+              - /url: https://appgallery.huawei.com/app/C102906941
+          - listitem [ref=f38e327]:
+            - link "Мобильное приложение в RuStore" [ref=f38e328] [cursor=pointer]:
+              - /url: https://www.rustore.ru/catalog/app/ru.mos.app
+          - listitem [ref=f38e330]:
+            - link "Мобильное приложение в RuMarket" [ref=f38e331] [cursor=pointer]:
+              - /url: https://ruplay.market/apps/category/Gorodskie_servisy/ru.mos.app/
+      - generic [ref=f38e333]:
+        - navigation [ref=f38e334]:
+          - generic [ref=f38e335]:
+            - link "Цифровая доступность" [ref=f38e336] [cursor=pointer]:
+              - /url: https://www.mos.ru/dostupnost/
+            - link "Техническая поддержка" [ref=f38e337] [cursor=pointer]:
+              - /url: https://www.mos.ru/feedback/support/
+          - generic [ref=f38e338]:
+            - button "Сайты Москвы" [ref=f38e339] [cursor=pointer]
+            - button "Сайты России" [ref=f38e340] [cursor=pointer]
+          - generic [ref=f38e341]:
+            - link "Информация о госзаказе" [ref=f38e342] [cursor=pointer]:
+              - /url: https://zakupki.mos.ru/purchase/list
+              - text: Инф. о госзаказе
+            - link "Портал поставщиков" [ref=f38e343] [cursor=pointer]:
+              - /url: https://zakupki.mos.ru/
+          - button "Карта сайта" [ref=f38e345] [cursor=pointer]
+        - generic [ref=f38e346]:
+          - paragraph [ref=f38e347]:
+            - link "4 979уникальных посетителей сегодня" [ref=f38e348] [cursor=pointer]:
+              - /url: https://www.mos.ru/dit/function/o-departamente/stats/
+          - paragraph [ref=f38e349]:
+            - link "7 523всего посетили порталы Москвы" [ref=f38e350] [cursor=pointer]:
+              - /url: https://www.mos.ru/dit/function/o-departamente/stats/
+    - generic [ref=f38e351]:
+      - generic [ref=f38e352]:
+        - link "Соглашение о пользовании информационными системами и ресурсами города Москвы" [ref=f38e353] [cursor=pointer]:
+          - /url: https://www.mos.ru/legal/rules/
+        - link "Политика в отношении обработки персональных данных" [ref=f38e354] [cursor=pointer]:
+          - /url: https://www.mos.ru/dit/documents/informatcionnaia-bezopasnost/view/274898220/
+        - generic [ref=f38e355]: Свидетельство на товарный знак № 681231 от 09.11.2018
+      - link "English" [ref=f38e357] [cursor=pointer]:
+        - /url: https://www.mos.ru/en
+  - dialog [ref=f38e359]:
+    - generic [ref=f38e360]:
+      - generic [ref=f38e361]:
+        - text: Продолжая пользоваться Порталом Мэра и Правительства Москвы, вы соглашаетесь на обработку файлов cookie с использованием метрических программ. Это поможет сделать портал еще более удобным и полезным для миллионов пользователей.
+        - link "Подробнее" [ref=f38e362] [cursor=pointer]:
+          - /url: https://www.mos.ru/legal/rules
+      - button "Принять" [ref=f38e364] [cursor=pointer]
+  - button "Кнопка. Открыть чат" [ref=f38e368] [cursor=pointer]

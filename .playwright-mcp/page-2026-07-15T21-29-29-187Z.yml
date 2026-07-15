@@ -1,0 +1,1654 @@
+- generic [active] [ref=f51e1]:
+  - generic [ref=f51e4]:
+    - generic [ref=f51e7]:
+      - link [ref=f51e9] [cursor=pointer]:
+        - /url: /
+        - generic [ref=f51e12]:
+          - heading "Портал открытых данных" [level=2] [ref=f51e13]
+          - paragraph [ref=f51e14]: Правительства Москвы
+      - generic [ref=f51e15]:
+        - link "Данные" [ref=f51e16] [cursor=pointer]:
+          - /url: /opendata
+        - link "Разработчикам" [ref=f51e20] [cursor=pointer]:
+          - /url: /developers
+      - generic [ref=f51e24]:
+        - button "Вход" [ref=f51e27] [cursor=pointer]
+        - button "ENG" [ref=f51e31] [cursor=pointer]
+        - link [ref=f51e35] [cursor=pointer]:
+          - /url: /visually-impaired/dataset
+          - button [ref=f51e37]
+    - generic [ref=f51e42]:
+      - generic [ref=f51e44]:
+        - generic [ref=f51e46]:
+          - generic: Категории
+          - textbox [ref=f51e47]
+        - generic [ref=f51e51]:
+          - textbox [ref=f51e52]
+          - generic [ref=f51e53]: Поставщики
+        - button "Ещё" [ref=f51e56] [cursor=pointer]
+        - button [disabled] [ref=f51e60]
+        - generic [ref=f51e66]:
+          - textbox "Поиск..." [ref=f51e67]
+          - generic [ref=f51e68]:
+            - button [ref=f51e69] [cursor=pointer]
+            - button [ref=f51e72] [cursor=pointer]
+        - button [ref=f51e76] [cursor=pointer]
+        - button [ref=f51e80] [cursor=pointer]
+      - table [ref=f51e87]:
+        - rowgroup [ref=f51e88]:
+          - row [ref=f51e89]:
+            - columnheader "Название набора" [ref=f51e90]
+            - columnheader [ref=f51e91]
+            - columnheader "Рейтинг" [ref=f51e92]
+            - columnheader "Скачиваний" [ref=f51e93]
+            - columnheader "Актуализирован" [ref=f51e94]
+            - columnheader "Примечание" [ref=f51e95]
+            - columnheader [ref=f51e96]
+            - columnheader [ref=f51e97]
+        - rowgroup [ref=f51e98]:
+          - row [ref=f51e99]:
+            - cell [ref=f51e100]:
+              - link "Wi-Fi в библиотеках Связь" [ref=f51e101] [cursor=pointer]:
+                - /url: opendata/60788
+                - generic [ref=f51e103]:
+                  - generic [ref=f51e104]: Wi-Fi в библиотеках
+                  - generic [ref=f51e105]: Связь
+            - cell [ref=f51e107]:
+              - link:
+                - /url: opendata/60788
+            - cell [ref=f51e108]:
+              - 'link "3.2 Оценили: 301" [ref=f51e109] [cursor=pointer]':
+                - /url: opendata/60788
+                - generic [ref=f51e112]:
+                  - generic [ref=f51e113]: "3.2"
+                  - generic [ref=f51e144]: "Оценили: 301"
+            - cell [ref=f51e145]:
+              - link "108806" [ref=f51e146] [cursor=pointer]:
+                - /url: opendata/60788
+            - cell [ref=f51e149]:
+              - link "17.06.2026" [ref=f51e150] [cursor=pointer]:
+                - /url: opendata/60788
+            - cell [ref=f51e153]:
+              - link "Есть карта" [ref=f51e154] [cursor=pointer]:
+                - /url: opendata/60788
+            - cell [ref=f51e160]:
+              - link [ref=f51e161] [cursor=pointer]:
+                - /url: opendata/60788
+                - button "Экспорт" [ref=f51e164]
+            - cell [ref=f51e168]:
+              - link [ref=f51e169] [cursor=pointer]:
+                - /url: opendata/60788
+          - row [ref=f51e176]:
+            - cell [ref=f51e177]:
+              - link "Wi-Fi в кинотеатрах Связь" [ref=f51e178] [cursor=pointer]:
+                - /url: opendata/60789
+                - generic [ref=f51e180]:
+                  - generic [ref=f51e181]: Wi-Fi в кинотеатрах
+                  - generic [ref=f51e182]: Связь
+            - cell [ref=f51e184]:
+              - link:
+                - /url: opendata/60789
+            - cell [ref=f51e185]:
+              - 'link "1.6 Оценили: 126" [ref=f51e186] [cursor=pointer]':
+                - /url: opendata/60789
+                - generic [ref=f51e189]:
+                  - generic [ref=f51e190]: "1.6"
+                  - generic [ref=f51e219]: "Оценили: 126"
+            - cell [ref=f51e220]:
+              - link "13007" [ref=f51e221] [cursor=pointer]:
+                - /url: opendata/60789
+            - cell [ref=f51e224]:
+              - link "08.04.2026" [ref=f51e225] [cursor=pointer]:
+                - /url: opendata/60789
+            - cell [ref=f51e228]:
+              - link "Есть карта" [ref=f51e229] [cursor=pointer]:
+                - /url: opendata/60789
+            - cell [ref=f51e235]:
+              - link [ref=f51e236] [cursor=pointer]:
+                - /url: opendata/60789
+                - button "Экспорт" [ref=f51e239]
+            - cell [ref=f51e243]:
+              - link [ref=f51e244] [cursor=pointer]:
+                - /url: opendata/60789
+          - row [ref=f51e251]:
+            - cell [ref=f51e252]:
+              - link "Wi-Fi в культурных центрах Связь" [ref=f51e253] [cursor=pointer]:
+                - /url: opendata/60790
+                - generic [ref=f51e255]:
+                  - generic [ref=f51e256]: Wi-Fi в культурных центрах
+                  - generic [ref=f51e257]: Связь
+            - cell [ref=f51e259]:
+              - link:
+                - /url: opendata/60790
+            - cell [ref=f51e260]:
+              - 'link "1.3 Оценили: 225" [ref=f51e261] [cursor=pointer]':
+                - /url: opendata/60790
+                - generic [ref=f51e264]:
+                  - generic [ref=f51e265]: "1.3"
+                  - generic [ref=f51e294]: "Оценили: 225"
+            - cell [ref=f51e295]:
+              - link "2356" [ref=f51e296] [cursor=pointer]:
+                - /url: opendata/60790
+            - cell [ref=f51e299]:
+              - link "17.06.2026" [ref=f51e300] [cursor=pointer]:
+                - /url: opendata/60790
+            - cell [ref=f51e303]:
+              - link "Есть карта" [ref=f51e304] [cursor=pointer]:
+                - /url: opendata/60790
+            - cell [ref=f51e310]:
+              - link [ref=f51e311] [cursor=pointer]:
+                - /url: opendata/60790
+                - button "Экспорт" [ref=f51e314]
+            - cell [ref=f51e318]:
+              - link [ref=f51e319] [cursor=pointer]:
+                - /url: opendata/60790
+          - row [ref=f51e326]:
+            - cell [ref=f51e327]:
+              - link "Wi-Fi в парках Связь" [ref=f51e328] [cursor=pointer]:
+                - /url: opendata/861
+                - generic [ref=f51e330]:
+                  - generic [ref=f51e331]: Wi-Fi в парках
+                  - generic [ref=f51e332]: Связь
+            - cell [ref=f51e334]:
+              - link:
+                - /url: opendata/861
+            - cell [ref=f51e335]:
+              - 'link "2.9 Оценили: 666" [ref=f51e336] [cursor=pointer]':
+                - /url: opendata/861
+                - generic [ref=f51e339]:
+                  - generic [ref=f51e340]: "2.9"
+                  - generic [ref=f51e370]: "Оценили: 666"
+            - cell [ref=f51e371]:
+              - link "11383" [ref=f51e372] [cursor=pointer]:
+                - /url: opendata/861
+            - cell [ref=f51e375]:
+              - link "17.06.2026" [ref=f51e376] [cursor=pointer]:
+                - /url: opendata/861
+            - cell [ref=f51e379]:
+              - link "Есть карта" [ref=f51e380] [cursor=pointer]:
+                - /url: opendata/861
+            - cell [ref=f51e386]:
+              - link [ref=f51e387] [cursor=pointer]:
+                - /url: opendata/861
+                - button "Экспорт" [ref=f51e390]
+            - cell [ref=f51e394]:
+              - link [ref=f51e395] [cursor=pointer]:
+                - /url: opendata/861
+          - row [ref=f51e402]:
+            - cell [ref=f51e403]:
+              - link "XML-схемы, используемые для подготовки электронных документов в формате XML для текстовых документов раздела 12 проектной документации в электронном виде «Смета на строительство, реконструкцию, капитальный ремонт, снос объекта капитального строительства» состава разделов проектной документации на объекты капитального строительства производственного и непроизводственного назначения и раздела 9 проектной документации в электронном виде «Смета на строительство, реконструкцию, капитальный ремонт, снос объекта капитального строительства» состава разделов проектной документации на линейные объекты Строительство" [ref=f51e404] [cursor=pointer]:
+                - /url: opendata/64030
+                - generic [ref=f51e406]:
+                  - generic [ref=f51e407]: XML-схемы, используемые для подготовки электронных документов в формате XML для текстовых документов раздела 12 проектной документации в электронном виде «Смета на строительство, реконструкцию, капитальный ремонт, снос объекта капитального строительства» состава разделов проектной документации на объекты капитального строительства производственного и непроизводственного назначения и раздела 9 проектной документации в электронном виде «Смета на строительство, реконструкцию, капитальный ремонт, снос объекта капитального строительства» состава разделов проектной документации на линейные объекты
+                  - generic [ref=f51e408]: Строительство
+            - cell [ref=f51e410]:
+              - link:
+                - /url: opendata/64030
+            - cell [ref=f51e411]:
+              - 'link "4.1 Оценили: 13442" [ref=f51e412] [cursor=pointer]':
+                - /url: opendata/64030
+                - generic [ref=f51e415]:
+                  - generic [ref=f51e416]: "4.1"
+                  - generic [ref=f51e448]: "Оценили: 13442"
+            - cell [ref=f51e449]:
+              - link "313" [ref=f51e450] [cursor=pointer]:
+                - /url: opendata/64030
+            - cell [ref=f51e453]:
+              - link "15.01.2026" [ref=f51e454] [cursor=pointer]:
+                - /url: opendata/64030
+            - cell [ref=f51e457]:
+              - link:
+                - /url: opendata/64030
+            - cell [ref=f51e458]:
+              - link [ref=f51e459] [cursor=pointer]:
+                - /url: opendata/64030
+                - button "Экспорт" [ref=f51e462]
+            - cell [ref=f51e466]:
+              - link [ref=f51e467] [cursor=pointer]:
+                - /url: opendata/64030
+          - row [ref=f51e474]:
+            - cell [ref=f51e475]:
+              - link "Аварийные службы по ремонту водопровода, канализации, освещения и отопления в многоквартирных домах Жилищно-коммунальное хозяйство" [ref=f51e476] [cursor=pointer]:
+                - /url: opendata/3082
+                - generic [ref=f51e478]:
+                  - generic [ref=f51e479]: Аварийные службы по ремонту водопровода, канализации, освещения и отопления в многоквартирных домах
+                  - generic [ref=f51e480]: Жилищно-коммунальное хозяйство
+            - cell [ref=f51e482]:
+              - link:
+                - /url: opendata/3082
+            - cell [ref=f51e483]:
+              - 'link "1.5 Оценили: 261" [ref=f51e484] [cursor=pointer]':
+                - /url: opendata/3082
+                - generic [ref=f51e487]:
+                  - generic [ref=f51e488]: "1.5"
+                  - generic [ref=f51e517]: "Оценили: 261"
+            - cell [ref=f51e518]:
+              - link "1975" [ref=f51e519] [cursor=pointer]:
+                - /url: opendata/3082
+            - cell [ref=f51e522]:
+              - link "22.12.2020" [ref=f51e523] [cursor=pointer]:
+                - /url: opendata/3082
+            - cell [ref=f51e526]:
+              - link "Есть карта" [ref=f51e527] [cursor=pointer]:
+                - /url: opendata/3082
+            - cell [ref=f51e533]:
+              - link [ref=f51e534] [cursor=pointer]:
+                - /url: opendata/3082
+                - button "Экспорт" [ref=f51e537]
+            - cell [ref=f51e541]:
+              - link [ref=f51e542] [cursor=pointer]:
+                - /url: opendata/3082
+          - row [ref=f51e549]:
+            - cell [ref=f51e550]:
+              - link "Автовокзалы и автостанции Москвы Дороги и транспорт" [ref=f51e551] [cursor=pointer]:
+                - /url: opendata/1881
+                - generic [ref=f51e553]:
+                  - generic [ref=f51e554]: Автовокзалы и автостанции Москвы
+                  - generic [ref=f51e555]: Дороги и транспорт
+            - cell [ref=f51e557]:
+              - link:
+                - /url: opendata/1881
+            - cell [ref=f51e558]:
+              - 'link "2.4 Оценили: 157" [ref=f51e559] [cursor=pointer]':
+                - /url: opendata/1881
+                - generic [ref=f51e562]:
+                  - generic [ref=f51e563]: "2.4"
+                  - generic [ref=f51e593]: "Оценили: 157"
+            - cell [ref=f51e594]:
+              - link "8287" [ref=f51e595] [cursor=pointer]:
+                - /url: opendata/1881
+            - cell [ref=f51e598]:
+              - link "25.12.2025" [ref=f51e599] [cursor=pointer]:
+                - /url: opendata/1881
+            - cell [ref=f51e602]:
+              - link "Есть карта" [ref=f51e603] [cursor=pointer]:
+                - /url: opendata/1881
+            - cell [ref=f51e609]:
+              - link [ref=f51e610] [cursor=pointer]:
+                - /url: opendata/1881
+                - button "Экспорт" [ref=f51e613]
+            - cell [ref=f51e617]:
+              - link [ref=f51e618] [cursor=pointer]:
+                - /url: opendata/1881
+          - row [ref=f51e625]:
+            - cell [ref=f51e626]:
+              - link "Автоматические станции контроля загрязнения атмосферы Справочная информация" [ref=f51e627] [cursor=pointer]:
+                - /url: opendata/2447
+                - generic [ref=f51e629]:
+                  - generic [ref=f51e630]: Автоматические станции контроля загрязнения атмосферы
+                  - generic [ref=f51e631]: Справочная информация
+            - cell [ref=f51e633]:
+              - link:
+                - /url: opendata/2447
+            - cell [ref=f51e634]:
+              - 'link "1.6 Оценили: 245" [ref=f51e635] [cursor=pointer]':
+                - /url: opendata/2447
+                - generic [ref=f51e638]:
+                  - generic [ref=f51e639]: "1.6"
+                  - generic [ref=f51e668]: "Оценили: 245"
+            - cell [ref=f51e669]:
+              - link "3211" [ref=f51e670] [cursor=pointer]:
+                - /url: opendata/2447
+            - cell [ref=f51e673]:
+              - link "13.02.2026" [ref=f51e674] [cursor=pointer]:
+                - /url: opendata/2447
+            - cell [ref=f51e677]:
+              - link "Есть карта" [ref=f51e678] [cursor=pointer]:
+                - /url: opendata/2447
+            - cell [ref=f51e684]:
+              - link [ref=f51e685] [cursor=pointer]:
+                - /url: opendata/2447
+                - button "Экспорт" [ref=f51e688]
+            - cell [ref=f51e692]:
+              - link [ref=f51e693] [cursor=pointer]:
+                - /url: opendata/2447
+          - row [ref=f51e700]:
+            - cell [ref=f51e701]:
+              - link "Адреса центров обслуживания клиентов для подачи заявок на технологическое присоединение к электрическим сетям Жилищно-коммунальное хозяйство" [ref=f51e702] [cursor=pointer]:
+                - /url: opendata/3305
+                - generic [ref=f51e704]:
+                  - generic [ref=f51e705]: Адреса центров обслуживания клиентов для подачи заявок на технологическое присоединение к электрическим сетям
+                  - generic [ref=f51e706]: Жилищно-коммунальное хозяйство
+            - cell [ref=f51e708]:
+              - link:
+                - /url: opendata/3305
+            - cell [ref=f51e709]:
+              - 'link "2.0 Оценили: 290" [ref=f51e710] [cursor=pointer]':
+                - /url: opendata/3305
+                - generic [ref=f51e713]:
+                  - generic [ref=f51e714]: "2.0"
+                  - generic [ref=f51e743]: "Оценили: 290"
+            - cell [ref=f51e744]:
+              - link "1311" [ref=f51e745] [cursor=pointer]:
+                - /url: opendata/3305
+            - cell [ref=f51e748]:
+              - link "15.12.2025" [ref=f51e749] [cursor=pointer]:
+                - /url: opendata/3305
+            - cell [ref=f51e752]:
+              - link "Есть карта" [ref=f51e753] [cursor=pointer]:
+                - /url: opendata/3305
+            - cell [ref=f51e759]:
+              - link [ref=f51e760] [cursor=pointer]:
+                - /url: opendata/3305
+                - button "Экспорт" [ref=f51e763]
+            - cell [ref=f51e767]:
+              - link [ref=f51e768] [cursor=pointer]:
+                - /url: opendata/3305
+          - row [ref=f51e775]:
+            - cell [ref=f51e776]:
+              - link "Адресный реестр объектов недвижимости города Москвы Земля и имущество" [ref=f51e777] [cursor=pointer]:
+                - /url: opendata/60562
+                - generic [ref=f51e779]:
+                  - generic [ref=f51e780]: Адресный реестр объектов недвижимости города Москвы
+                  - generic [ref=f51e781]: Земля и имущество
+            - cell [ref=f51e783]:
+              - link:
+                - /url: opendata/60562
+            - cell [ref=f51e784]:
+              - 'link "5.0 Оценили: 24869" [ref=f51e785] [cursor=pointer]':
+                - /url: opendata/60562
+                - generic [ref=f51e788]:
+                  - generic [ref=f51e789]: "5.0"
+                  - generic [ref=f51e821]: "Оценили: 24869"
+            - cell [ref=f51e822]:
+              - link "17184" [ref=f51e823] [cursor=pointer]:
+                - /url: opendata/60562
+            - cell [ref=f51e826]:
+              - link "15.07.2026" [ref=f51e827] [cursor=pointer]:
+                - /url: opendata/60562
+            - cell [ref=f51e830]:
+              - link "Есть карта" [ref=f51e831] [cursor=pointer]:
+                - /url: opendata/60562
+            - cell [ref=f51e837]:
+              - link [ref=f51e838] [cursor=pointer]:
+                - /url: opendata/60562
+                - button "Экспорт" [ref=f51e841]
+            - cell [ref=f51e845]:
+              - link [ref=f51e846] [cursor=pointer]:
+                - /url: opendata/60562
+          - row [ref=f51e853]:
+            - cell [ref=f51e854]:
+              - link "Археологические находки на реконструируемых улицах Культура" [ref=f51e855] [cursor=pointer]:
+                - /url: opendata/2541
+                - generic [ref=f51e857]:
+                  - generic [ref=f51e858]: Археологические находки на реконструируемых улицах
+                  - generic [ref=f51e859]: Культура
+            - cell [ref=f51e861]:
+              - link:
+                - /url: opendata/2541
+            - cell [ref=f51e862]:
+              - 'link "4.7 Оценили: 12" [ref=f51e863] [cursor=pointer]':
+                - /url: opendata/2541
+                - generic [ref=f51e866]:
+                  - generic [ref=f51e867]: "4.7"
+                  - generic [ref=f51e899]: "Оценили: 12"
+            - cell [ref=f51e900]:
+              - link "2886" [ref=f51e901] [cursor=pointer]:
+                - /url: opendata/2541
+            - cell [ref=f51e904]:
+              - link "28.01.2026" [ref=f51e905] [cursor=pointer]:
+                - /url: opendata/2541
+            - cell [ref=f51e908]:
+              - link "Есть карта" [ref=f51e909] [cursor=pointer]:
+                - /url: opendata/2541
+            - cell [ref=f51e915]:
+              - link [ref=f51e916] [cursor=pointer]:
+                - /url: opendata/2541
+                - button "Экспорт" [ref=f51e919]
+            - cell [ref=f51e923]:
+              - link [ref=f51e924] [cursor=pointer]:
+                - /url: opendata/2541
+          - row [ref=f51e931]:
+            - cell [ref=f51e932]:
+              - link "Архивы Москвы Справочная информация" [ref=f51e933] [cursor=pointer]:
+                - /url: opendata/1930
+                - generic [ref=f51e935]:
+                  - generic [ref=f51e936]: Архивы Москвы
+                  - generic [ref=f51e937]: Справочная информация
+            - cell [ref=f51e939]:
+              - link:
+                - /url: opendata/1930
+            - cell [ref=f51e940]:
+              - 'link "3.2 Оценили: 128" [ref=f51e941] [cursor=pointer]':
+                - /url: opendata/1930
+                - generic [ref=f51e944]:
+                  - generic [ref=f51e945]: "3.2"
+                  - generic [ref=f51e976]: "Оценили: 128"
+            - cell [ref=f51e977]:
+              - link "2847" [ref=f51e978] [cursor=pointer]:
+                - /url: opendata/1930
+            - cell [ref=f51e981]:
+              - link "13.04.2026" [ref=f51e982] [cursor=pointer]:
+                - /url: opendata/1930
+            - cell [ref=f51e985]:
+              - link "Есть карта" [ref=f51e986] [cursor=pointer]:
+                - /url: opendata/1930
+            - cell [ref=f51e992]:
+              - link [ref=f51e993] [cursor=pointer]:
+                - /url: opendata/1930
+                - button "Экспорт" [ref=f51e996]
+            - cell [ref=f51e1000]:
+              - link [ref=f51e1001] [cursor=pointer]:
+                - /url: opendata/1930
+          - row [ref=f51e1008]:
+            - cell [ref=f51e1009]:
+              - link "Аттракционы в парках и на площадках Досуг и отдых" [ref=f51e1010] [cursor=pointer]:
+                - /url: opendata/498
+                - generic [ref=f51e1012]:
+                  - generic [ref=f51e1013]: Аттракционы в парках и на площадках
+                  - generic [ref=f51e1014]: Досуг и отдых
+            - cell [ref=f51e1016]:
+              - link:
+                - /url: opendata/498
+            - cell [ref=f51e1017]:
+              - 'link "1.7 Оценили: 113" [ref=f51e1018] [cursor=pointer]':
+                - /url: opendata/498
+                - generic [ref=f51e1021]:
+                  - generic [ref=f51e1022]: "1.7"
+                  - generic [ref=f51e1051]: "Оценили: 113"
+            - cell [ref=f51e1052]:
+              - link "22413" [ref=f51e1053] [cursor=pointer]:
+                - /url: opendata/498
+            - cell [ref=f51e1056]:
+              - link "15.07.2026" [ref=f51e1057] [cursor=pointer]:
+                - /url: opendata/498
+            - cell [ref=f51e1060]:
+              - link "Есть карта" [ref=f51e1061] [cursor=pointer]:
+                - /url: opendata/498
+            - cell [ref=f51e1067]:
+              - link [ref=f51e1068] [cursor=pointer]:
+                - /url: opendata/498
+                - button "Экспорт" [ref=f51e1071]
+            - cell [ref=f51e1075]:
+              - link [ref=f51e1076] [cursor=pointer]:
+                - /url: opendata/498
+          - row [ref=f51e1083]:
+            - cell [ref=f51e1084]:
+              - link "Аттракционы в торгово-развлекательных комплексах Досуг и отдых" [ref=f51e1085] [cursor=pointer]:
+                - /url: opendata/3227
+                - generic [ref=f51e1087]:
+                  - generic [ref=f51e1088]: Аттракционы в торгово-развлекательных комплексах
+                  - generic [ref=f51e1089]: Досуг и отдых
+            - cell [ref=f51e1091]:
+              - link:
+                - /url: opendata/3227
+            - cell [ref=f51e1092]:
+              - 'link "3.8 Оценили: 90" [ref=f51e1093] [cursor=pointer]':
+                - /url: opendata/3227
+                - generic [ref=f51e1096]:
+                  - generic [ref=f51e1097]: "3.8"
+                  - generic [ref=f51e1128]: "Оценили: 90"
+            - cell [ref=f51e1129]:
+              - link "5906" [ref=f51e1130] [cursor=pointer]:
+                - /url: opendata/3227
+            - cell [ref=f51e1133]:
+              - link "13.02.2026" [ref=f51e1134] [cursor=pointer]:
+                - /url: opendata/3227
+            - cell [ref=f51e1137]:
+              - link "Есть карта" [ref=f51e1138] [cursor=pointer]:
+                - /url: opendata/3227
+            - cell [ref=f51e1144]:
+              - link [ref=f51e1145] [cursor=pointer]:
+                - /url: opendata/3227
+                - button "Экспорт" [ref=f51e1148]
+            - cell [ref=f51e1152]:
+              - link [ref=f51e1153] [cursor=pointer]:
+                - /url: opendata/3227
+          - row [ref=f51e1160]:
+            - cell [ref=f51e1161]:
+              - link "Аэропорты Дороги и транспорт" [ref=f51e1162] [cursor=pointer]:
+                - /url: opendata/62883
+                - generic [ref=f51e1164]:
+                  - generic [ref=f51e1165]: Аэропорты
+                  - generic [ref=f51e1166]: Дороги и транспорт
+            - cell [ref=f51e1168]:
+              - link:
+                - /url: opendata/62883
+            - cell [ref=f51e1169]:
+              - 'link "3.2 Оценили: 13" [ref=f51e1170] [cursor=pointer]':
+                - /url: opendata/62883
+                - generic [ref=f51e1173]:
+                  - generic [ref=f51e1174]: "3.2"
+                  - generic [ref=f51e1205]: "Оценили: 13"
+            - cell [ref=f51e1206]:
+              - link "773" [ref=f51e1207] [cursor=pointer]:
+                - /url: opendata/62883
+            - cell [ref=f51e1210]:
+              - link "09.02.2026" [ref=f51e1211] [cursor=pointer]:
+                - /url: opendata/62883
+            - cell [ref=f51e1214]:
+              - link "Есть карта" [ref=f51e1215] [cursor=pointer]:
+                - /url: opendata/62883
+            - cell [ref=f51e1221]:
+              - link [ref=f51e1222] [cursor=pointer]:
+                - /url: opendata/62883
+                - button "Экспорт" [ref=f51e1225]
+            - cell [ref=f51e1229]:
+              - link [ref=f51e1230] [cursor=pointer]:
+                - /url: opendata/62883
+          - row [ref=f51e1237]:
+            - cell [ref=f51e1238]:
+              - link "Балансодержатели зарядных станций для электромобилей, подведомственных Департаменту жилищно-коммунального хозяйства города Москвы Справочная информация" [ref=f51e1239] [cursor=pointer]:
+                - /url: opendata/64062
+                - generic [ref=f51e1241]:
+                  - generic [ref=f51e1242]: Балансодержатели зарядных станций для электромобилей, подведомственных Департаменту жилищно-коммунального хозяйства города Москвы
+                  - generic [ref=f51e1243]: Справочная информация
+            - cell [ref=f51e1245]:
+              - link:
+                - /url: opendata/64062
+            - cell [ref=f51e1246]:
+              - 'link "0.0 Оценили: 0" [ref=f51e1247] [cursor=pointer]':
+                - /url: opendata/64062
+                - generic [ref=f51e1250]:
+                  - generic [ref=f51e1251]: "0.0"
+                  - generic [ref=f51e1278]: "Оценили: 0"
+            - cell [ref=f51e1279]:
+              - link "29" [ref=f51e1280] [cursor=pointer]:
+                - /url: opendata/64062
+            - cell [ref=f51e1283]:
+              - link "26.06.2026" [ref=f51e1284] [cursor=pointer]:
+                - /url: opendata/64062
+            - cell [ref=f51e1287]:
+              - link:
+                - /url: opendata/64062
+            - cell [ref=f51e1288]:
+              - link [ref=f51e1289] [cursor=pointer]:
+                - /url: opendata/64062
+                - button "Экспорт" [ref=f51e1292]
+            - cell [ref=f51e1296]:
+              - link [ref=f51e1297] [cursor=pointer]:
+                - /url: opendata/64062
+          - row [ref=f51e1304]:
+            - cell [ref=f51e1305]:
+              - link "Библиотеки Культура" [ref=f51e1306] [cursor=pointer]:
+                - /url: opendata/526
+                - generic [ref=f51e1308]:
+                  - generic [ref=f51e1309]: Библиотеки
+                  - generic [ref=f51e1310]: Культура
+            - cell [ref=f51e1312]:
+              - link:
+                - /url: opendata/526
+            - cell [ref=f51e1313]:
+              - 'link "4.7 Оценили: 125" [ref=f51e1314] [cursor=pointer]':
+                - /url: opendata/526
+                - generic [ref=f51e1317]:
+                  - generic [ref=f51e1318]: "4.7"
+                  - generic [ref=f51e1350]: "Оценили: 125"
+            - cell [ref=f51e1351]:
+              - link "14449" [ref=f51e1352] [cursor=pointer]:
+                - /url: opendata/526
+            - cell [ref=f51e1355]:
+              - link "15.07.2026" [ref=f51e1356] [cursor=pointer]:
+                - /url: opendata/526
+            - cell [ref=f51e1359]:
+              - link "Есть карта" [ref=f51e1360] [cursor=pointer]:
+                - /url: opendata/526
+            - cell [ref=f51e1366]:
+              - link [ref=f51e1367] [cursor=pointer]:
+                - /url: opendata/526
+                - button "Экспорт" [ref=f51e1370]
+            - cell [ref=f51e1374]:
+              - link [ref=f51e1375] [cursor=pointer]:
+                - /url: opendata/526
+          - row [ref=f51e1382]:
+            - cell [ref=f51e1383]:
+              - link "Больницы взрослые Здравоохранение" [ref=f51e1384] [cursor=pointer]:
+                - /url: opendata/517
+                - generic [ref=f51e1386]:
+                  - generic [ref=f51e1387]: Больницы взрослые
+                  - generic [ref=f51e1388]: Здравоохранение
+            - cell [ref=f51e1390]:
+              - link:
+                - /url: opendata/517
+            - cell [ref=f51e1391]:
+              - 'link "2.1 Оценили: 849" [ref=f51e1392] [cursor=pointer]':
+                - /url: opendata/517
+                - generic [ref=f51e1395]:
+                  - generic [ref=f51e1396]: "2.1"
+                  - generic [ref=f51e1426]: "Оценили: 849"
+            - cell [ref=f51e1427]:
+              - link "12528" [ref=f51e1428] [cursor=pointer]:
+                - /url: opendata/517
+            - cell [ref=f51e1431]:
+              - link "13.07.2026" [ref=f51e1432] [cursor=pointer]:
+                - /url: opendata/517
+            - cell [ref=f51e1435]:
+              - link "Есть карта" [ref=f51e1436] [cursor=pointer]:
+                - /url: opendata/517
+            - cell [ref=f51e1442]:
+              - link [ref=f51e1443] [cursor=pointer]:
+                - /url: opendata/517
+                - button "Экспорт" [ref=f51e1446]
+            - cell [ref=f51e1450]:
+              - link [ref=f51e1451] [cursor=pointer]:
+                - /url: opendata/517
+          - row [ref=f51e1458]:
+            - cell [ref=f51e1459]:
+              - link "Больницы детские и специализированные Здравоохранение" [ref=f51e1460] [cursor=pointer]:
+                - /url: opendata/502
+                - generic [ref=f51e1462]:
+                  - generic [ref=f51e1463]: Больницы детские и специализированные
+                  - generic [ref=f51e1464]: Здравоохранение
+            - cell [ref=f51e1466]:
+              - link:
+                - /url: opendata/502
+            - cell [ref=f51e1467]:
+              - 'link "2.3 Оценили: 395" [ref=f51e1468] [cursor=pointer]':
+                - /url: opendata/502
+                - generic [ref=f51e1471]:
+                  - generic [ref=f51e1472]: "2.3"
+                  - generic [ref=f51e1502]: "Оценили: 395"
+            - cell [ref=f51e1503]:
+              - link "10364" [ref=f51e1504] [cursor=pointer]:
+                - /url: opendata/502
+            - cell [ref=f51e1507]:
+              - link "13.07.2026" [ref=f51e1508] [cursor=pointer]:
+                - /url: opendata/502
+            - cell [ref=f51e1511]:
+              - link "Есть карта" [ref=f51e1512] [cursor=pointer]:
+                - /url: opendata/502
+            - cell [ref=f51e1518]:
+              - link [ref=f51e1519] [cursor=pointer]:
+                - /url: opendata/502
+                - button "Экспорт" [ref=f51e1522]
+            - cell [ref=f51e1526]:
+              - link [ref=f51e1527] [cursor=pointer]:
+                - /url: opendata/502
+          - row [ref=f51e1534]:
+            - cell [ref=f51e1535]:
+              - link "Ботаническая коллекция парка «Зарядье» Культура" [ref=f51e1536] [cursor=pointer]:
+                - /url: opendata/60861
+                - generic [ref=f51e1538]:
+                  - generic [ref=f51e1539]: Ботаническая коллекция парка «Зарядье»
+                  - generic [ref=f51e1540]: Культура
+            - cell [ref=f51e1542]:
+              - link:
+                - /url: opendata/60861
+            - cell [ref=f51e1543]:
+              - 'link "4.7 Оценили: 23" [ref=f51e1544] [cursor=pointer]':
+                - /url: opendata/60861
+                - generic [ref=f51e1547]:
+                  - generic [ref=f51e1548]: "4.7"
+                  - generic [ref=f51e1580]: "Оценили: 23"
+            - cell [ref=f51e1581]:
+              - link "484" [ref=f51e1582] [cursor=pointer]:
+                - /url: opendata/60861
+            - cell [ref=f51e1585]:
+              - link "05.09.2025" [ref=f51e1586] [cursor=pointer]:
+                - /url: opendata/60861
+            - cell [ref=f51e1589]:
+              - link:
+                - /url: opendata/60861
+            - cell [ref=f51e1590]:
+              - link [ref=f51e1591] [cursor=pointer]:
+                - /url: opendata/60861
+                - button "Экспорт" [ref=f51e1594]
+            - cell [ref=f51e1598]:
+              - link [ref=f51e1599] [cursor=pointer]:
+                - /url: opendata/60861
+          - row [ref=f51e1606]:
+            - cell [ref=f51e1607]:
+              - link "Бытовые услуги на территории Москвы Торговля" [ref=f51e1608] [cursor=pointer]:
+                - /url: opendata/1904
+                - generic [ref=f51e1610]:
+                  - generic [ref=f51e1611]: Бытовые услуги на территории Москвы
+                  - generic [ref=f51e1612]: Торговля
+            - cell [ref=f51e1614]:
+              - link:
+                - /url: opendata/1904
+            - cell [ref=f51e1615]:
+              - 'link "4.0 Оценили: 5" [ref=f51e1616] [cursor=pointer]':
+                - /url: opendata/1904
+                - generic [ref=f51e1619]:
+                  - generic [ref=f51e1620]: "4.0"
+                  - generic [ref=f51e1651]: "Оценили: 5"
+            - cell [ref=f51e1652]:
+              - link "7604" [ref=f51e1653] [cursor=pointer]:
+                - /url: opendata/1904
+            - cell [ref=f51e1656]:
+              - link "27.09.2024" [ref=f51e1657] [cursor=pointer]:
+                - /url: opendata/1904
+            - cell [ref=f51e1660]:
+              - link "Есть карта" [ref=f51e1661] [cursor=pointer]:
+                - /url: opendata/1904
+            - cell [ref=f51e1667]:
+              - link [ref=f51e1668] [cursor=pointer]:
+                - /url: opendata/1904
+                - button "Экспорт" [ref=f51e1671]
+            - cell [ref=f51e1675]:
+              - link [ref=f51e1676] [cursor=pointer]:
+                - /url: opendata/1904
+          - row [ref=f51e1683]:
+            - cell [ref=f51e1684]:
+              - link "Бюро судебно-медицинской экспертизы Здравоохранение" [ref=f51e1685] [cursor=pointer]:
+                - /url: opendata/2347
+                - generic [ref=f51e1687]:
+                  - generic [ref=f51e1688]: Бюро судебно-медицинской экспертизы
+                  - generic [ref=f51e1689]: Здравоохранение
+            - cell [ref=f51e1691]:
+              - link:
+                - /url: opendata/2347
+            - cell [ref=f51e1692]:
+              - 'link "4.6 Оценили: 10" [ref=f51e1693] [cursor=pointer]':
+                - /url: opendata/2347
+                - generic [ref=f51e1696]:
+                  - generic [ref=f51e1697]: "4.6"
+                  - generic [ref=f51e1729]: "Оценили: 10"
+            - cell [ref=f51e1730]:
+              - link "1928" [ref=f51e1731] [cursor=pointer]:
+                - /url: opendata/2347
+            - cell [ref=f51e1734]:
+              - link "13.07.2026" [ref=f51e1735] [cursor=pointer]:
+                - /url: opendata/2347
+            - cell [ref=f51e1738]:
+              - link "Есть карта" [ref=f51e1739] [cursor=pointer]:
+                - /url: opendata/2347
+            - cell [ref=f51e1745]:
+              - link [ref=f51e1746] [cursor=pointer]:
+                - /url: opendata/2347
+                - button "Экспорт" [ref=f51e1749]
+            - cell [ref=f51e1753]:
+              - link [ref=f51e1754] [cursor=pointer]:
+                - /url: opendata/2347
+          - row [ref=f51e1761]:
+            - cell [ref=f51e1762]:
+              - link "Вакансии для инвалидов. Виды рабочих мест Справочная информация" [ref=f51e1763] [cursor=pointer]:
+                - /url: opendata/2046
+                - generic [ref=f51e1765]:
+                  - generic [ref=f51e1766]: Вакансии для инвалидов. Виды рабочих мест
+                  - generic [ref=f51e1767]: Справочная информация
+            - cell [ref=f51e1769]:
+              - link:
+                - /url: opendata/2046
+            - cell [ref=f51e1770]:
+              - 'link "3.0 Оценили: 2" [ref=f51e1771] [cursor=pointer]':
+                - /url: opendata/2046
+                - generic [ref=f51e1774]:
+                  - generic [ref=f51e1775]: "3.0"
+                  - generic [ref=f51e1805]: "Оценили: 2"
+            - cell [ref=f51e1806]:
+              - link "754" [ref=f51e1807] [cursor=pointer]:
+                - /url: opendata/2046
+            - cell [ref=f51e1810]:
+              - link "10.09.2018" [ref=f51e1811] [cursor=pointer]:
+                - /url: opendata/2046
+            - cell [ref=f51e1814]:
+              - link:
+                - /url: opendata/2046
+            - cell [ref=f51e1815]:
+              - link [ref=f51e1816] [cursor=pointer]:
+                - /url: opendata/2046
+                - button "Экспорт" [ref=f51e1819]
+            - cell [ref=f51e1823]:
+              - link [ref=f51e1824] [cursor=pointer]:
+                - /url: opendata/2046
+          - row [ref=f51e1831]:
+            - cell [ref=f51e1832]:
+              - link "Вакансии для инвалидов. Образование Справочная информация" [ref=f51e1833] [cursor=pointer]:
+                - /url: opendata/2047
+                - generic [ref=f51e1835]:
+                  - generic [ref=f51e1836]: Вакансии для инвалидов. Образование
+                  - generic [ref=f51e1837]: Справочная информация
+            - cell [ref=f51e1839]:
+              - link:
+                - /url: opendata/2047
+            - cell [ref=f51e1840]:
+              - 'link "3.8 Оценили: 6" [ref=f51e1841] [cursor=pointer]':
+                - /url: opendata/2047
+                - generic [ref=f51e1844]:
+                  - generic [ref=f51e1845]: "3.8"
+                  - generic [ref=f51e1876]: "Оценили: 6"
+            - cell [ref=f51e1877]:
+              - link "609" [ref=f51e1878] [cursor=pointer]:
+                - /url: opendata/2047
+            - cell [ref=f51e1881]:
+              - link "21.04.2022" [ref=f51e1882] [cursor=pointer]:
+                - /url: opendata/2047
+            - cell [ref=f51e1885]:
+              - link:
+                - /url: opendata/2047
+            - cell [ref=f51e1886]:
+              - link [ref=f51e1887] [cursor=pointer]:
+                - /url: opendata/2047
+                - button "Экспорт" [ref=f51e1890]
+            - cell [ref=f51e1894]:
+              - link [ref=f51e1895] [cursor=pointer]:
+                - /url: opendata/2047
+          - row [ref=f51e1902]:
+            - cell [ref=f51e1903]:
+              - link "Вакансии для инвалидов. Особенности работы Справочная информация" [ref=f51e1904] [cursor=pointer]:
+                - /url: opendata/2048
+                - generic [ref=f51e1906]:
+                  - generic [ref=f51e1907]: Вакансии для инвалидов. Особенности работы
+                  - generic [ref=f51e1908]: Справочная информация
+            - cell [ref=f51e1910]:
+              - link:
+                - /url: opendata/2048
+            - cell [ref=f51e1911]:
+              - 'link "1.0 Оценили: 1" [ref=f51e1912] [cursor=pointer]':
+                - /url: opendata/2048
+                - generic [ref=f51e1915]:
+                  - generic [ref=f51e1916]: "1.0"
+                  - generic [ref=f51e1944]: "Оценили: 1"
+            - cell [ref=f51e1945]:
+              - link "415" [ref=f51e1946] [cursor=pointer]:
+                - /url: opendata/2048
+            - cell [ref=f51e1949]:
+              - link "10.09.2018" [ref=f51e1950] [cursor=pointer]:
+                - /url: opendata/2048
+            - cell [ref=f51e1953]:
+              - link:
+                - /url: opendata/2048
+            - cell [ref=f51e1954]:
+              - link [ref=f51e1955] [cursor=pointer]:
+                - /url: opendata/2048
+                - button "Экспорт" [ref=f51e1958]
+            - cell [ref=f51e1962]:
+              - link [ref=f51e1963] [cursor=pointer]:
+                - /url: opendata/2048
+          - row [ref=f51e1970]:
+            - cell [ref=f51e1971]:
+              - link "Вакансии для инвалидов. Режим работы Справочная информация" [ref=f51e1972] [cursor=pointer]:
+                - /url: opendata/2049
+                - generic [ref=f51e1974]:
+                  - generic [ref=f51e1975]: Вакансии для инвалидов. Режим работы
+                  - generic [ref=f51e1976]: Справочная информация
+            - cell [ref=f51e1978]:
+              - link:
+                - /url: opendata/2049
+            - cell [ref=f51e1979]:
+              - 'link "0.0 Оценили: 0" [ref=f51e1980] [cursor=pointer]':
+                - /url: opendata/2049
+                - generic [ref=f51e1983]:
+                  - generic [ref=f51e1984]: "0.0"
+                  - generic [ref=f51e2011]: "Оценили: 0"
+            - cell [ref=f51e2012]:
+              - link "286" [ref=f51e2013] [cursor=pointer]:
+                - /url: opendata/2049
+            - cell [ref=f51e2016]:
+              - link "10.09.2018" [ref=f51e2017] [cursor=pointer]:
+                - /url: opendata/2049
+            - cell [ref=f51e2020]:
+              - link:
+                - /url: opendata/2049
+            - cell [ref=f51e2021]:
+              - link [ref=f51e2022] [cursor=pointer]:
+                - /url: opendata/2049
+                - button "Экспорт" [ref=f51e2025]
+            - cell [ref=f51e2029]:
+              - link [ref=f51e2030] [cursor=pointer]:
+                - /url: opendata/2049
+          - row [ref=f51e2037]:
+            - cell [ref=f51e2038]:
+              - link "Вакансии для инвалидов. Характер работы Справочная информация" [ref=f51e2039] [cursor=pointer]:
+                - /url: opendata/2050
+                - generic [ref=f51e2041]:
+                  - generic [ref=f51e2042]: Вакансии для инвалидов. Характер работы
+                  - generic [ref=f51e2043]: Справочная информация
+            - cell [ref=f51e2045]:
+              - link:
+                - /url: opendata/2050
+            - cell [ref=f51e2046]:
+              - 'link "0.0 Оценили: 0" [ref=f51e2047] [cursor=pointer]':
+                - /url: opendata/2050
+                - generic [ref=f51e2050]:
+                  - generic [ref=f51e2051]: "0.0"
+                  - generic [ref=f51e2078]: "Оценили: 0"
+            - cell [ref=f51e2079]:
+              - link "566" [ref=f51e2080] [cursor=pointer]:
+                - /url: opendata/2050
+            - cell [ref=f51e2083]:
+              - link "10.09.2018" [ref=f51e2084] [cursor=pointer]:
+                - /url: opendata/2050
+            - cell [ref=f51e2087]:
+              - link:
+                - /url: opendata/2050
+            - cell [ref=f51e2088]:
+              - link [ref=f51e2089] [cursor=pointer]:
+                - /url: opendata/2050
+                - button "Экспорт" [ref=f51e2092]
+            - cell [ref=f51e2096]:
+              - link [ref=f51e2097] [cursor=pointer]:
+                - /url: opendata/2050
+          - row [ref=f51e2104]:
+            - cell [ref=f51e2105]:
+              - link "Валовой региональный продукт (ВРП) Справочная информация" [ref=f51e2106] [cursor=pointer]:
+                - /url: opendata/61963
+                - generic [ref=f51e2108]:
+                  - generic [ref=f51e2109]: Валовой региональный продукт (ВРП)
+                  - generic [ref=f51e2110]: Справочная информация
+            - cell [ref=f51e2112]:
+              - link:
+                - /url: opendata/61963
+            - cell [ref=f51e2113]:
+              - 'link "3.3 Оценили: 6" [ref=f51e2114] [cursor=pointer]':
+                - /url: opendata/61963
+                - generic [ref=f51e2117]:
+                  - generic [ref=f51e2118]: "3.3"
+                  - generic [ref=f51e2149]: "Оценили: 6"
+            - cell [ref=f51e2150]:
+              - link "193" [ref=f51e2151] [cursor=pointer]:
+                - /url: opendata/61963
+            - cell [ref=f51e2154]:
+              - link "08.04.2026" [ref=f51e2155] [cursor=pointer]:
+                - /url: opendata/61963
+            - cell [ref=f51e2158]:
+              - link:
+                - /url: opendata/61963
+            - cell [ref=f51e2159]:
+              - link [ref=f51e2160] [cursor=pointer]:
+                - /url: opendata/61963
+                - button "Экспорт" [ref=f51e2163]
+            - cell [ref=f51e2167]:
+              - link [ref=f51e2168] [cursor=pointer]:
+                - /url: opendata/61963
+          - row [ref=f51e2175]:
+            - cell [ref=f51e2176]:
+              - link "Велосипедные парковки Дороги и транспорт" [ref=f51e2177] [cursor=pointer]:
+                - /url: opendata/916
+                - generic [ref=f51e2179]:
+                  - generic [ref=f51e2180]: Велосипедные парковки
+                  - generic [ref=f51e2181]: Дороги и транспорт
+            - cell [ref=f51e2183]:
+              - link:
+                - /url: opendata/916
+            - cell [ref=f51e2184]:
+              - 'link "3.7 Оценили: 44" [ref=f51e2185] [cursor=pointer]':
+                - /url: opendata/916
+                - generic [ref=f51e2188]:
+                  - generic [ref=f51e2189]: "3.7"
+                  - generic [ref=f51e2220]: "Оценили: 44"
+            - cell [ref=f51e2221]:
+              - link "13231" [ref=f51e2222] [cursor=pointer]:
+                - /url: opendata/916
+            - cell [ref=f51e2225]:
+              - link "13.07.2026" [ref=f51e2226] [cursor=pointer]:
+                - /url: opendata/916
+            - cell [ref=f51e2229]:
+              - link "Есть карта" [ref=f51e2230] [cursor=pointer]:
+                - /url: opendata/916
+            - cell [ref=f51e2236]:
+              - link [ref=f51e2237] [cursor=pointer]:
+                - /url: opendata/916
+                - button "Экспорт" [ref=f51e2240]
+            - cell [ref=f51e2244]:
+              - link [ref=f51e2245] [cursor=pointer]:
+                - /url: opendata/916
+          - row [ref=f51e2252]:
+            - cell [ref=f51e2253]:
+              - link "Ветеринарная помощь на дому Забота о животных" [ref=f51e2254] [cursor=pointer]:
+                - /url: opendata/61350
+                - generic [ref=f51e2256]:
+                  - generic [ref=f51e2257]: Ветеринарная помощь на дому
+                  - generic [ref=f51e2258]: Забота о животных
+            - cell [ref=f51e2260]:
+              - link:
+                - /url: opendata/61350
+            - cell [ref=f51e2261]:
+              - 'link "2.7 Оценили: 7" [ref=f51e2262] [cursor=pointer]':
+                - /url: opendata/61350
+                - generic [ref=f51e2265]:
+                  - generic [ref=f51e2266]: "2.7"
+                  - generic [ref=f51e2296]: "Оценили: 7"
+            - cell [ref=f51e2297]:
+              - link "639" [ref=f51e2298] [cursor=pointer]:
+                - /url: opendata/61350
+            - cell [ref=f51e2301]:
+              - link "21.01.2026" [ref=f51e2302] [cursor=pointer]:
+                - /url: opendata/61350
+            - cell [ref=f51e2305]:
+              - link "Есть карта" [ref=f51e2306] [cursor=pointer]:
+                - /url: opendata/61350
+            - cell [ref=f51e2312]:
+              - link [ref=f51e2313] [cursor=pointer]:
+                - /url: opendata/61350
+                - button "Экспорт" [ref=f51e2316]
+            - cell [ref=f51e2320]:
+              - link [ref=f51e2321] [cursor=pointer]:
+                - /url: opendata/61350
+          - row [ref=f51e2328]:
+            - cell [ref=f51e2329]:
+              - link "Ветеринарные учреждения Забота о животных" [ref=f51e2330] [cursor=pointer]:
+                - /url: opendata/1193
+                - generic [ref=f51e2332]:
+                  - generic [ref=f51e2333]: Ветеринарные учреждения
+                  - generic [ref=f51e2334]: Забота о животных
+            - cell [ref=f51e2336]:
+              - link:
+                - /url: opendata/1193
+            - cell [ref=f51e2337]:
+              - 'link "3.2 Оценили: 149" [ref=f51e2338] [cursor=pointer]':
+                - /url: opendata/1193
+                - generic [ref=f51e2341]:
+                  - generic [ref=f51e2342]: "3.2"
+                  - generic [ref=f51e2373]: "Оценили: 149"
+            - cell [ref=f51e2374]:
+              - link "9639" [ref=f51e2375] [cursor=pointer]:
+                - /url: opendata/1193
+            - cell [ref=f51e2378]:
+              - link "09.06.2026" [ref=f51e2379] [cursor=pointer]:
+                - /url: opendata/1193
+            - cell [ref=f51e2382]:
+              - link "Есть карта" [ref=f51e2383] [cursor=pointer]:
+                - /url: opendata/1193
+            - cell [ref=f51e2389]:
+              - link [ref=f51e2390] [cursor=pointer]:
+                - /url: opendata/1193
+                - button "Экспорт" [ref=f51e2393]
+            - cell [ref=f51e2397]:
+              - link [ref=f51e2398] [cursor=pointer]:
+                - /url: opendata/1193
+          - row [ref=f51e2405]:
+            - cell [ref=f51e2406]:
+              - link "Виды деятельности, подлежащие государственному тарифному регулированию в городе Москве Справочная информация" [ref=f51e2407] [cursor=pointer]:
+                - /url: opendata/63123
+                - generic [ref=f51e2409]:
+                  - generic [ref=f51e2410]: Виды деятельности, подлежащие государственному тарифному регулированию в городе Москве
+                  - generic [ref=f51e2411]: Справочная информация
+            - cell [ref=f51e2413]:
+              - link:
+                - /url: opendata/63123
+            - cell [ref=f51e2414]:
+              - 'link "0.0 Оценили: 0" [ref=f51e2415] [cursor=pointer]':
+                - /url: opendata/63123
+                - generic [ref=f51e2418]:
+                  - generic [ref=f51e2419]: "0.0"
+                  - generic [ref=f51e2446]: "Оценили: 0"
+            - cell [ref=f51e2447]:
+              - link "27" [ref=f51e2448] [cursor=pointer]:
+                - /url: opendata/63123
+            - cell [ref=f51e2451]:
+              - link "31.01.2023" [ref=f51e2452] [cursor=pointer]:
+                - /url: opendata/63123
+            - cell [ref=f51e2455]:
+              - link:
+                - /url: opendata/63123
+            - cell [ref=f51e2456]:
+              - link [ref=f51e2457] [cursor=pointer]:
+                - /url: opendata/63123
+                - button "Экспорт" [ref=f51e2460]
+            - cell [ref=f51e2464]:
+              - link [ref=f51e2465] [cursor=pointer]:
+                - /url: opendata/63123
+          - row [ref=f51e2472]:
+            - cell [ref=f51e2473]:
+              - link "Виды деятельности программ дополнительного образования Справочная информация" [ref=f51e2474] [cursor=pointer]:
+                - /url: opendata/62789
+                - generic [ref=f51e2476]:
+                  - generic [ref=f51e2477]: Виды деятельности программ дополнительного образования
+                  - generic [ref=f51e2478]: Справочная информация
+            - cell [ref=f51e2480]:
+              - link:
+                - /url: opendata/62789
+            - cell [ref=f51e2481]:
+              - 'link "0.0 Оценили: 0" [ref=f51e2482] [cursor=pointer]':
+                - /url: opendata/62789
+                - generic [ref=f51e2485]:
+                  - generic [ref=f51e2486]: "0.0"
+                  - generic [ref=f51e2513]: "Оценили: 0"
+            - cell [ref=f51e2514]:
+              - link "29" [ref=f51e2515] [cursor=pointer]:
+                - /url: opendata/62789
+            - cell [ref=f51e2518]:
+              - link "24.11.2025" [ref=f51e2519] [cursor=pointer]:
+                - /url: opendata/62789
+            - cell [ref=f51e2522]:
+              - link:
+                - /url: opendata/62789
+            - cell [ref=f51e2523]:
+              - link [ref=f51e2524] [cursor=pointer]:
+                - /url: opendata/62789
+                - button "Экспорт" [ref=f51e2527]
+            - cell [ref=f51e2531]:
+              - link [ref=f51e2532] [cursor=pointer]:
+                - /url: opendata/62789
+          - row [ref=f51e2539]:
+            - cell [ref=f51e2540]:
+              - link "Виды (локальных) ремонтных работ, проводимых подведомственными Департаменту жилищно-коммунального хозяйства города Москвы организациями Справочная информация" [ref=f51e2541] [cursor=pointer]:
+                - /url: opendata/62442
+                - generic [ref=f51e2543]:
+                  - generic [ref=f51e2544]: Виды (локальных) ремонтных работ, проводимых подведомственными Департаменту жилищно-коммунального хозяйства города Москвы организациями
+                  - generic [ref=f51e2545]: Справочная информация
+            - cell [ref=f51e2547]:
+              - link:
+                - /url: opendata/62442
+            - cell [ref=f51e2548]:
+              - 'link "0.0 Оценили: 0" [ref=f51e2549] [cursor=pointer]':
+                - /url: opendata/62442
+                - generic [ref=f51e2552]:
+                  - generic [ref=f51e2553]: "0.0"
+                  - generic [ref=f51e2580]: "Оценили: 0"
+            - cell [ref=f51e2581]:
+              - link "48" [ref=f51e2582] [cursor=pointer]:
+                - /url: opendata/62442
+            - cell [ref=f51e2585]:
+              - link "09.06.2023" [ref=f51e2586] [cursor=pointer]:
+                - /url: opendata/62442
+            - cell [ref=f51e2589]:
+              - link:
+                - /url: opendata/62442
+            - cell [ref=f51e2590]:
+              - link [ref=f51e2591] [cursor=pointer]:
+                - /url: opendata/62442
+                - button "Экспорт" [ref=f51e2594]
+            - cell [ref=f51e2598]:
+              - link [ref=f51e2599] [cursor=pointer]:
+                - /url: opendata/62442
+          - row [ref=f51e2606]:
+            - cell [ref=f51e2607]:
+              - link "Виды музыкальных инструментов Справочная информация" [ref=f51e2608] [cursor=pointer]:
+                - /url: opendata/2281
+                - generic [ref=f51e2610]:
+                  - generic [ref=f51e2611]: Виды музыкальных инструментов
+                  - generic [ref=f51e2612]: Справочная информация
+            - cell [ref=f51e2614]:
+              - link:
+                - /url: opendata/2281
+            - cell [ref=f51e2615]:
+              - 'link "1.0 Оценили: 1" [ref=f51e2616] [cursor=pointer]':
+                - /url: opendata/2281
+                - generic [ref=f51e2619]:
+                  - generic [ref=f51e2620]: "1.0"
+                  - generic [ref=f51e2648]: "Оценили: 1"
+            - cell [ref=f51e2649]:
+              - link "821" [ref=f51e2650] [cursor=pointer]:
+                - /url: opendata/2281
+            - cell [ref=f51e2653]:
+              - link "03.09.2024" [ref=f51e2654] [cursor=pointer]:
+                - /url: opendata/2281
+            - cell [ref=f51e2657]:
+              - link:
+                - /url: opendata/2281
+            - cell [ref=f51e2658]:
+              - link [ref=f51e2659] [cursor=pointer]:
+                - /url: opendata/2281
+                - button "Экспорт" [ref=f51e2662]
+            - cell [ref=f51e2666]:
+              - link [ref=f51e2667] [cursor=pointer]:
+                - /url: opendata/2281
+          - row [ref=f51e2674]:
+            - cell [ref=f51e2675]:
+              - link "Виды направлений Справочная информация" [ref=f51e2676] [cursor=pointer]:
+                - /url: opendata/61323
+                - generic [ref=f51e2678]:
+                  - generic [ref=f51e2679]: Виды направлений
+                  - generic [ref=f51e2680]: Справочная информация
+            - cell [ref=f51e2682]:
+              - link:
+                - /url: opendata/61323
+            - cell [ref=f51e2683]:
+              - 'link "1.7 Оценили: 11" [ref=f51e2684] [cursor=pointer]':
+                - /url: opendata/61323
+                - generic [ref=f51e2687]:
+                  - generic [ref=f51e2688]: "1.7"
+                  - generic [ref=f51e2717]: "Оценили: 11"
+            - cell [ref=f51e2718]:
+              - link "237" [ref=f51e2719] [cursor=pointer]:
+                - /url: opendata/61323
+            - cell [ref=f51e2722]:
+              - link "18.12.2024" [ref=f51e2723] [cursor=pointer]:
+                - /url: opendata/61323
+            - cell [ref=f51e2726]:
+              - link:
+                - /url: opendata/61323
+            - cell [ref=f51e2727]:
+              - link [ref=f51e2728] [cursor=pointer]:
+                - /url: opendata/61323
+                - button "Экспорт" [ref=f51e2731]
+            - cell [ref=f51e2735]:
+              - link [ref=f51e2736] [cursor=pointer]:
+                - /url: opendata/61323
+          - row [ref=f51e2743]:
+            - cell [ref=f51e2744]:
+              - link "Виды нестационарных торговых объектов Торговля" [ref=f51e2745] [cursor=pointer]:
+                - /url: opendata/2286
+                - generic [ref=f51e2747]:
+                  - generic [ref=f51e2748]: Виды нестационарных торговых объектов
+                  - generic [ref=f51e2749]: Торговля
+            - cell [ref=f51e2751]:
+              - link:
+                - /url: opendata/2286
+            - cell [ref=f51e2752]:
+              - 'link "0.0 Оценили: 0" [ref=f51e2753] [cursor=pointer]':
+                - /url: opendata/2286
+                - generic [ref=f51e2756]:
+                  - generic [ref=f51e2757]: "0.0"
+                  - generic [ref=f51e2784]: "Оценили: 0"
+            - cell [ref=f51e2785]:
+              - link "532" [ref=f51e2786] [cursor=pointer]:
+                - /url: opendata/2286
+            - cell [ref=f51e2789]:
+              - link "19.09.2024" [ref=f51e2790] [cursor=pointer]:
+                - /url: opendata/2286
+            - cell [ref=f51e2793]:
+              - link:
+                - /url: opendata/2286
+            - cell [ref=f51e2794]:
+              - link [ref=f51e2795] [cursor=pointer]:
+                - /url: opendata/2286
+                - button "Экспорт" [ref=f51e2798]
+            - cell [ref=f51e2802]:
+              - link [ref=f51e2803] [cursor=pointer]:
+                - /url: opendata/2286
+          - row [ref=f51e2810]:
+            - cell [ref=f51e2811]:
+              - link "Виды освещения спортивных объектов Справочная информация" [ref=f51e2812] [cursor=pointer]:
+                - /url: opendata/2705
+                - generic [ref=f51e2814]:
+                  - generic [ref=f51e2815]: Виды освещения спортивных объектов
+                  - generic [ref=f51e2816]: Справочная информация
+            - cell [ref=f51e2818]:
+              - link:
+                - /url: opendata/2705
+            - cell [ref=f51e2819]:
+              - 'link "0.0 Оценили: 0" [ref=f51e2820] [cursor=pointer]':
+                - /url: opendata/2705
+                - generic [ref=f51e2823]:
+                  - generic [ref=f51e2824]: "0.0"
+                  - generic [ref=f51e2851]: "Оценили: 0"
+            - cell [ref=f51e2852]:
+              - link "187" [ref=f51e2853] [cursor=pointer]:
+                - /url: opendata/2705
+            - cell [ref=f51e2856]:
+              - link "15.12.2025" [ref=f51e2857] [cursor=pointer]:
+                - /url: opendata/2705
+            - cell [ref=f51e2860]:
+              - link:
+                - /url: opendata/2705
+            - cell [ref=f51e2861]:
+              - link [ref=f51e2862] [cursor=pointer]:
+                - /url: opendata/2705
+                - button "Экспорт" [ref=f51e2865]
+            - cell [ref=f51e2869]:
+              - link [ref=f51e2870] [cursor=pointer]:
+                - /url: opendata/2705
+          - row [ref=f51e2877]:
+            - cell [ref=f51e2878]:
+              - link "Виды покрытий спортивных объектов Справочная информация" [ref=f51e2879] [cursor=pointer]:
+                - /url: opendata/1526
+                - generic [ref=f51e2881]:
+                  - generic [ref=f51e2882]: Виды покрытий спортивных объектов
+                  - generic [ref=f51e2883]: Справочная информация
+            - cell [ref=f51e2885]:
+              - link:
+                - /url: opendata/1526
+            - cell [ref=f51e2886]:
+              - 'link "0.0 Оценили: 0" [ref=f51e2887] [cursor=pointer]':
+                - /url: opendata/1526
+                - generic [ref=f51e2890]:
+                  - generic [ref=f51e2891]: "0.0"
+                  - generic [ref=f51e2918]: "Оценили: 0"
+            - cell [ref=f51e2919]:
+              - link "596" [ref=f51e2920] [cursor=pointer]:
+                - /url: opendata/1526
+            - cell [ref=f51e2923]:
+              - link "15.12.2025" [ref=f51e2924] [cursor=pointer]:
+                - /url: opendata/1526
+            - cell [ref=f51e2927]:
+              - link:
+                - /url: opendata/1526
+            - cell [ref=f51e2928]:
+              - link [ref=f51e2929] [cursor=pointer]:
+                - /url: opendata/1526
+                - button "Экспорт" [ref=f51e2932]
+            - cell [ref=f51e2936]:
+              - link [ref=f51e2937] [cursor=pointer]:
+                - /url: opendata/1526
+          - row [ref=f51e2944]:
+            - cell [ref=f51e2945]:
+              - link "Виды предприятий общественного питания Справочная информация" [ref=f51e2946] [cursor=pointer]:
+                - /url: opendata/2052
+                - generic [ref=f51e2948]:
+                  - generic [ref=f51e2949]: Виды предприятий общественного питания
+                  - generic [ref=f51e2950]: Справочная информация
+            - cell [ref=f51e2952]:
+              - link:
+                - /url: opendata/2052
+            - cell [ref=f51e2953]:
+              - 'link "0.0 Оценили: 0" [ref=f51e2954] [cursor=pointer]':
+                - /url: opendata/2052
+                - generic [ref=f51e2957]:
+                  - generic [ref=f51e2958]: "0.0"
+                  - generic [ref=f51e2985]: "Оценили: 0"
+            - cell [ref=f51e2986]:
+              - link "688" [ref=f51e2987] [cursor=pointer]:
+                - /url: opendata/2052
+            - cell [ref=f51e2990]:
+              - link "19.09.2024" [ref=f51e2991] [cursor=pointer]:
+                - /url: opendata/2052
+            - cell [ref=f51e2994]:
+              - link:
+                - /url: opendata/2052
+            - cell [ref=f51e2995]:
+              - link [ref=f51e2996] [cursor=pointer]:
+                - /url: opendata/2052
+                - button "Экспорт" [ref=f51e2999]
+            - cell [ref=f51e3003]:
+              - link [ref=f51e3004] [cursor=pointer]:
+                - /url: opendata/2052
+          - row [ref=f51e3011]:
+            - cell [ref=f51e3012]:
+              - link "Виды проводимых работ в рамках Государственной программы «Развитие транспортной системы» Справочная информация" [ref=f51e3013] [cursor=pointer]:
+                - /url: opendata/62403
+                - generic [ref=f51e3015]:
+                  - generic [ref=f51e3016]: Виды проводимых работ в рамках Государственной программы «Развитие транспортной системы»
+                  - generic [ref=f51e3017]: Справочная информация
+            - cell [ref=f51e3019]:
+              - link:
+                - /url: opendata/62403
+            - cell [ref=f51e3020]:
+              - 'link "4.6 Оценили: 55" [ref=f51e3021] [cursor=pointer]':
+                - /url: opendata/62403
+                - generic [ref=f51e3024]:
+                  - generic [ref=f51e3025]: "4.6"
+                  - generic [ref=f51e3057]: "Оценили: 55"
+            - cell [ref=f51e3058]:
+              - link "69" [ref=f51e3059] [cursor=pointer]:
+                - /url: opendata/62403
+            - cell [ref=f51e3062]:
+              - link "19.09.2024" [ref=f51e3063] [cursor=pointer]:
+                - /url: opendata/62403
+            - cell [ref=f51e3066]:
+              - link:
+                - /url: opendata/62403
+            - cell [ref=f51e3067]:
+              - link [ref=f51e3068] [cursor=pointer]:
+                - /url: opendata/62403
+                - button "Экспорт" [ref=f51e3071]
+            - cell [ref=f51e3075]:
+              - link [ref=f51e3076] [cursor=pointer]:
+                - /url: opendata/62403
+          - row [ref=f51e3083]:
+            - cell [ref=f51e3084]:
+              - link "Виды проектов планировки территорий Справочная информация" [ref=f51e3085] [cursor=pointer]:
+                - /url: opendata/2707
+                - generic [ref=f51e3087]:
+                  - generic [ref=f51e3088]: Виды проектов планировки территорий
+                  - generic [ref=f51e3089]: Справочная информация
+            - cell [ref=f51e3091]:
+              - link:
+                - /url: opendata/2707
+            - cell [ref=f51e3092]:
+              - 'link "0.0 Оценили: 0" [ref=f51e3093] [cursor=pointer]':
+                - /url: opendata/2707
+                - generic [ref=f51e3096]:
+                  - generic [ref=f51e3097]: "0.0"
+                  - generic [ref=f51e3124]: "Оценили: 0"
+            - cell [ref=f51e3125]:
+              - link "311" [ref=f51e3126] [cursor=pointer]:
+                - /url: opendata/2707
+            - cell [ref=f51e3129]:
+              - link "22.08.2025" [ref=f51e3130] [cursor=pointer]:
+                - /url: opendata/2707
+            - cell [ref=f51e3133]:
+              - link:
+                - /url: opendata/2707
+            - cell [ref=f51e3134]:
+              - link [ref=f51e3135] [cursor=pointer]:
+                - /url: opendata/2707
+                - button "Экспорт" [ref=f51e3138]
+            - cell [ref=f51e3142]:
+              - link [ref=f51e3143] [cursor=pointer]:
+                - /url: opendata/2707
+          - row [ref=f51e3150]:
+            - cell [ref=f51e3151]:
+              - link "Виды работ по ордерам на производство земляных работ, установку временных ограждений и размещение временных объектов. Справочная информация" [ref=f51e3152] [cursor=pointer]:
+                - /url: opendata/63004
+                - generic [ref=f51e3154]:
+                  - generic [ref=f51e3155]: Виды работ по ордерам на производство земляных работ, установку временных ограждений и размещение временных объектов.
+                  - generic [ref=f51e3156]: Справочная информация
+            - cell [ref=f51e3158]:
+              - link:
+                - /url: opendata/63004
+            - cell [ref=f51e3159]:
+              - 'link "1.8 Оценили: 42" [ref=f51e3160] [cursor=pointer]':
+                - /url: opendata/63004
+                - generic [ref=f51e3163]:
+                  - generic [ref=f51e3164]: "1.8"
+                  - generic [ref=f51e3193]: "Оценили: 42"
+            - cell [ref=f51e3194]:
+              - link "103" [ref=f51e3195] [cursor=pointer]:
+                - /url: opendata/63004
+            - cell [ref=f51e3198]:
+              - link "06.03.2025" [ref=f51e3199] [cursor=pointer]:
+                - /url: opendata/63004
+            - cell [ref=f51e3202]:
+              - link:
+                - /url: opendata/63004
+            - cell [ref=f51e3203]:
+              - link [ref=f51e3204] [cursor=pointer]:
+                - /url: opendata/63004
+                - button "Экспорт" [ref=f51e3207]
+            - cell [ref=f51e3211]:
+              - link [ref=f51e3212] [cursor=pointer]:
+                - /url: opendata/63004
+          - row [ref=f51e3219]:
+            - cell [ref=f51e3220]:
+              - link "Виды собственности спортивных объектов Справочная информация" [ref=f51e3221] [cursor=pointer]:
+                - /url: opendata/2713
+                - generic [ref=f51e3223]:
+                  - generic [ref=f51e3224]: Виды собственности спортивных объектов
+                  - generic [ref=f51e3225]: Справочная информация
+            - cell [ref=f51e3227]:
+              - link:
+                - /url: opendata/2713
+            - cell [ref=f51e3228]:
+              - 'link "0.0 Оценили: 0" [ref=f51e3229] [cursor=pointer]':
+                - /url: opendata/2713
+                - generic [ref=f51e3232]:
+                  - generic [ref=f51e3233]: "0.0"
+                  - generic [ref=f51e3260]: "Оценили: 0"
+            - cell [ref=f51e3261]:
+              - link "53" [ref=f51e3262] [cursor=pointer]:
+                - /url: opendata/2713
+            - cell [ref=f51e3265]:
+              - link "15.12.2025" [ref=f51e3266] [cursor=pointer]:
+                - /url: opendata/2713
+            - cell [ref=f51e3269]:
+              - link:
+                - /url: opendata/2713
+            - cell [ref=f51e3270]:
+              - link [ref=f51e3271] [cursor=pointer]:
+                - /url: opendata/2713
+                - button "Экспорт" [ref=f51e3274]
+            - cell [ref=f51e3278]:
+              - link [ref=f51e3279] [cursor=pointer]:
+                - /url: opendata/2713
+          - row [ref=f51e3286]:
+            - cell [ref=f51e3287]:
+              - link "Виды спорта и услуг Справочная информация" [ref=f51e3288] [cursor=pointer]:
+                - /url: opendata/1528
+                - generic [ref=f51e3290]:
+                  - generic [ref=f51e3291]: Виды спорта и услуг
+                  - generic [ref=f51e3292]: Справочная информация
+            - cell [ref=f51e3294]:
+              - link:
+                - /url: opendata/1528
+            - cell [ref=f51e3295]:
+              - 'link "4.0 Оценили: 2" [ref=f51e3296] [cursor=pointer]':
+                - /url: opendata/1528
+                - generic [ref=f51e3299]:
+                  - generic [ref=f51e3300]: "4.0"
+                  - generic [ref=f51e3331]: "Оценили: 2"
+            - cell [ref=f51e3332]:
+              - link "573" [ref=f51e3333] [cursor=pointer]:
+                - /url: opendata/1528
+            - cell [ref=f51e3336]:
+              - link "18.02.2026" [ref=f51e3337] [cursor=pointer]:
+                - /url: opendata/1528
+            - cell [ref=f51e3340]:
+              - link:
+                - /url: opendata/1528
+            - cell [ref=f51e3341]:
+              - link [ref=f51e3342] [cursor=pointer]:
+                - /url: opendata/1528
+                - button "Экспорт" [ref=f51e3345]
+            - cell [ref=f51e3349]:
+              - link [ref=f51e3350] [cursor=pointer]:
+                - /url: opendata/1528
+          - row [ref=f51e3357]:
+            - cell [ref=f51e3358]:
+              - link "Виды стационарных объектов бытового обслуживания Справочная информация" [ref=f51e3359] [cursor=pointer]:
+                - /url: opendata/2053
+                - generic [ref=f51e3361]:
+                  - generic [ref=f51e3362]: Виды стационарных объектов бытового обслуживания
+                  - generic [ref=f51e3363]: Справочная информация
+            - cell [ref=f51e3365]:
+              - link:
+                - /url: opendata/2053
+            - cell [ref=f51e3366]:
+              - 'link "0.0 Оценили: 0" [ref=f51e3367] [cursor=pointer]':
+                - /url: opendata/2053
+                - generic [ref=f51e3370]:
+                  - generic [ref=f51e3371]: "0.0"
+                  - generic [ref=f51e3398]: "Оценили: 0"
+            - cell [ref=f51e3399]:
+              - link "432" [ref=f51e3400] [cursor=pointer]:
+                - /url: opendata/2053
+            - cell [ref=f51e3403]:
+              - link "19.09.2024" [ref=f51e3404] [cursor=pointer]:
+                - /url: opendata/2053
+            - cell [ref=f51e3407]:
+              - link:
+                - /url: opendata/2053
+            - cell [ref=f51e3408]:
+              - link [ref=f51e3409] [cursor=pointer]:
+                - /url: opendata/2053
+                - button "Экспорт" [ref=f51e3412]
+            - cell [ref=f51e3416]:
+              - link [ref=f51e3417] [cursor=pointer]:
+                - /url: opendata/2053
+          - row [ref=f51e3424]:
+            - cell [ref=f51e3425]:
+              - link "Виды стационарных торговых объектов Справочная информация" [ref=f51e3426] [cursor=pointer]:
+                - /url: opendata/2054
+                - generic [ref=f51e3428]:
+                  - generic [ref=f51e3429]: Виды стационарных торговых объектов
+                  - generic [ref=f51e3430]: Справочная информация
+            - cell [ref=f51e3432]:
+              - link:
+                - /url: opendata/2054
+            - cell [ref=f51e3433]:
+              - 'link "0.0 Оценили: 0" [ref=f51e3434] [cursor=pointer]':
+                - /url: opendata/2054
+                - generic [ref=f51e3437]:
+                  - generic [ref=f51e3438]: "0.0"
+                  - generic [ref=f51e3465]: "Оценили: 0"
+            - cell [ref=f51e3466]:
+              - link "385" [ref=f51e3467] [cursor=pointer]:
+                - /url: opendata/2054
+            - cell [ref=f51e3470]:
+              - link "19.09.2024" [ref=f51e3471] [cursor=pointer]:
+                - /url: opendata/2054
+            - cell [ref=f51e3474]:
+              - link:
+                - /url: opendata/2054
+            - cell [ref=f51e3475]:
+              - link [ref=f51e3476] [cursor=pointer]:
+                - /url: opendata/2054
+                - button "Экспорт" [ref=f51e3479]
+            - cell [ref=f51e3483]:
+              - link [ref=f51e3484] [cursor=pointer]:
+                - /url: opendata/2054
+          - row [ref=f51e3491]:
+            - cell [ref=f51e3492]:
+              - link "Виды транспорта Справочная информация" [ref=f51e3493] [cursor=pointer]:
+                - /url: opendata/62411
+                - generic [ref=f51e3495]:
+                  - generic [ref=f51e3496]: Виды транспорта
+                  - generic [ref=f51e3497]: Справочная информация
+            - cell [ref=f51e3499]:
+              - link:
+                - /url: opendata/62411
+            - cell [ref=f51e3500]:
+              - 'link "0.0 Оценили: 0" [ref=f51e3501] [cursor=pointer]':
+                - /url: opendata/62411
+                - generic [ref=f51e3504]:
+                  - generic [ref=f51e3505]: "0.0"
+                  - generic [ref=f51e3532]: "Оценили: 0"
+            - cell [ref=f51e3533]:
+              - link "244" [ref=f51e3534] [cursor=pointer]:
+                - /url: opendata/62411
+            - cell [ref=f51e3537]:
+              - link "09.09.2024" [ref=f51e3538] [cursor=pointer]:
+                - /url: opendata/62411
+            - cell [ref=f51e3541]:
+              - link:
+                - /url: opendata/62411
+            - cell [ref=f51e3542]:
+              - link [ref=f51e3543] [cursor=pointer]:
+                - /url: opendata/62411
+                - button "Экспорт" [ref=f51e3546]
+            - cell [ref=f51e3550]:
+              - link [ref=f51e3551] [cursor=pointer]:
+                - /url: opendata/62411
+          - row [ref=f51e3558]:
+            - cell [ref=f51e3559]:
+              - link "Виды услуг, предоставляемые стационарными торговыми объектами Справочная информация" [ref=f51e3560] [cursor=pointer]:
+                - /url: opendata/2275
+                - generic [ref=f51e3562]:
+                  - generic [ref=f51e3563]: Виды услуг, предоставляемые стационарными торговыми объектами
+                  - generic [ref=f51e3564]: Справочная информация
+            - cell [ref=f51e3566]:
+              - link:
+                - /url: opendata/2275
+            - cell [ref=f51e3567]:
+              - 'link "0.0 Оценили: 0" [ref=f51e3568] [cursor=pointer]':
+                - /url: opendata/2275
+                - generic [ref=f51e3571]:
+                  - generic [ref=f51e3572]: "0.0"
+                  - generic [ref=f51e3599]: "Оценили: 0"
+            - cell [ref=f51e3600]:
+              - link "342" [ref=f51e3601] [cursor=pointer]:
+                - /url: opendata/2275
+            - cell [ref=f51e3604]:
+              - link "19.09.2024" [ref=f51e3605] [cursor=pointer]:
+                - /url: opendata/2275
+            - cell [ref=f51e3608]:
+              - link:
+                - /url: opendata/2275
+            - cell [ref=f51e3609]:
+              - link [ref=f51e3610] [cursor=pointer]:
+                - /url: opendata/2275
+                - button "Экспорт" [ref=f51e3613]
+            - cell [ref=f51e3617]:
+              - link [ref=f51e3618] [cursor=pointer]:
+                - /url: opendata/2275
+          - row [ref=f51e3625]:
+            - cell [ref=f51e3626]:
+              - link "Входы и выходы вестибюлей станций Московского метрополитена Дороги и транспорт" [ref=f51e3627] [cursor=pointer]:
+                - /url: opendata/624
+                - generic [ref=f51e3629]:
+                  - generic [ref=f51e3630]: Входы и выходы вестибюлей станций Московского метрополитена
+                  - generic [ref=f51e3631]: Дороги и транспорт
+            - cell [ref=f51e3633]:
+              - link:
+                - /url: opendata/624
+            - cell [ref=f51e3634]:
+              - 'link "4.5 Оценили: 441" [ref=f51e3635] [cursor=pointer]':
+                - /url: opendata/624
+                - generic [ref=f51e3638]:
+                  - generic [ref=f51e3639]: "4.5"
+                  - generic [ref=f51e3671]: "Оценили: 441"
+            - cell [ref=f51e3672]:
+              - link "21675" [ref=f51e3673] [cursor=pointer]:
+                - /url: opendata/624
+            - cell [ref=f51e3676]:
+              - link "18.06.2026" [ref=f51e3677] [cursor=pointer]:
+                - /url: opendata/624
+            - cell [ref=f51e3680]:
+              - link "Есть карта" [ref=f51e3681] [cursor=pointer]:
+                - /url: opendata/624
+            - cell [ref=f51e3687]:
+              - link [ref=f51e3688] [cursor=pointer]:
+                - /url: opendata/624
+                - button "Экспорт" [ref=f51e3691]
+            - cell [ref=f51e3695]:
+              - link [ref=f51e3696] [cursor=pointer]:
+                - /url: opendata/624
+  - generic [ref=f51e3711]:
+    - generic [ref=f51e3712]:
+      - text: Продолжая пользоваться Порталом открытых данных Правительства Москвы, вы соглашаетесь на обработку файлов cookie и соответствующих пользовательских данных в целях функционирования сайта и анализа его использования.
+      - link "Подробнее" [ref=f51e3713] [cursor=pointer]:
+        - /url: https://www.mos.ru/dit/documents/informatcionnaia-bezopasnost/view/274898220/
+    - button "Принять" [ref=f51e3714] [cursor=pointer]

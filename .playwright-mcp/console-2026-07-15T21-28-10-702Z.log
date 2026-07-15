@@ -1,0 +1,6 @@
+[    1106ms] [INFO] Running in the browser with appId=ng @ https://data.mos.ru/main.4df3efab2665905f.js:0
+[   10833ms] [LOG] CS Counter v1.0.28 loaded off... @ https://stats.mos.ru/counter/v2/static/counter2.js?ch=17841508&h=data.mos.ru:3
+[   15255ms] [ERROR] Failed to load resource: the server responded with a status of 401 () @ https://apidata.mos.ru/v1/datasets/61061:0
+[   15386ms] [ERROR] Failed to load resource: the server responded with a status of 401 () @ https://apidata.mos.ru/v1/datasets/61062:0
+[   15533ms] [ERROR] Failed to load resource: the server responded with a status of 401 () @ https://apidata.mos.ru/v1/datasets/61063:0
+[   15659ms] [ERROR] Failed to load resource: the server responded with a status of 401 () @ https://apidata.mos.ru/v1/datasets/61064:0

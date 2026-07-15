@@ -1,0 +1,65 @@
+- generic [active] [ref=f55e1]:
+  - generic [ref=f55e4]:
+    - generic [ref=f55e7]:
+      - link [ref=f55e9] [cursor=pointer]:
+        - /url: /
+        - generic [ref=f55e12]:
+          - heading "Портал открытых данных" [level=2] [ref=f55e13]
+          - paragraph [ref=f55e14]: Правительства Москвы
+      - generic [ref=f55e15]:
+        - link "Данные" [ref=f55e16] [cursor=pointer]:
+          - /url: /opendata
+        - link "Разработчикам" [ref=f55e20] [cursor=pointer]:
+          - /url: /developers
+      - generic [ref=f55e24]:
+        - button "Вход" [ref=f55e27] [cursor=pointer]
+        - button "ENG" [ref=f55e31] [cursor=pointer]
+        - link [ref=f55e35] [cursor=pointer]:
+          - /url: /visually-impaired/dataset
+          - button [ref=f55e37]
+    - generic [ref=f55e44]:
+      - strong [ref=f55e47]: Произошла ошибка
+      - generic [ref=f55e48]: Страница, к которой вы обратились, не существует.
+      - link "На главную страницу" [ref=f55e49] [cursor=pointer]:
+        - /url: /
+    - contentinfo [ref=f55e51]:
+      - generic [ref=f55e52]:
+        - generic [ref=f55e53]:
+          - generic [ref=f55e57]:
+            - heading "Портал открытых данных" [level=1] [ref=f55e58]
+            - paragraph [ref=f55e59]: Правительства Москвы
+          - generic [ref=f55e60]:
+            - generic [ref=f55e61]:
+              - text: "Техническая поддержка:"
+              - link "opendata@mos.ru" [ref=f55e62] [cursor=pointer]:
+                - /url: mailto:opendata@mos.ru
+            - link "Условия использования" [ref=f55e63] [cursor=pointer]:
+              - /url: /terms
+            - link "Документация" [ref=f55e64] [cursor=pointer]:
+              - /url: /documents
+        - generic [ref=f55e65]:
+          - link [ref=f55e67] [cursor=pointer]:
+            - /url: https://mos.ru/
+          - generic [ref=f55e70]:
+            - text: Все материалы сайта доступны по лицензии
+            - link "Creative Commons Attribution 4.0" [ref=f55e71] [cursor=pointer]:
+              - /url: https://creativecommons.org/licenses/by/4.0/deed.ru
+            - text: . при условии ссылки на первоисточник.
+          - generic [ref=f55e72]:
+            - text: В части
+            - link "https://data.mos.ru" [ref=f55e73] [cursor=pointer]:
+              - /url: https://data.mos.ru
+            - text: ", материалы доступны в соответствии с"
+            - link "https://data.gov.ru/normative_base" [ref=f55e74] [cursor=pointer]:
+              - /url: https://data.gov.ru/normative_base
+            - text: .
+          - link "Соглашение о пользовании информационными системами и ресурсами города Москвы." [ref=f55e76] [cursor=pointer]:
+            - /url: https://www.mos.ru/legal/rules/
+          - link "Политика в отношении обработки персональных данных." [ref=f55e78] [cursor=pointer]:
+            - /url: https://www.mos.ru/dit/documents/informatcionnaia-bezopasnost/view/274898220/
+  - generic [ref=f55e87]:
+    - generic [ref=f55e88]:
+      - text: Продолжая пользоваться Порталом открытых данных Правительства Москвы, вы соглашаетесь на обработку файлов cookie и соответствующих пользовательских данных в целях функционирования сайта и анализа его использования.
+      - link "Подробнее" [ref=f55e89] [cursor=pointer]:
+        - /url: https://www.mos.ru/dit/documents/informatcionnaia-bezopasnost/view/274898220/
+    - button "Принять" [ref=f55e90] [cursor=pointer]

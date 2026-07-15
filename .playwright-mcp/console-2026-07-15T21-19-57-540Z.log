@@ -1,0 +1,29 @@
+[     205ms] [ERROR] Loading the script 'https://api-maps.yandex.ru/2.1/?lang=ru_RU' violates the following Content Security Policy directive: "script-src-elem 'unsafe-inline' 'self' https://doc-upload2.mos.ru https://audit.idit.mos.ru https://maps.google.com https://gc.kis.v2.scr.kaspersky-labs.com wss://gc.kis.v2.scr.kaspersky-labs.com". The action has been blocked. @ https://tr.mos.ru/widget-niok/#/:0
+[     214ms] [ERROR] Loading the script 'https://mc.yandex.ru/metrika/watch.js' violates the following Content Security Policy directive: "script-src-elem 'unsafe-inline' 'self' https://doc-upload2.mos.ru https://audit.idit.mos.ru https://maps.google.com https://gc.kis.v2.scr.kaspersky-labs.com wss://gc.kis.v2.scr.kaspersky-labs.com". The action has been blocked. @ https://tr.mos.ru/widget-niok/:38
+[     215ms] [INFO] Download the Vue Devtools extension for a better development experience:
+https://github.com/vuejs/vue-devtools @ https://tr.mos.ru/widget-niok/vendor.bacc5d85.js:0
+[     215ms] [INFO] You are running Vue in development mode.
+Make sure to turn on production mode when deploying for production.
+See more tips at https://vuejs.org/guide/deployment.html @ https://tr.mos.ru/widget-niok/vendor.bacc5d85.js:0
+[     370ms] [ERROR] Failed to load resource: the server responded with a status of 403 () @ https://tr.mos.ru/csp/report:0
+[     382ms] [ERROR] Failed to load resource: the server responded with a status of 403 () @ https://tr.mos.ru/csp/report:0
+[   41104ms] [ERROR] [Vue warn]: Error in mounted hook: "ReferenceError: ymaps is not defined"
+
+found in
+
+---> <SMap>
+       <Search>
+         <App>
+           <Root> @ https://tr.mos.ru/widget-niok/vendor.bacc5d85.js:0
+[   41104ms] [ERROR] ReferenceError: ymaps is not defined
+    at i.mounted (https://tr.mos.ru/widget-niok/app.761f3ab7.js:1:56838)
+    at Ge (https://tr.mos.ru/widget-niok/vendor.bacc5d85.js:1:63812)
+    at Object.insert (https://tr.mos.ru/widget-niok/vendor.bacc5d85.js:1:74964)
+    at D (https://tr.mos.ru/widget-niok/vendor.bacc5d85.js:1:108233)
+    at i.__patch__ (https://tr.mos.ru/widget-niok/vendor.bacc5d85.js:1:110450)
+    at i._update (https://tr.mos.ru/widget-niok/vendor.bacc5d85.js:1:85608)
+    at i.r (https://tr.mos.ru/widget-niok/vendor.bacc5d85.js:1:118551)
+    at rn.get (https://tr.mos.ru/widget-niok/vendor.bacc5d85.js:1:65512)
+    at rn.run (https://tr.mos.ru/widget-niok/vendor.bacc5d85.js:1:66396)
+    at en (https://tr.mos.ru/widget-niok/vendor.bacc5d85.js:1:64068) @ https://tr.mos.ru/widget-niok/vendor.bacc5d85.js:0
+[  104814ms] [ERROR] Failed to load resource: the server responded with a status of 405 () @ https://tr.mos.ru/widget-niok/api/details/addrsearch:0

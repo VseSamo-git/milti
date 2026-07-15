@@ -1,0 +1,623 @@
+- generic [active] [ref=f7e1]:
+  - generic [ref=f7e7]:
+    - link "Перейти к содержимому" [ref=f7e8] [cursor=pointer]:
+      - /url: "#content"
+    - banner [ref=f7e9]:
+      - link "mos.ru – Официальный сайт Мэра Москвы" [ref=f7e11] [cursor=pointer]:
+        - /url: https://www.mos.ru/
+      - generic [ref=f7e15]:
+        - generic [ref=f7e16]:
+          - generic [ref=f7e18]:
+            - link "Новости" [ref=f7e19] [cursor=pointer]:
+              - /url: https://www.mos.ru/news/
+            - button "Меню раздела Новости"
+          - generic [ref=f7e21]:
+            - link "Услуги" [ref=f7e22] [cursor=pointer]:
+              - /url: https://www.mos.ru/uslugi/
+            - button "Меню раздела Услуги"
+          - link "Мосбилет" [ref=f7e24] [cursor=pointer]:
+            - /url: https://bilet.mos.ru/
+          - generic [ref=f7e28]:
+            - link "Мэр" [ref=f7e29] [cursor=pointer]:
+              - /url: https://www.mos.ru/mayor/
+            - button "Меню раздела Мэр"
+          - generic [ref=f7e31]:
+            - link "Власть" [ref=f7e32] [cursor=pointer]:
+              - /url: https://www.mos.ru/authority/
+            - button "Меню раздела Власть"
+          - link "Мосфото" [ref=f7e34] [cursor=pointer]:
+            - /url: https://foto.mos.ru/
+          - link "Мой район" [ref=f7e36] [cursor=pointer]:
+            - /url: https://www.mos.ru/moi-raion/
+          - generic [ref=f7e38]:
+            - link "Помощь" [ref=f7e39] [cursor=pointer]:
+              - /url: https://www.mos.ru/feedback/
+            - button "Меню раздела Помощь"
+        - button "Поиск по сайту" [ref=f7e43] [cursor=pointer]
+      - button "Вход/Регистрация" [ref=f7e47] [cursor=pointer]
+  - generic [ref=f7e52]:
+    - generic [ref=f7e55]:
+      - heading [level=2] [ref=f7e63]:
+        - link "Департамент экономической политики и развития города Москвы" [ref=f7e64] [cursor=pointer]:
+          - /url: /depr/
+      - generic [ref=f7e66]:
+        - complementary [ref=f7e69]:
+          - generic [ref=f7e70]:
+            - list [ref=f7e71]:
+              - listitem [ref=f7e72]:
+                - link "Главная" [ref=f7e73] [cursor=pointer]:
+                  - /url: /depr/
+              - listitem [ref=f7e74]:
+                - link "Деятельность" [ref=f7e75] [cursor=pointer]:
+                  - /url: /depr/function/
+              - listitem [ref=f7e76]:
+                - link "Руководство" [ref=f7e77] [cursor=pointer]:
+                  - /url: /depr/structure/
+              - listitem [ref=f7e78]:
+                - link "Новости" [ref=f7e79] [cursor=pointer]:
+                  - /url: /depr/news/
+              - listitem [ref=f7e80]:
+                - link "Документы" [ref=f7e81] [cursor=pointer]:
+                  - /url: /depr/documents/
+              - listitem [ref=f7e82]:
+                - link "Инвестпрограммы субъектов электроэнергетики" [ref=f7e83] [cursor=pointer]:
+                  - /url: https://www.mos.ru/depr/documents/ipse/
+              - listitem [ref=f7e84]:
+                - link "Учреждения" [ref=f7e85] [cursor=pointer]:
+                  - /url: /depr/organizations/
+              - listitem [ref=f7e86]:
+                - link "Контакты" [ref=f7e87] [cursor=pointer]:
+                  - /url: /depr/contacts/
+            - list [ref=f7e88]:
+              - listitem [ref=f7e89]:
+                - link "Электронная приемная" [ref=f7e90] [cursor=pointer]:
+                  - /url: /feedback/reception/?department=19565090
+              - listitem [ref=f7e91]:
+                - link "Противодействие коррупции" [ref=f7e92] [cursor=pointer]:
+                  - /url: /depr/anticorruption/
+        - main [ref=f7e93]:
+          - generic [ref=f7e96]:
+            - generic [ref=f7e97] [cursor=pointer]: назад
+            - heading "Налог от кадастровой стоимости. Объекты налогообложения" [level=2] [ref=f7e98]
+            - generic [ref=f7e99]:
+              - paragraph [ref=f7e100]
+              - paragraph [ref=f7e101]: "С 1 января 2014 года налогом на имущество организаций от кадастровой стоимости облагается:"
+              - list [ref=f7e102]:
+                - listitem [ref=f7e103]:
+                  - paragraph [ref=f7e104]: недвижимое имущество, предназначенное или фактически используемое для размещения торгово-офисных объектов, объектов общественного питания и (или) бытового обслуживания, включенное в Перечень объектов, в отношении которых налог на имущество организаций уплачивается от их кадастровой стоимости (далее — Перечень);
+                - listitem [ref=f7e105]:
+                  - paragraph [ref=f7e106]: недвижимое имущество иностранных организаций, вне зависимости от включения в Перечень.
+              - paragraph [ref=f7e107]: С 1 января 2016 года объектом налогообложения также стали жилые дома и жилые помещения, не учитываемые на балансе в качестве объектов основных средств более двух лет, вне зависимости от включения в Перечень.
+              - paragraph [ref=f7e108]: "С 1 января 2021 года от кадастровой стоимости также облагаются объекты недвижимости, вне зависимости от включения в Перечень:"
+              - list [ref=f7e109]:
+                - listitem [ref=f7e110]:
+                  - paragraph [ref=f7e111]: жилые помещения, гаражи и машино-места, учитываемые на балансе в качестве объектов основных средств;
+                - listitem [ref=f7e112]:
+                  - paragraph [ref=f7e113]: гаражи и машино-места, не учитываемые на балансе в качестве объектов основных средств более двух лет;
+                - listitem [ref=f7e114]:
+                  - paragraph [ref=f7e115]: объекты незавершенного строительства;
+                - listitem [ref=f7e116]:
+                  - paragraph [ref=f7e117]: жилые строения, садовые дома, хозяйственные строения или сооружения, расположенные на земельных участках, предоставленных для ведения личного подсобного хозяйства, огородничества, садоводства или индивидуального жилищного строительства.
+              - paragraph [ref=f7e118]
+              - paragraph [ref=f7e119]:
+                - strong [ref=f7e120]: Перечень облагаемых объектов
+              - paragraph [ref=f7e121]: "Правительство Москвы ежегодно до 30 ноября формирует Перечень объектов недвижимого имущества:"
+              - list [ref=f7e122]:
+                - listitem [ref=f7e123]:
+                  - paragraph [ref=f7e124]:
+                    - text: Перечень на 2014 год —
+                    - link "постановление Правительства Москвы от 29.11.2013 № 772-ПП" [ref=f7e125] [cursor=pointer]:
+                      - /url: https://www.mos.ru/depr/documents/normativno-pravovye-akty-po-uplate-naloga-na-imushchestvo-organizatcii-ot-kadastrovoi-stoimosti/view/159227220/
+                - listitem [ref=f7e126]:
+                  - paragraph [ref=f7e127]:
+                    - text: Перечни с 2015 года —
+                    - link "постановление Правительства Москвы от 28.11.2014 № 700-ПП" [ref=f7e128] [cursor=pointer]:
+                      - /url: https://www.mos.ru/depr/documents/normativno-pravovye-akty-po-uplate-naloga-na-imushchestvo-organizatcii-ot-kadastrovoi-stoimosti/view/159226220/
+              - paragraph [ref=f7e129]
+              - paragraph [ref=f7e130]:
+                - strong [ref=f7e131]: ПЕРЕЧЕНЬ НА 2022 ГОД
+              - paragraph [ref=f7e132]:
+                - text: Определен
+                - link "постановлением Правительства Москвы от 28.11.2014 № 700-ПП" [ref=f7e133] [cursor=pointer]:
+                  - /url: https://www.mos.ru/depr/documents/normativno-pravovye-akty-po-uplate-naloga-na-imushchestvo-organizatcii-ot-kadastrovoi-stoimosti/view/159226220/
+                - text: «Об определении перечня объектов недвижимого имущества, в отношении которых налоговая база определяется как их кадастровая стоимость» с изменениями, внесенными постановлением Правительства Москвы от 23.11.2021 № 1833-ПП и вступившими в силу с 1 января 2022 года.
+              - paragraph [ref=f7e134]
+              - paragraph [ref=f7e135]: "В Перечень на 2022 год включены:"
+              - list [ref=f7e136]:
+                - listitem [ref=f7e137]:
+                  - paragraph [ref=f7e138]: 20 203 нежилых зданий любой площади на земельных участках с видом разрешенного использования для размещения офисных объектов или объектов торговли, общепита и (или) бытового обслуживания;
+                - listitem [ref=f7e139]:
+                  - paragraph [ref=f7e140]: "16 759 объектов с видом фактического использования для размещения офисных объектов или объектов торговли, общепита и (или) бытового обслуживания:"
+                  - list [ref=f7e141]:
+                    - listitem [ref=f7e142]: 3 239 нежилых зданий (и помещений в них) площадью свыше 1 тыс. м²;
+                    - listitem [ref=f7e143]: 13 520 нежилых помещений, расположенных в многоквартирных домах, общая площадь нежилых помещений в которых превышает 3 тыс. м²;
+                - listitem [ref=f7e144]:
+                  - paragraph [ref=f7e145]:
+                    - text: 454 нежилых зданий и нежилых помещений в зданиях, включенных в Перечень пешеходных зон (утвержден
+                    - link "постановлением Правительства Москвы от 16.03.2016 № 78-ПП" [ref=f7e146] [cursor=pointer]:
+                      - /url: https://www.mos.ru/depr/documents/normativno-pravovye-akty-goroda-moskvy/view/160111220
+                    - text: ), с видом фактического использования или назначением по документам БТИ для размещения офисных объектов или объектов торговли, общепита и (или) бытового обслуживания.
+              - paragraph [ref=f7e147]
+              - paragraph [ref=f7e148]: "Всего в Перечне на 2022 год:"
+              - list [ref=f7e149]:
+                - listitem [ref=f7e150]:
+                  - paragraph [ref=f7e151]: 37 416 объект;
+                - listitem [ref=f7e152]:
+                  - paragraph [ref=f7e153]: 96,3 млн м².
+              - paragraph [ref=f7e154]
+              - paragraph [ref=f7e155]:
+                - text: С Перечнем вы можете ознакомиться
+                - link "на сайте" [ref=f7e156] [cursor=pointer]:
+                  - /url: https://www.mos.ru/depr/function/nalogovaya-politika/vklyuchen-li-vash-obekt-v-utverzhdennyy-perechen-obektov-nedvizhimosti/
+                - text: Мэра Москвы.
+              - paragraph [ref=f7e157]: Если принадлежащий вам объект недвижимости находится в Перечне, значит, на момент формирования Перечня данный объект соответствует критериям, по которым он должен облагаться налогом на имущество от кадастровой стоимости.
+              - paragraph [ref=f7e158]: В случае если вам принадлежит нежилое помещение в нежилом здании, то в Перечне необходимо осуществлять поиск здания, в котором расположено данное помещение.
+              - paragraph [ref=f7e159]:
+                - text: Проверьте, находится ли ваш объект в Перечне! (
+                - link "см. здесь" [ref=f7e160] [cursor=pointer]:
+                  - /url: https://www.mos.ru/depr/function/nalogovaya-politika/vklyuchen-li-vash-obekt-v-utverzhdennyy-perechen-obektov-nedvizhimosti/
+                - text: ).
+              - paragraph [ref=f7e161]
+              - table [ref=f7e163]:
+                - rowgroup [ref=f7e164]:
+                  - row [ref=f7e165]:
+                    - cell [ref=f7e166]:
+                      - link "Перечни объектов налогообложения прошлых лет" [ref=f7e167] [cursor=pointer]:
+                        - /url: https://www.mos.ru/depr/perecheni-proshlykh-let
+              - paragraph [ref=f7e168]
+              - paragraph [ref=f7e169]:
+                - strong [ref=f7e170]: Какие объекты включены в Перечень на 2022 год?
+              - paragraph [ref=f7e171]: "В Перечень на 2022 год включены объекты, соответствующие одному из следующих условий:"
+              - list [ref=f7e172]:
+                - listitem [ref=f7e173]:
+                  - paragraph [ref=f7e174]: здание расположено на земельном участке с видом разрешенного использования, включающим размещение офисов, объектов торговли, бытового обслуживания, общественного питания;
+                - listitem [ref=f7e175]:
+                  - paragraph [ref=f7e176]:
+                    - text: нежилое здание (площадью свыше 1 тыс. м²) либо нежилое помещение в жилом доме (если совокупная площадь нежилых помещений превышает 3 тыс. м²) фактически используется не менее чем на 20% общей площади для офисов, объектов торговли, бытового обслуживания, общественного питания согласно акту
+                    - link "Госинспекции по недвижимости" [ref=f7e177] [cursor=pointer]:
+                      - /url: https://www.mos.ru/ggi/function/opredelenie-fakticheskogo-ispolzovanie-obektov-nedvizhimosti/rezultaty-inspekcionnykh-meropriyatij/
+                    - text: ;
+                - listitem [ref=f7e178]:
+                  - paragraph [ref=f7e179]:
+                    - text: нежилое здание либо нежилое помещение, расположенное на пешеходных зонах (список таких зон см.
+                    - link "здесь" [ref=f7e180] [cursor=pointer]:
+                      - /url: https://www.mos.ru/depr/documents/normativno-pravovye-akty-goroda-moskvy/view/160111220
+                    - text: ), фактически используется не менее чем на 20% общей площади для размещения офисов, объектов торговли, бытового обслуживания, общественного питания согласно акту Госинспекции по недвижимости, либо имеет соответствующее назначение в документах технического учета.
+              - paragraph [ref=f7e181]
+              - paragraph [ref=f7e182]:
+                - strong [ref=f7e183]: Где получить информацию
+              - paragraph [ref=f7e184]:
+                - text: Проверить, включен ли объект недвижимости в Перечень, можно
+                - link "на сайте" [ref=f7e185] [cursor=pointer]:
+                  - /url: https://www.mos.ru/depr/function/nalogovaya-politika/vklyuchen-li-vash-obekt-v-utverzhdennyy-perechen-obektov-nedvizhimosti/
+                - text: Мэра Москвы.
+              - paragraph [ref=f7e186]:
+                - text: "По вопросам, связанным с включением объектов в Перечень, обращайтесь в Департамент экономической политики и развития города Москвы. Обращения принимаются по адресу: 125032, Москва, Вознесенский переулок, д. 21 или через раздел «"
+                - link "Электронная приемная" [ref=f7e187] [cursor=pointer]:
+                  - /url: https://www.mos.ru/feedback/reception/
+                - text: » на сайте Мэра Москвы.
+              - paragraph [ref=f7e188]
+              - paragraph [ref=f7e189]:
+                - strong [ref=f7e190]: Как определить, по какому критерию объект был включен в Перечень?
+              - paragraph [ref=f7e191]:
+                - text: В результатах поиска объекта недвижимости в
+                - link "сервисе" [ref=f7e192] [cursor=pointer]:
+                  - /url: https://www.mos.ru/depr/function/nalogovaya-politika/vklyuchen-li-vash-obekt-v-utverzhdennyy-perechen-obektov-nedvizhimosti/
+                - text: указывается информация о том, по какому критерию объект недвижимого имущества включен в Перечень. Обращаем внимание, что в сервисе отражается только один из критериев, по которым объект включен в Перечень, хотя объект может соответствовать нескольким критериям одновременно.
+              - paragraph [ref=f7e193]:
+                - text: Проверить, проводилось ли обследование Госинспекцией по недвижимости, можно в разделе «
+                - link "Результаты инспекционных мероприятий" [ref=f7e194] [cursor=pointer]:
+                  - /url: https://www.mos.ru/ggi/function/opredelenie-fakticheskogo-ispolzovanie-obektov-nedvizhimosti/rezultaty-inspekcionnykh-meropriyatij/
+                - text: ».
+              - paragraph [ref=f7e195]: Если обследование не проводилось, значит, объект недвижимости включен в Перечень на основании вида разрешенного использования земельного участка либо документов технического учета для объектов, расположенных на пешеходных зонах (подробнее о критериях см. выше).
+              - paragraph [ref=f7e196]:
+                - text: Обратиться в Департамент экономической политики и развития города Москвы за разъяснениями, по каким критериям ваш объект недвижимости был включен в Перечень, а также узнать о порядке его налогообложения и возможных льготах (
+                - link "подробнее" [ref=f7e197] [cursor=pointer]:
+                  - /url: https://www.mos.ru/feedback/reception/
+                - text: ).
+              - paragraph [ref=f7e198]:
+                - text: Ознакомиться с порядком налогообложения вашего объекта недвижимости налогом на имущество, уплачиваемым от кадастровой стоимости, можно в разделе «
+                - link "Как уплачивать налог и отчитываться по нему?" [ref=f7e199] [cursor=pointer]:
+                  - /url: https://www.mos.ru/depr/function/nalogovaya-politika/nalog-ot-kadastrovoj-stoimosti/how-to-pay-tax/
+                - text: ».
+              - paragraph [ref=f7e200]
+              - paragraph [ref=f7e201]:
+                - strong [ref=f7e202]: Что делать, если вы не согласны с включением объекта недвижимости в Перечень?
+              - paragraph [ref=f7e203]:
+                - text: Проверьте, соответствует ли ваш объект недвижимости критериям налогообложения от кадастровой стоимости. Если фактически объект не соответствует критериям, однако документально это не оформлено, вам необходимо осуществить действия, описанные ниже.
+                - strong [ref=f7e204]: Обратите внимание на сроки!
+              - paragraph [ref=f7e205]: Определить, по какому критерию объект был включен в Перечень (см. выше).
+              - paragraph [ref=f7e206]: "В случае если здание было включено в Перечень, поскольку вид разрешенного использования земельного участка предусматривает размещение офисов, объектов торговли, бытового обслуживания, общественного питания, но данный участок фактически не используется под заявленные цели, вы можете:"
+              - list [ref=f7e207]:
+                - listitem [ref=f7e208]:
+                  - paragraph [ref=f7e209]:
+                    - text: обратиться в Департамент городского имущества города Москвы в ближайшее время для исключения указанных видов размещения из вида разрешенного использования земельного участка (для земли, находящейся в собственности города Москвы или государственная собственность на которую не разграничена) и внесения данных изменений Росреестром в ЕГРН до начала налогового периода (до 31 декабря) (
+                    - link "подробнее" [ref=f7e210] [cursor=pointer]:
+                      - /url: https://www.mos.ru/dgi/function/gosudarstvennye-uslugi/izmenenie-razreshennogo-ispolzovaniia-zemelnogo-uchastka/
+                    - text: ),
+                - listitem [ref=f7e211]:
+                  - paragraph [ref=f7e212]:
+                    - text: если изменение вида разрешенного использования нецелесообразно либо вы не успели оформить документы в срок, позволяющий исключить объект из Перечня, но при этом объект недвижимости фактически используется для вышеуказанных видов деятельности менее чем на 20% площади, вы можете заявить
+                    - link "льготу" [ref=f7e213] [cursor=pointer]:
+                      - /url: https://www.mos.ru/depr/function/nalogovaya-politika/nalog-ot-kadastrovoj-stoimosti/kadastr-tax-credits
+                    - text: ", снижающую налог в четыре раза.Для применения льготы за налоговый период (год) нужно обратиться до 30 апреля текущего года в Госинспекцию по недвижимости для составления акта обследования до 30 июня."
+              - paragraph [ref=f7e214]
+              - paragraph [ref=f7e215]: "В случае если объект недвижимости был включен в Перечень по акту Госинспекции по недвижимости как фактически использующийся не менее чем на 20% общей площади для размещения офисов, объектов торговли, бытового обслуживания или общественного питания, вы можете:"
+              - list [ref=f7e216]:
+                - listitem [ref=f7e217]:
+                  - paragraph [ref=f7e218]:
+                    - text: в случае несогласия с актом — обратиться в
+                    - link "Департамент экономической политики и развития города Москвы" [ref=f7e219] [cursor=pointer]:
+                      - /url: https://www.mos.ru/depr/function/nalogovaya-politika/nalog-ot-kadastrovoj-stoimosti/rassmotrenie-voprosov-nalogooblozheniya-nalogom-na-imushestvo/
+                    - text: для рассмотрения вашего заявления на комиссии с целью составления Госинспекцией по недвижимости повторного акта, подтверждающего отсутствие данных видов использования объекта. С заявлением можно обратиться
+                    - strong [ref=f7e220]: в течение года
+                    - text: ", в котором составлен акт, и"
+                    - strong [ref=f7e221]: в течение 90 календарных дней
+                    - text: следующего за ним года;
+                - listitem [ref=f7e222]:
+                  - paragraph [ref=f7e223]:
+                    - text: в случае если акт был составлен корректно, но с даты его составления фактическое использование объекта изменилось и сейчас он используется для вышеуказанных видов деятельности менее чем на 20% общей площади, рекомендуем обратиться в Департамент экономической политики и развития города Москвы для рассмотрения вашего заявления на комиссии с целью составления Госинспекцией по недвижимости акта, подтверждающего отсутствие данных видов использования объекта, до начала налогового периода (до 31 декабря) (
+                    - link "подробнее" [ref=f7e224] [cursor=pointer]:
+                      - /url: https://www.mos.ru/depr/function/nalogovaya-politika/nalog-ot-kadastrovoj-stoimosti/rassmotrenie-voprosov-nalogooblozheniya-nalogom-na-imushestvo/
+                    - text: ).
+              - paragraph [ref=f7e225]
+              - paragraph [ref=f7e226]: Если объект недвижимости включен в Перечень одновременно по нескольким критериям и вы с ними не согласны, то необходимо осуществить все применимые действия, описанные выше в подпунктах 2 и 3.
+              - paragraph [ref=f7e227]
+              - paragraph [ref=f7e228]:
+                - strong [ref=f7e229]: Что дальше?
+              - paragraph [ref=f7e230]:
+                - text: Если в результате вышеуказанных действий ваш объект перестал соответствовать критериям налогообложения от кадастровой стоимости, он будет исключен из Перечня (с 1 января) и обновленные сведения будут учтены при разработке Перечней последующих лет.Если сроки действий, описанных выше в пунктах 2 и 3, были пропущены, рекомендуем до начала процесса формирования Перечня на следующий год (до 30 сентября) привести документы в порядок, чтобы ваш объект недвижимости не был включен в Перечни последующих лет. Кроме того, вы можете рассмотреть возможность снижения налога путем применения различных
+                - link "льгот" [ref=f7e231] [cursor=pointer]:
+                  - /url: https://www.mos.ru/depr/function/nalogovaya-politika/nalog-ot-kadastrovoj-stoimosti/kadastr-tax-credits/
+                - text: .
+              - table [ref=f7e233]:
+                - rowgroup [ref=f7e234]:
+                  - row [ref=f7e235]:
+                    - cell [ref=f7e236]
+              - table [ref=f7e238]:
+                - rowgroup [ref=f7e239]:
+                  - row [ref=f7e240]:
+                    - cell [ref=f7e241]:
+                      - link [ref=f7e242] [cursor=pointer]:
+                        - /url: https://vk.com/moscoweconomy
+                    - cell [ref=f7e243]:
+                      - link [ref=f7e244] [cursor=pointer]:
+                        - /url: https://ok.ru/moscoweconomy
+                    - cell [ref=f7e245]:
+                      - link [ref=f7e246] [cursor=pointer]:
+                        - /url: https://www.youtube.com/c/%D0%94%D0%B5%D0%BF%D0%B0%D1%80%D1%82%D0%B0%D0%BC%D0%B5%D0%BD%D1%82%D1%8D%D0%BA%D0%BE%D0%BD%D0%BE%D0%BC%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%B9%D0%BF%D0%BE%D0%BB%D0%B8%D1%82%D0%B8%D0%BA%D0%B8%D0%B8%D1%80%D0%B0%D0%B7%D0%B2%D0%B8%D1%82%D0%B8%D1%8F/videos
+    - generic [ref=f7e250]:
+      - iframe [ref=f7e252]:
+        - generic [ref=f14e3] [cursor=pointer]:
+          - generic [ref=f14e4]:
+            - generic "Проект." [ref=f14e5]: Проект
+            - generic "Время быть вместе." [ref=f14e6]: Время быть вместе
+            - generic "«Лето в Москве» заряжает добром." [ref=f14e7]: «Лето в Москве» заряжает добром
+          - button "Подробнее" [ref=f14e8]
+      - iframe [ref=f7e254]:
+        - generic [ref=f12e5] [cursor=pointer]:
+          - generic "Новость." [ref=f12e6]: Новость
+          - generic "170 больничных корпусов построили и реконструировали в Москве с 2011 года." [ref=f12e7]: 170 больничных корпусов построили и реконструировали в Москве с 2011 года
+      - iframe [ref=f7e256]:
+        - generic [ref=f13e3] [cursor=pointer]:
+          - generic [ref=f13e4]:
+            - generic "Услуги." [ref=f13e5]: Услуги
+            - generic "15 лет удобных решений." [ref=f13e6]: 15 лет удобных решений
+            - generic "Более 460 электронных услуг и сервисов на mos.ru." [ref=f13e7]: Более 460 электронных услуг и сервисов на mos.ru
+          - button "Подробнее" [ref=f13e8]
+      - iframe [ref=f7e258]:
+        - generic [ref=f15e3] [cursor=pointer]:
+          - generic [ref=f15e4]:
+            - generic "Платформа для бизнеса." [ref=f15e5]: Платформа для бизнеса
+            - generic "Уверенность в своем деле." [ref=f15e6]: Уверенность в своем деле
+            - generic "Решайте вопросы вместе с платформой «Открытый контроль»." [ref=f15e7]: Решайте вопросы вместе с платформой «Открытый контроль»
+          - button "Подробнее" [ref=f15e8]
+  - contentinfo [ref=f7e260]:
+    - generic [ref=f7e261]:
+      - generic [ref=f7e262]:
+        - generic [ref=f7e263]:
+          - generic [ref=f7e264]:
+            - text: Официальный портал Мэра и Правительства Москвы
+            - button [ref=f7e265] [cursor=pointer]:
+              - img "Показать дополнительную информацию" [ref=f7e266]
+          - generic [ref=f7e269]: 125032, Москва, ул. Тверская, 13
+          - generic [ref=f7e270]: Социальные сети портала Москвы
+          - list [ref=f7e271]:
+            - listitem [ref=f7e272]:
+              - link "MaxMessenger портала Москвы" [ref=f7e273] [cursor=pointer]:
+                - /url: https://max.ru/mosru
+            - listitem [ref=f7e276]:
+              - link "VK.com портала Москвы" [ref=f7e277] [cursor=pointer]:
+                - /url: https://vk.com/mos
+            - listitem [ref=f7e280]:
+              - link "Telegram портала Москвы" [ref=f7e281] [cursor=pointer]:
+                - /url: https://t.me/mosrutop
+            - listitem [ref=f7e284]:
+              - link "OK.ru портала Москвы" [ref=f7e285] [cursor=pointer]:
+                - /url: https://ok.ru/moscow
+            - listitem [ref=f7e288]:
+              - link "RSS портала Москвы" [ref=f7e289] [cursor=pointer]:
+                - /url: https://www.mos.ru/rss
+        - navigation [ref=f7e292]:
+          - generic [ref=f7e293]:
+            - link "Новости" [ref=f7e295] [cursor=pointer]:
+              - /url: https://www.mos.ru/news/
+            - list [ref=f7e296]:
+              - listitem [ref=f7e297]:
+                - link "Здравоохранение" [ref=f7e298] [cursor=pointer]:
+                  - /url: https://www.mos.ru/search/newsfeed?page=1&q=&spheres=18299
+              - listitem [ref=f7e299]:
+                - link "Транспорт" [ref=f7e300] [cursor=pointer]:
+                  - /url: https://www.mos.ru/search/newsfeed?page=1&q=&spheres=2299
+              - listitem [ref=f7e301]:
+                - link "Социальная сфера" [ref=f7e302] [cursor=pointer]:
+                  - /url: https://www.mos.ru/search/newsfeed?page=1&q=&spheres=1299
+              - listitem [ref=f7e303]:
+                - link "Образование" [ref=f7e304] [cursor=pointer]:
+                  - /url: https://www.mos.ru/search/newsfeed?page=1&q=&spheres=15299
+              - listitem [ref=f7e305]:
+                - link "Строительство и реконструкция" [ref=f7e306] [cursor=pointer]:
+                  - /url: https://www.mos.ru/search/newsfeed?page=1&q=&spheres=4299
+              - listitem [ref=f7e307]:
+                - link "Культура" [ref=f7e308] [cursor=pointer]:
+                  - /url: https://www.mos.ru/search/newsfeed?page=1&q=&spheres=3299
+              - listitem [ref=f7e309]:
+                - link "Благоустройство и ЖКХ" [ref=f7e310] [cursor=pointer]:
+                  - /url: https://www.mos.ru/search/newsfeed?page=1&q=&spheres=5299%252C350299
+              - listitem [ref=f7e311]:
+                - link "Экономика и предпринимательство" [ref=f7e312] [cursor=pointer]:
+                  - /url: https://www.mos.ru/search/newsfeed?page=1&q=&spheres=12299
+              - listitem [ref=f7e313]:
+                - link "Спорт" [ref=f7e314] [cursor=pointer]:
+                  - /url: https://www.mos.ru/search/newsfeed?page=1&q=&spheres=6299
+              - listitem [ref=f7e315]:
+                - link "Все новости" [ref=f7e316] [cursor=pointer]:
+                  - /url: https://www.mos.ru/news/
+          - generic [ref=f7e317]:
+            - link "Услуги" [ref=f7e319] [cursor=pointer]:
+              - /url: https://www.mos.ru/uslugi/
+            - list [ref=f7e320]:
+              - listitem [ref=f7e321]:
+                - link "Для жителей" [ref=f7e322] [cursor=pointer]:
+                  - /url: https://www.mos.ru/uslugi/
+              - listitem [ref=f7e323]:
+                - link "Образование" [ref=f7e324] [cursor=pointer]:
+                  - /url: https://www.mos.ru/uslugi/obrazovanie/
+              - listitem [ref=f7e325]:
+                - link "Жилье, недвижимость, земля" [ref=f7e326] [cursor=pointer]:
+                  - /url: https://www.mos.ru/uslugi/zhile-nedvizhimost-zemlya/
+              - listitem [ref=f7e327]:
+                - link "Социальная поддержка" [ref=f7e328] [cursor=pointer]:
+                  - /url: https://www.mos.ru/uslugi/socialnaya-podderzhka/
+              - listitem [ref=f7e329]:
+                - link "Все услуги" [ref=f7e330] [cursor=pointer]:
+                  - /url: https://www.mos.ru/uslugi/
+              - listitem [ref=f7e331]:
+                - link "Центры госуслуг" [ref=f7e332] [cursor=pointer]:
+                  - /url: https://www.mos.ru/services/centry-gosudarstvennyh-uslug/
+              - listitem [ref=f7e333]:
+                - link "Для бизнеса" [ref=f7e334] [cursor=pointer]:
+                  - /url: https://www.mos.ru/biznes/
+              - listitem [ref=f7e335]:
+                - link "Мои платежи" [ref=f7e336] [cursor=pointer]:
+                  - /url: https://pay.mos.ru/mospaynew/newportal/charges
+          - generic [ref=f7e337]:
+            - link "Мэр" [ref=f7e339] [cursor=pointer]:
+              - /url: https://www.mos.ru/mayor/
+            - list [ref=f7e340]:
+              - listitem [ref=f7e341]:
+                - link "Деятельность" [ref=f7e342] [cursor=pointer]:
+                  - /url: https://www.mos.ru/mayor/
+              - listitem [ref=f7e343]:
+                - link "Биография" [ref=f7e344] [cursor=pointer]:
+                  - /url: https://www.mos.ru/mayor/biography/
+              - listitem [ref=f7e345]:
+                - link "Интервью" [ref=f7e346] [cursor=pointer]:
+                  - /url: https://www.mos.ru/mayor/interviews/
+              - listitem [ref=f7e347]:
+                - link "Телеграммы" [ref=f7e348] [cursor=pointer]:
+                  - /url: https://www.mos.ru/mayor/telegrams/
+              - listitem [ref=f7e349]:
+                - link "Медиа" [ref=f7e350] [cursor=pointer]:
+                  - /url: https://www.mos.ru/mayor/media/
+              - generic [ref=f7e351]: Социальные сети мэра Москвы
+              - list [ref=f7e352]:
+                - listitem [ref=f7e353]:
+                  - link "MaxMessenger мэра Москвы" [ref=f7e354] [cursor=pointer]:
+                    - /url: https://max.ru/mossobyanin
+                - listitem [ref=f7e357]:
+                  - link "VK.com мэра Москвы" [ref=f7e358] [cursor=pointer]:
+                    - /url: https://vk.com/mossobyanin
+                - listitem [ref=f7e361]:
+                  - link "Telegram мэра Москвы" [ref=f7e362] [cursor=pointer]:
+                    - /url: https://t.me/mos_sobyanin
+          - generic [ref=f7e365]:
+            - link "Власть" [ref=f7e367] [cursor=pointer]:
+              - /url: https://www.mos.ru/authority/
+            - list [ref=f7e368]:
+              - listitem [ref=f7e369]:
+                - link "Структура" [ref=f7e370] [cursor=pointer]:
+                  - /url: https://www.mos.ru/authority/
+              - listitem [ref=f7e371]:
+                - link "Органы власти" [ref=f7e372] [cursor=pointer]:
+                  - /url: https://www.mos.ru/authority/list/
+              - listitem [ref=f7e373]:
+                - link "Префектуры и управы" [ref=f7e374] [cursor=pointer]:
+                  - /url: https://www.mos.ru/authority/territory/
+              - listitem [ref=f7e375]:
+                - link "Документы" [ref=f7e376] [cursor=pointer]:
+                  - /url: https://www.mos.ru/authority/documents/
+          - generic [ref=f7e377]:
+            - link "Мой район" [ref=f7e379] [cursor=pointer]:
+              - /url: https://www.mos.ru/moi-raion/
+            - list [ref=f7e380]:
+              - listitem [ref=f7e381]:
+                - link "Найти свой район" [ref=f7e382] [cursor=pointer]:
+                  - /url: https://www.mos.ru/moi-raion/
+              - listitem [ref=f7e383]:
+                - link "Центры госуслуг" [ref=f7e384] [cursor=pointer]:
+                  - /url: https://www.mos.ru/services/centry-gosudarstvennyh-uslug/
+              - listitem [ref=f7e385]:
+                - link "Культурно-исторические объекты" [ref=f7e386] [cursor=pointer]:
+                  - /url: https://www.mos.ru/map/?screens=%5B%22objectsList%22%5D&categories=%5B%2266%22%5D&mapParams=%7B%22cp%22%3A%7B%22lat%22%3A55.751288%2C%22lng%22%3A37.617928%7D%2C%22p1%22%3A%7B%22lat%22%3A55.83252950925928%2C%22lng%22%3A37.83760070800782%7D%2C%22p2%22%3A%7B%22lat%22%3A55.66984035430873%2C%22lng%22%3A37.39814758300782%7D%2C%22z%22%3A12%7D&kindTitle=Исторические+объекты
+              - listitem [ref=f7e387]:
+                - link "Поликлиники и больницы" [ref=f7e388] [cursor=pointer]:
+                  - /url: https://www.mos.ru/map/?screens=%5B%22objectsList%22%5D&categories=%5B%2240%22%5D&kind=20&mapParams=%7B%22cp%22%3A%7B%22lat%22%3A55.77261442958424%2C%22lng%22%3A37.63710021972657%7D%2C%22p1%22%3A%7B%22lat%22%3A55.855853098804744%2C%22lng%22%3A37.75211334228516%7D%2C%22p2%22%3A%7B%22lat%22%3A55.68919762233934%2C%22lng%22%3A37.522087097167976%7D%2C%22z%22%3A12%7D&kindTitle=Поликлиники+взрослые
+              - listitem [ref=f7e389]:
+                - link "Детские сады" [ref=f7e390] [cursor=pointer]:
+                  - /url: https://www.mos.ru/map/?screens=%5B%22objectsList%22%5D&categories=%5B%2237%22%5D&kind=48&mapParams=%7B%22cp%22%3A%7B%22lat%22%3A55.77261442958424%2C%22lng%22%3A37.63710021972657%7D%2C%22p1%22%3A%7B%22lat%22%3A55.855853098804744%2C%22lng%22%3A37.75211334228516%7D%2C%22p2%22%3A%7B%22lat%22%3A55.68919762233934%2C%22lng%22%3A37.522087097167976%7D%2C%22z%22%3A12%7D&kindTitle=Детские+сады
+              - listitem [ref=f7e391]:
+                - link "Школы" [ref=f7e392] [cursor=pointer]:
+                  - /url: https://www.mos.ru/map/?screens=%5B%22objectsList%22%5D&categories=%5B%2237%22%5D&kind=21&mapParams=%7B%22cp%22%3A%7B%22lat%22%3A55.77261442958424%2C%22lng%22%3A37.63710021972657%7D%2C%22p1%22%3A%7B%22lat%22%3A55.855853098804744%2C%22lng%22%3A37.75211334228516%7D%2C%22p2%22%3A%7B%22lat%22%3A55.68919762233934%2C%22lng%22%3A37.522087097167976%7D%2C%22z%22%3A12%7D&kindTitle=Школы
+              - listitem [ref=f7e393]:
+                - link "Ярмарки выходного дня" [ref=f7e394] [cursor=pointer]:
+                  - /url: https://www.mos.ru/map/?screens=%5B%22objectsList%22%5D&categories=%5B%2231%22%5D&kind=67&mapParams=%7B%22cp%22%3A%7B%22lat%22%3A55.84681815422685%2C%22lng%22%3A37.597323500000016%7D%2C%22p1%22%3A%7B%22lat%22%3A55.87949971647212%2C%22lng%22%3A37.65229225158692%7D%2C%22p2%22%3A%7B%22lat%22%3A55.81406311282012%2C%22lng%22%3A37.54242897033692%7D%2C%22z%22%3A14%7D&kindTitle=Ярмарки+выходного+дня
+              - listitem [ref=f7e395]:
+                - link "Транспортная инфраструктура" [ref=f7e396] [cursor=pointer]:
+                  - /url: https://www.mos.ru/map/?screens=%5B%22objectsList%22%5D&categories=%5B%2273%22%5D&mapParams=%7B%22cp%22%3A%7B%22lat%22%3A55.74956513355559%2C%22lng%22%3A37.62297975%7D%2C%22p1%22%3A%7B%22lat%22%3A55.75998770672451%2C%22lng%22%3A37.637357711792%7D%2C%22p2%22%3A%7B%22lat%22%3A55.739143464522186%2C%22lng%22%3A37.60860443115235%7D%2C%22z%22%3A15%7D&kindTitle=Транспортная+инфраструктура
+              - listitem [ref=f7e397]:
+                - link "Все объекты" [ref=f7e398] [cursor=pointer]:
+                  - /url: https://www.mos.ru/map/?screens=%5B%5D&categories=%5B%5D&mapParams=%7B%22cp%22%3A%7B%22lat%22%3A55.751288%2C%22lng%22%3A37.617928%7D%2C%22p1%22%3A%7B%22lat%22%3A55.79298239140481%2C%22lng%22%3A37.67538070678712%7D%2C%22p2%22%3A%7B%22lat%22%3A55.70960915707037%2C%22lng%22%3A37.56036758422852%7D%2C%22z%22%3A13%7D
+          - generic [ref=f7e399]:
+            - link "Помощь" [ref=f7e401] [cursor=pointer]:
+              - /url: https://www.mos.ru/feedback/
+            - list [ref=f7e402]:
+              - listitem [ref=f7e403]:
+                - link "Инструкции" [ref=f7e404] [cursor=pointer]:
+                  - /url: https://www.mos.ru/otvet/
+              - listitem [ref=f7e405]:
+                - link "Написать в техподдержку" [ref=f7e406] [cursor=pointer]:
+                  - /url: https://www.mos.ru/feedback/form/
+              - listitem [ref=f7e407]:
+                - link "Предложить идею" [ref=f7e408] [cursor=pointer]:
+                  - /url: https://www.mos.ru/feedback/idea/
+              - listitem [ref=f7e409]:
+                - link "Электронная приемная" [ref=f7e410] [cursor=pointer]:
+                  - /url: https://www.mos.ru/feedback/reception/
+              - listitem [ref=f7e411]:
+                - link "Телефонный справочник" [ref=f7e412] [cursor=pointer]:
+                  - /url: https://www.mos.ru/feedback/phones/
+              - listitem [ref=f7e413]:
+                - link "Обзоры обращений" [ref=f7e414] [cursor=pointer]:
+                  - /url: https://www.mos.ru/feedback/reviews/
+          - generic [ref=f7e415]:
+            - link "Проекты" [ref=f7e417] [cursor=pointer]:
+              - /url: https://www.mos.ru/city/projects/
+            - list [ref=f7e418]:
+              - listitem [ref=f7e419]:
+                - link "Мобильные приложения Москвы" [ref=f7e420] [cursor=pointer]:
+                  - /url: https://www.mos.ru/city/projects/mosapps/
+              - listitem [ref=f7e421]:
+                - link "МЭШ" [ref=f7e422] [cursor=pointer]:
+                  - /url: https://www.mos.ru/city/projects/mesh/
+              - listitem [ref=f7e423]:
+                - link "Электронная медицинская карта" [ref=f7e424] [cursor=pointer]:
+                  - /url: https://www.mos.ru/city/projects/medcarta/
+              - listitem [ref=f7e425]:
+                - link "Парки Москвы" [ref=f7e426] [cursor=pointer]:
+                  - /url: https://www.mos.ru/city/projects/parks/
+              - listitem [ref=f7e427]:
+                - link "Безопасность в Интернете" [ref=f7e428] [cursor=pointer]:
+                  - /url: https://www.mos.ru/city/projects/personaldata/
+              - listitem [ref=f7e429]:
+                - link "Московские центральные диаметры" [ref=f7e430] [cursor=pointer]:
+                  - /url: https://www.mos.ru/city/projects/diametry/
+              - listitem [ref=f7e431]:
+                - link "Моспитомец" [ref=f7e432] [cursor=pointer]:
+                  - /url: https://pets.mos.ru/
+              - listitem [ref=f7e433]:
+                - link "Московский стандарт реновации" [ref=f7e434] [cursor=pointer]:
+                  - /url: https://www.mos.ru/city/projects/renovation/
+              - listitem [ref=f7e435]:
+                - link "Все проекты" [ref=f7e436] [cursor=pointer]:
+                  - /url: https://www.mos.ru/city/projects/
+          - generic [ref=f7e437]:
+            - link "Мосбилет" [ref=f7e439] [cursor=pointer]:
+              - /url: https://bilet.mos.ru/
+            - list [ref=f7e440]:
+              - listitem [ref=f7e441]:
+                - link "Спектакли" [ref=f7e442] [cursor=pointer]:
+                  - /url: https://bilet.mos.ru/spektakli/
+              - listitem [ref=f7e443]:
+                - link "Зоопарк" [ref=f7e444] [cursor=pointer]:
+                  - /url: https://bilet.mos.ru/zoopark/
+              - listitem [ref=f7e445]:
+                - link "Для детей" [ref=f7e446] [cursor=pointer]:
+                  - /url: https://bilet.mos.ru/dlya-detey/
+              - listitem [ref=f7e447]:
+                - link "Музеи" [ref=f7e448] [cursor=pointer]:
+                  - /url: https://bilet.mos.ru/museums/
+              - listitem [ref=f7e449]:
+                - link "Лекции" [ref=f7e450] [cursor=pointer]:
+                  - /url: https://bilet.mos.ru/lekcii/
+              - listitem [ref=f7e451]:
+                - link "Концерты" [ref=f7e452] [cursor=pointer]:
+                  - /url: https://bilet.mos.ru/koncerty/
+              - listitem [ref=f7e453]:
+                - link "Экскурсии" [ref=f7e454] [cursor=pointer]:
+                  - /url: https://bilet.mos.ru/ekskursii/
+              - generic [ref=f7e455]: Телегам-канал Мосбилет
+              - list [ref=f7e456]:
+                - listitem [ref=f7e457]:
+                  - link "Telegram мосбилет" [ref=f7e458] [cursor=pointer]:
+                    - /url: https://t.me/mosbilet
+                - listitem [ref=f7e461]:
+                  - link "VK.com мосбилет" [ref=f7e462] [cursor=pointer]:
+                    - /url: https://vk.com/biletmosru
+      - generic [ref=f7e465]:
+        - link "Мобильное приложение Моя Москва" [ref=f7e467] [cursor=pointer]:
+          - /url: https://www.mos.ru/mobile/
+        - list [ref=f7e468]:
+          - listitem [ref=f7e469]:
+            - link "Мобильное приложение в App Store" [ref=f7e470] [cursor=pointer]:
+              - /url: https://apps.apple.com/ru/app/моя-москва-приложение-mos-ru/id1390518510
+          - listitem [ref=f7e472]:
+            - link "Мобильное приложение в Huawey AppGallery" [ref=f7e473] [cursor=pointer]:
+              - /url: https://appgallery.huawei.com/app/C102906941
+          - listitem [ref=f7e475]:
+            - link "Мобильное приложение в RuStore" [ref=f7e476] [cursor=pointer]:
+              - /url: https://www.rustore.ru/catalog/app/ru.mos.app
+          - listitem [ref=f7e478]:
+            - link "Мобильное приложение в RuMarket" [ref=f7e479] [cursor=pointer]:
+              - /url: https://ruplay.market/apps/category/Gorodskie_servisy/ru.mos.app/
+      - generic [ref=f7e481]:
+        - navigation [ref=f7e482]:
+          - generic [ref=f7e483]:
+            - link "Цифровая доступность" [ref=f7e484] [cursor=pointer]:
+              - /url: https://www.mos.ru/dostupnost/
+            - link "Техническая поддержка" [ref=f7e485] [cursor=pointer]:
+              - /url: https://www.mos.ru/feedback/support/
+          - generic [ref=f7e486]:
+            - button "Сайты Москвы" [ref=f7e487] [cursor=pointer]
+            - button "Сайты России" [ref=f7e488] [cursor=pointer]
+          - generic [ref=f7e489]:
+            - link "Информация о госзаказе" [ref=f7e490] [cursor=pointer]:
+              - /url: https://zakupki.mos.ru/purchase/list
+              - text: Инф. о госзаказе
+            - link "Портал поставщиков" [ref=f7e491] [cursor=pointer]:
+              - /url: https://zakupki.mos.ru/
+          - button "Карта сайта" [ref=f7e493] [cursor=pointer]
+        - generic [ref=f7e494]:
+          - paragraph [ref=f7e495]:
+            - link "4 979уникальных посетителей сегодня" [ref=f7e496] [cursor=pointer]:
+              - /url: https://www.mos.ru/dit/function/o-departamente/stats/
+          - paragraph [ref=f7e497]:
+            - link "7 523всего посетили порталы Москвы" [ref=f7e498] [cursor=pointer]:
+              - /url: https://www.mos.ru/dit/function/o-departamente/stats/
+    - generic [ref=f7e499]:
+      - generic [ref=f7e500]:
+        - link "Соглашение о пользовании информационными системами и ресурсами города Москвы" [ref=f7e501] [cursor=pointer]:
+          - /url: https://www.mos.ru/legal/rules/
+        - link "Политика в отношении обработки персональных данных" [ref=f7e502] [cursor=pointer]:
+          - /url: https://www.mos.ru/dit/documents/informatcionnaia-bezopasnost/view/274898220/
+        - generic [ref=f7e503]: Свидетельство на товарный знак № 681231 от 09.11.2018
+      - link "English" [ref=f7e505] [cursor=pointer]:
+        - /url: https://www.mos.ru/en
+  - dialog [ref=f7e507]:
+    - generic [ref=f7e508]:
+      - generic [ref=f7e509]:
+        - text: Продолжая пользоваться Порталом Мэра и Правительства Москвы, вы соглашаетесь на обработку файлов cookie с использованием метрических программ. Это поможет сделать портал еще более удобным и полезным для миллионов пользователей.
+        - link "Подробнее" [ref=f7e510] [cursor=pointer]:
+          - /url: https://www.mos.ru/legal/rules
+      - button "Принять" [ref=f7e512] [cursor=pointer]
+  - button "Кнопка. Открыть чат" [ref=f7e516] [cursor=pointer]

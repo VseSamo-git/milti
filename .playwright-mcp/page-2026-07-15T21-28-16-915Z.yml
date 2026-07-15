@@ -1,0 +1,233 @@
+- generic [active] [ref=f50e1]:
+  - generic [ref=f50e4]:
+    - generic [ref=f50e7]:
+      - link [ref=f50e9] [cursor=pointer]:
+        - /url: /
+        - generic [ref=f50e12]:
+          - heading "Портал открытых данных" [level=2] [ref=f50e13]
+          - paragraph [ref=f50e14]: Правительства Москвы
+      - generic [ref=f50e15]:
+        - link "Данные" [ref=f50e16] [cursor=pointer]:
+          - /url: /opendata
+        - link "Разработчикам" [ref=f50e20] [cursor=pointer]:
+          - /url: /developers
+      - generic [ref=f50e24]:
+        - button "Вход" [ref=f50e27] [cursor=pointer]
+        - button "ENG" [ref=f50e31] [cursor=pointer]
+        - link [ref=f50e35] [cursor=pointer]:
+          - /url: /visually-impaired/dataset
+          - button [ref=f50e37]
+    - generic [ref=f50e42]:
+      - generic [ref=f50e43]:
+        - generic [ref=f50e45]:
+          - generic [ref=f50e46]:
+            - generic [ref=f50e48]:
+              - link [ref=f50e49] [cursor=pointer]:
+                - /url: /opendata?booleanFilters=%5Bobject%20Object%5D&newRecommendedFavorites=all&searchString=
+              - paragraph [ref=f50e52]: Объекты недвижимого имущества на 2014 год, включенные в Перечень торговых, офисных объектов, объектов общественного питания и (или) бытового обслуживания, в отношении которых налоговая база определяется как их кадастровая стоимость
+            - generic [ref=f50e53]:
+              - link "Земля и имущество" [ref=f50e54] [cursor=pointer]:
+                - /url: /opendata?openCategoryIds=4
+              - generic [ref=f50e55]:
+                - generic [ref=f50e56]:
+                  - generic [ref=f50e57]: "5179"
+                  - generic [ref=f50e61]: "1154"
+                - generic [ref=f50e65]: 17.02.2026
+          - generic [ref=f50e68]:
+            - generic [ref=f50e69]: Рейтинг
+            - generic [ref=f50e71]:
+              - generic [ref=f50e72]: "0.0"
+              - generic [ref=f50e99]: "Оценили: 0"
+          - generic [ref=f50e101]:
+            - button [ref=f50e102] [cursor=pointer]
+            - button [ref=f50e106] [cursor=pointer]
+          - generic [ref=f50e110]:
+            - button "Экспорт" [ref=f50e112] [cursor=pointer]
+            - generic [ref=f50e116]: Не нашли объект?
+        - navigation [ref=f50e120]:
+          - link "Таблица" [ref=f50e121] [cursor=pointer]:
+            - /url: /opendata/61061
+          - link "Карта" [ref=f50e125] [cursor=pointer]:
+            - /url: /opendata/61061/map
+          - link "Паспорт" [ref=f50e129] [cursor=pointer]:
+            - /url: /opendata/61061/passport
+          - link "Описание" [ref=f50e133] [cursor=pointer]:
+            - /url: /opendata/61061/description
+      - generic [ref=f50e141]:
+        - generic [ref=f50e144]:
+          - generic [ref=f50e145]:
+            - generic [ref=f50e148] [cursor=pointer]:
+              - checkbox "Рекомендованные" [ref=f50e151]
+              - generic [ref=f50e152]: Рекомендованные
+            - generic [ref=f50e153]:
+              - generic [ref=f50e155]:
+                - checkbox "Рядом со мной (м)" [ref=f50e158] [cursor=pointer]
+                - generic [ref=f50e159] [cursor=pointer]: Рядом со мной (м)
+              - generic [ref=f50e160]:
+                - spinbutton "2000" [disabled] [ref=f50e161]
+                - button [disabled] [ref=f50e163] [cursor=pointer]
+          - button [ref=f50e167] [cursor=pointer]
+        - generic [ref=f50e171]:
+          - table [ref=f50e173]:
+            - rowgroup [ref=f50e174]:
+              - row [ref=f50e175]:
+                - columnheader "№" [ref=f50e176]:
+                  - generic [ref=f50e178]:
+                    - text: 
+                    - generic [ref=f50e179]: №
+                - columnheader " Кадастровый номер" [ref=f50e181]:
+                  - generic [ref=f50e183]:
+                    - paragraph [ref=f50e184]:
+                      - button "" [ref=f50e185] [cursor=pointer]
+                    - generic [ref=f50e187]: Кадастровый номер
+            - rowgroup [ref=f50e196]:
+              - row [ref=f50e197]:
+                - cell "1" [ref=f50e198]
+                - cell "77:05:0003004:1072" [ref=f50e203]
+              - row [ref=f50e214]:
+                - cell "2" [ref=f50e215]
+                - cell "77:02:0002009:1009" [ref=f50e220]
+              - row [ref=f50e231]:
+                - cell "3" [ref=f50e232]
+                - cell "77:06:0007007:1036" [ref=f50e237]
+              - row [ref=f50e248]:
+                - cell "4" [ref=f50e249]
+                - cell "77:09:0005008:1078" [ref=f50e254]
+              - row [ref=f50e265]:
+                - cell "5" [ref=f50e266]
+                - cell "77:01:0004010:1025" [ref=f50e271]
+              - row [ref=f50e282]:
+                - cell "6" [ref=f50e283]
+                - cell "77:00:0000000:41480" [ref=f50e288]
+              - row [ref=f50e299]:
+                - cell "7" [ref=f50e300]
+                - cell "77:01:0001081:1006" [ref=f50e305]
+              - row [ref=f50e316]:
+                - cell "8" [ref=f50e317]
+                - cell "77:01:0001082:1021" [ref=f50e322]
+              - row [ref=f50e333]:
+                - cell "9" [ref=f50e334]
+                - cell "77:01:0002023:1011" [ref=f50e339]
+              - row [ref=f50e350]:
+                - cell "10" [ref=f50e351]
+                - cell "77:01:0002023:1042" [ref=f50e356]
+          - table [ref=f50e369]:
+            - rowgroup [ref=f50e370]:
+              - row [ref=f50e371]:
+                - columnheader " Локальный идентификатор" [ref=f50e372]:
+                  - generic [ref=f50e373]:
+                    - paragraph [ref=f50e374]:
+                      - button "" [ref=f50e375] [cursor=pointer]
+                    - generic [ref=f50e377]: Локальный идентификатор
+                - columnheader " Номер строки в Приложении 1 к постановлению Правительства Москвы от 29 ноября 2013 г. № 772-ПП" [ref=f50e379]:
+                  - generic [ref=f50e380]:
+                    - paragraph [ref=f50e381]:
+                      - button "" [ref=f50e382] [cursor=pointer]
+                    - generic [ref=f50e384]: Номер строки в Приложении 1 к постановлению Правительства Москвы от 29 ноября 2013 г. № 772-ПП
+                - columnheader " Административный округ" [ref=f50e386]:
+                  - generic [ref=f50e387]:
+                    - paragraph [ref=f50e388]:
+                      - button "" [ref=f50e389] [cursor=pointer]
+                    - generic [ref=f50e391]: Административный округ
+                - columnheader " Район" [ref=f50e393]:
+                  - generic [ref=f50e394]:
+                    - paragraph [ref=f50e395]:
+                      - button "" [ref=f50e396] [cursor=pointer]
+                    - generic [ref=f50e398]: Район
+                - columnheader " Адрес" [ref=f50e400]:
+                  - generic [ref=f50e401]:
+                    - paragraph [ref=f50e402]:
+                      - button "" [ref=f50e403] [cursor=pointer]
+                    - generic [ref=f50e405]: Адрес
+                - columnheader " Номер помещения" [ref=f50e407]:
+                  - generic [ref=f50e408]:
+                    - paragraph [ref=f50e409]:
+                      - button "" [ref=f50e410] [cursor=pointer]
+                    - generic [ref=f50e412]: Номер помещения
+                - text: 
+            - rowgroup [ref=f50e414]:
+              - row [ref=f50e415]:
+                - cell "490501" [ref=f50e416]
+                - cell "1121" [ref=f50e421]
+                - cell "Южный административный округ" [ref=f50e426]
+                - cell "Нагорный район" [ref=f50e431]
+                - cell "город Москва, Фруктовая улица, дом 5А" [ref=f50e436]
+                - cell [ref=f50e441]
+              - row [ref=f50e443]:
+                - cell "490578" [ref=f50e444]
+                - cell "602" [ref=f50e449]
+                - cell "Северо-Восточный административный округ" [ref=f50e454]
+                - cell "район Бибирево" [ref=f50e459]
+                - cell "город Москва, Алтуфьевское шоссе, дом 72" [ref=f50e464]
+                - cell [ref=f50e469]
+              - row [ref=f50e471]:
+                - cell "490582" [ref=f50e472]
+                - cell "1290" [ref=f50e477]
+                - cell "Юго-Западный административный округ" [ref=f50e482]
+                - cell "район Тёплый Стан" [ref=f50e487]
+                - cell "город Москва, улица Академика Варги, дом 8, корпус 1" [ref=f50e492]
+                - cell [ref=f50e497]
+              - row [ref=f50e499]:
+                - cell "490583" [ref=f50e500]
+                - cell "1650" [ref=f50e505]
+                - cell "Северный административный округ" [ref=f50e510]
+                - cell "Хорошёвский район" [ref=f50e515]
+                - cell "город Москва, Ленинградский проспект, дом 37А, корпус 14" [ref=f50e520]
+                - cell [ref=f50e525]
+              - row [ref=f50e527]:
+                - cell "490584" [ref=f50e528]
+                - cell "424" [ref=f50e533]
+                - cell "Центральный административный округ" [ref=f50e538]
+                - cell "Тверской район" [ref=f50e543]
+                - cell "город Москва, Долгоруковская улица, дом 7" [ref=f50e548]
+                - cell [ref=f50e553]
+              - row [ref=f50e555]:
+                - cell "490589" [ref=f50e556]
+                - cell "1814" [ref=f50e561]
+                - cell "Юго-Восточный административный округ" [ref=f50e566]
+                - cell "Южнопортовый район" [ref=f50e571]
+                - cell "город Москва, Шарикоподшипниковская улица, дом 13, строение 3" [ref=f50e576]
+                - cell [ref=f50e581]
+              - row [ref=f50e583]:
+                - cell "490593" [ref=f50e584]
+                - cell "186" [ref=f50e589]
+                - cell "Центральный административный округ" [ref=f50e594]
+                - cell "Мещанский район" [ref=f50e599]
+                - cell "город Москва, улица Большая Лубянка, дом 11, строение 1" [ref=f50e604]
+                - cell [ref=f50e609]
+              - row [ref=f50e611]:
+                - cell "490594" [ref=f50e612]
+                - cell "190" [ref=f50e617]
+                - cell "Центральный административный округ" [ref=f50e622]
+                - cell "Басманный район" [ref=f50e627]
+                - cell "город Москва, улица Покровка, дом 47А" [ref=f50e632]
+                - cell [ref=f50e637]
+              - row [ref=f50e639]:
+                - cell "490597" [ref=f50e640]
+                - cell "297" [ref=f50e645]
+                - cell "Центральный административный округ" [ref=f50e650]
+                - cell "Таганский район" [ref=f50e655]
+                - cell "город Москва, Гончарная улица, дом 20/1, строение 1" [ref=f50e660]
+                - cell [ref=f50e665]
+              - row [ref=f50e667]:
+                - cell "490598" [ref=f50e668]
+                - cell "298" [ref=f50e673]
+                - cell "Центральный административный округ" [ref=f50e678]
+                - cell "Таганский район" [ref=f50e683]
+                - cell "город Москва, Котельническая набережная, дом 33, строение 1" [ref=f50e688]
+                - cell [ref=f50e693]
+        - generic [ref=f50e697]:
+          - generic [ref=f50e698]: Записей на странице
+          - combobox "10" [ref=f50e700] [cursor=pointer]
+          - generic [ref=f50e708]: "Число записей: 1725"
+          - button [disabled] [ref=f50e709]
+          - button [disabled] [ref=f50e712]
+          - spinbutton [ref=f50e715] [cursor=pointer]: "1"
+          - button [ref=f50e716] [cursor=pointer]
+          - button [ref=f50e719] [cursor=pointer]
+  - generic [ref=f50e730]:
+    - generic [ref=f50e731]:
+      - text: Продолжая пользоваться Порталом открытых данных Правительства Москвы, вы соглашаетесь на обработку файлов cookie и соответствующих пользовательских данных в целях функционирования сайта и анализа его использования.
+      - link "Подробнее" [ref=f50e732] [cursor=pointer]:
+        - /url: https://www.mos.ru/dit/documents/informatcionnaia-bezopasnost/view/274898220/
+    - button "Принять" [ref=f50e733] [cursor=pointer]
