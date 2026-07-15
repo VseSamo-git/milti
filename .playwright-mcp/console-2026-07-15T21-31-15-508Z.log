@@ -1,4 +1,0 @@
-[     331ms] [INFO] Running in the browser with appId=ng @ https://data.mos.ru/main.4df3efab2665905f.js:0
-[     340ms] [LOG] CS Counter v1.0.28 loaded off... @ https://stats.mos.ru/counter/v2/static/counter2.js?ch=17841510&h=data.mos.ru:3
-[   20629ms] [ERROR] Failed to load resource: the server responded with a status of 400 () @ https://data.mos.ru/api/v2/odata/datasets/61062/rows?limit=1&offset=0:0
-[   20782ms] [ERROR] Failed to load resource: the server responded with a status of 400 () @ https://data.mos.ru/api/v2/odata/datasets/61062/data?limit=1&offset=0:0
