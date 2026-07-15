@@ -1,0 +1,22 @@
+{
+  "name": "kosmos",
+  "version": "0.1.0",
+  "private": true,
+  "description": "КОСМОС — база лидов отдела развития МИЛТИ",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "test": "node --test tests/*.test.js",
+    "baseline": "node scripts/build_baseline.js",
+    "baseline:parse": "node scripts/build_baseline.js parse",
+    "baseline:enrich": "node scripts/build_baseline.js enrich",
+    "baseline:unom": "node scripts/build_baseline.js unom",
+    "baseline:subtract": "node scripts/build_baseline.js subtract",
+    "db:schema": "node scripts/apply_schema.js"
+  },
+  "dependencies": {
+    "postgres": "^3.4.4"
+  }
+}
