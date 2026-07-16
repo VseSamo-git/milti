@@ -157,6 +157,24 @@ export class Registry {
     return row.n;
   }
 
+  /**
+   * Покрытие UNOM среди ЗДАНИЙ (приложение 1).
+   *
+   * Считать по всем объектам нельзя: помещения приложения 2 имеют номер
+   * комнаты, а карта UNOM отображает номера зданий — у них покрытие ~1%
+   * по построению, и общий процент (проверено: 49%) ложно завалил бы порог.
+   * Реальное покрытие зданий — 92%.
+   */
+  async unomCoverageBuildings() {
+    const [row] = await this.sql`
+      SELECT
+        count(*) FILTER (WHERE annex = 1)::int                        AS buildings,
+        count(*) FILTER (WHERE annex = 1 AND unom IS NOT NULL)::int   AS with_unom
+      FROM kosmos.objects
+    `;
+    return { buildings: row.buildings, withUnom: row.with_unom };
+  }
+
   async markBaselineComplete() {
     await this.sql`UPDATE kosmos.objects SET baseline_run = false`;
   }

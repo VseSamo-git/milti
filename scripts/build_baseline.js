@@ -132,14 +132,19 @@ async function stageUnom(registry) {
   }
 
   const applied = await registry.applyUnomMap(unomMap);
-  const total = await registry.countObjects();
-  console.log(`UNOM проставлен: ${applied} из ${total}`);
+  console.log(`UNOM проставлен: ${applied} строк`);
   console.log(ATTRIBUTION);
 
-  const coverage = total ? applied / total : 0;
+  // Порог считаем ТОЛЬКО по зданиям приложения 1. У помещений приложения 2
+  // номер комнаты, а карта UNOM — про здания: их покрытие ~1% по построению.
+  // Проверено на живых данных: здания — 92%, помещения — 1%, агрегат — 49%.
+  const { buildings, withUnom } = await registry.unomCoverageBuildings();
+  const coverage = buildings ? withUnom / buildings : 0;
+  console.log(`покрытие зданий UNOM: ${withUnom}/${buildings} (${(100 * coverage).toFixed(0)}%)`);
+
   if (coverage < 0.5) {
     throw new Error(
-      `UNOM склеился только для ${(100 * coverage).toFixed(0)}% объектов. ` +
+      `UNOM склеился только для ${(100 * coverage).toFixed(0)}% зданий. ` +
         'Вычитание точек будет дырявым — разберитесь до запуска subtract.'
     );
   }

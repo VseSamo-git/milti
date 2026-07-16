@@ -97,7 +97,7 @@ CREATE TABLE IF NOT EXISTS kosmos.objects (
 
     CONSTRAINT valid_object_type CHECK (object_type IN (
         'бц', 'офисное_здание', 'офис_компании', 'нии', 'вуз',
-        'конкурент', 'в_стройке', 'неизвестен'
+        'тц', 'конкурент', 'в_стройке', 'неизвестен'
     )),
     CONSTRAINT valid_status CHECK (status IN (
         'активен', 'не_найден_в_последнем_обходе',
