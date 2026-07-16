@@ -79,7 +79,13 @@ export async function fetchPage(catalogId, offset, limit = PAGE_SIZE) {
  * страница сворачивается в карту сразу и выбрасывается: остаётся только
  * ~500 тысяч пар «кадастровый номер -> UNOM».
  *
- * Разовая операция; повторяется, только когда нужно освежить UNOM.
+ * СКОЛЬКО ЖДАТЬ: ~50 минут, а не 15. Замерено 2026-07-16: страницы
+ * деградируют с ростом смещения — offset 0 отдаётся за 2,3 с,
+ * offset 400 000 за 10,2 с. Это классическая беда пагинации через OFFSET:
+ * сервер сканирует с начала на каждом запросе. Прямой выгрузки файлом
+ * у портала нет (эндпоинты /export отдают SPA-заглушку), так что
+ * альтернативы нет. Операция разовая, повторяется раз в год — терпимо.
+ * Не пытайтесь распараллелить: получите бан, а не ускорение.
  */
 export async function buildUnomMapFromApi({ onProgress } = {}) {
   const { catalogId, totalObjects } = await fetchCatalogId();
@@ -88,17 +94,22 @@ export async function buildUnomMapFromApi({ onProgress } = {}) {
 
   for (let offset = 0; ; offset += PAGE_SIZE) {
     const page = await fetchPage(catalogId, offset);
-    if (page.length === 0) break;
+    const pageSize = page.length;
+    if (pageSize === 0) break;
 
-    seen += page.length;
+    seen += pageSize;
     for (const [cadastralNo, unom] of buildUnomMap(page)) {
       map.set(cadastralNo, unom);
     }
-    page.length = 0; // не держим строки
+    page.length = 0; // не держим строки: 548 тыс. записей не влезут в кучу
 
     if (onProgress) onProgress(seen, totalObjects, map.size);
-    if (page.length < PAGE_SIZE && seen >= (totalObjects || 0)) break;
-    if (seen >= (totalObjects || Infinity)) break;
+
+    // Выходим по короткой странице — это признак конца выдачи.
+    // Счётчик totalObjects как страховка: он берётся из паспорта релиза
+    // и может разойтись с фактом, если релиз обновится посреди выгрузки.
+    if (pageSize < PAGE_SIZE) break;
+    if (totalObjects && seen >= totalObjects) break;
   }
 
   return { map, seen, catalogId };
