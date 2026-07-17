@@ -186,4 +186,73 @@ export class Registry {
   async markBaselineComplete() {
     await this.sql`UPDATE kosmos.objects SET baseline_run = false`;
   }
+  /**
+   * Записать точки OSM (конкуренты, ВУЗы, НИИ, супермаркеты).
+   *
+   * Ключ — osm_id. Повторный обход обновляет last_seen_at и воскрешает
+   * статус: точка, ранее помеченная кандидатом на закрытие, снова активна.
+   *
+   * @param {{osmId,kind,chain?,name?,lat,lon,street?,house?}[]} places
+   * @param {string} source
+   */
+  async upsertPlaces(places, source) {
+    if (!places.length) return 0;
+    const CHUNK = 500;
+    let n = 0;
+    for (let i = 0; i < places.length; i += CHUNK) {
+      const rows = places.slice(i, i + CHUNK).map((p) => ({
+        osm_id: p.osmId,
+        kind: p.kind,
+        chain: p.chain ?? null,
+        name: p.name ?? null,
+        lat: p.lat,
+        lon: p.lon,
+        street: p.street ?? null,
+        house: p.house ?? null,
+        source,
+      }));
+      const res = await this.sql`
+        INSERT INTO kosmos.places ${this.sql(
+          rows,
+          'osm_id', 'kind', 'chain', 'name', 'lat', 'lon', 'street', 'house', 'source'
+        )}
+        ON CONFLICT (osm_id) DO UPDATE SET
+          name         = EXCLUDED.name,
+          chain        = EXCLUDED.chain,
+          lat          = EXCLUDED.lat,
+          lon          = EXCLUDED.lon,
+          street       = EXCLUDED.street,
+          house        = EXCLUDED.house,
+          last_seen_at = now(),
+          status       = 'активна'
+      `;
+      n += res.count ?? rows.length;
+    }
+    return n;
+  }
+
+  /**
+   * Пометить точки, которых не было в свежем обходе.
+   *
+   * Именно пометить, а не удалить: OSM живёт правками людей, и точка может
+   * пропасть из-за чужой ошибки. Статус «кандидат_на_закрытие» — приглашение
+   * проверить, а не утверждение, что заведение закрылось.
+   */
+  async markMissingPlaces(kind, seenOsmIds) {
+    const res = await this.sql`
+      UPDATE kosmos.places
+      SET status = 'кандидат_на_закрытие'
+      WHERE kind = ${kind}
+        AND status = 'активна'
+        AND NOT (osm_id = ANY(${seenOsmIds}))
+    `;
+    return res.count ?? 0;
+  }
+
+  async countPlaces(kind) {
+    const [row] = await this.sql`
+      SELECT count(*)::int AS n FROM kosmos.places WHERE kind = ${kind}
+    `;
+    return row.n;
+  }
 }
