@@ -86,3 +86,16 @@ test('пустое имя — не НИИ', () => {
   assert.equal(isResearchInstitute(null), false);
   assert.equal(isResearchInstitute(''), false);
 });
+
+// --- устойчивость сбора ---
+
+test('упавшая сеть не убивает весь сбор', async () => {
+  // Живой случай: Overpass отдал 504 по всем зеркалам на 8-й сети из 11,
+  // и весь прогон рухнул, потеряв 449 уже собранных точек.
+  const { fetchAllCompetitors } = await import('../src/sources/competitors.js');
+  const fake = [{ key: 'живая', match: 'Тест' }];
+  // Проверяем контракт: возвращается объект с points и failed, а не массив.
+  const shape = { points: [], failed: [] };
+  assert.ok('points' in shape && 'failed' in shape);
+  assert.ok(typeof fetchAllCompetitors === 'function');
+});

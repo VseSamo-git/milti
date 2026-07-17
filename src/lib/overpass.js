@@ -36,37 +36,49 @@ export function escapeRe(value) {
   return value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 }
 
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+
 /**
- * Выполнить запрос к Overpass с перебором зеркал.
+ * Выполнить запрос к Overpass: перебор зеркал, затем повтор с паузой.
+ *
+ * 504 от публичного Overpass — это перегрузка, а не отказ: тот же запрос
+ * через полминуты обычно проходит. Проверено на живых данных — сбор
+ * конкурентов падал на 504 по всем трём зеркалам сразу.
+ *
  * @param {string} query — тело запроса Overpass QL
+ * @param {{attempts?: number, backoffMs?: number}} opts
  */
-export async function runOverpass(query) {
+export async function runOverpass(query, { attempts = 3, backoffMs = 20000 } = {}) {
   let lastError;
 
-  for (const endpoint of OVERPASS_ENDPOINTS) {
-    try {
-      const response = await fetch(endpoint, {
-        method: 'POST',
-        headers: { 'User-Agent': UA, 'Content-Type': 'text/plain' },
-        body: query,
-      });
+  for (let attempt = 1; attempt <= attempts; attempt++) {
+    for (const endpoint of OVERPASS_ENDPOINTS) {
+      try {
+        const response = await fetch(endpoint, {
+          method: 'POST',
+          headers: { 'User-Agent': UA, 'Content-Type': 'text/plain' },
+          body: query,
+        });
 
-      if (!response.ok) {
-        lastError = new Error(`${endpoint}: HTTP ${response.status}`);
-        continue;
+        if (!response.ok) {
+          lastError = new Error(`${endpoint}: HTTP ${response.status}`);
+          continue;
+        }
+
+        const text = await response.text();
+        if (!text.includes('"elements"')) {
+          // Overpass при перегрузке отдаёт HTML вместо JSON
+          lastError = new Error(`${endpoint}: не JSON (вероятно перегрузка)`);
+          continue;
+        }
+
+        return JSON.parse(text);
+      } catch (error) {
+        lastError = error;
       }
-
-      const text = await response.text();
-      if (!text.includes('"elements"')) {
-        // Overpass при перегрузке отдаёт HTML с 504 вместо JSON
-        lastError = new Error(`${endpoint}: не JSON (вероятно перегрузка)`);
-        continue;
-      }
-
-      return JSON.parse(text);
-    } catch (error) {
-      lastError = error;
     }
+
+    if (attempt < attempts) await sleep(backoffMs * attempt);
   }
 
   throw lastError || new Error('все зеркала Overpass недоступны');

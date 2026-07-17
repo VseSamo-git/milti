@@ -20,22 +20,35 @@ import { fetchResearchInstitutes, fetchUniversities, SOURCE as SRC_EDU } from '.
 
 async function stageCompetitors(registry) {
   console.log('=== КОНКУРЕНТЫ ===');
-  const points = await fetchAllCompetitors({
-    onProgress: (chain, found, total) => console.log(`   ${chain}: ${found} (всего ${total})`),
+  const { points, failed } = await fetchAllCompetitors({
+    onProgress: (chain, found, total, error) =>
+      console.log(
+        error ? `   ${chain}: НЕ ОТВЕТИЛ (${error.message.slice(0, 40)})` : `   ${chain}: ${found} (всего ${total})`
+      ),
   });
 
   const written = await registry.upsertPlaces(
     points.map((p) => ({ ...p, kind: 'конкурент' })),
     SRC_COMP
   );
-
-  // Точки, которых не стало в этом обходе, — кандидаты на закрытие.
-  // Это и есть Димина «информация о закрытиях точек».
-  const marked = await registry.markMissingPlaces('конкурент', points.map((p) => p.osmId));
-
   console.log(`записано точек: ${written}`);
-  console.log(`помечено кандидатами на закрытие: ${marked}`);
+
+  // ВАЖНО. Помечать пропавшие точки можно ТОЛЬКО если обход был полным.
+  // Иначе сеть, не ответившая из-за таймаута Overpass, будет целиком
+  // помечена «закрылась» — и Дима в воскресенье прочтёт, что Шоколадница
+  // ушла из Москвы. Молчаливая ложь хуже отсутствия данных.
+  if (failed.length === 0) {
+    const marked = await registry.markMissingPlaces('конкурент', points.map((p) => p.osmId));
+    console.log(`помечено кандидатами на закрытие: ${marked}`);
+  } else {
+    console.log('');
+    console.log(`ВНИМАНИЕ: не ответили сети: ${failed.map((f) => f.chain).join(', ')}`);
+    console.log('Пометка закрытий ПРОПУЩЕНА — обход неполный, иначе целая сеть');
+    console.log('была бы объявлена закрытой из-за сбоя источника.');
+  }
+
   console.log(`всего в реестре: ${await registry.countPlaces('конкурент')}`);
+  return failed;
 }
 
 async function stageEducation(registry) {

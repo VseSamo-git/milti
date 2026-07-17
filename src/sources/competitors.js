@@ -77,9 +77,21 @@ export async function fetchChain(chain, bbox = MOSCOW_BBOX) {
 export async function fetchAllCompetitors({ chains = COMPETITOR_CHAINS, bbox = MOSCOW_BBOX, onProgress } = {}) {
   const all = [];
   const seen = new Set();
+  const failed = [];
 
   for (const chain of chains) {
-    const items = await fetchChain(chain, bbox);
+    let items;
+    try {
+      items = await fetchChain(chain, bbox);
+    } catch (error) {
+      // Упавшая сеть НЕ должна убивать весь сбор: 449 уже собранных точек
+      // дороже, чем одна недостающая сеть. Проверено на живых данных —
+      // Overpass отдал 504 по всем зеркалам, и весь прогон рухнул.
+      failed.push({ chain: chain.key, reason: error.message });
+      if (onProgress) onProgress(chain.key, null, all.length, error);
+      continue;
+    }
+
     for (const item of items) {
       if (seen.has(item.osmId)) continue;
       seen.add(item.osmId);
@@ -88,7 +100,9 @@ export async function fetchAllCompetitors({ chains = COMPETITOR_CHAINS, bbox = M
     if (onProgress) onProgress(chain.key, items.length, all.length);
   }
 
-  return all;
+  // Возвращаем и то, что собрали, и то, что не далось: молчаливая потеря
+  // сети хуже честного «эта сеть не ответила».
+  return { points: all, failed };
 }
 
 /**
