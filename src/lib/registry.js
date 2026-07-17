@@ -21,7 +21,15 @@ export class Registry {
    * @param {{dbUrl: string}} cfg
    */
   constructor(cfg) {
-    this.sql = postgres(cfg.dbUrl, { onnotice: () => {} });
+    // ssl: 'require' обязателен для облачного Postgres (Supabase и т.п.).
+    // Без него Supabase отвергает соединение, но отдаёт это как 28P01
+    // «password authentication failed» — ошибка врёт про причину, проверено.
+    // Для локального Postgres без TLS ставьте KOSMOS_DB_SSL=off.
+    this.sql = postgres(cfg.dbUrl, {
+      onnotice: () => {},
+      ssl: cfg.dbSsl,
+      max: cfg.dbMaxConnections,
+    });
   }
 
   async close() {

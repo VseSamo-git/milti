@@ -22,6 +22,12 @@ export function loadConfig(env = process.env) {
   }
   return {
     dbUrl,
+    // Облачный Postgres (Supabase) требует TLS. Без него соединение
+    // отвергается с ошибкой «password authentication failed» — она врёт
+    // про причину. Для локального Postgres без TLS: KOSMOS_DB_SSL=off.
+    dbSsl: env.KOSMOS_DB_SSL === 'off' ? false : 'require',
+    // Supabase pooler держит ограниченный пул; 5 достаточно и не упирается в лимит.
+    dbMaxConnections: Number(env.KOSMOS_DB_MAX || 5),
     nspdReferer: env.KOSMOS_NSPD_REFERER || DEFAULT_NSPD_REFERER,
     // Путь к bundle с корневым сертификатом Минцифры.
     // Без него Node не доверяет сертификату НСПД: SEC_E_UNTRUSTED_ROOT.

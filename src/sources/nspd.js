@@ -31,10 +31,14 @@
  *      "https://nspd.gov.ru/map" и "https://nspd.gov.ru/" заблокированы
  *      СПЕЦИАЛЬНО: ими подписываются наивные скраперы. User-Agent не нужен.
  *   2. TLS: сертификат выпущен российским национальным УЦ, Node его не знает
- *      (SELF_SIGNED_CERT_IN_CHAIN). Нужен NODE_EXTRA_CA_CERTS с корневым
- *      сертификатом Минцифры. Отключать проверку ЗАПРЕЩЕНО.
+ *      (SELF_SIGNED_CERT_IN_CHAIN). Подкладываем корневой Минцифры своим
+ *      диспетчером undici — см. конструктор. NODE_EXTRA_CA_CERTS не годится:
+ *      Node читает её только при старте процесса. Отключать проверку ЗАПРЕЩЕНО.
  *   3. Имя поля площади зависит от типа объекта — см. AREA_FIELD_BY_CATEGORY.
  */
+
+import { readFileSync } from 'node:fs';
+import { Agent, fetch as undiciFetch } from 'undici';
 
 export const NSPD_ENDPOINT = 'https://nspd.gov.ru/api/geoportal/v2/search/geoportal';
 
@@ -64,12 +68,21 @@ function asInt(value) {
 
 export class NspdClient {
   /**
-   * @param {{nspdReferer: string, nspdRateLimitPerSec: number}} cfg
+   * @param {{nspdReferer: string, nspdRateLimitPerSec: number, caBundle: string|null}} cfg
    */
   constructor(cfg) {
     this.referer = cfg.nspdReferer;
     this.minIntervalMs = 1000 / (cfg.nspdRateLimitPerSec || 1);
     this.lastCallAt = 0;
+
+    // Сертификат подключаем СВОИМ диспетчером, а не через NODE_EXTRA_CA_CERTS.
+    // Причина: эта переменная читается Node только при старте процесса —
+    // выставить её из кода уже поздно, и все запросы молча падают в
+    // «fetch failed». Проверено на живых данных.
+    // Проверку сертификата НЕ отключаем: подкладываем корневой Минцифры.
+    this.dispatcher = cfg.caBundle
+      ? new Agent({ connect: { ca: readFileSync(cfg.caBundle, 'utf8') } })
+      : undefined;
   }
 
   async #throttle() {
@@ -89,7 +102,10 @@ export class NspdClient {
     await this.#throttle();
 
     const url = `${NSPD_ENDPOINT}?query=${encodeURIComponent(cadastralNo)}&thematicSearchId=1`;
-    const response = await fetch(url, { headers: { Referer: this.referer } });
+    const response = await undiciFetch(url, {
+      headers: { Referer: this.referer },
+      dispatcher: this.dispatcher,
+    });
 
     if (response.status === 204 || response.status === 404) return null;
     if (response.status === 403) {

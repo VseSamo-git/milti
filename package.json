@@ -17,6 +17,7 @@
     "db:schema": "node scripts/apply_schema.js"
   },
   "dependencies": {
-    "postgres": "^3.4.4"
+    "postgres": "^3.4.4",
+    "undici": "^8.7.0"
   }
 }
