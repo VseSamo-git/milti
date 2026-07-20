@@ -129,31 +129,54 @@ export class Registry {
   }
 
   /**
-   * Проставить UNOM из адресного реестра.
+   * Проставить UNOM и координаты из адресного реестра.
    *
-   * Без этого шага вычитание работает вхолостую: колонка пуста, совпадений
-   * ноль, и Дима получает базу со своими же действующими точками внутри.
-   * Кадастровые номера, которых нет в реестре, остаются NULL — не выдумываем.
+   * Без UNOM вычитание работает вхолостую: колонка пуста, совпадений ноль,
+   * и Дима получает базу со своими же действующими точками внутри.
+   * Координаты нужны для связки «здание → площадка»: без них у ТЦ и ВУЗов
+   * нет способа определить здание, а лид без гео не показать на карте.
    *
-   * @param {Map<string, number>|Record<string, number>} unomMap
+   * COALESCE, а не перезапись: система никогда не затирает уже известное
+   * значение (спека, раздел 8). Заполняем только пустые ячейки — поэтому
+   * координаты долетают и до зданий, где UNOM проставлен прошлым прогоном.
+   * Кадастровых номеров, которых нет в реестре, не выдумываем — остаются NULL.
+   *
+   * Значение карты — запись { unom, lat, lon }. Старый формат (голое число
+   * UNOM в кэше на диске) поддержан для совместимости: трактуем как запись
+   * без координат.
+   *
+   * @param {Map<string, {unom:number,lat:number|null,lon:number|null}|number>
+   *        |Record<string, {unom:number,lat:number|null,lon:number|null}|number>} unomMap
    */
   async applyUnomMap(unomMap) {
     const pairs = unomMap instanceof Map ? [...unomMap] : Object.entries(unomMap);
     if (pairs.length === 0) return 0;
 
+    const norm = (value) =>
+      typeof value === 'object' && value !== null
+        ? { unom: value.unom, lat: value.lat ?? null, lon: value.lon ?? null }
+        : { unom: value, lat: null, lon: null };
+
     const CHUNK = 2000;
     let applied = 0;
     for (let i = 0; i < pairs.length; i += CHUNK) {
-      const chunk = pairs.slice(i, i + CHUNK).map(([cadastral_no, unom]) => ({
-        cadastral_no,
-        unom,
-      }));
+      const chunk = pairs.slice(i, i + CHUNK).map(([cadastral_no, value]) => {
+        const { unom, lat, lon } = norm(value);
+        return [cadastral_no, String(unom), lat, lon];
+      });
       const result = await this.sql`
         UPDATE kosmos.objects o
-        SET unom = v.unom::bigint
-        FROM (VALUES ${this.sql(chunk.map((c) => [c.cadastral_no, String(c.unom)]))})
-             AS v(cadastral_no, unom)
-        WHERE o.cadastral_no = v.cadastral_no AND o.unom IS NULL
+        SET unom = COALESCE(o.unom, v.unom::bigint),
+            lat  = COALESCE(o.lat,  v.lat::double precision),
+            lon  = COALESCE(o.lon,  v.lon::double precision)
+        FROM (VALUES ${this.sql(chunk)})
+             AS v(cadastral_no, unom, lat, lon)
+        WHERE o.cadastral_no = v.cadastral_no
+          AND (
+            (o.unom IS NULL AND v.unom IS NOT NULL) OR
+            (o.lat  IS NULL AND v.lat  IS NOT NULL) OR
+            (o.lon  IS NULL AND v.lon  IS NOT NULL)
+          )
       `;
       applied += result.count;
     }

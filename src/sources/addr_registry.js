@@ -20,6 +20,8 @@
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { dirname } from 'node:path';
 
+import { withRetry } from '../lib/retry.js';
+
 export const DATASET_ID = 60562;
 export const DATASET_META_URL = `https://data.mos.ru/api/v2/odata/datasets/${DATASET_ID}`;
 export const CATALOG_URL = 'https://data.mos.ru/api/v2/odata/catalog/get';
@@ -59,7 +61,10 @@ export async function fetchPage(catalogId, offset, limit = PAGE_SIZE) {
   const response = await fetch(CATALOG_URL, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ id: catalogId, limit, offset }),
+    // fetchGeodata:true ОБЯЗАТЕЛЕН — без него портал молча отдаёт строки
+    // без geodata_center, и координаты теряются. Проверено 2026-07-20:
+    // без флага 0/200 строк с гео, с флагом 200/200.
+    body: JSON.stringify({ id: catalogId, limit, offset, fetchGeodata: true }),
   });
   if (!response.ok) {
     throw new Error(`data.mos.ru отдал HTTP ${response.status} на выгрузку`);
@@ -93,13 +98,20 @@ export async function buildUnomMapFromApi({ onProgress } = {}) {
   let seen = 0;
 
   for (let offset = 0; ; offset += PAGE_SIZE) {
-    const page = await fetchPage(catalogId, offset);
+    // Выгрузка — ~549 страниц, десятки минут. Под fetchGeodata портал
+    // изредка отдаёт 504: без ретрая один блип убьёт весь прогон и часы
+    // ожидания. withRetry повторяет только временное (см. isTransient),
+    // на 504/503/502/429 — с нарастающей паузой 3-15 с.
+    const page = await withRetry(() => fetchPage(catalogId, offset), {
+      attempts: 5,
+      backoffMs: 3000,
+    });
     const pageSize = page.length;
     if (pageSize === 0) break;
 
     seen += pageSize;
-    for (const [cadastralNo, unom] of buildUnomMap(page)) {
-      map.set(cadastralNo, unom);
+    for (const [cadastralNo, record] of buildUnomMap(page)) {
+      map.set(cadastralNo, record);
     }
     page.length = 0; // не держим строки: 548 тыс. записей не влезут в кучу
 
@@ -125,11 +137,18 @@ export async function saveUnomMap(map, destPath) {
 }
 
 /**
- * Построить отображение кадастровый номер -> UNOM.
+ * Построить отображение кадастровый номер -> запись { unom, lat, lon }.
  *
  * ВНИМАНИЕ на структуру, она неочевидна и проверена на живых данных:
  *   KAD_N — это НЕ строка и НЕ массив строк, а массив объектов:
  *   [{ global_id, is_deleted, KAD_N: "77:03:0007004:1064" }]
+ *
+ * Координаты берём из geodata_center.coordinates в порядке GeoJSON [lon, lat].
+ * Порядок осей КРИТИЧЕН: перепутать местами — отправить все здания в
+ * Индийский океан (широта Москвы ~55, долгота ~37). Портал отдаёт гео
+ * ТОЛЬКО при fetchGeodata:true в запросе (см. fetchPage). Без флага
+ * geodata_center отсутствует, и lat/lon честно остаются null — пустая
+ * ячейка честнее выдуманной.
  *
  * У одного здания может быть несколько кадастровых номеров; у одного
  * кадастрового номера — один UNOM. Удалённые записи (is_deleted) и
@@ -137,7 +156,7 @@ export async function saveUnomMap(map, destPath) {
  * не здание, его UNOM нам не нужен.
  *
  * @param {Array<object>} rows
- * @returns {Map<string, number>}
+ * @returns {Map<string, {unom: number, lat: number|null, lon: number|null}>}
  */
 export function buildUnomMap(rows) {
   const map = new Map();
@@ -147,10 +166,18 @@ export function buildUnomMap(rows) {
     const unom = Number(row?.UNOM);
     if (!Number.isFinite(unom) || unom === 0) continue;
 
+    const coords = row?.geodata_center?.coordinates;
+    const [lon, lat] = Array.isArray(coords) ? coords : [null, null];
+    const record = {
+      unom,
+      lat: Number.isFinite(lat) ? lat : null,
+      lon: Number.isFinite(lon) ? lon : null,
+    };
+
     for (const entry of row.KAD_N || []) {
       if (entry?.is_deleted) continue;
       const cadastralNo = String(entry?.KAD_N || '').trim();
-      if (cadastralNo) map.set(cadastralNo, unom);
+      if (cadastralNo) map.set(cadastralNo, record);
     }
   }
 

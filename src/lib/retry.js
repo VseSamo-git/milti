@@ -25,6 +25,10 @@ const TRANSIENT_TEXT = [
   'timeout',
 ];
 
+// Шлюзовые/перегрузочные HTTP-статусы: сервер жив, но временно не отвечает.
+// 4xx (кроме 429) сюда НЕ входят — это наша ошибка запроса, повтор не лечит.
+const TRANSIENT_HTTP = /http (429|500|502|503|504)\b/;
+
 /**
  * Похоже ли это на временный сетевой сбой, который лечится повтором.
  * @param {unknown} error
@@ -34,6 +38,7 @@ export function isTransient(error) {
   if (!error) return false;
   if (error.code && TRANSIENT_CODES.has(error.code)) return true;
   const message = String(error.message || '').toLowerCase();
+  if (TRANSIENT_HTTP.test(message)) return true;
   return TRANSIENT_TEXT.some((needle) => message.includes(needle));
 }
 

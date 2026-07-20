@@ -83,3 +83,18 @@ test('isTransient распознаёт сетевые обрывы и пропу
   assert.equal(isTransient(new Error('duplicate key value violates unique constraint')), false);
   assert.equal(isTransient(new Error('НСПД отдал 403')), false);
 });
+
+test('isTransient считает шлюзовые HTTP-статусы временными', () => {
+  // Портал data.mos.ru под fetchGeodata изредка отдаёт 504/503 — это
+  // перегрузка шлюза, лечится повтором. Формат сообщения — как у fetchPage.
+  assert.equal(isTransient(new Error('data.mos.ru отдал HTTP 504 на выгрузку')), true);
+  assert.equal(isTransient(new Error('data.mos.ru отдал HTTP 503 на выгрузку')), true);
+  assert.equal(isTransient(new Error('data.mos.ru отдал HTTP 502 на выгрузку')), true);
+  assert.equal(isTransient(new Error('data.mos.ru отдал HTTP 429 на выгрузку')), true);
+});
+
+test('isTransient НЕ повторяет клиентские HTTP-ошибки (4xx кроме 429)', () => {
+  // 400/404 — наша вина (кривой запрос), повтор не поможет, падаем сразу.
+  assert.equal(isTransient(new Error('data.mos.ru отдал HTTP 400 на выгрузку')), false);
+  assert.equal(isTransient(new Error('data.mos.ru отдал HTTP 404 на выгрузку')), false);
+});

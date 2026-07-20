@@ -154,7 +154,7 @@ async function stageUnom(registry) {
   }
 
   const applied = await registry.applyUnomMap(unomMap);
-  console.log(`UNOM проставлен: ${applied} строк`);
+  console.log(`адресный реестр: обновлено ${applied} строк (UNOM и/или координаты)`);
   console.log(ATTRIBUTION);
 
   // Порог считаем ТОЛЬКО по зданиям приложения 1. У помещений приложения 2
