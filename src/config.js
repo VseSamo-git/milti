@@ -34,5 +34,11 @@ export function loadConfig(env = process.env) {
     // Отключать проверку сертификата ЗАПРЕЩЕНО — это не решение, а дыра.
     caBundle: env.KOSMOS_CA_BUNDLE || null,
     nspdRateLimitPerSec: Number(env.KOSMOS_NSPD_RPS || 1),
+    // NocoDB — витрина Димы поверх нашей базы. Токен и id базы берём
+    // из окружения: токен светился в переписке, его надо уметь заменить,
+    // не трогая код.
+    nocodbUrl: env.KOSMOS_NOCODB_URL || 'https://app.nocodb.com',
+    nocodbToken: env.KOSMOS_NOCODB_TOKEN || null,
+    nocodbBase: env.KOSMOS_NOCODB_BASE || null,
   };
 }
