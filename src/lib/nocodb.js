@@ -95,6 +95,51 @@ export class NocodbClient {
     return sent;
   }
 
+  /**
+   * Создать срез (grid-вид) с фильтрами и сортировкой.
+   *
+   * Фильтры адресуют колонки по id, а не по имени, поэтому сначала
+   * читаем колонки таблицы. Молчаливо пропустить несуществующую колонку
+   * нельзя: срез тогда покажет всё подряд, и Дима примет это за данные.
+   *
+   * @param {string} tableId
+   * @param {{title: string, filters?: object[], sorts?: object[]}} def
+   */
+  async createView(tableId, def) {
+    const cols = await this.columns(tableId);
+    const idByTitle = new Map(cols.map((c) => [c.title, c.id]));
+
+    const view = await this.#call(`/api/v2/meta/tables/${tableId}/grids`, {
+      method: 'POST',
+      body: JSON.stringify({ title: def.title }),
+    });
+
+    for (const f of def.filters || []) {
+      const columnId = idByTitle.get(f.column);
+      if (!columnId) throw new Error(`срез «${def.title}»: нет колонки «${f.column}»`);
+      await this.#call(`/api/v2/meta/views/${view.id}/filters`, {
+        method: 'POST',
+        body: JSON.stringify({
+          fk_column_id: columnId,
+          comparison_op: f.op,
+          value: f.value,
+          logical_op: 'and',
+        }),
+      });
+    }
+
+    for (const s of def.sorts || []) {
+      const columnId = idByTitle.get(s.column);
+      if (!columnId) throw new Error(`срез «${def.title}»: нет колонки «${s.column}»`);
+      await this.#call(`/api/v2/meta/views/${view.id}/sorts`, {
+        method: 'POST',
+        body: JSON.stringify({ fk_column_id: columnId, direction: s.direction }),
+      });
+    }
+
+    return view.id;
+  }
+
   /** Сколько строк уже лежит — чтобы не заливать повторно. */
   async count(tableId) {
     const payload = await this.#call(`/api/v2/tables/${tableId}/records/count`);

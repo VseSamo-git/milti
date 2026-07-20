@@ -19,8 +19,9 @@
  *   node run.js ./scripts/build_vitrina.js
  */
 import { loadConfig } from '../src/config.js';
-import { NocodbClient, num, text } from '../src/lib/nocodb.js';
+import { NocodbClient, num, select, text } from '../src/lib/nocodb.js';
 import { Registry } from '../src/lib/registry.js';
+import { SHEET_VIEWS } from '../src/lib/vitrina_views.js';
 
 const cfg = loadConfig();
 const client = new NocodbClient(cfg);
@@ -29,6 +30,33 @@ const registry = new Registry(cfg);
 // Числовые типы Postgres, которые должны стать числами и в витрине:
 // иначе NocoDB отсортирует площади как строки и поставит «900» выше «10000».
 const NUMERIC = new Set(['integer', 'bigint', 'numeric', 'double precision', 'real', 'smallint']);
+
+// Текстовая колонка с малым числом различных значений — это на самом деле
+// справочник: «Статус», «Тип», «Сеть», «Достоверность». В витрине они должны
+// быть плашками выбора, а не серым текстом: так их видно, по ним фильтруют
+// в один клик, и опечатка в фильтре становится невозможной.
+// Порог 15: у «Сети» одиннадцать значений, у адреса — тысячи.
+const MAX_ENUM_VALUES = 15;
+
+async function enumOptions(registry, view, column) {
+  const rows = await registry.sql.unsafe(
+    `SELECT DISTINCT "${column}" AS v FROM vitrina."${view}"
+     WHERE "${column}" IS NOT NULL LIMIT ${MAX_ENUM_VALUES + 1}`
+  );
+  // Одно значение на всю колонку — это не справочник, а константа:
+  // фильтровать по ней нечего, плашка только занимает место.
+  if (rows.length < 2 || rows.length > MAX_ENUM_VALUES) return null;
+
+  // dtxp перечисляет опции через запятую и обрамляет апострофами, поэтому
+  // значение с любым из этих символов он разрежет на куски. Поймано на
+  // живых данных: «офисное использование установлено городом (перечень
+  // 700-ПП), на картах как БЦ не значится» превратилось в две битые опции
+  // и уронило заливку. Такие колонки оставляем текстом.
+  const values = rows.map((r) => String(r.v));
+  if (values.some((v) => v.includes("'") || v.includes(','))) return null;
+
+  return values.sort();
+}
 
 try {
   const views = await registry.sql`
@@ -51,10 +79,17 @@ try {
     // а не накапливает следы прошлых прогонов.
     if (existing.has(view)) await client.deleteTable(existing.get(view));
 
-    const columns = cols.map((c, i) => {
-      const col = NUMERIC.has(c.data_type) ? num(c.column_name) : text(c.column_name);
-      return i === 0 ? { ...col, pv: true } : col;
-    });
+    const columns = [];
+    for (const [i, c] of cols.entries()) {
+      let col;
+      if (NUMERIC.has(c.data_type)) {
+        col = num(c.column_name);
+      } else {
+        const options = await enumOptions(registry, view, c.column_name);
+        col = options ? select(c.column_name, options) : text(c.column_name);
+      }
+      columns.push(i === 0 ? { ...col, pv: true } : col);
+    }
 
     const tableId = await client.createTable(view, columns);
 
@@ -74,7 +109,16 @@ try {
       );
     }
 
-    console.log(`✓ ${view}: ${rows.length} строк, ${cols.length} колонок`);
+    // Срезы создаём ПОСЛЕ заливки: фильтр по пустой таблице выглядит
+    // сломанным, и первое впечатление у Димы будет «ничего не работает».
+    const defs = SHEET_VIEWS[view] || [];
+    for (const def of defs) await client.createView(tableId, def);
+
+    const selects = columns.filter((c) => c.uidt === 'SingleSelect').length;
+    console.log(
+      `✓ ${view}: ${rows.length} строк, ${cols.length} колонок ` +
+        `(плашек ${selects}, срезов ${defs.length})`
+    );
   }
 
   console.log('');
