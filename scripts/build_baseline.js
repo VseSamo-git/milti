@@ -29,6 +29,7 @@ import { existsSync } from 'node:fs';
 
 import { loadConfig } from '../src/config.js';
 import { Registry, SOURCE_PP700 } from '../src/lib/registry.js';
+import { withRetry } from '../src/lib/retry.js';
 import { selfcheck, subtractOurPoints } from '../src/lib/subtract.js';
 import { ATTRIBUTION, buildUnomMapFromApi, saveUnomMap } from '../src/sources/addr_registry.js';
 import { NspdClient } from '../src/sources/nspd.js';
@@ -98,23 +99,28 @@ async function stageEnrich(registry, cfg) {
   let failed = 0;
 
   for (const [index, cadastralNo] of pending.entries()) {
-    let payload;
+    // Весь корпус объекта под защитой: ни сбой НСПД, ни обрыв базы не
+    // должны убить 40-часовой прогон. Упавший объект остаётся с
+    // area_source IS NULL и подхватится следующим запуском — прогон
+    // возобновляемый. Проверено болью: незащищённая запись в базу
+    // уронила прогон на 1461-м объекте по ECONNRESET.
     try {
-      payload = await client.fetchRaw(cadastralNo);
+      // Сетевые шаги — с повтором: и запрос к НСПД, и записи в облачную
+      // базу переживают короткий блип, а не роняют всё.
+      const payload = await withRetry(() => client.fetchRaw(cadastralNo));
+      if (payload === null) continue;
+
+      await withRetry(() => registry.recordObservation({ source: 'nspd', cadastralNo, payload }));
+
+      const record = client.parse(payload);
+      if (record !== null) {
+        await withRetry(() => registry.applyNspd(cadastralNo, record));
+        enriched += 1;
+      }
     } catch (error) {
       failed += 1;
       console.error(`[${index + 1}/${pending.length}] ${cadastralNo}: ${error.message}`);
       continue;
-    }
-
-    if (payload === null) continue;
-
-    await registry.recordObservation({ source: 'nspd', cadastralNo, payload });
-
-    const record = client.parse(payload);
-    if (record !== null) {
-      await registry.applyNspd(cadastralNo, record);
-      enriched += 1;
     }
 
     if ((index + 1) % 500 === 0) {
