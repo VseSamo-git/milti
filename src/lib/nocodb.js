@@ -138,7 +138,11 @@ export class NocodbClient {
  * уехали туда, прежде чем это заметили. Пустая ячейка честнее выдуманной.
  */
 export function formatCoords(lat, lon) {
-  if (lat === null || lat === undefined || lon === null || lon === undefined) return null;
+  // Пустая строка тоже пустое место: Number('') === 0, и без этой проверки
+  // '' проезжает как законный ноль. Поймано тестом, не глазами.
+  const missing = (v) => v === null || v === undefined || v === '';
+  if (missing(lat) || missing(lon)) return null;
+
   const [a, b] = [Number(lat), Number(lon)];
   if (!Number.isFinite(a) || !Number.isFinite(b)) return null;
   return `${a.toFixed(6)}, ${b.toFixed(6)}`;

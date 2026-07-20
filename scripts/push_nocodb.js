@@ -51,9 +51,15 @@ async function fill(tables, title, rows) {
   }
 
   const already = await client.count(id);
-  if (already > 0 && !force) {
-    console.log(`— «${title}»: уже ${already} строк, пропускаю (--force чтобы перезалить)`);
-    return 0;
+  if (already > 0) {
+    if (!force) {
+      console.log(`— «${title}»: уже ${already} строк, пропускаю (--force чтобы перезалить)`);
+      return 0;
+    }
+    // Без очистки --force дописал бы строки поверх существующих и
+    // удвоил таблицу. Сначала стираем, потом пишем.
+    const removed = await client.clear(id);
+    console.log(`   «${title}»: стёрто ${removed} старых строк`);
   }
 
   const sent = await client.insert(id, rows, {
