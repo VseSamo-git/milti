@@ -210,13 +210,16 @@ export class Registry {
     await this.sql`UPDATE kosmos.objects SET baseline_run = false`;
   }
   /**
-   * Записать точки OSM (конкуренты, ВУЗы, НИИ, супермаркеты).
+   * Записать точки (конкуренты со store-locator'ов, ВУЗы/НИИ/супермаркеты из OSM).
    *
-   * Ключ — osm_id. Повторный обход обновляет last_seen_at и воскрешает
-   * статус: точка, ранее помеченная кандидатом на закрытие, снова активна.
+   * Ключ — place_key: у OSM это 'node/123', у store-locator — 'chain:slug'.
+   * Провенанс построчный: source и confidence можно задать в самой точке
+   * (store-locator знает свой домен), либо через параметр source (OSM-источники).
+   * Координаты необязательны: French Bakery отдаёт адрес без них.
+   * Повторный обход обновляет last_seen_at и воскрешает статус.
    *
-   * @param {{osmId,kind,chain?,name?,lat,lon,street?,house?}[]} places
-   * @param {string} source
+   * @param {{placeKey?,osmId?,kind,chain?,name?,lat?,lon?,street?,house?,address?,source?,confidence?}[]} places
+   * @param {string} [source] — источник по умолчанию для точек без своего
    */
   async upsertPlaces(places, source) {
     if (!places.length) return 0;
@@ -224,28 +227,33 @@ export class Registry {
     let n = 0;
     for (let i = 0; i < places.length; i += CHUNK) {
       const rows = places.slice(i, i + CHUNK).map((p) => ({
-        osm_id: p.osmId,
+        place_key: p.placeKey ?? p.osmId,
         kind: p.kind,
         chain: p.chain ?? null,
         name: p.name ?? null,
-        lat: p.lat,
-        lon: p.lon,
+        lat: p.lat ?? null,
+        lon: p.lon ?? null,
         street: p.street ?? null,
         house: p.house ?? null,
-        source,
+        address: p.address ?? null,
+        source: p.source ?? source,
+        confidence: p.confidence ?? 'high',
       }));
       const res = await this.sql`
         INSERT INTO kosmos.places ${this.sql(
           rows,
-          'osm_id', 'kind', 'chain', 'name', 'lat', 'lon', 'street', 'house', 'source'
+          'place_key', 'kind', 'chain', 'name', 'lat', 'lon', 'street', 'house', 'address', 'source', 'confidence'
         )}
-        ON CONFLICT (osm_id) DO UPDATE SET
+        ON CONFLICT (place_key) DO UPDATE SET
           name         = EXCLUDED.name,
           chain        = EXCLUDED.chain,
           lat          = EXCLUDED.lat,
           lon          = EXCLUDED.lon,
           street       = EXCLUDED.street,
           house        = EXCLUDED.house,
+          address      = EXCLUDED.address,
+          source       = EXCLUDED.source,
+          confidence   = EXCLUDED.confidence,
           last_seen_at = now(),
           status       = 'активна'
       `;
@@ -255,19 +263,33 @@ export class Registry {
   }
 
   /**
+   * Разовая чистка перед переходом на store-locator'ы: удалить конкурентов,
+   * собранных из OSM. Это НЕ нарушение принципа «система не удаляет»: мы не
+   * помечаем реальные точки закрытыми, а вычищаем данные из дискредитированного
+   * источника (OSM давал 4–141% покрытия). Точность важнее сохранности мусора.
+   * @returns {number} сколько строк удалено
+   */
+  async deleteCompetitorsFromSource(source = 'osm_competitors') {
+    const res = await this.sql`
+      DELETE FROM kosmos.places WHERE kind = 'конкурент' AND source = ${source}
+    `;
+    return res.count ?? 0;
+  }
+
+  /**
    * Пометить точки, которых не было в свежем обходе.
    *
    * Именно пометить, а не удалить: OSM живёт правками людей, и точка может
    * пропасть из-за чужой ошибки. Статус «кандидат_на_закрытие» — приглашение
    * проверить, а не утверждение, что заведение закрылось.
    */
-  async markMissingPlaces(kind, seenOsmIds) {
+  async markMissingPlaces(kind, seenKeys) {
     const res = await this.sql`
       UPDATE kosmos.places
       SET status = 'кандидат_на_закрытие'
       WHERE kind = ${kind}
         AND status = 'активна'
-        AND NOT (osm_id = ANY(${seenOsmIds}))
+        AND NOT (place_key = ANY(${seenKeys}))
     `;
     return res.count ?? 0;
   }

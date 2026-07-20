@@ -15,40 +15,48 @@
 import { loadConfig } from '../src/config.js';
 import { Registry } from '../src/lib/registry.js';
 import { OSM_ATTRIBUTION } from '../src/lib/overpass.js';
-import { COMPETITOR_CHAINS, fetchAllCompetitors, SOURCE as SRC_COMP } from '../src/sources/competitors.js';
+import { fetchAllCompetitors } from '../src/sources/competitors.js';
 import { fetchResearchInstitutes, fetchUniversities, SOURCE as SRC_EDU } from '../src/sources/education.js';
 
+// Сети без первоисточника: свой store-locator за анти-ботом или отсутствует.
+// Их НЕ собираем автоматически (обход защиты не встраиваем) и честно называем,
+// чтобы «нет данных» не читалось как «сеть исчезла».
+const CHAINS_NO_SOURCE = ['drinkit', 'здрасте', 'parle market'];
+
 async function stageCompetitors(registry) {
-  console.log('=== КОНКУРЕНТЫ ===');
-  const { points, failed } = await fetchAllCompetitors({
-    onProgress: (chain, found, total, error) =>
-      console.log(
-        error ? `   ${chain}: НЕ ОТВЕТИЛ (${error.message.slice(0, 40)})` : `   ${chain}: ${found} (всего ${total})`
-      ),
+  console.log('=== КОНКУРЕНТЫ (store-locators сетей) ===');
+
+  // Разовая чистка данных из дискредитированного источника (OSM: покрытие
+  // 4–141%). Не пометка «закрыто», а удаление мусора — по решению 2026-07-20.
+  const purged = await registry.deleteCompetitorsFromSource('osm_competitors');
+  if (purged) console.log(`удалено старых OSM-точек: ${purged}`);
+
+  const { points, failed, coverage } = await fetchAllCompetitors({
+    onProgress: (e) => {
+      if (e.error) console.log(`   ${e.chain}: УПАЛ — ${e.error.message.slice(0, 40)}`);
+      else if (e.moscow === null) console.log(`   ${e.chain}: СЛОМАН — ${e.verdict.reason}`);
+      else console.log(`   ${e.chain}: Москва ${e.moscow}  (разбор ${e.verdict.reason})`);
+    },
   });
 
-  const written = await registry.upsertPlaces(
-    points.map((p) => ({ ...p, kind: 'конкурент' })),
-    SRC_COMP
-  );
+  const written = await registry.upsertPlaces(points.map((p) => ({ ...p, kind: 'конкурент' })));
   console.log(`записано точек: ${written}`);
 
-  // ВАЖНО. Помечать пропавшие точки можно ТОЛЬКО если обход был полным.
-  // Иначе сеть, не ответившая из-за таймаута Overpass, будет целиком
-  // помечена «закрылась» — и Дима в воскресенье прочтёт, что Шоколадница
-  // ушла из Москвы. Молчаливая ложь хуже отсутствия данных.
+  // Пометка «кандидат на закрытие» — ТОЛЬКО при полном обходе. Сломанный
+  // парсер (канарейка) попадает в failed; при этом целую сеть нельзя объявить
+  // закрытой из-за сбоя источника — Дима прочёл бы, что Шоколадница ушла.
   if (failed.length === 0) {
-    const marked = await registry.markMissingPlaces('конкурент', points.map((p) => p.osmId));
+    const marked = await registry.markMissingPlaces('конкурент', points.map((p) => p.placeKey));
     console.log(`помечено кандидатами на закрытие: ${marked}`);
   } else {
     console.log('');
-    console.log(`ВНИМАНИЕ: не ответили сети: ${failed.map((f) => f.chain).join(', ')}`);
-    console.log('Пометка закрытий ПРОПУЩЕНА — обход неполный, иначе целая сеть');
-    console.log('была бы объявлена закрытой из-за сбоя источника.');
+    console.log(`ВНИМАНИЕ: не собрались сети: ${failed.map((f) => f.chain).join(', ')}`);
+    console.log('Пометка закрытий ПРОПУЩЕНА — обход неполный.');
   }
 
   console.log(`всего в реестре: ${await registry.countPlaces('конкурент')}`);
-  return failed;
+  console.log(`без первоисточника (не собраны, нужен вторичный): ${CHAINS_NO_SOURCE.join(', ')}`);
+  return { failed, coverage };
 }
 
 async function stageEducation(registry) {
