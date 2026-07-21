@@ -16,7 +16,12 @@
  * максимум, и это цена, которую видно и можно назвать.
  *
  * Запуск:
- *   node run.js ./scripts/build_vitrina.js
+ *   node run.js ./scripts/build_vitrina.js            — все семь листов
+ *   node run.js ./scripts/build_vitrina.js 7          — только лист 7
+ *   node run.js ./scripts/build_vitrina.js "7 Конкуренты"
+ *
+ * Точечная пересборка бережёт остальные листы: полный прогон дропает и
+ * создаёт КАЖДУЮ таблицу заново, а Дима уже мог начать работать в базе.
  */
 import { loadConfig } from '../src/config.js';
 import { NocodbClient, num, select, text } from '../src/lib/nocodb.js';
@@ -59,12 +64,21 @@ async function enumOptions(registry, view, column) {
 }
 
 try {
-  const views = await registry.sql`
+  const allViews = await registry.sql`
     SELECT table_name FROM information_schema.views
     WHERE table_schema = 'vitrina' AND table_name ~ '^[1-9] '
     ORDER BY table_name`;
 
-  console.log(`листов к сборке: ${views.length}`);
+  // Необязательный фильтр: номер листа ('7') или полное имя ('7 Конкуренты').
+  const only = (process.argv[2] || '').trim();
+  const views = only
+    ? allViews.filter((v) => v.table_name === only || v.table_name.startsWith(`${only} `))
+    : allViews;
+  if (only && views.length === 0) {
+    throw new Error(`лист «${only}» не найден. Есть: ${allViews.map((v) => v.table_name).join(', ')}`);
+  }
+
+  console.log(`листов к сборке: ${views.length}${only ? ` (фильтр «${only}»)` : ''}`);
   const existing = await client.tables();
 
   for (const { table_name: view } of views) {

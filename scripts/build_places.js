@@ -15,16 +15,17 @@
 import { loadConfig } from '../src/config.js';
 import { Registry } from '../src/lib/registry.js';
 import { OSM_ATTRIBUTION } from '../src/lib/overpass.js';
+import { ADAPTERS } from '../src/sources/competitors/index.js';
+import { SECONDARY_ADAPTERS, SECONDARY_SOURCE } from '../src/sources/competitors/osm_secondary.js';
 import { fetchAllCompetitors } from '../src/sources/competitors.js';
 import { fetchResearchInstitutes, fetchUniversities, SOURCE as SRC_EDU } from '../src/sources/education.js';
 
-// Сети без первоисточника: свой store-locator за анти-ботом или отсутствует.
-// Их НЕ собираем автоматически (обход защиты не встраиваем) и честно называем,
-// чтобы «нет данных» не читалось как «сеть исчезла».
-const CHAINS_NO_SOURCE = ['drinkit', 'здрасте', 'parle market'];
+// Восемь сетей с первоисточником (store-locator) + три вторичных из OSM
+// (drinkit, здрасте, parle market — их локатор за анти-ботом или отсутствует).
+const PRIMARY_CHAINS = new Set(ADAPTERS.map((a) => a.chain));
 
 async function stageCompetitors(registry) {
-  console.log('=== КОНКУРЕНТЫ (store-locators сетей) ===');
+  console.log('=== КОНКУРЕНТЫ ===');
 
   // Разовая чистка данных из дискредитированного источника (OSM: покрытие
   // 4–141%). Не пометка «закрыто», а удаление мусора — по решению 2026-07-20.
@@ -32,30 +33,46 @@ async function stageCompetitors(registry) {
   if (purged) console.log(`удалено старых OSM-точек: ${purged}`);
 
   const { points, failed, coverage } = await fetchAllCompetitors({
+    adapters: [...ADAPTERS, ...SECONDARY_ADAPTERS],
     onProgress: (e) => {
       if (e.error) console.log(`   ${e.chain}: УПАЛ — ${e.error.message.slice(0, 40)}`);
       else if (e.moscow === null) console.log(`   ${e.chain}: СЛОМАН — ${e.verdict.reason}`);
-      else console.log(`   ${e.chain}: Москва ${e.moscow}  (разбор ${e.verdict.reason})`);
+      else console.log(`   ${e.chain}: Москва ${e.moscow}  (${e.verdict.reason})`);
     },
   });
 
   const written = await registry.upsertPlaces(points.map((p) => ({ ...p, kind: 'конкурент' })));
   console.log(`записано точек: ${written}`);
 
-  // Пометка «кандидат на закрытие» — ТОЛЬКО при полном обходе. Сломанный
-  // парсер (канарейка) попадает в failed; при этом целую сеть нельзя объявить
-  // закрытой из-за сбоя источника — Дима прочёл бы, что Шоколадница ушла.
-  if (failed.length === 0) {
-    const marked = await registry.markMissingPlaces('конкурент', points.map((p) => p.placeKey));
+  // Пометка «кандидат на закрытие» — деликатная операция:
+  //   1. только если НИ ОДИН первичный store-locator не упал — иначе целую
+  //      сеть объявишь закрытой из-за сбоя источника (Дима прочёл бы, что
+  //      Шоколадница ушла). Сбой вторичного (OSM лёг) первички не блокирует;
+  //   2. вторичные точки (OSM) из пометки исключены совсем: в краудсорсе
+  //      пропажа точки — чужая недонесённая правка, а не закрытие.
+  const primaryFailed = failed.filter((f) => PRIMARY_CHAINS.has(f.chain));
+  if (primaryFailed.length === 0) {
+    const marked = await registry.markMissingPlaces(
+      'конкурент',
+      points.map((p) => p.placeKey),
+      { excludeSources: [SECONDARY_SOURCE] }
+    );
     console.log(`помечено кандидатами на закрытие: ${marked}`);
   } else {
     console.log('');
-    console.log(`ВНИМАНИЕ: не собрались сети: ${failed.map((f) => f.chain).join(', ')}`);
-    console.log('Пометка закрытий ПРОПУЩЕНА — обход неполный.');
+    console.log(`ВНИМАНИЕ: упали первичные сети: ${primaryFailed.map((f) => f.chain).join(', ')}`);
+    console.log('Пометка закрытий ПРОПУЩЕНА — обход первички неполный.');
   }
 
-  console.log(`всего в реестре: ${await registry.countPlaces('конкурент')}`);
-  console.log(`без первоисточника (не собраны, нужен вторичный): ${CHAINS_NO_SOURCE.join(', ')}`);
+  // Отдельно печатаем вторичные: сколько собрали и какая это доля сети.
+  const partial = coverage.filter((c) => c.status === 'partial');
+  if (partial.length) {
+    console.log('');
+    console.log('вторичные (OSM, неполно, помечены confidence=low):');
+    for (const c of partial) console.log(`   ${c.chain}: ${c.reason}`);
+  }
+
+  console.log(`\nвсего в реестре: ${await registry.countPlaces('конкурент')}`);
   return { failed, coverage };
 }
 

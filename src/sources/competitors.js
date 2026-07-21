@@ -34,27 +34,29 @@ const COVERAGE_FLOOR = 0.7;
  * @param {number} rawCount — сколько точек распарсил адаптер (ДО фильтра Москвы)
  * @param {number|null} stated — сколько сеть заявляет о себе
  * @param {number|null} expectedMin — мягкий эталон из разведки, если stated нет
- * @returns {{status:'ok'|'estimate'|'broken', reason:string, ref:number|null}}
+ * @param {'primary'|'secondary'} kind — вторичный источник (OSM) заведомо неполон
+ * @returns {{status:'ok'|'estimate'|'broken'|'partial', reason:string, ref:number|null}}
  */
-export function checkCoverage(rawCount, stated, expectedMin = null) {
+export function checkCoverage(rawCount, stated, expectedMin = null, kind = 'primary') {
   const ref = stated ?? expectedMin;
   if (rawCount === 0) return { status: 'broken', reason: '0 точек — источник не отдал список', ref };
   if (!ref) return { status: 'estimate', reason: `${rawCount} точек, эталона для сверки нет`, ref: null };
 
   const ratio = rawCount / ref;
+  const pct = `${rawCount} из ~${ref} (${Math.round(ratio * 100)}%)`;
+
+  // Вторичный источник (OSM) неполон по своей природе — это НЕ поломка.
+  // Пишем что есть, но честно называем долей, чтобы никто не принял
+  // краудсорс за полный обход store-locator'а.
+  if (kind === 'secondary') {
+    return { status: 'partial', reason: `${pct} — вторичный источник (OSM), неполно`, ref };
+  }
+
   if (ratio < COVERAGE_FLOOR) {
-    return {
-      status: 'broken',
-      reason: `${rawCount} из ~${ref} (${Math.round(ratio * 100)}%) — парсер сломан`,
-      ref,
-    };
+    return { status: 'broken', reason: `${pct} — парсер сломан`, ref };
   }
   // stated есть и сошлось → «ok»; сверка была лишь с оценкой → «estimate».
-  return {
-    status: stated ? 'ok' : 'estimate',
-    reason: `${rawCount} из ~${ref} (${Math.round(ratio * 100)}%)`,
-    ref,
-  };
+  return { status: stated ? 'ok' : 'estimate', reason: pct, ref };
 }
 
 /**
@@ -80,7 +82,7 @@ export async function fetchAllCompetitors({ adapters = ADAPTERS, onProgress } = 
     }
 
     const raw = result.raw || [];
-    const verdict = checkCoverage(raw.length, result.stated ?? null, adapter.expectedMin ?? null);
+    const verdict = checkCoverage(raw.length, result.stated ?? null, adapter.expectedMin ?? null, adapter.kind);
     coverage.push({ chain: adapter.chain, raw: raw.length, stated: result.stated ?? null, ...verdict });
 
     if (verdict.status === 'broken') {

@@ -52,6 +52,39 @@ test('канарейка: мало точек относительно заяв�
   assert.equal(checkCoverage(78, null, 70).status, 'estimate'); // сверка с оценкой
 });
 
+test('вторичный источник (OSM) неполон — это partial, а НЕ broken', () => {
+  // drinkit: 47 из ~116 (40%). Для store-locator'а это «сломан», для OSM — норма.
+  assert.equal(checkCoverage(47, null, 116, 'secondary').status, 'partial');
+  assert.equal(checkCoverage(3, null, 24, 'secondary').status, 'partial'); // parle 12%
+  // Но пустой ответ — всё равно поломка: источник не отдал ничего.
+  assert.equal(checkCoverage(0, null, 116, 'secondary').status, 'broken');
+  // Тот же расклад для первички остаётся broken — режимы не перепутаны.
+  assert.equal(checkCoverage(47, null, 116, 'primary').status, 'broken');
+});
+
+test('вторичная сеть: точки пишутся, помечены low, в failed НЕ уходит', async () => {
+  const adapters = [
+    {
+      chain: 'вторичная',
+      source: 'osm_secondary',
+      confidence: 'low',
+      kind: 'secondary',
+      expectedMin: 100,
+      async fetch() {
+        // 20 из 100 — для OSM ожидаемая неполнота
+        return { stated: null, raw: Array.from({ length: 20 }, (_, i) => ({
+          id: `node/${i}`, name: `т${i}`, address: 'Москва', lat: 55.75, lon: 37.6,
+        })) };
+      },
+    },
+  ];
+  const { points, failed, coverage } = await fetchAllCompetitors({ adapters });
+  assert.equal(failed.length, 0, 'вторичная неполнота — не failed');
+  assert.equal(points.length, 20, 'собранные точки пишутся');
+  assert.ok(points.every((p) => p.confidence === 'low'), 'вторичные помечены low');
+  assert.equal(coverage[0].status, 'partial');
+});
+
 test('сломанная сеть уходит в failed и НЕ пишется в базу', async () => {
   const adapters = [
     {

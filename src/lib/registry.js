@@ -238,36 +238,45 @@ export class Registry {
     const CHUNK = 500;
     let n = 0;
     for (let i = 0; i < places.length; i += CHUNK) {
-      const rows = places.slice(i, i + CHUNK).map((p) => ({
-        place_key: p.placeKey ?? p.osmId,
-        kind: p.kind,
-        chain: p.chain ?? null,
-        name: p.name ?? null,
-        lat: p.lat ?? null,
-        lon: p.lon ?? null,
-        street: p.street ?? null,
-        house: p.house ?? null,
-        address: p.address ?? null,
-        source: p.source ?? source,
-        confidence: p.confidence ?? 'high',
-      }));
+      const rows = places.slice(i, i + CHUNK).map((p) => {
+        const src = p.source ?? source;
+        const address = p.address ?? null;
+        return {
+          place_key: p.placeKey ?? p.osmId,
+          kind: p.kind,
+          chain: p.chain ?? null,
+          name: p.name ?? null,
+          lat: p.lat ?? null,
+          lon: p.lon ?? null,
+          street: p.street ?? null,
+          house: p.house ?? null,
+          address,
+          // Констрейнт address_needs_source: адрес без источника недопустим.
+          // Адрес пришёл из того же источника, что и точка (миграция 004
+          // так же бэкофиллила старые строки). Нет адреса — нет и источника.
+          address_source: address === null ? null : (p.addressSource ?? src),
+          source: src,
+          confidence: p.confidence ?? 'high',
+        };
+      });
       const res = await this.sql`
         INSERT INTO kosmos.places ${this.sql(
           rows,
-          'place_key', 'kind', 'chain', 'name', 'lat', 'lon', 'street', 'house', 'address', 'source', 'confidence'
+          'place_key', 'kind', 'chain', 'name', 'lat', 'lon', 'street', 'house', 'address', 'address_source', 'source', 'confidence'
         )}
         ON CONFLICT (place_key) DO UPDATE SET
-          name         = EXCLUDED.name,
-          chain        = EXCLUDED.chain,
-          lat          = EXCLUDED.lat,
-          lon          = EXCLUDED.lon,
-          street       = EXCLUDED.street,
-          house        = EXCLUDED.house,
-          address      = EXCLUDED.address,
-          source       = EXCLUDED.source,
-          confidence   = EXCLUDED.confidence,
-          last_seen_at = now(),
-          status       = 'активна'
+          name           = EXCLUDED.name,
+          chain          = EXCLUDED.chain,
+          lat            = EXCLUDED.lat,
+          lon            = EXCLUDED.lon,
+          street         = EXCLUDED.street,
+          house          = EXCLUDED.house,
+          address        = EXCLUDED.address,
+          address_source = EXCLUDED.address_source,
+          source         = EXCLUDED.source,
+          confidence     = EXCLUDED.confidence,
+          last_seen_at   = now(),
+          status         = 'активна'
       `;
       n += res.count ?? rows.length;
     }
@@ -295,13 +304,14 @@ export class Registry {
    * пропасть из-за чужой ошибки. Статус «кандидат_на_закрытие» — приглашение
    * проверить, а не утверждение, что заведение закрылось.
    */
-  async markMissingPlaces(kind, seenKeys) {
+  async markMissingPlaces(kind, seenKeys, { excludeSources = [] } = {}) {
     const res = await this.sql`
       UPDATE kosmos.places
       SET status = 'кандидат_на_закрытие'
       WHERE kind = ${kind}
         AND status = 'активна'
         AND NOT (place_key = ANY(${seenKeys}))
+        AND NOT (source = ANY(${excludeSources}))
     `;
     return res.count ?? 0;
   }
