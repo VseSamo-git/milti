@@ -40,5 +40,15 @@ export function loadConfig(env = process.env) {
     nocodbUrl: env.KOSMOS_NOCODB_URL || 'https://app.nocodb.com',
     nocodbToken: env.KOSMOS_NOCODB_TOKEN || null,
     nocodbBase: env.KOSMOS_NOCODB_BASE || null,
+    // Телеграм-агент Димы: пишет боту словами, агент делает.
+    // Ключ Anthropic — мозг агента; токен бота — из @BotFather;
+    // whitelist — Telegram-id тех, кому можно (иначе бот молчит всем).
+    anthropicKey: env.ANTHROPIC_API_KEY || null,
+    botModel: env.KOSMOS_BOT_MODEL || 'claude-haiku-4-5',
+    telegramToken: env.KOSMOS_TELEGRAM_TOKEN || null,
+    telegramAllowedIds: (env.KOSMOS_TELEGRAM_ALLOWED || '')
+      .split(',')
+      .map((s) => s.trim())
+      .filter(Boolean),
   };
 }
