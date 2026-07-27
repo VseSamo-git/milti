@@ -22,6 +22,7 @@
 import { readFile } from 'node:fs/promises';
 
 import { loadConfig } from '../src/config.js';
+import { isMain } from '../src/lib/is_main.js';
 import { buildIndex, findNearest } from '../src/lib/nearest.js';
 import { Registry } from '../src/lib/registry.js';
 import { ATTRIBUTION } from '../src/sources/addr_registry.js';
@@ -29,14 +30,13 @@ import { ATTRIBUTION } from '../src/sources/addr_registry.js';
 const BUILDINGS = 'data/buildings.json';
 const SOURCE = 'addr_registry';
 
-// Порог по умолчанию — 100 м. Центр здания и точка внутри него дальше
-// этого расходятся редко; на большем расстоянии начинается соседний дом.
-const maxArg = process.argv.find((a) => a.startsWith('--max='));
-const MAX_METERS = maxArg ? Number(maxArg.split('=')[1]) : 100;
-
-const registry = new Registry(loadConfig());
-
-try {
+/**
+ * Привязать адреса всем точкам без адреса, но с координатами.
+ * @param {Registry} registry
+ * @param {{maxMeters?: number}} opts — порог, дальше которого адрес не берём
+ * @returns {{written: number, tooFar: number}}
+ */
+export async function linkAddresses(registry, { maxMeters = 100 } = {}) {
   const buildings = JSON.parse(await readFile(BUILDINGS, 'utf8'));
   console.log(`справочник зданий: ${buildings.length}`);
   const grid = buildIndex(buildings);
@@ -46,13 +46,13 @@ try {
     SELECT id, kind, name, lat, lon FROM kosmos.places
     WHERE address IS NULL AND lat IS NOT NULL AND lon IS NOT NULL`;
   console.log(`точек без адреса, но с координатами: ${places.length}`);
-  console.log(`порог: ${MAX_METERS} м`);
+  console.log(`порог: ${maxMeters} м`);
 
   const matched = [];
   let tooFar = 0;
 
   for (const place of places) {
-    const hit = findNearest(grid, Number(place.lat), Number(place.lon), MAX_METERS);
+    const hit = findNearest(grid, Number(place.lat), Number(place.lon), maxMeters);
     if (hit === null) {
       tooFar += 1;
       continue;
@@ -95,6 +95,16 @@ try {
 
   console.log('');
   console.log(ATTRIBUTION);
-} finally {
-  await registry.close();
+  return { written, tooFar };
+}
+
+if (isMain(import.meta.url)) {
+  const maxArg = process.argv.find((a) => a.startsWith('--max='));
+  const maxMeters = maxArg ? Number(maxArg.split('=')[1]) : 100;
+  const registry = new Registry(loadConfig());
+  try {
+    await linkAddresses(registry, { maxMeters });
+  } finally {
+    await registry.close();
+  }
 }

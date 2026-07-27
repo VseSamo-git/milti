@@ -19,12 +19,13 @@ import { ADAPTERS } from '../src/sources/competitors/index.js';
 import { SECONDARY_ADAPTERS, SECONDARY_SOURCE } from '../src/sources/competitors/osm_secondary.js';
 import { fetchAllCompetitors } from '../src/sources/competitors.js';
 import { fetchResearchInstitutes, fetchUniversities, SOURCE as SRC_EDU } from '../src/sources/education.js';
+import { isMain } from '../src/lib/is_main.js';
 
 // Восемь сетей с первоисточником (store-locator) + три вторичных из OSM
 // (drinkit, здрасте, parle market — их локатор за анти-ботом или отсутствует).
 const PRIMARY_CHAINS = new Set(ADAPTERS.map((a) => a.chain));
 
-async function stageCompetitors(registry) {
+export async function stageCompetitors(registry) {
   console.log('=== КОНКУРЕНТЫ ===');
 
   // Разовая чистка данных из дискредитированного источника (OSM: покрытие
@@ -76,7 +77,7 @@ async function stageCompetitors(registry) {
   return { failed, coverage };
 }
 
-async function stageEducation(registry) {
+export async function stageEducation(registry) {
   console.log('=== ВУЗЫ И КОЛЛЕДЖИ ===');
   const universities = await fetchUniversities();
   const uniWritten = await registry.upsertPlaces(
@@ -97,14 +98,15 @@ async function stageEducation(registry) {
   console.log(`всего в реестре: ${await registry.countPlaces('нии')}`);
 }
 
-const stage = process.argv[2] || 'all';
-const registry = new Registry(loadConfig());
-
-try {
-  if (stage === 'competitors' || stage === 'all') await stageCompetitors(registry);
-  if (stage === 'education' || stage === 'all') await stageEducation(registry);
-  console.log('');
-  console.log(OSM_ATTRIBUTION);
-} finally {
-  await registry.close();
+if (isMain(import.meta.url)) {
+  const stage = process.argv[2] || 'all';
+  const registry = new Registry(loadConfig());
+  try {
+    if (stage === 'competitors' || stage === 'all') await stageCompetitors(registry);
+    if (stage === 'education' || stage === 'all') await stageEducation(registry);
+    console.log('');
+    console.log(OSM_ATTRIBUTION);
+  } finally {
+    await registry.close();
+  }
 }

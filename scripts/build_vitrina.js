@@ -24,13 +24,10 @@
  * создаёт КАЖДУЮ таблицу заново, а Дима уже мог начать работать в базе.
  */
 import { loadConfig } from '../src/config.js';
+import { isMain } from '../src/lib/is_main.js';
 import { NocodbClient, num, select, text } from '../src/lib/nocodb.js';
 import { Registry } from '../src/lib/registry.js';
 import { SHEET_VIEWS } from '../src/lib/vitrina_views.js';
-
-const cfg = loadConfig();
-const client = new NocodbClient(cfg);
-const registry = new Registry(cfg);
 
 // Числовые типы Postgres, которые должны стать числами и в витрине:
 // иначе NocoDB отсортирует площади как строки и поставит «900» выше «10000».
@@ -63,14 +60,21 @@ async function enumOptions(registry, view, column) {
   return values.sort();
 }
 
-try {
+/**
+ * Собрать витрину Димы в NocoDB из вью схемы vitrina.
+ * @param {object} cfg — конфиг (dbUrl, nocodb*)
+ * @param {{only?: string}} opts — номер/имя одного листа; пусто — все семь
+ */
+export async function buildVitrina(cfg, { only = '' } = {}) {
+  const client = new NocodbClient(cfg);
+  const registry = new Registry(cfg);
+  try {
   const allViews = await registry.sql`
     SELECT table_name FROM information_schema.views
     WHERE table_schema = 'vitrina' AND table_name ~ '^[1-9] '
     ORDER BY table_name`;
 
-  // Необязательный фильтр: номер листа ('7') или полное имя ('7 Конкуренты').
-  const only = (process.argv[2] || '').trim();
+  only = String(only || '').trim();
   const views = only
     ? allViews.filter((v) => v.table_name === only || v.table_name.startsWith(`${only} `))
     : allViews;
@@ -137,6 +141,12 @@ try {
 
   console.log('');
   console.log(`Витрина готова: ${cfg.nocodbUrl}`);
-} finally {
-  await registry.close();
+  } finally {
+    await registry.close();
+  }
+}
+
+if (isMain(import.meta.url)) {
+  // Необязательный фильтр: номер листа ('7') или полное имя ('7 Конкуренты').
+  await buildVitrina(loadConfig(), { only: process.argv[2] || '' });
 }

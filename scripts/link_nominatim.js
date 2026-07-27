@@ -16,6 +16,7 @@
  *   node run.js ./scripts/link_nominatim.js
  */
 import { loadConfig } from '../src/config.js';
+import { isMain } from '../src/lib/is_main.js';
 import { Registry } from '../src/lib/registry.js';
 
 const UA = 'kosmos-mealty/1.0 (address backfill; contact pochtavsesamo@gmail.com)';
@@ -37,9 +38,12 @@ async function reverse(lat, lon) {
   return line || j.display_name || null;
 }
 
-const registry = new Registry(loadConfig());
-
-try {
+/**
+ * Добить адреса конкурентам без адреса обратным геокодером OSM.
+ * @param {Registry} registry
+ * @returns {{written: number}}
+ */
+export async function linkNominatim(registry) {
   const gap = await registry.sql`
     SELECT id, chain, name, lat, lon FROM kosmos.places
     WHERE kind='конкурент' AND address IS NULL AND lat IS NOT NULL AND lon IS NOT NULL`;
@@ -70,7 +74,15 @@ try {
     SELECT count(*)::int total, count(*) FILTER (WHERE address IS NOT NULL)::int with_addr
     FROM kosmos.places WHERE kind='конкурент'`;
   console.log(`конкуренты: ${c.total} всего, ${c.with_addr} с адресом`);
-  console.log('\n© OpenStreetMap contributors / Nominatim, ODbL.');
-} finally {
-  await registry.close();
+  console.log('© OpenStreetMap contributors / Nominatim, ODbL.');
+  return { written };
+}
+
+if (isMain(import.meta.url)) {
+  const registry = new Registry(loadConfig());
+  try {
+    await linkNominatim(registry);
+  } finally {
+    await registry.close();
+  }
 }
