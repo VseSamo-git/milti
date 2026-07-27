@@ -98,6 +98,15 @@ async function stageEnrich(registry, cfg) {
   let enriched = 0;
   let failed = 0;
 
+  // Предохранитель от бана. 403 у НСПД — это WAF режет наш IP по правилу,
+  // а не разовый сбой. Продолжать долбить забаненный портал бессмысленно
+  // и вредно: серия запросов только углубляет бан (проверено болью —
+  // домашний IP 192.144.14.117 словил бан правилом WAF после того, как
+  // прогон грыз 403 во время сетевого блипа). Поэтому N подряд 403 → обрыв.
+  const FORBIDDEN_LIMIT = 5;
+  let consecutive403 = 0;
+  let bannedAbort = false;
+
   for (const [index, cadastralNo] of pending.entries()) {
     // Весь корпус объекта под защитой: ни сбой НСПД, ни обрыв базы не
     // должны убить 40-часовой прогон. Упавший объект остаётся с
@@ -108,6 +117,7 @@ async function stageEnrich(registry, cfg) {
       // Сетевые шаги — с повтором: и запрос к НСПД, и записи в облачную
       // базу переживают короткий блип, а не роняют всё.
       const payload = await withRetry(() => client.fetchRaw(cadastralNo));
+      consecutive403 = 0; // дошли до ответа — IP не забанен
       if (payload === null) continue;
 
       await withRetry(() => registry.recordObservation({ source: 'nspd', cadastralNo, payload }));
@@ -119,6 +129,20 @@ async function stageEnrich(registry, cfg) {
       }
     } catch (error) {
       failed += 1;
+      if (/\b403\b/.test(error.message || '')) {
+        consecutive403 += 1;
+        if (consecutive403 >= FORBIDDEN_LIMIT) {
+          console.error(
+            `\nНСПД банит наш IP: ${consecutive403} подряд 403. Обрываю прогон, ` +
+              `чтобы не углублять бан. Смени IP (сервер/VPN) или переждни снятие бана, ` +
+              `затем перезапусти — прогон возобновляемый (пройденные пропускаются).`
+          );
+          bannedAbort = true;
+          break;
+        }
+      } else {
+        consecutive403 = 0;
+      }
       console.error(`[${index + 1}/${pending.length}] ${cadastralNo}: ${error.message}`);
       continue;
     }
@@ -134,6 +158,9 @@ async function stageEnrich(registry, cfg) {
   }
 
   console.log(`обогащено: ${enriched}, ошибок: ${failed}`);
+  // Ненулевой код выхода при бане: чтобы фон/оркестратор не счёл прогон
+  // успешным и не пошёл дальше по конвейеру на неполных данных.
+  if (bannedAbort) process.exitCode = 3;
 }
 
 async function stageUnom(registry) {
