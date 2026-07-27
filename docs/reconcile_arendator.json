@@ -1,14 +1,358 @@
 {
  "generatedFor": "≥10000 м² Москва (Арендатор)",
- "matchThresholdM": 150,
+ "matchThresholdM": 80,
  "counts": {
-  "arendator": 152,
-  "matched": 131,
-  "missing": 21
+  "arendator": 782,
+  "matched": 644,
+  "missing": 138
  },
  "missing": [
   {
-   "name": null,
+   "name": "maunt vorkplejs",
+   "address": "г. Москва, ЗАО, район Солнцево, Боровское шоссе 2а",
+   "lat": 55.662938,
+   "lon": 37.427408,
+   "url": "https://www.arendator.ru/objects/53387-maunt_vorkplejs/",
+   "nearestM": 116
+  },
+  {
+   "name": "upside kuncevo",
+   "address": "г. Москва, ЗАО, район Кунцево, Рублевское шоссе 21",
+   "lat": 55.729726,
+   "lon": 37.441772,
+   "url": "https://www.arendator.ru/objects/52907-upside_kuncevo/",
+   "nearestM": 134
+  },
+  {
+   "name": "lejks vorkplejs",
+   "address": "г. Москва, ЗАО, район Очаково-Матвеевское, Озерная улица 42а",
+   "lat": 55.672707,
+   "lon": 37.446084,
+   "url": "https://www.arendator.ru/objects/53077-lejks_vorkplejs/",
+   "nearestM": 241
+  },
+  {
+   "name": "khimki one himki 1",
+   "address": "г. Химки (Московская обл), Ленинградская улица 25",
+   "lat": 55.88838,
+   "lon": 37.4378009,
+   "url": "https://www.arendator.ru/objects/8781-khimki_one_himki_1/",
+   "nearestM": 1038
+  },
+  {
+   "name": "kalibr-5",
+   "address": "г. Москва, СВАО, район Останкинский, Годовикова улица 9",
+   "lat": 55.806808,
+   "lon": 37.625612,
+   "url": "https://www.arendator.ru/objects/35077-kalibr-5/",
+   "nearestM": 150
+  },
+  {
+   "name": "1-ya frezernaya 2",
+   "address": "г. Москва, ЮВАО, район Нижегородский, Фрезерная 1-я улица 2/1с1",
+   "lat": 55.74179411066893,
+   "lon": 37.740224119048634,
+   "url": "https://www.arendator.ru/objects/52313-1-ya_frezernaya_2/",
+   "nearestM": 129
+  },
+  {
+   "name": "park plejs moskou",
+   "address": "г. Москва, ЮЗАО, район Обручевский, Ленинский проспект 113/1",
+   "lat": 55.65590883674901,
+   "lon": 37.49824778413072,
+   "url": "https://www.arendator.ru/objects/9274-park_plejs_moskou/",
+   "nearestM": 293
+  },
+  {
+   "name": "green point",
+   "address": "г. Химки (Московская обл), Панфилова улица 19с1",
+   "lat": 55.881446926318254,
+   "lon": 37.4330346488085,
+   "url": "https://www.arendator.ru/objects/51024-green_point/",
+   "nearestM": 540
+  },
+  {
+   "name": "simonov plaza",
+   "address": "г. Москва, Ленинская 26с5",
+   "lat": 55.71124,
+   "lon": 37.652436,
+   "url": "https://www.arendator.ru/objects/30362-simonov_plaza/",
+   "nearestM": 83
+  },
+  {
+   "name": "icity",
+   "address": "г. Москва, ​Шмитовский вл37",
+   "lat": 55.755302,
+   "lon": 37.530355,
+   "url": "https://www.arendator.ru/objects/49827-icity/",
+   "nearestM": 89
+  },
+  {
+   "name": "rts nagatinskij",
+   "address": "г. Москва, ЮАО, район Нагатино-Садовники, Хлебозаводский проезд 7 корп.10",
+   "lat": 55.669422,
+   "lon": 37.6314,
+   "url": "https://www.arendator.ru/objects/8806-rts_nagatinskij/",
+   "nearestM": 96
+  },
+  {
+   "name": "orbita 2",
+   "address": "г. Москва, СЗАО, район Строгино, Кулакова улица 20к1",
+   "lat": 55.803410434043236,
+   "lon": 37.389546320098425,
+   "url": "https://www.arendator.ru/objects/8300-orbita_2/",
+   "nearestM": 95
+  },
+  {
+   "name": "fabrika bc polar",
+   "address": "г. Электросталь (Московская обл), Тевосяна улица 25",
+   "lat": 55.779084,
+   "lon": 38.445828,
+   "url": "https://www.arendator.ru/objects/50329-fabrika_bc_polar/",
+   "nearestM": 32294
+  },
+  {
+   "name": "sheremetevskij-2",
+   "address": "г. Москва, аэропорт Шереметьево имени А. С. Пушкина вл 5",
+   "lat": 55.96797,
+   "lon": 37.433301,
+   "url": "https://www.arendator.ru/objects/11945-sheremetevskij-2/",
+   "nearestM": 2197
+  },
+  {
+   "name": "krasnogorsk-plaza",
+   "address": "г. Красногорск (Красногорский р-н, Московская обл), Ильинское шоссе 1а",
+   "lat": 55.815241,
+   "lon": 37.352884,
+   "url": "https://www.arendator.ru/objects/8344-krasnogorsk-plaza/",
+   "nearestM": 873
+  },
+  {
+   "name": "madex-2",
+   "address": "д. Малые Вяземы (Одинцовский р-н, Московская обл), Петровский проезд вл. 5",
+   "lat": 55.633348,
+   "lon": 37.019223,
+   "url": "https://www.arendator.ru/objects/49324-madex-2/",
+   "nearestM": 6920
+  },
+  {
+   "name": "aero siti",
+   "address": "г. Химки (Московская обл), Куркинское шоссе 2",
+   "lat": 55.883434,
+   "lon": 37.434289,
+   "url": "https://www.arendator.ru/objects/8878-aero_siti/",
+   "nearestM": 774
+  },
+  {
+   "name": "botanica ye039s botanicheskij sad",
+   "address": "г. Москва, СВАО, район Ростокино, Леонова 1-я улица 18",
+   "lat": 55.845139743843596,
+   "lon": 37.638911041662844,
+   "url": "https://www.arendator.ru/objects/49866-botanica_ye039s_botanicheskij_sad/",
+   "nearestM": 145
+  },
+  {
+   "name": "kantri park",
+   "address": "г. Химки (Московская обл), Панфилова улица 21/1",
+   "lat": 55.880215323697,
+   "lon": 37.4333589914014,
+   "url": "https://www.arendator.ru/objects/9177-kantri_park/",
+   "nearestM": 418
+  },
+  {
+   "name": "rts seligerskaya",
+   "address": "г. Москва, САО, район Западное Дегунино, Дмитровское шоссе 85",
+   "lat": 55.816713,
+   "lon": 37.570375,
+   "url": "https://www.arendator.ru/objects/35248-rts_seligerskaya/",
+   "nearestM": 210
+  },
+  {
+   "name": "skolkovo park",
+   "address": "г. Москва, ЗАО, район Можайский, Сколковское шоссе вл43",
+   "lat": 55.699685,
+   "lon": 37.398356,
+   "url": "https://www.arendator.ru/objects/50890-skolkovo_park/",
+   "nearestM": 126
+  },
+  {
+   "name": "stratos",
+   "address": "г. Москва, Николы Теслы 1",
+   "lat": 55.694282,
+   "lon": 37.345131,
+   "url": "https://www.arendator.ru/objects/50923-stratos/",
+   "nearestM": 139
+  },
+  {
+   "name": "k2",
+   "address": "г. Москва, 23-й Калужское 14с3",
+   "lat": 55.590363,
+   "lon": 37.472944,
+   "url": "https://www.arendator.ru/objects/32733-k2/",
+   "nearestM": 121
+  },
+  {
+   "name": "orbion",
+   "address": "г. Москва, Минское 19-й км",
+   "lat": 55.697681,
+   "lon": 37.342176,
+   "url": "https://www.arendator.ru/objects/50924-orbion/",
+   "nearestM": 310
+  },
+  {
+   "name": "quadroom kvadrum",
+   "address": "г. Мытищи (Мытищинский р-н, Московская обл), Центральная улица 20Б с1",
+   "lat": 55.895615,
+   "lon": 37.695375,
+   "url": "https://www.arendator.ru/objects/49898-quadroom_kvadrum/",
+   "nearestM": 702
+  },
+  {
+   "name": "tehnospark technospark-1",
+   "address": "ТАО (г. Москва), ТАО, Промышленная улица 2А",
+   "lat": 55.452452,
+   "lon": 37.275009,
+   "url": "https://www.arendator.ru/objects/32478-tehnospark_technospark-1/",
+   "nearestM": 175
+  },
+  {
+   "name": "kurchatovskij institut-2",
+   "address": "г. Москва, СЗАО, район Щукино, Академика Курчатова площадь 1",
+   "lat": 55.801364,
+   "lon": 37.477085,
+   "url": "https://www.arendator.ru/objects/32485-kurchatovskij_institut-2/",
+   "nearestM": 310
+  },
+  {
+   "name": "kubik",
+   "address": "г. Красногорск (Красногорский р-н, Московская обл), Строителей бульвар 4к1",
+   "lat": 55.81460698550314,
+   "lon": 37.38607718783537,
+   "url": "https://www.arendator.ru/objects/49899-kubik/",
+   "nearestM": 311
+  },
+  {
+   "name": "himki",
+   "address": "г. Химки (Московская обл), Ленинградская улица 39с5",
+   "lat": 55.907824,
+   "lon": 37.416089,
+   "url": "https://www.arendator.ru/objects/9158-himki/",
+   "nearestM": 1457
+  },
+  {
+   "name": "dobrynya-2",
+   "address": "г. Москва, ЦАО, район Якиманка, Добрынинский 4-й переулок 8",
+   "lat": 55.72798862873435,
+   "lon": 37.61694269311492,
+   "url": "https://www.arendator.ru/objects/8372-dobrynya-2/",
+   "nearestM": 117
+  },
+  {
+   "name": "samolet-1",
+   "address": "г. Жуковский (Московская обл), Гагарина улица 60а",
+   "lat": 55.61024,
+   "lon": 38.088451,
+   "url": "https://www.arendator.ru/objects/49091-samolet-1/",
+   "nearestM": 11398
+  },
+  {
+   "name": "platinum platinum",
+   "address": "г. Москва, ЮАО, район Москворечье-Сабурово, Котляковская улица 3 стр.13",
+   "lat": 55.6441917,
+   "lon": 37.6313705,
+   "url": "https://www.arendator.ru/objects/8951-platinum_platinum/",
+   "nearestM": 118
+  },
+  {
+   "name": "kosinskaya plaza",
+   "address": "г. Москва, ВАО, район Вешняки, Косинская улица 9 стр.21",
+   "lat": 55.715606,
+   "lon": 37.834902,
+   "url": "https://www.arendator.ru/objects/50428-kosinskaya_plaza/",
+   "nearestM": 131
+  },
+  {
+   "name": "prizma",
+   "address": "г. Москва, ЦАО, район Мещанский, Щепкина улица 61/2 стр.12",
+   "lat": 55.7885578,
+   "lon": 37.6243416,
+   "url": "https://www.arendator.ru/objects/9474-prizma/",
+   "nearestM": 143
+  },
+  {
+   "name": "alfa laval alfa laval",
+   "address": "г. Королев (Московская обл), Советская улица 73",
+   "lat": 55.937243729135254,
+   "lon": 37.86683944047492,
+   "url": "https://www.arendator.ru/objects/50437-alfa_laval_alfa_laval/",
+   "nearestM": 8978
+  },
+  {
+   "name": "grinvud greenwood",
+   "address": "г. Москва, МКАДБ 69-й к19",
+   "lat": 55.868496628435786,
+   "lon": 37.403284423277604,
+   "url": "https://www.arendator.ru/objects/26376-grinvud_greenwood/",
+   "nearestM": 924
+  },
+  {
+   "name": "workingline",
+   "address": "г. Москва, ЦАО, район Пресненский, Садовая-Кудринская улица 11с1",
+   "lat": 55.763206607321344,
+   "lon": 37.586539347221084,
+   "url": "https://www.arendator.ru/objects/9482-workingline/",
+   "nearestM": 81
+  },
+  {
+   "name": "terminal solnechnyj",
+   "address": "г. Москва, ЗАО, район Солнцево, Боровское шоссе 6к4",
+   "lat": 55.657282082129285,
+   "lon": 37.39608471163934,
+   "url": "https://www.arendator.ru/objects/28941-terminal_solnechnyj/",
+   "nearestM": 141
+  },
+  {
+   "name": "panorama plaza panorama plaza",
+   "address": "г. Москва, ЦАО, район Таганский, Котельническая набережная 33с1",
+   "lat": 55.740674,
+   "lon": 37.647046,
+   "url": "https://www.arendator.ru/objects/8974-panorama_plaza_panorama_plaza/",
+   "nearestM": 94
+  },
+  {
+   "name": "trianon",
+   "address": "г. Москва, ЦАО, район Пресненский, Красногвардейская 3-я улица 3",
+   "lat": 55.756479651558095,
+   "lon": 37.53754779762246,
+   "url": "https://www.arendator.ru/objects/8719-trianon/",
+   "nearestM": 118
+  },
+  {
+   "name": "krasnokazarmennaya 14a",
+   "address": "г. Москва, ЮВАО, район Лефортово, Красноказарменная улица 14Ак1",
+   "lat": 55.75322481028538,
+   "lon": 37.70575361838491,
+   "url": "https://www.arendator.ru/objects/22031-krasnokazarmennaya_14a/",
+   "nearestM": 123
+  },
+  {
+   "name": "profsoyuznaya 78",
+   "address": "г. Москва, ЮЗАО, район Коньково, Профсоюзная улица 78",
+   "lat": 55.659167571263694,
+   "lon": 37.54179017063863,
+   "url": "https://www.arendator.ru/objects/32527-profsoyuznaya_78/",
+   "nearestM": 173
+  },
+  {
+   "name": "siren plaza",
+   "address": "г. Москва, ВАО, район Восточное Измайлово, Парковая 16-я улица 20-22",
+   "lat": 55.805988,
+   "lon": 37.832485,
+   "url": "https://www.arendator.ru/objects/7955-siren_plaza/",
+   "nearestM": 271
+  },
+  {
+   "name": "helios country gelios kantri",
    "address": "г. Химки (Московская обл), Репина улица 34",
    "lat": 55.90383272848743,
    "lon": 37.42721928836055,
@@ -16,7 +360,15 @@
    "nearestM": 1803
   },
   {
-   "name": null,
+   "name": "shtab-kvartira robert bosh",
+   "address": "г. Химки (Московская обл), Вашутинское шоссе 24",
+   "lat": 55.921264,
+   "lon": 37.413933,
+   "url": "https://www.arendator.ru/objects/51228-shtab-kvartira_robert_bosh/",
+   "nearestM": 1365
+  },
+  {
+   "name": "soyuz",
    "address": "г. Москва, ЦАО, район Хамовники, Лужнецкая набережная 2/4с81",
    "lat": 55.71385565935774,
    "lon": 37.572444279762045,
@@ -24,7 +376,7 @@
    "nearestM": 197
   },
   {
-   "name": null,
+   "name": "prospekt-4",
    "address": "г. Химки (Московская обл), Юбилейный проспект 1",
    "lat": 55.88554922499072,
    "lon": 37.42416845767205,
@@ -32,7 +384,7 @@
    "nearestM": 943
   },
   {
-   "name": null,
+   "name": "perspektiva-1",
    "address": "п. Птицефабрики (Красногорский р-н, Московская обл), Фабричная вл6с8",
    "lat": 55.996882018693924,
    "lon": 37.540303051589596,
@@ -40,7 +392,15 @@
    "nearestM": 4978
   },
   {
-   "name": null,
+   "name": "neglinnaya plaza-1",
+   "address": "г. Москва, ЦАО, район Мещанский, Трубная площадь 2",
+   "lat": 55.76653636413727,
+   "lon": 37.62230617790973,
+   "url": "https://www.arendator.ru/objects/7465-neglinnaya_plaza-1/",
+   "nearestM": 81
+  },
+  {
+   "name": "dominanta-3",
    "address": "г. Москва, СЗАО, район Щукино, Щукинская улица 2",
    "lat": 55.80908999996821,
    "lon": 37.48235316931144,
@@ -48,7 +408,7 @@
    "nearestM": 158
   },
   {
-   "name": null,
+   "name": "radonezh",
    "address": "г. Хотьково (Сергиево-Посадский р-н, Московская обл), Академика Королева улица 9",
    "lat": 56.25641022381215,
    "lon": 37.98281507605721,
@@ -56,7 +416,31 @@
    "nearestM": 29862
   },
   {
-   "name": null,
+   "name": "vernadskogo prospekt 910",
+   "address": "г. Москва, ЮЗАО, район Гагаринский, Вернадского проспект 9/10",
+   "lat": 55.690881206801876,
+   "lon": 37.53245562698343,
+   "url": "https://www.arendator.ru/objects/51504-vernadskogo_prospekt_910/",
+   "nearestM": 103
+  },
+  {
+   "name": "zacepa 39",
+   "address": "г. Москва, ЦАО, район Замоскворечье, Зацепа улица 39",
+   "lat": 55.728074,
+   "lon": 37.628334,
+   "url": "https://www.arendator.ru/objects/7473-zacepa_39/",
+   "nearestM": 129
+  },
+  {
+   "name": "ideya-2",
+   "address": "г. Москва, ЮВАО, район Лефортово, Энтузиастов шоссе 20",
+   "lat": 55.750727979461956,
+   "lon": 37.71453342195081,
+   "url": "https://www.arendator.ru/objects/9521-ideya-2/",
+   "nearestM": 135
+  },
+  {
+   "name": "na krestyanskoj",
    "address": "г. Мытищи (Мытищинский р-н, Московская обл), Крестьянская 3-я улица с23",
    "lat": 55.8921489564999,
    "lon": 37.71406988954919,
@@ -64,7 +448,15 @@
    "nearestM": 562
   },
   {
-   "name": null,
+   "name": "perovskij-1",
+   "address": "г. Москва, ВАО, район Новогиреево, Полимерная улица 8",
+   "lat": 55.746061,
+   "lon": 37.799697,
+   "url": "https://www.arendator.ru/objects/35125-perovskij-1/",
+   "nearestM": 93
+  },
+  {
+   "name": "kutuzovskij prospekt 74k1",
    "address": "г. Москва, ЗАО, район Дорогомилово, Кутузовский проспект 7/4к1",
    "lat": 55.748863,
    "lon": 37.563673,
@@ -72,7 +464,23 @@
    "nearestM": 220
   },
   {
-   "name": null,
+   "name": "marr plaza marr plaza",
+   "address": "г. Москва, ЦАО, район Пресненский, Сергея Макеева улица 13",
+   "lat": 55.763368098012315,
+   "lon": 37.55130727976196,
+   "url": "https://www.arendator.ru/objects/9015-marr_plaza_marr_plaza/",
+   "nearestM": 106
+  },
+  {
+   "name": "pyat prudov",
+   "address": "г. Москва, ЮЗАО, район Обручевский, Новаторов улица 1",
+   "lat": 55.668747,
+   "lon": 37.525252,
+   "url": "https://www.arendator.ru/objects/51514-pyat_prudov/",
+   "nearestM": 122
+  },
+  {
+   "name": "yubilejnyj-1",
    "address": "г. Дмитров (Дмитровский р-н, Московская обл), Профессиональная улица 3",
    "lat": 56.349198510195485,
    "lon": 37.518401457671764,
@@ -80,7 +488,7 @@
    "nearestM": 41671
   },
   {
-   "name": null,
+   "name": "kashtanovaya rocsha",
    "address": "д. Шолохово (Мытищинский р-н, Московская обл), ​Дмитровское вл2Б ст1",
    "lat": 56.056242,
    "lon": 37.531298,
@@ -88,7 +496,7 @@
    "nearestM": 11504
   },
   {
-   "name": null,
+   "name": "noginsk-1",
    "address": "п. Затишье (Ногинский р-н, Московская обл), Горьковское 44 км от МКАД",
    "lat": 55.826867,
    "lon": 38.416687,
@@ -96,7 +504,15 @@
    "nearestM": 32450
   },
   {
-   "name": null,
+   "name": "geofizika-nv",
+   "address": "г. Москва, ВАО, район Сокольники, Стромынка улица 18к5Б",
+   "lat": 55.793905,
+   "lon": 37.697073,
+   "url": "https://www.arendator.ru/objects/35152-geofizika-nv/",
+   "nearestM": 89
+  },
+  {
+   "name": "korona-ejr",
    "address": "г. Москва, ЗАО, район Тропарево-Никулино, Вернадского проспект 92",
    "lat": 55.65522973613551,
    "lon": 37.473101542327555,
@@ -104,7 +520,479 @@
    "nearestM": 254
   },
   {
-   "name": null,
+   "name": "ostrovnaya 2",
+   "address": "г. Москва, ЗАО, район Крылатское, Островная улица 2",
+   "lat": 55.7617989,
+   "lon": 37.4584007,
+   "url": "https://www.arendator.ru/objects/9299-ostrovnaya_2/",
+   "nearestM": 869
+  },
+  {
+   "name": "ogorod",
+   "address": "п. Горки-10 (Одинцовский р-н, Московская обл), участок 27/1",
+   "lat": 55.704423,
+   "lon": 37.026993,
+   "url": "https://www.arendator.ru/objects/49496-ogorod/",
+   "nearestM": 538
+  },
+  {
+   "name": "konvent plyus",
+   "address": "г. Москва, ЗАО, район Филевский парк, Багратионовский проезд 7к20Б",
+   "lat": 55.74320962627335,
+   "lon": 37.50416762698348,
+   "url": "https://www.arendator.ru/objects/9311-konvent_plyus/",
+   "nearestM": 84
+  },
+  {
+   "name": "na profsoyuznoj 23",
+   "address": "г. Москва, ЮЗАО, район Черемушки, Профсоюзная улица 23",
+   "lat": 55.67472579140896,
+   "lon": 37.561239355819716,
+   "url": "https://www.arendator.ru/objects/7264-na_profsoyuznoj_23/",
+   "nearestM": 87
+  },
+  {
+   "name": "terminal borisovskij",
+   "address": "г. Подольск (Московская обл), ПромТехАльянс 1с1",
+   "lat": 55.486188,
+   "lon": 37.594198,
+   "url": "https://www.arendator.ru/objects/49252-terminal_borisovskij/",
+   "nearestM": 597
+  },
+  {
+   "name": "premium west",
+   "address": "рп. Новоивановское (Одинцовский р-н, Московская обл), Можайское шоссе вл165",
+   "lat": 55.709738,
+   "lon": 37.382402,
+   "url": "https://www.arendator.ru/objects/9061-premium_west/",
+   "nearestM": 392
+  },
+  {
+   "name": "teploinzhstroj",
+   "address": "г. Мытищи (Мытищинский р-н, Московская обл), Осташковское шоссе вл5с1",
+   "lat": 55.901652,
+   "lon": 37.666638,
+   "url": "https://www.arendator.ru/objects/7791-teploinzhstroj/",
+   "nearestM": 844
+  },
+  {
+   "name": "skypoint",
+   "address": "г. Москва, САО, район Молжаниновский, Международное шоссе 28Бс1",
+   "lat": 55.94863507044178,
+   "lon": 37.41870293254066,
+   "url": "https://www.arendator.ru/objects/9334-skypoint/",
+   "nearestM": 109
+  },
+  {
+   "name": "onegin",
+   "address": "г. Москва, ЦАО, район Якиманка, Полянка М. улица 2",
+   "lat": 55.73674965216009,
+   "lon": 37.616863849073745,
+   "url": "https://www.arendator.ru/objects/9336-onegin/",
+   "nearestM": 87
+  },
+  {
+   "name": "korston-1",
+   "address": "г. Серпухов (Московская обл), Борисовское шоссе 1",
+   "lat": 54.917324,
+   "lon": 37.425845,
+   "url": "https://www.arendator.ru/objects/28284-korston-1/",
+   "nearestM": 39913
+  },
+  {
+   "name": "yuzhnyj-4",
+   "address": "г. Москва, ЮАО, район Чертаново Центральное, Дорожная улица 3/6",
+   "lat": 55.615248,
+   "lon": 37.628172,
+   "url": "https://www.arendator.ru/objects/11389-yuzhnyj-4/",
+   "nearestM": 86
+  },
+  {
+   "name": "gorod-1",
+   "address": "с/п. Лесной Городок (Одинцовский р-н, Московская обл), Школьная 1",
+   "lat": 55.632997,
+   "lon": 37.212333,
+   "url": "https://www.arendator.ru/objects/49535-gorod-1/",
+   "nearestM": 2235
+  },
+  {
+   "name": "dva kapitana-2",
+   "address": "г. Москва, МКАДБ 66-й с4",
+   "lat": 55.817043256892056,
+   "lon": 37.38377617019569,
+   "url": "https://www.arendator.ru/objects/50303-dva_kapitana-2/",
+   "nearestM": 578
+  },
+  {
+   "name": "podolskij",
+   "address": "г. Москва, ЮАО, район Даниловский, Подольское шоссе 8",
+   "lat": 55.714516481577796,
+   "lon": 37.624394101852225,
+   "url": "https://www.arendator.ru/objects/9091-podolskij/",
+   "nearestM": 120
+  },
+  {
+   "name": "oka",
+   "address": "г. Ступино (Ступинский р-н, Московская обл), Горького улица 26",
+   "lat": 54.89157786801779,
+   "lon": 38.06256408465574,
+   "url": "https://www.arendator.ru/objects/28291-oka/",
+   "nearestM": 66487
+  },
+  {
+   "name": "prospekt-3",
+   "address": "г. Химки (Московская обл), Панфилова улица 1",
+   "lat": 55.88757826647144,
+   "lon": 37.4285136362754,
+   "url": "https://www.arendator.ru/objects/32393-prospekt-3/",
+   "nearestM": 1209
+  },
+  {
+   "name": "michurinskij-5",
+   "address": "г. Москва, ЗАО, район Очаково-Матвеевское, Озерная улица 42",
+   "lat": 55.67112861462426,
+   "lon": 37.44570186137681,
+   "url": "https://www.arendator.ru/objects/9355-michurinskij-5/",
+   "nearestM": 119
+  },
+  {
+   "name": "atrium-7",
+   "address": "г. Мытищи (Мытищинский р-н, Московская обл), Колпакова улица 24а",
+   "lat": 55.9179082869586,
+   "lon": 37.73257136441804,
+   "url": "https://www.arendator.ru/objects/30347-atrium-7/",
+   "nearestM": 3397
+  },
+  {
+   "name": "volkovskij",
+   "address": "г. Мытищи (Мытищинский р-н, Московская обл), Волковское шоссе 5Ас1",
+   "lat": 55.93079173452132,
+   "lon": 37.74809288095086,
+   "url": "https://www.arendator.ru/objects/8845-volkovskij/",
+   "nearestM": 5125
+  },
+  {
+   "name": "istrinskij prompark",
+   "address": "с/п. Лучинское (Истринский р-н, Московская обл), Центральная 3Вс1",
+   "lat": 55.90475061471868,
+   "lon": 36.84370827116379,
+   "url": "https://www.arendator.ru/objects/30349-istrinskij_prompark/",
+   "nearestM": 20508
+  },
+  {
+   "name": "sapfir-1",
+   "address": "г. Москва, САО, район Западное Дегунино, Маршала Федоренко улица 3с1",
+   "lat": 55.87911928698757,
+   "lon": 37.49267279894973,
+   "url": "https://www.arendator.ru/objects/32397-sapfir-1/",
+   "nearestM": 226
+  },
+  {
+   "name": "kupavna",
+   "address": "г. Старая Купавна (Ногинский р-н, Московская обл), Дорожная улица 12с2",
+   "lat": 55.79402357536672,
+   "lon": 38.200917582030975,
+   "url": "https://www.arendator.ru/objects/49293-kupavna/",
+   "nearestM": 18751
+  },
+  {
+   "name": "na bolshoj dorogomilovskoj ulice",
+   "address": "г. Москва, ЗАО, район Дорогомилово, Дорогомиловская Б. улица 1",
+   "lat": 55.74558450301492,
+   "lon": 37.56395655819666,
+   "url": "https://www.arendator.ru/objects/8591-na_bolshoj_dorogomilovskoj_ulice/",
+   "nearestM": 148
+  },
+  {
+   "name": "medvedkovo",
+   "address": "г. Москва, СВАО, район Северное Медведково, Полярная улица 39с2",
+   "lat": 55.89233864780875,
+   "lon": 37.645316876465735,
+   "url": "https://www.arendator.ru/objects/9360-medvedkovo/",
+   "nearestM": 157
+  },
+  {
+   "name": "na krasnokazarmennom",
+   "address": "г. Москва, ЮВАО, район Лефортово, Красноказарменная улица 14Ак1",
+   "lat": 55.7534978145911,
+   "lon": 37.705870507933895,
+   "url": "https://www.arendator.ru/objects/8852-na_krasnokazarmennom/",
+   "nearestM": 120
+  },
+  {
+   "name": "elma",
+   "address": "Зеленоград (г. Москва), Зеленоград, район Старое Крюково, 4922-й проезд 4 стр 2Б 3Б 4Б 5",
+   "lat": 55.98364,
+   "lon": 37.22084,
+   "url": "https://www.arendator.ru/objects/10133-elma/",
+   "nearestM": 129
+  },
+  {
+   "name": "novaya riga",
+   "address": "д. Падиково (Истринский р-н, Московская обл)",
+   "lat": 55.822496522045945,
+   "lon": 36.990152999999985,
+   "url": "https://www.arendator.ru/objects/13461-novaya_riga/",
+   "nearestM": 12979
+  },
+  {
+   "name": "sheremetevskij-4",
+   "address": "г. Химки (Московская обл), Международный аэропорт Шереметьево вл5",
+   "lat": 55.96797,
+   "lon": 37.433301,
+   "url": "https://www.arendator.ru/objects/30101-sheremetevskij-4/",
+   "nearestM": 2197
+  },
+  {
+   "name": "na tverskoj 28k2",
+   "address": "г. Москва, ЦАО, район Тверской, Тверская улица 28к2",
+   "lat": 55.769443879670725,
+   "lon": 37.59904137301629,
+   "url": "https://www.arendator.ru/objects/7318-na_tverskoj_28k2/",
+   "nearestM": 89
+  },
+  {
+   "name": "perec",
+   "address": "г. Видное (Ленинский р-н, Московская обл), 23-й Каширского вл4",
+   "lat": 55.583062,
+   "lon": 37.743435,
+   "url": "https://www.arendator.ru/objects/49046-perec/",
+   "nearestM": 1197
+  },
+  {
+   "name": "kosinskaya 9s14",
+   "address": "г. Москва, ВАО, район Вешняки, Косинская улица 9с14",
+   "lat": 55.71522590482004,
+   "lon": 37.83014827116385,
+   "url": "https://www.arendator.ru/objects/9367-kosinskaya_9s14/",
+   "nearestM": 240
+  },
+  {
+   "name": "matrixoffice",
+   "address": "г. Москва, ЮАО, район Донской, Шаболовка улица 34с3",
+   "lat": 55.71811022438278,
+   "lon": 37.60766936441803,
+   "url": "https://www.arendator.ru/objects/9112-matrixoffice/",
+   "nearestM": 206
+  },
+  {
+   "name": "novokosino-2-1",
+   "address": "г. Реутов (Московская обл), Юбилейный проспект 72",
+   "lat": 55.75326741760797,
+   "lon": 37.88387520370472,
+   "url": "https://www.arendator.ru/objects/28573-novokosino-2-1/",
+   "nearestM": 681
+  },
+  {
+   "name": "mezhdunarodnyj aeroport domodedovo",
+   "address": "г. Домодедово (Московская обл), Аэропорт Домодедово стр1",
+   "lat": 55.414072,
+   "lon": 37.899185,
+   "url": "https://www.arendator.ru/objects/30366-mezhdunarodnyj_aeroport_domodedovo/",
+   "nearestM": 21173
+  },
+  {
+   "name": "smena",
+   "address": "г. Москва, СВАО, район Ростокино, Докукина улица 16к1",
+   "lat": 55.841766,
+   "lon": 37.651466,
+   "url": "https://www.arendator.ru/objects/9121-smena/",
+   "nearestM": 88
+  },
+  {
+   "name": "malyj levshinskij 7s2",
+   "address": "г. Москва, ЦАО, район Хамовники, Левшинский М. переулок 7с2",
+   "lat": 55.741704498026465,
+   "lon": 37.588035999999946,
+   "url": "https://www.arendator.ru/objects/8869-malyj_levshinskij_7s2/",
+   "nearestM": 95
+  },
+  {
+   "name": "kuryanovo-1",
+   "address": "г. Москва, Курьяновская 6",
+   "lat": 55.649378,
+   "lon": 37.683572,
+   "url": "https://www.arendator.ru/objects/30373-kuryanovo-1/",
+   "nearestM": 114
+  },
+  {
+   "name": "mosavto",
+   "address": "г. Москва, СВАО, район Останкинский, Академика Королева улица 13с5",
+   "lat": 55.82023334153374,
+   "lon": 37.617560253967135,
+   "url": "https://www.arendator.ru/objects/9382-mosavto/",
+   "nearestM": 117
+  },
+  {
+   "name": "std hlebnikovo",
+   "address": "г. Долгопрудный (Московская обл), Новое 1с1",
+   "lat": 55.974680934495915,
+   "lon": 37.519044714294125,
+   "url": "https://www.arendator.ru/objects/6055-std_hlebnikovo/",
+   "nearestM": 2884
+  },
+  {
+   "name": "ekosokolniki",
+   "address": "г. Москва, 4-й Лучевой просек 4",
+   "lat": 55.80156237946599,
+   "lon": 37.67242907605725,
+   "url": "https://www.arendator.ru/objects/35241-ekosokolniki/",
+   "nearestM": 309
+  },
+  {
+   "name": "lotte centr moskva",
+   "address": "г. Москва, ЮЗАО, район Коньково, Профсоюзная улица 65с1",
+   "lat": 55.6515249305294,
+   "lon": 37.53836591534418,
+   "url": "https://www.arendator.ru/objects/9386-lotte_centr_moskva/",
+   "nearestM": 147
+  },
+  {
+   "name": "istra",
+   "address": "д. Давыдовское (Истринский р-н, Московская обл), Дачная улица 1-10",
+   "lat": 55.855153,
+   "lon": 36.801767,
+   "url": "https://www.arendator.ru/objects/32426-istra/",
+   "nearestM": 21385
+  },
+  {
+   "name": "krekshino",
+   "address": "д. Крекшино (НАО, Марушкинское, г. Москва), Терминальный 2А",
+   "lat": 55.58257162488098,
+   "lon": 37.10422815344226,
+   "url": "https://www.arendator.ru/objects/32427-krekshino/",
+   "nearestM": 397
+  },
+  {
+   "name": "dmitrovskoe shosse 71",
+   "address": "г. Москва, САО, район Дмитровский, Дмитровское шоссе 71",
+   "lat": 55.856152137870346,
+   "lon": 37.56020883068835,
+   "url": "https://www.arendator.ru/objects/8622-dmitrovskoe_shosse_71/",
+   "nearestM": 86
+  },
+  {
+   "name": "sholohovo",
+   "address": "г. Мытищи (Мытищинский р-н, Московская обл), 1-й вл4с2",
+   "lat": 56.045725,
+   "lon": 37.546965,
+   "url": "https://www.arendator.ru/objects/32432-sholohovo/",
+   "nearestM": 10177
+  },
+  {
+   "name": "vympel",
+   "address": "г. Москва, Старый Петровско-Разумовский 1/23 стр.1",
+   "lat": 55.80139481197014,
+   "lon": 37.56444745242055,
+   "url": "https://www.arendator.ru/objects/9138-vympel/",
+   "nearestM": 167
+  },
+  {
+   "name": "wika",
+   "address": "д. Николо-Хованское (НАО, Сосенское, г. Москва), Индустриальный парк Индиго вл1011Ас1",
+   "lat": 55.600292,
+   "lon": 37.452264,
+   "url": "https://www.arendator.ru/objects/35000-wika/",
+   "nearestM": 361
+  },
+  {
+   "name": "pollars",
+   "address": "г. Москва, ЮАО, район Даниловский, Дербеневская набережная 11",
+   "lat": 55.7212627229033,
+   "lon": 37.65234027976219,
+   "url": "https://www.arendator.ru/objects/9402-pollars/",
+   "nearestM": 95
+  },
+  {
+   "name": "sheremetevo",
+   "address": "г. Долгопрудный (Московская обл), Новое 56",
+   "lat": 55.972247,
+   "lon": 37.459316,
+   "url": "https://www.arendator.ru/objects/13498-sheremetevo/",
+   "nearestM": 3592
+  },
+  {
+   "name": "nagatino",
+   "address": "г. Москва, ЮАО, район Нагорный, Варшавское шоссе 28А",
+   "lat": 55.682737,
+   "lon": 37.617923,
+   "url": "https://www.arendator.ru/objects/32461-nagatino/",
+   "nearestM": 106
+  },
+  {
+   "name": "pulmart",
+   "address": "г. Пушкино (Пушкинский р-н, Московская обл), Ярославское шоссе 190к1",
+   "lat": 56.003632173488285,
+   "lon": 37.8769400257948,
+   "url": "https://www.arendator.ru/objects/6607-pulmart/",
+   "nearestM": 4924
+  },
+  {
+   "name": "ciklon",
+   "address": "г. Москва, ВАО, район Гольяново, Щелковское шоссе 77",
+   "lat": 55.813329,
+   "lon": 37.804072,
+   "url": "https://www.arendator.ru/objects/32465-ciklon/",
+   "nearestM": 152
+  },
+  {
+   "name": "metako",
+   "address": "г. Домодедово (Московская обл), Каширское шоссе 10",
+   "lat": 55.44567013208454,
+   "lon": 37.76430747486832,
+   "url": "https://www.arendator.ru/objects/51665-metako/",
+   "nearestM": 11999
+  },
+  {
+   "name": "derbenevskij",
+   "address": "г. Москва, ЮАО, район Даниловский, Дербеневская улица 1",
+   "lat": 55.7263304754975,
+   "lon": 37.6518884735405,
+   "url": "https://www.arendator.ru/objects/9426-derbenevskij/",
+   "nearestM": 85
+  },
+  {
+   "name": "karat-1",
+   "address": "г. Реутов (Московская обл), Ленина улица 1А",
+   "lat": 55.75339360724954,
+   "lon": 37.85777836441804,
+   "url": "https://www.arendator.ru/objects/28371-karat-1/",
+   "nearestM": 1047
+  },
+  {
+   "name": "pulsar",
+   "address": "г. Москва, ВАО, район Соколиная гора, Окружной проезд 27",
+   "lat": 55.77600849433936,
+   "lon": 37.74238572883597,
+   "url": "https://www.arendator.ru/objects/32469-pulsar/",
+   "nearestM": 167
+  },
+  {
+   "name": "fud siti   food city",
+   "address": "г. Москва, поселение СосенскоеБ МамыриБ 22-й Калужского здание 10",
+   "lat": 55.60101,
+   "lon": 37.471102,
+   "url": "https://www.arendator.ru/objects/49623-fud_siti___food_city/",
+   "nearestM": 83
+  },
+  {
+   "name": "logopark sofino",
+   "address": "г. Москва, Новорязанское шоссе",
+   "lat": 55.681646,
+   "lon": 37.843984,
+   "url": "https://www.arendator.ru/objects/11740-logopark_sofino/",
+   "nearestM": 152
+  },
+  {
+   "name": "sokol bridge sokol bridzh",
+   "address": "г. Москва, САО, район Хорошевский, Куусинена улица 21Б",
+   "lat": 55.78936096120756,
+   "lon": 37.510571495700745,
+   "url": "https://www.arendator.ru/objects/8927-sokol_bridge_sokol_bridzh/",
+   "nearestM": 139
+  },
+  {
+   "name": "regus grinvud",
    "address": "г. Москва, МКАД 69 19",
    "lat": 55.868617,
    "lon": 37.403261,
@@ -112,7 +1000,15 @@
    "nearestM": 937
   },
   {
-   "name": null,
+   "name": "svyaz inzhiniring",
+   "address": "г. Москва, ЮАО, район Бирюлево Восточное, Радиальная 6-я улица 9",
+   "lat": 55.606004,
+   "lon": 37.649948,
+   "url": "https://www.arendator.ru/objects/32481-svyaz_inzhiniring/",
+   "nearestM": 81
+  },
+  {
+   "name": "klimovsk raven",
    "address": "г. Подольск (Московская обл), Коммунальная улица 23А",
    "lat": 55.36404599996524,
    "lon": 37.56057703439316,
@@ -120,7 +1016,23 @@
    "nearestM": 8222
   },
   {
-   "name": null,
+   "name": "niissu",
+   "address": "г. Москва, ЮЗАО, район Обручевский, Старокалужское шоссе 58",
+   "lat": 55.661481,
+   "lon": 37.53861,
+   "url": "https://www.arendator.ru/objects/32482-niissu/",
+   "nearestM": 103
+  },
+  {
+   "name": "polyus",
+   "address": "г. Москва, ЮЗАО, район Коньково, Введенского улица 3с1",
+   "lat": 55.645796,
+   "lon": 37.545959,
+   "url": "https://www.arendator.ru/objects/32486-polyus/",
+   "nearestM": 98
+  },
+  {
+   "name": "oao perovskoe",
    "address": "г. Москва, ВАО, район Новогиреево, Кусковская улица 12",
    "lat": 55.738485,
    "lon": 37.77776,
@@ -128,7 +1040,15 @@
    "nearestM": 237
   },
   {
-   "name": null,
+   "name": "na sretenskom 61s2",
+   "address": "г. Москва, ЦАО, район Красносельский, Сретенский бульвар 6/1с2",
+   "lat": 55.765984486337565,
+   "lon": 37.63501418650791,
+   "url": "https://www.arendator.ru/objects/7917-na_sretenskom_61s2/",
+   "nearestM": 80
+  },
+  {
+   "name": "riga land riga lend",
    "address": "г. Красногорск (Красногорский р-н, Московская обл), 26-й 5с6",
    "lat": 55.785589,
    "lon": 37.241627,
@@ -136,7 +1056,15 @@
    "nearestM": 3877
   },
   {
-   "name": null,
+   "name": "leninskij 2",
+   "address": "г. Москва, ЦАО, район Якиманка, Ленинский проспект 2",
+   "lat": 55.72961908139795,
+   "lon": 37.611104644180195,
+   "url": "https://www.arendator.ru/objects/7406-leninskij_2/",
+   "nearestM": 95
+  },
+  {
+   "name": "atlant park",
    "address": "пгт. Обухово (Ногинский р-н, Московская обл)",
    "lat": 55.83163,
    "lon": 38.269561,
@@ -144,7 +1072,15 @@
    "nearestM": 24510
   },
   {
-   "name": null,
+   "name": "lubyanskij",
+   "address": "г. Москва, ЦАО, район Басманный, Лубянский проезд 15с2",
+   "lat": 55.756856325358896,
+   "lon": 37.63219771163927,
+   "url": "https://www.arendator.ru/objects/8948-lubyanskij/",
+   "nearestM": 85
+  },
+  {
+   "name": "mozhajskij",
    "address": "рп. Новоивановское (Одинцовский р-н, Московская обл), Можайское шоссе 165с1",
    "lat": 55.712127,
    "lon": 37.381899,
@@ -152,7 +1088,7 @@
    "nearestM": 429
   },
   {
-   "name": null,
+   "name": "nikolskij-1",
    "address": "г. Орехово-Зуево (Московская обл), Ленина улица 44а",
    "lat": 55.80217203227127,
    "lon": 38.981009423278735,
@@ -160,7 +1096,7 @@
    "nearestM": 65395
   },
   {
-   "name": null,
+   "name": "cshelkovskij domostroitelnyj kombinat",
    "address": "г. Домодедово (Московская обл), Текстильщиков 23",
    "lat": 55.436898,
    "lon": 37.731991,
@@ -168,7 +1104,7 @@
    "nearestM": 10712
   },
   {
-   "name": null,
+   "name": "orehovskij",
    "address": "г. Орехово-Зуево (Московская обл), Бабушкина улица 2А",
    "lat": 55.80987258522597,
    "lon": 38.993752492065106,
@@ -178,164 +1114,164 @@
  ],
  "matchedSample": [
   {
-   "name": null,
-   "address": "г. Москва, ЮАО, район Донской, Калужская М. улица 15с5",
-   "d": 7,
-   "cadastral_no": "77:05:0001009:1095",
-   "area_sqm": null,
-   "object_type": "неизвестен"
-  },
-  {
-   "name": null,
-   "address": "г. Москва, ЦАО, район Пресненский, Краснопресненская набережная 14с1",
-   "d": 24,
-   "cadastral_no": "77:01:0004042:5084",
-   "area_sqm": null,
-   "object_type": "неизвестен"
-  },
-  {
-   "name": null,
-   "address": "г. Москва, СЗАО, район Митино, Волоколамское шоссе 142",
-   "d": 38,
-   "cadastral_no": "77:00:0000000:15988",
-   "area_sqm": "22958.00",
-   "object_type": "бц"
-  },
-  {
-   "name": null,
-   "address": "г. Москва, ЮАО, район Даниловский, Партийный переулок 1к58с1",
-   "d": 17,
-   "cadastral_no": "77:05:0001004:3444",
-   "area_sqm": null,
-   "object_type": "неизвестен"
-  },
-  {
-   "name": null,
-   "address": "г. Москва, ЗАО, район Можайский, Верейская улица 29с134",
-   "d": 26,
-   "cadastral_no": "77:07:0012006:4741",
-   "area_sqm": "72249.40",
-   "object_type": "неизвестен"
-  },
-  {
-   "name": null,
-   "address": "г. Москва, ЮВАО, район Текстильщики, Волгоградский проспект 43к3",
-   "d": 28,
-   "cadastral_no": "77:04:0002004:2319",
-   "area_sqm": null,
-   "object_type": "неизвестен"
-  },
-  {
-   "name": null,
-   "address": "г. Москва, СЗАО, район Южное Тушино, Василия Петушкова улица 8с1",
-   "d": 59,
-   "cadastral_no": "77:08:0005001:1040",
-   "area_sqm": null,
-   "object_type": "неизвестен"
-  },
-  {
-   "name": null,
-   "address": "г. Москва, ЦАО, район Красносельский, Тургеневская площадь 2",
-   "d": 6,
-   "cadastral_no": "77:01:0001037:1016",
-   "area_sqm": "14508.00",
-   "object_type": "неизвестен"
-  },
-  {
-   "name": null,
-   "address": "г. Москва, ЮАО, район Нагорный, Электролитный проезд 3",
+   "name": "level work voroncovskaya",
+   "address": "г. Москва, ЮЗАО, район Обручевский, Старокалужское шоссе 64с11",
    "d": 58,
-   "cadastral_no": "77:05:0003002:1210",
-   "area_sqm": null,
-   "object_type": "неизвестен"
-  },
-  {
-   "name": null,
-   "address": "г. Москва, САО, район Савеловский, Мишина улица 56",
-   "d": 4,
-   "cadastral_no": "77:09:0004014:1128",
-   "area_sqm": null,
-   "object_type": "неизвестен"
-  },
-  {
-   "name": null,
-   "address": "г. Москва, ЦАО, район Замоскворечье, Летниковская улица 10с4",
-   "d": 20,
-   "cadastral_no": "77:01:0006017:1032",
-   "area_sqm": null,
-   "object_type": "неизвестен"
-  },
-  {
-   "name": null,
-   "address": "г. Москва, ЦАО, район Арбат, Новый Арбат улица 21с1",
-   "d": 20,
-   "cadastral_no": "77:01:0001059:1031",
-   "area_sqm": "66354.20",
-   "object_type": "неизвестен"
-  },
-  {
-   "name": null,
-   "address": "г. Москва, ЮЗАО, район Ломоносовский, Вавилова улица 69/75",
-   "d": 50,
-   "cadastral_no": "77:06:0003008:1035",
-   "area_sqm": null,
-   "object_type": "неизвестен"
-  },
-  {
-   "name": null,
-   "address": "г. Москва, ЦАО, район Тверской, Краснопролетарская улица 36",
-   "d": 11,
-   "cadastral_no": "77:01:0004002:1065",
-   "area_sqm": "13905.10",
+   "cadastral_no": "77:06:0003015:1048",
+   "area_sqm": "1409.80",
    "object_type": "бц"
   },
   {
-   "name": null,
-   "address": "г. Москва, ЦАО, район Пресненский, Звенигородская 2-я улица 13с43",
+   "name": "danilovskaya manufaktura 1867",
+   "address": "г. Москва, ЮАО, район Чертаново Южное, Варшавское шоссе 9 стр.28",
+   "d": 2,
+   "cadastral_no": "77:05:0001020:3129",
+   "area_sqm": null,
+   "object_type": "неизвестен"
+  },
+  {
+   "name": "oko towers",
+   "address": "г. Москва, ЦАО, район Пресненский, Красногвардейский 1-й проезд 21с1",
+   "d": 18,
+   "cadastral_no": "77:01:0004042:7393",
+   "area_sqm": "114910.40",
+   "object_type": "бц"
+  },
+  {
+   "name": "valleks",
+   "address": "г. Москва, ЮЗАО, район Обручевский, Старокалужское шоссе 62",
+   "d": 30,
+   "cadastral_no": "77:06:0003015:1033",
+   "area_sqm": "24978.60",
+   "object_type": "бц"
+  },
+  {
+   "name": "bannyj pereulok 9",
+   "address": "г. Москва, ЦАО, район Мещанский, Банный переулок 9",
+   "d": 26,
+   "cadastral_no": "77:01:0003052:6796",
+   "area_sqm": "12471.70",
+   "object_type": "бц"
+  },
+  {
+   "name": "diapazon",
+   "address": "г. Москва, СЗАО, район Щукино, Волоколамский 1-й проезд 10с1",
+   "d": 32,
+   "cadastral_no": "77:08:0009016:1017",
+   "area_sqm": "25086.50",
+   "object_type": "бц"
+  },
+  {
+   "name": "vernadskij",
+   "address": "г. Москва, ЗАО, район Проспект Вернадского, Вернадского проспект 39",
+   "d": 22,
+   "cadastral_no": "77:07:0013007:18824",
+   "area_sqm": "21184.20",
+   "object_type": "бц"
+  },
+  {
+   "name": "sadovaya plaza-1",
+   "address": "г. Москва, ЦАО, район Тверской, Долгоруковская улица 7",
+   "d": 12,
+   "cadastral_no": "77:01:0004010:3454",
+   "area_sqm": "16170.00",
+   "object_type": "бц"
+  },
+  {
+   "name": "yunnatov 18",
+   "address": "г. Москва, САО, район Савеловский, Юннатов улица 18",
+   "d": 37,
+   "cadastral_no": "77:09:0004010:3578",
+   "area_sqm": null,
+   "object_type": "неизвестен"
+  },
+  {
+   "name": "jazz dzhaz",
+   "address": "г. Москва, СВАО, район Марьина роща, Сущевский Вал улица 49",
+   "d": 6,
+   "cadastral_no": "77:02:0024018:3182",
+   "area_sqm": null,
+   "object_type": "неизвестен"
+  },
+  {
+   "name": "zenit plaza",
+   "address": "г. Москва, СЗАО, район Строгино, Маршала Прошлякова улица 30",
+   "d": 5,
+   "cadastral_no": "77:08:0013004:1013",
+   "area_sqm": "24366.00",
+   "object_type": "неизвестен"
+  },
+  {
+   "name": "trehgornaya manufaktura",
+   "address": "г. Москва, ЦАО, район Пресненский, Рочдельская улица 15",
+   "d": 2,
+   "cadastral_no": "77:01:0004033:1017",
+   "area_sqm": null,
+   "object_type": "неизвестен"
+  },
+  {
+   "name": "evolyuciya evolution tower",
+   "address": "г. Москва, ЦАО, район Пресненский, Пресненская набережная 4с2",
+   "d": 50,
+   "cadastral_no": "77:01:0004042:7392",
+   "area_sqm": "128102.70",
+   "object_type": "бц"
+  },
+  {
+   "name": "naberezhnaya tower naberezhnaya tauer bashnya na naberzhnoj",
+   "address": "г. Москва, ЦАО, район Пресненский, Пресненская набережная 10",
+   "d": 42,
+   "cadastral_no": "77:01:0004042:1018",
+   "area_sqm": "222365.50",
+   "object_type": "бц"
+  },
+  {
+   "name": "kuncevo plaza",
+   "address": "г. Москва, ЗАО, район Кунцево, Ярцевская улица 19",
+   "d": 23,
+   "cadastral_no": "77:07:0004002:11040",
+   "area_sqm": "236218.00",
+   "object_type": "неизвестен"
+  },
+  {
+   "name": "victory park",
+   "address": "г. Москва, ЗАО, район Раменки, Минская улица 2ж",
+   "d": 11,
+   "cadastral_no": "77:07:0006007:1085",
+   "area_sqm": "34869.00",
+   "object_type": "неизвестен"
+  },
+  {
+   "name": "ducat place 3 dukat plejs iii",
+   "address": "г. Москва, ЦАО, район Пресненский, Гашека улица 6",
+   "d": 9,
+   "cadastral_no": "77:01:0004012:1027",
+   "area_sqm": "46085.30",
+   "object_type": "неизвестен"
+  },
+  {
+   "name": "borodino plaza",
+   "address": "г. Москва, ЦАО, район Красносельский, Русаковская улица 13",
    "d": 3,
-   "cadastral_no": "77:01:0004037:1018",
-   "area_sqm": null,
-   "object_type": "неизвестен"
+   "cadastral_no": "77:01:0003034:1012",
+   "area_sqm": "30755.00",
+   "object_type": "бц"
   },
   {
-   "name": null,
-   "address": "г. Москва, ЦАО, район Тверской, Лесная улица 7",
-   "d": 7,
-   "cadastral_no": "77:01:0004016:4082",
-   "area_sqm": "53083.40",
-   "object_type": "неизвестен"
+   "name": "golden gate zolotye vorota",
+   "address": "г. Москва, Энтузиастов бульвар 2",
+   "d": 36,
+   "cadastral_no": "77:01:0006032:5822",
+   "area_sqm": "46719.00",
+   "object_type": "бц"
   },
   {
-   "name": null,
-   "address": "г. Москва, СВАО, район Бабушкинский, Искры улица 31к1",
-   "d": 14,
-   "cadastral_no": "77:02:0014008:1094",
-   "area_sqm": "15199.70",
-   "object_type": "неизвестен"
-  },
-  {
-   "name": null,
-   "address": "г. Москва, САО, район Хорошевский, Аэропорта проезд 8",
-   "d": 8,
-   "cadastral_no": "77:09:0005004:9062",
-   "area_sqm": null,
-   "object_type": "неизвестен"
-  },
-  {
-   "name": null,
-   "address": "г. Москва, ЮАО, район Чертаново Южное, Дорожная улица 60Б",
-   "d": 20,
-   "cadastral_no": "77:05:0008006:1167",
-   "area_sqm": "19329.60",
-   "object_type": "неизвестен"
-  },
-  {
-   "name": null,
-   "address": "г. Москва, ЮЗАО, район Черемушки, Профсоюзная улица 25А",
-   "d": 57,
-   "cadastral_no": "77:00:0000000:41578",
-   "area_sqm": "19637.90",
-   "object_type": "неизвестен"
+   "name": "lobachevskij-1",
+   "address": "г. Москва, ЮАО, район Даниловский, Андропова проспект 18к5",
+   "d": 6,
+   "cadastral_no": "77:05:0002007:1008",
+   "area_sqm": "32841.90",
+   "object_type": "бц"
   }
  ]
 }

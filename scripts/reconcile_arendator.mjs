@@ -14,43 +14,13 @@ import postgres from 'postgres';
 import { loadConfig } from '../src/config.js';
 import { distanceMeters } from '../src/lib/nearest.js';
 
-const DIR = 'Арендатор';
-const MATCH_M = 150; // порог совпадения БЦ ↔ здание из базы
+const SOURCE = 'docs/arendator_bc.json'; // все 782 БЦ (см. scripts/fetch_arendator.mjs)
+const MATCH_M = 80; // порог совпадения БЦ ↔ здание из базы (тождество здания)
 
-const clean = (s) => (s || '').replace(/&nbsp;/g, ' ').replace(/\s+/g, ' ').trim();
-
+// Источник — полный досбор всех 9 страниц, а не 2 сохранённые HTML.
 function parseArendator() {
-  const files = fs.readdirSync(DIR).filter((n) => n.toLowerCase().endsWith('.html')).sort();
-  const byKey = new Map();
-  for (const file of files) {
-    const html = fs.readFileSync(`${DIR}/${file}`, 'utf8');
-
-    // id объекта → видимое название БЦ (из ссылки-карточки)
-    const names = new Map();
-    for (const m of html.matchAll(/href="[^"]*\/objects\/(\d+)-[^"]*"[^>]*>([^<]{2,120})</g)) {
-      const name = clean(m[2]);
-      if (name && !/^\s*$/.test(name) && !names.has(m[1])) names.set(m[1], name);
-    }
-
-    for (const block of html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)) {
-      let data;
-      try { data = JSON.parse(block[1]); } catch { continue; }
-      if (!Array.isArray(data.itemListElement)) continue;
-      for (const el of data.itemListElement) {
-        const p = el.item || el;
-        if (!p.geo) continue;
-        const lat = Number(p.geo.latitude);
-        const lon = Number(p.geo.longitude);
-        if (!Number.isFinite(lat) || !Number.isFinite(lon)) continue;
-        const address = clean(typeof p.address === 'string' ? p.address : p.address?.name);
-        const id = (p.url || '').match(/\/objects\/(\d+)-/)?.[1];
-        const name = id && names.get(id);
-        const key = `${lat.toFixed(5)},${lon.toFixed(5)}`;
-        if (!byKey.has(key)) byKey.set(key, { name: name || null, address, lat, lon, url: p.url });
-      }
-    }
-  }
-  return [...byKey.values()];
+  const items = JSON.parse(fs.readFileSync(SOURCE, 'utf8')).items || [];
+  return items.filter((x) => Number.isFinite(x.lat) && Number.isFinite(x.lon));
 }
 
 async function main() {

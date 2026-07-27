@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ssh:*)",
+      "Bash(scp:*)",
+      "Bash(tar:*)",
+      "Bash(rsync:*)",
+      "Bash(pg_dump:*)",
+      "Bash(pg_restore:*)"
+    ]
+  }
+}
