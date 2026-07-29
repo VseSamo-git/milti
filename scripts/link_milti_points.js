@@ -61,15 +61,26 @@ function addrKey(s) {
 const R = 6371000, rad = (d) => d * Math.PI / 180;
 const distM = (a, b, c, d) => { const dLa = rad(c - a), dLo = rad(d - b); const s = Math.sin(dLa / 2) ** 2 + Math.cos(rad(a)) * Math.cos(rad(c)) * Math.sin(dLo / 2) ** 2; return 2 * R * Math.asin(Math.sqrt(s)); };
 
-export async function linkMiltiPoints(registry, { apply = false } = {}) {
+export async function linkMiltiPoints(registry, { apply = false, rematch = false } = {}) {
+  // Режим --rematch: точки уже в БД (CSV мог остаться на другой машине).
+  // Берём их из our_points/closed_points и только пере-вычитаем — это ловит
+  // и внешние БЦ, влитые ПОСЛЕ первого вычитания.
+  let work, closed;
+  if (rematch) {
+    const toPt = (r) => ({ name: r.name, addr: r.address_raw, geo: r.lat != null ? [r.lat, r.lon] : null });
+    work = (await registry.sql`SELECT name, address_raw, lat, lon FROM kosmos.our_points`).map(toPt);
+    closed = (await registry.sql`SELECT name, address_raw, lat, lon FROM kosmos.closed_points`).map(toPt);
+    console.log(`[rematch из БД] точки: работающих ${work.length}, закрытых ${closed.length}`);
+  } else {
   // work: [TITLE, LOCAL_ADDRESS, GEO_POINT]; closed: [TITLE, FINE_LOCATION, LOCAL_ADDRESS, GEO_POINT]
-  const work = readCsv('Открытые_и_закрытые_точки__work.csv').slice(1)
+  work = readCsv('Открытые_и_закрытые_точки__work.csv').slice(1)
     .map((r) => ({ name: r[0], addr: r[1], geo: geo(r[2]) })).filter((x) => x.addr || x.geo);
-  const closed = readCsv('Открытые_и_закрытые_точки__closed.csv').slice(1)
+  closed = readCsv('Открытые_и_закрытые_точки__closed.csv').slice(1)
     .map((r) => ({ name: r[0], addr: r[2], geo: geo(r[3]) })).filter((x) => x.addr || x.geo);
   console.log(`точки: работающих ${work.length}, закрытых ${closed.length}`);
+  }
 
-  if (apply) {
+  if (apply && !rematch) {
     await registry.sql`TRUNCATE kosmos.our_points RESTART IDENTITY`;
     await registry.sql`TRUNCATE kosmos.closed_points RESTART IDENTITY`;
     const ins = (tbl, pts) => pts.length ? registry.sql`
@@ -117,7 +128,8 @@ export async function linkMiltiPoints(registry, { apply = false } = {}) {
 
 if (isMain(import.meta.url)) {
   const apply = process.argv.includes('--apply');
+  const rematch = process.argv.includes('--rematch');
   const registry = new Registry(loadConfig());
-  try { await linkMiltiPoints(registry, { apply }); }
+  try { await linkMiltiPoints(registry, { apply, rematch }); }
   finally { await registry.close(); }
 }
