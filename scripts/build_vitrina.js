@@ -27,7 +27,7 @@ import { loadConfig } from '../src/config.js';
 import { isMain } from '../src/lib/is_main.js';
 import { NocodbClient, num, select, text } from '../src/lib/nocodb.js';
 import { Registry } from '../src/lib/registry.js';
-import { SHEET_VIEWS } from '../src/lib/vitrina_views.js';
+import { SHEET_VIEWS, SHEET_LIST } from '../src/lib/vitrina_views.js';
 
 // Числовые типы Postgres, которые должны стать числами и в витрине:
 // иначе NocoDB отсортирует площади как строки и поставит «900» выше «10000».
@@ -69,10 +69,13 @@ export async function buildVitrina(cfg, { only = '' } = {}) {
   const client = new NocodbClient(cfg);
   const registry = new Registry(cfg);
   try {
-  const allViews = await registry.sql`
-    SELECT table_name FROM information_schema.views
-    WHERE table_schema = 'vitrina' AND table_name ~ '^[1-9] '
-    ORDER BY table_name`;
+  // Состав и порядок листов задаёт SHEET_LIST; строим те из них, что реально
+  // существуют как вью схемы vitrina. Прежний разбор по регэкспу '^[1-9] '
+  // заменён на явный список — так витрина совпадает с задумкой п.4 (единая База).
+  const present = await registry.sql`
+    SELECT table_name FROM information_schema.views WHERE table_schema = 'vitrina'`;
+  const presentSet = new Set(present.map((v) => v.table_name));
+  const allViews = SHEET_LIST.filter((n) => presentSet.has(n)).map((table_name) => ({ table_name }));
 
   only = String(only || '').trim();
   const views = only

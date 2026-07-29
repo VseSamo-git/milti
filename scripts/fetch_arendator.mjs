@@ -59,7 +59,8 @@ function parsePage(html) {
 
 const all = [];
 const seen = new Set();
-for (let p = 1; p <= 9; p++) {
+let lastPage = 0;
+for (let p = 1; p <= 40; p++) {          // динамически: идём пока страница отдаёт карточки
   const html = await getPage(p);
   const items = parsePage(html);
   let added = 0;
@@ -69,7 +70,9 @@ for (let p = 1; p <= 9; p++) {
     seen.add(key); all.push(it); added++;
   }
   console.log(`стр.${p}: карточек ${items.length}, новых ${added}, всего ${all.length}`);
-  if (p < 9) await sleep(1200);
+  lastPage = p;
+  if (items.length === 0) { console.log('пустая страница — конец списка'); break; }
+  await sleep(1200);
 }
 
 const withGeo = all.filter((x) => x.lat && x.lon).length;
@@ -78,5 +81,5 @@ console.log('Примеры:');
 for (const x of all.slice(0, 5)) console.log(`  • ${x.name} — ${x.address} [${x.lat}, ${x.lon}]`);
 
 const fs = await import('node:fs');
-fs.writeFileSync('docs/arendator_bc.json', JSON.stringify({ source: 'arendator.ru БЦ ≥10к Москва', fetched_pages: 9, count: all.length, items: all }, null, 1));
+fs.writeFileSync('docs/arendator_bc.json', JSON.stringify({ source: 'arendator.ru БЦ ≥10к Москва', fetched_pages: lastPage, count: all.length, items: all }, null, 1));
 console.log('\nСохранил: docs/arendator_bc.json');

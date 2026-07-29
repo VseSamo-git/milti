@@ -36,6 +36,11 @@ const NII_RE = /(^|\s|«|"|-)(НИИ|ВНИИ|ЦНИИ|ГНИИ)|научно-и
 // Явные не-НИИ, которые ловятся по подстроке.
 const NII_FALSE_POSITIVE = /храм|церк|собор|часовн|памятник|князю|мемориал/i;
 
+// Транспортные маршруты OSM: relation type=route с именем вида
+// «Автобус 4: НИИОХ => Станция Мытищи» подходит под НИИ по подстроке
+// (НИИОХ). Это не институт, а маршрут — режем по имени и по тегам.
+const TRANSPORT_ROUTE = /^\s*(автобус|маршрут|трамвай|троллейбус|электробус|marshrutka|bus|tram)\b.*(=>|=&gt;|→|:)/i;
+
 export function buildUniversitiesQuery(bbox = MOSCOW_BBOX) {
   const box = bboxString(bbox);
   return (
@@ -62,6 +67,9 @@ export function buildResearchQuery(bbox = MOSCOW_BBOX) {
 
 /** Отсеять ложные срабатывания регэкспа по названию. */
 export function isResearchInstitute(name, tags = {}) {
+  // Маршрут общественного транспорта — не институт, чем бы ни звался.
+  if (tags.type === 'route' || tags.route || tags.public_transport) return false;
+  if (name && TRANSPORT_ROUTE.test(name)) return false;
   if (tags.office === 'research') return true;
   if (!name) return false;
   if (NII_FALSE_POSITIVE.test(name)) return false;
