@@ -26,7 +26,19 @@ const HOUSEWORD = /\b(дом|корпус|корп|кор|строение|ст�
 
 function norm(s) {
   return ` ${String(s).toLowerCase().replace(/ё/g, 'е')} `
+    // Порядковый номер улицы («2-й Южнопортовый», «7-я Кожуховская») — часть
+    // НАЗВАНИЯ, а не дом. Убираем, иначе за дом принимается «2»/«7».
+    .replace(/\b\d+\s*-?\s*[йяе]\b/g, ' ')
     .replace(ADMIN, ' ').replace(STREETTYPE, ' ').replace(HOUSEWORD, ' ');
+}
+
+// Ключ названия: без префиксов БЦ/ТЦ/МФК и кавычек. «БЦ «Академик»» → «академик».
+function nameKey(t) {
+  if (!t || t === '(без названия)') return null;
+  const s = String(t).toLowerCase().replace(/ё/g, 'е')
+    .replace(/^(бц|бизнес-?центр|бизнес-?парк|мфк|тц|трц|деловой центр|дц)\s+/i, '')
+    .replace(/["«»'"`]/g, '').replace(/\s+/g, ' ').trim();
+  return s.length >= 4 ? s : null; // слишком короткие имена не годятся (риск ложных)
 }
 // Полный ключ: улица + ВСЕ числа (корпус/строение включительно). Совпал —
 // это буквально та же строка адреса.
@@ -73,28 +85,32 @@ export async function reconcile(cfg, { apply = false } = {}) {
     const named = (t) => t && t !== '(без названия)' ? t : null;
     const label = (o) => named(o.title) || o.addr_short || '(без названия)';
 
-    // Предрасчёт по Базе: полный ключ, слова+дом, координаты.
-    const bazaParsed = baza.map((o) => ({ o, full: addrKey(o.address), ...parseAddr(o.address) }));
+    // Предрасчёт по Базе: полный ключ, слова+дом, имя, координаты.
+    const bazaParsed = baza.map((o) => ({ o, full: addrKey(o.address), name: nameKey(o.title), ...parseAddr(o.address) }));
 
     const exact = [];   // {cad} → status='дубль_в_базе'
     const hints = [];   // {cad, hint} → baza_dubl_hint
     for (const p of prov) {
       const pf = addrKey(p.address);
       const pp = parseAddr(p.address);
+      const pn = nameKey(p.title);
       let exactHit = null, looseHit = null, looseD = Infinity;
       for (const bp of bazaParsed) {
         const d = (p.lat != null && bp.o.lat != null) ? distM(p.lat, p.lon, bp.o.lat, bp.o.lon) : Infinity;
         // ТОЧНОЕ: координата ≤50 м ИЛИ полностью тот же адрес.
         if (d <= 50 || (pf && bp.full && pf === bp.full)) { exactHit = bp.o; break; }
-        // НЕТОЧНОЕ: тот же номер дома + пересечение слов улицы + ≤300 м.
+        // НЕТОЧНОЕ, флаг (берём ближайший кандидат):
+        //  а) то же название + ≤1000 м (имя — сильный сигнал, адрес мог разойтись);
+        //  б) тот же номер дома + пересечение слов улицы + ≤300 м.
+        const nameMatch = pn && bp.name === pn && d <= 1000;
+        let addrMatch = false;
         if (pp.house && bp.house === pp.house && d <= 300) {
-          let overlap = false;
-          for (const w of pp.words) if (bp.words.has(w)) { overlap = true; break; }
-          if (overlap && d < looseD) { looseD = d; looseHit = bp.o; }
+          for (const w of pp.words) if (bp.words.has(w)) { addrMatch = true; break; }
         }
+        if ((nameMatch || addrMatch) && d < looseD) { looseD = d; looseHit = bp.o; }
       }
       if (exactHit) { exact.push({ cad: p.cadastral_no }); continue; }
-      if (looseHit) hints.push({ cad: p.cadastral_no, hint: `похоже уже в Базе: «${label(looseHit)}» (~${Math.round(looseD)} м)` });
+      if (looseHit) hints.push({ cad: p.cadastral_no, hint: `похоже уже в Базе: «${label(looseHit)}»${Number.isFinite(looseD) ? ` (~${Math.round(looseD)} м)` : ''}` });
       else hints.push({ cad: p.cadastral_no, hint: null }); // очистить устаревший флаг
     }
     const flagged = hints.filter((h) => h.hint);
