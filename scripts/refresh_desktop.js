@@ -17,23 +17,28 @@
 import { loadConfig } from '../src/config.js';
 import { isMain } from '../src/lib/is_main.js';
 import { syncVerdicts } from './sync_verdicts.js';
+import { reconcile } from './reconcile_proverka.js';
 import { buildVitrina } from './build_vitrina.js';
 
 export async function refreshDesktop(cfg, { mode = 'quick' } = {}) {
   console.log('===== синк решений NocoDB → вердикты =====');
   const r = await syncVerdicts(cfg, { apply: true });
 
-  // quick: пересобираем «На проверку» ТОЛЬКО когда реально были решения —
-  // иначе таблица дропалась бы каждые полчаса и «моргала» у Димы без причины.
-  // full: пересобираем всегда (суточная сверка, ОК-объекты появляются в Базе).
-  if (mode === 'full') {
-    console.log('\n===== пересборка витрины (все листы) =====');
-    await buildVitrina(cfg);
-  } else if (r.applied > 0) {
-    console.log(`\n===== есть ${r.applied} решений → пересборка «На проверку» =====`);
-    await buildVitrina(cfg, { only: 'На проверку' });
+  // Пересобираем, только когда что-то изменилось: full (суточная сверка) или
+  // были новые решения (База выросла → надо пересчитать дубли/флаги и убрать
+  // из очереди то, что уехало). Иначе таблица «моргала» бы каждую минуту зря.
+  if (mode === 'full' || r.applied > 0) {
+    console.log('\n===== сверка «На проверку» ↔ «База» (дубли + флаги) =====');
+    await reconcile(cfg, { apply: true });
+    if (mode === 'full') {
+      console.log('\n===== пересборка витрины (все листы) =====');
+      await buildVitrina(cfg);
+    } else {
+      console.log(`\n===== есть ${r.applied} решений → пересборка «На проверку» =====`);
+      await buildVitrina(cfg, { only: 'На проверку' });
+    }
   } else {
-    console.log('\nновых решений нет — пересборку пропускаем');
+    console.log('\nновых решений нет — сверку и пересборку пропускаем');
   }
   return r;
 }
