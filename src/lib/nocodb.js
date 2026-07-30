@@ -140,6 +140,46 @@ export class NocodbClient {
     return view.id;
   }
 
+  /**
+   * Прочитать строки таблицы (для обратного синка правок Димы).
+   *
+   * Идём страницами через offset, пока API отдаёт полную страницу. Просим
+   * только нужные поля (fields) — чтобы не тянуть тысячи адресов ради двух
+   * колонок. Всегда добавляем Id: без него строку не сопоставить.
+   *
+   * @param {string} tableId
+   * @param {{fields?: string[], pageSize?: number}} opts
+   * @returns {Promise<object[]>}
+   */
+  async records(tableId, { fields = [], pageSize = 100 } = {}) {
+    const out = [];
+    for (let offset = 0; ; offset += pageSize) {
+      const qs = new URLSearchParams({ limit: String(pageSize), offset: String(offset) });
+      if (fields.length) qs.set('fields', ['Id', ...fields].join(','));
+      const page = await this.#call(`/api/v2/tables/${tableId}/records?${qs.toString()}`);
+      const list = page.list || [];
+      out.push(...list);
+      if (list.length < pageSize) return out;
+    }
+  }
+
+  /**
+   * Обновить поля записей. Каждый элемент — объект с Id и меняемыми полями.
+   * Нужен для CRUD и для проверки обратного синка.
+   * @param {string} tableId
+   * @param {object[]} rows — [{Id, "Поле": значение}, ...]
+   */
+  async update(tableId, rows) {
+    if (!rows.length) return 0;
+    for (let i = 0; i < rows.length; i += 50) {
+      await this.#call(`/api/v2/tables/${tableId}/records`, {
+        method: 'PATCH',
+        body: JSON.stringify(rows.slice(i, i + 50)),
+      });
+    }
+    return rows.length;
+  }
+
   /** Сколько строк уже лежит — чтобы не заливать повторно. */
   async count(tableId) {
     const payload = await this.#call(`/api/v2/tables/${tableId}/records/count`);

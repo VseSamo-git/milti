@@ -26,6 +26,7 @@ import { stageCompetitors } from './build_places.js';
 import { linkAddresses } from './link_addresses.js';
 import { linkNominatim } from './link_nominatim.js';
 import { buildVitrina } from './build_vitrina.js';
+import { syncVerdicts } from './sync_verdicts.js';
 
 const cfg = loadConfig();
 
@@ -65,6 +66,11 @@ try {
 } finally {
   await registry.close();
 }
+
+// Синк решений Димы ДО пересборки: иначе drop таблицы сотрёт плашки
+// ОК/Хуй раньше, чем они попадут в вердикты. syncVerdicts сам открывает
+// и закрывает подключение.
+await step('Синк решений NocoDB → вердикты', () => syncVerdicts(cfg, { apply: true }));
 
 // Витрина — своим подключением (buildVitrina сам открывает и закрывает).
 await step('Витрина NocoDB', () => buildVitrina(cfg));
