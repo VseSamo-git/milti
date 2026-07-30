@@ -15,7 +15,8 @@ import { isMain } from '../src/lib/is_main.js';
 export async function setTitles(registry, { apply = false } = {}) {
   const rows = JSON.parse(readFileSync('docs/found_titles.json', 'utf8'))
     .filter((r) => r.cadastral_no && r.name && String(r.name).trim())
-    .map((r) => ({ cad: r.cadastral_no, name: String(r.name).trim().slice(0, 200) }));
+    .map((r) => ({ cad: r.cadastral_no, name: String(r.name).trim().slice(0, 200),
+                   src: (r.source && String(r.source).trim()) || 'интернет-поиск' }));
   console.log(`названий к записи: ${rows.length}`);
   for (const r of rows.slice(0, 15)) console.log(`  ${r.cad} → «${r.name}»`);
 
@@ -24,7 +25,7 @@ export async function setTitles(registry, { apply = false } = {}) {
   let set = 0;
   for (const r of rows) {
     const res = await registry.sql`
-      UPDATE kosmos.objects SET title = ${r.name}, title_source = 'интернет-поиск'
+      UPDATE kosmos.objects SET title = ${r.name}, title_source = ${r.src}
       WHERE cadastral_no = ${r.cad} AND title IS NULL
       RETURNING cadastral_no`;
     if (res.length) set++;
