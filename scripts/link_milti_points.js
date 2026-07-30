@@ -21,6 +21,7 @@ import { readFileSync } from 'node:fs';
 import { loadConfig } from '../src/config.js';
 import { Registry } from '../src/lib/registry.js';
 import { isMain } from '../src/lib/is_main.js';
+import { addrKey } from '../src/lib/addr_key.js';
 
 const CSV_DIR = process.env.KOSMOS_MILTI_CSV_DIR ||
   'C:/Users/pocht/AppData/Local/Temp/claude/c--Users-pocht-Documents------/5f5667f2-8a82-4954-a30e-2437cf275d2b/scratchpad/';
@@ -42,21 +43,8 @@ function parseCsv(text) {
 const readCsv = (f) => parseCsv(readFileSync(CSV_DIR + f, 'utf8').replace(/^\uFEFF/, ''));
 const geo = (s) => { const m = (s || '').match(/(-?\d+\.\d+)\s*,\s*(-?\d+\.\d+)/); return m ? [parseFloat(m[1]), parseFloat(m[2])] : null; };
 
-// Нормализованный ключ адреса: улица + дом, без шума. ё→е, тип улицы/дома убран.
-function addrKey(s) {
-  if (!s) return null;
-  let t = ` ${s.toLowerCase().replace(/ё/g, 'е')} `;
-  t = t.replace(/\b(российская федерация|г\.?|город|москва|московская|обл\.?|область|мо|поселение|деревня|д\.|рп|пгт|вн\.?тер\.?г\.?|муниципальный округ|район|р-н|ао|зао|сао|свао|юао|юзао|сзао|ювао|цао|нао|тао)\b/g, ' ');
-  t = t.replace(/\b(улица|ул|проспект|пр-кт|пр-т|проезд|переулок|пер|шоссе|ш|бульвар|б-р|бул|набережная|наб|площадь|пл|аллея|линия|тупик|квартал|кв-л)\b\.?/g, ' ');
-  t = t.replace(/\b(дом|корпус|корп|кор|строение|стр|владение|вл|литера|лит)\b\.?/g, ' ');
-  // «24к3» / «2а» → цифры и буквы дома оставляем, разделители чистим
-  t = t.replace(/[^0-9a-zа-я]+/g, ' ').replace(/\s+/g, ' ').trim();
-  // ключ = слова-буквы (улица) + все числа (дом/корпус), отсортированы
-  const words = t.split(' ').filter((w) => /[а-яa-z]/.test(w) && w.length > 2);
-  const nums = t.split(' ').filter((w) => /\d/.test(w));
-  if (!words.length || !nums.length) return null;
-  return words.sort().join(' ') + '|' + nums.sort().join(' ');
-}
+// Нормализация адреса — общая для всех сверок, см. src/lib/addr_key.js.
+// (Локальная копия жила здесь и молча не работала: \b не знает кириллицы.)
 
 const R = 6371000, rad = (d) => d * Math.PI / 180;
 const distM = (a, b, c, d) => { const dLa = rad(c - a), dLo = rad(d - b); const s = Math.sin(dLa / 2) ** 2 + Math.cos(rad(a)) * Math.cos(rad(c)) * Math.sin(dLo / 2) ** 2; return 2 * R * Math.asin(Math.sqrt(s)); };
@@ -91,19 +79,32 @@ export async function linkMiltiPoints(registry, { apply = false, rematch = false
     console.log('точки загружены в our_points / closed_points');
   }
 
+  // Вычитаем ОБА источника Базы. Раньше ходили только по objects — и ВУЗ/НИИ/
+  // колледжи с конкурентами (они живут в places) оставались в Базе даже там,
+  // где МИЛТИ уже работает: 20 таких адресов нашлись сверкой 30.07.2026.
   const objs = await registry.sql`SELECT cadastral_no, lat, lon, address FROM kosmos.objects`;
-  // индекс адресных ключей базы
+  const plcs = await registry.sql`
+    SELECT id, kind, lat, lon, address, name FROM kosmos.places
+     WHERE kind IN ('вуз','колледж','нии','конкурент')`;
+
+  // Единый список целей: ключ + координата + адрес. Ключ тот же, что видит
+  // Дима в листе (кадастровый номер / place:<id>) — так вычитание, вердикты
+  // и витрина говорят на одном языке.
+  const targets = [
+    ...objs.map((o) => ({ key: o.cadastral_no, table: 'objects', lat: o.lat, lon: o.lon, addr: o.address })),
+    ...plcs.map((p) => ({ key: `place:${p.id}`, table: 'places', id: p.id, lat: p.lat, lon: p.lon, addr: p.address || p.name })),
+  ];
   const byAddr = new Map();
-  for (const o of objs) { const k = addrKey(o.address); if (k) { if (!byAddr.has(k)) byAddr.set(k, []); byAddr.get(k).push(o.cadastral_no); } }
+  for (const t of targets) { const k = addrKey(t.addr); if (k) { if (!byAddr.has(k)) byAddr.set(k, []); byAddr.get(k).push(t.key); } }
 
   function hits(points) {
     const set = new Set();
     for (const p of points) {
       // 1) координаты ≤30м
-      if (p.geo) for (const o of objs) { if (o.lat != null && distM(p.geo[0], p.geo[1], o.lat, o.lon) <= THRESHOLD_M) set.add(o.cadastral_no); }
+      if (p.geo) for (const t of targets) { if (t.lat != null && distM(p.geo[0], p.geo[1], t.lat, t.lon) <= THRESHOLD_M) set.add(t.key); }
       // 2) адрес/название
       const k = addrKey(p.addr || p.name);
-      if (k && byAddr.has(k)) for (const cad of byAddr.get(k)) set.add(cad);
+      if (k && byAddr.has(k)) for (const key of byAddr.get(k)) set.add(key);
     }
     return set;
   }
@@ -111,19 +112,36 @@ export async function linkMiltiPoints(registry, { apply = false, rematch = false
   const closedHits = hits(closed);
   // работающая имеет приоритет
   for (const c of ourHits) closedHits.delete(c);
-  console.log(`вычитается: наша точка ${ourHits.size} + закрытая ${closedHits.size} = ${ourHits.size + closedHits.size}`);
+  const split = (s) => ({
+    cads: [...s].filter((k) => !k.startsWith('place:')),
+    pids: [...s].filter((k) => k.startsWith('place:')).map((k) => Number(k.slice(6))),
+  });
+  const our = split(ourHits), cls = split(closedHits);
+  console.log(`вычитается: наша точка ${ourHits.size} (здания ${our.cads.length} + места ${our.pids.length})`);
+  console.log(`            закрытая  ${closedHits.size} (здания ${cls.cads.length} + места ${cls.pids.length})`);
 
   if (apply) {
-    const upd = (cads, status, reason) => cads.size ? registry.sql`
-      UPDATE kosmos.objects SET status = ${status}, subtract_reason = ${reason}
-      WHERE cadastral_no = ANY(${[...cads]})` : null;
-    await upd(ourHits, 'вычтен_наша_точка', 'адрес работающей точки МИЛТИ');
-    await upd(closedHits, 'вычтен_закрытая_точка', 'адрес закрытой точки МИЛТИ');
+    // Сброс прежних отметок: список точек Дима обновляет раз в 3 месяца, и
+    // ушедшая из списка точка обязана вернуть здание в Базу, а не остаться
+    // вычтенной навсегда.
+    await registry.sql`UPDATE kosmos.objects SET status='активен', subtract_reason=NULL WHERE status LIKE 'вычтен%'`;
+    await registry.sql`UPDATE kosmos.places  SET status='активна', subtract_reason=NULL WHERE status LIKE 'вычтен%'`;
+
+    const upd = async (s, status, reason) => {
+      if (s.cads.length) await registry.sql`
+        UPDATE kosmos.objects SET status=${status}, subtract_reason=${reason}
+         WHERE cadastral_no = ANY(${s.cads})`;
+      if (s.pids.length) await registry.sql`
+        UPDATE kosmos.places SET status=${status}, subtract_reason=${reason}
+         WHERE id = ANY(${s.pids})`;
+    };
+    await upd(our, 'вычтен_наша_точка', 'адрес работающей точки МИЛТИ');
+    await upd(cls, 'вычтен_закрытая_точка', 'адрес закрытой точки МИЛТИ');
     console.log('статусы вычтенных проставлены');
   } else {
     console.log('(dry-run: база не изменена, добавь --apply чтобы записать)');
   }
-  return { our: ourHits.size, closed: closedHits.size };
+  return { our: ourHits.size, closed: closedHits.size, places: our.pids.length + cls.pids.length };
 }
 
 if (isMain(import.meta.url)) {

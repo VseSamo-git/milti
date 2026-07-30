@@ -18,9 +18,18 @@ import { NocodbClient } from '../src/lib/nocodb.js';
 import { Registry } from '../src/lib/registry.js';
 import { recordVerdict } from '../src/bot/tools.js';
 
-// Листы с колонкой решения: лист → {keyCol, decisionCol}. Легко расширить.
+// Листы с колонкой решения. Дима просил ОК/Хуй В КАЖДОМ листе, а не только в
+// очереди: решение он выносит там, где смотрит. Колонка одна и та же везде.
+//   Хуй → 'отказ'      — строка исчезает отовсюду;
+//   ОК  → 'интересно'  — во внешних/очередных листах объект уезжает в «Базу»
+//                        (с проверкой на дубль по названию+адресу), в самой
+//                        «Базе» это просто отметка «проверено, оставить».
 const DECISION_SHEETS = [
-  { sheet: 'На проверку', keyCol: 'Ключ', decisionCol: 'Решение (ОК / Хуй)' },
+  { sheet: 'База',               keyCol: 'Ключ', decisionCol: 'Решение (ОК / Хуй)' },
+  { sheet: 'На проверку',        keyCol: 'Ключ', decisionCol: 'Решение (ОК / Хуй)' },
+  { sheet: 'ТЦ с супермаркетом', keyCol: 'Ключ', decisionCol: 'Решение (ОК / Хуй)' },
+  { sheet: 'Конкуренты',         keyCol: 'Ключ', decisionCol: 'Решение (ОК / Хуй)' },
+  { sheet: 'БЦ средние 5-10к',   keyCol: 'Ключ', decisionCol: 'Решение (ОК / Хуй)' },
 ];
 const MAP = { 'ОК': 'интересно', 'Хуй': 'отказ' };
 const AUTHOR = 'дима (NocoDB)';
@@ -51,11 +60,9 @@ export async function syncVerdicts(cfg, { apply = false } = {}) {
     // каждый прогон плодил бы одинаковые вердикты.
     const keys = [...new Set(picks.map((p) => p.key))];
     const last = await registry.sql`
-      SELECT o.cadastral_no, lv.verdict
-      FROM kosmos.objects o
-      JOIN vitrina._last_verdict lv ON lv.object_id = o.id
-      WHERE o.cadastral_no = ANY(${keys})`;
-    const lastByKey = new Map(last.map((r) => [r.cadastral_no, r.verdict]));
+      SELECT entity_key, verdict FROM vitrina._last_verdict
+      WHERE entity_key = ANY(${keys})`;
+    const lastByKey = new Map(last.map((r) => [r.entity_key, r.verdict]));
 
     const todo = picks.filter((p) => lastByKey.get(p.key) !== p.verdict);
     console.log(`к записи (новые/изменённые): ${todo.length}`);
@@ -67,7 +74,7 @@ export async function syncVerdicts(cfg, { apply = false } = {}) {
     for (const p of todo) {
       try {
         await recordVerdict(registry, {
-          cadastralNo: p.key, verdict: p.verdict,
+          key: p.key, verdict: p.verdict,
           note: `решение с десктопа NocoDB (${p.decision})`, author: AUTHOR,
         });
         ok++;

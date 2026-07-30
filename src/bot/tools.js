@@ -89,30 +89,50 @@ export async function queryBase(registry, userSql, limit = 50) {
 }
 
 /**
- * Записать вердикт Димы к зданию. Единственная операция записи.
+ * Ключ объекта витрины — ровно то, что Дима видит в колонке «Ключ».
+ * Здания реестра: кадастровый номер. Места OSM (ВУЗ/НИИ/конкуренты):
+ * `place:<id>` — у них кадастра нет, а решение выносить всё равно нужно.
+ */
+export const isPlaceKey = (key) => /^place:\d+$/.test(String(key || ''));
+
+/**
+ * Записать вердикт Димы. Единственная операция записи.
  *
- * Здание ищем по кадастровому номеру (он есть во всех листах-объектах).
- * Ничего не удаляем и не перезаписываем: добавляем строку в append-only
+ * Объект ищем по ключу листа — кадастр здания или place:<id> места. Ничего
+ * не удаляем и не перезаписываем: добавляем строку в append-only
  * kosmos.verdicts, последний вердикт побеждает при показе.
  *
  * @param {import('../lib/registry.js').Registry} registry
- * @param {{cadastralNo: string, verdict: string, note?: string, author: string}} v
+ * @param {{key?: string, cadastralNo?: string, verdict: string, note?: string, author: string}} v
  * @returns {Promise<{ok: true, title: string|null} >}
  */
-export async function recordVerdict(registry, { cadastralNo, verdict, note = null, author }) {
+export async function recordVerdict(registry, { key, cadastralNo, verdict, note = null, author }) {
+  const entityKey = key || cadastralNo;
   if (!VERDICTS.includes(verdict)) {
     throw new Error(`неизвестный вердикт «${verdict}». Можно: ${VERDICTS.join(', ')}`);
   }
-  if (!cadastralNo) throw new Error('не указан кадастровый номер здания');
+  if (!entityKey) throw new Error('не указан ключ объекта (кадастровый номер или place:<id>)');
   if (!author) throw new Error('не указан автор вердикта');
 
-  const [obj] = await registry.sql`
-    SELECT id, title FROM kosmos.objects WHERE cadastral_no = ${cadastralNo} LIMIT 1`;
-  if (!obj) throw new Error(`здание с кадастром ${cadastralNo} не найдено`);
+  // object_id держим для зданий: он остаётся живой связью с реестром.
+  // Для мест его нет — вердикт опирается только на entity_key.
+  let objectId = null, title = null;
+  if (isPlaceKey(entityKey)) {
+    const [p] = await registry.sql`
+      SELECT name FROM kosmos.places WHERE id = ${Number(String(entityKey).slice(6))} LIMIT 1`;
+    if (!p) throw new Error(`место ${entityKey} не найдено`);
+    title = p.name;
+  } else {
+    const [obj] = await registry.sql`
+      SELECT id, title FROM kosmos.objects WHERE cadastral_no = ${entityKey} LIMIT 1`;
+    if (!obj) throw new Error(`здание с кадастром ${entityKey} не найдено`);
+    objectId = obj.id;
+    title = obj.title;
+  }
 
   await registry.sql`
-    INSERT INTO kosmos.verdicts (object_id, author, verdict, note)
-    VALUES (${obj.id}, ${author}, ${verdict}, ${note})`;
+    INSERT INTO kosmos.verdicts (object_id, entity_key, author, verdict, note)
+    VALUES (${objectId}, ${entityKey}, ${author}, ${verdict}, ${note})`;
 
-  return { ok: true, title: obj.title };
+  return { ok: true, title };
 }
