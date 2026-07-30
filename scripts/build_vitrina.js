@@ -105,6 +105,11 @@ export async function buildVitrina(cfg, { only = '' } = {}) {
       let col;
       if (NUMERIC.has(c.data_type)) {
         col = num(c.column_name);
+      } else if (/Решение \(ОК \/ Хуй\)/.test(c.column_name)) {
+        // Колонка решения Димы: вся NULL (enumOptions её бы не распознал),
+        // но это выбор из двух — делаем плашку принудительно, иначе Дима
+        // не может выбрать вариант (стоит серый текст).
+        col = select(c.column_name, ['ОК', 'Хуй']);
       } else {
         const options = await enumOptions(registry, view, c.column_name);
         col = options ? select(c.column_name, options) : text(c.column_name);
