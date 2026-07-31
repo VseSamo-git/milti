@@ -21,3 +21,5 @@ logs/
 cat.json
 diag_*.mjs
 tmp_*.mjs
+yandex_budget.json
+yandex_cache.json

@@ -22,6 +22,7 @@
 import { loadConfig } from '../src/config.js';
 import { Registry } from '../src/lib/registry.js';
 import { isMain } from '../src/lib/is_main.js';
+import { geocode as yandexGeo, budgetLeft, budgetUsed, DAILY_CAP } from '../src/lib/yandex.js';
 
 // --- нормализаторы ----------------------------------------------------------
 const PREFIX = /^(бц|тц|трц|тк|бизнес[- ]центр|бизнес[- ]парк|деловой центр|деловой квартал|торговый центр|торгово-развлекательн\w*|комплекс|мфк|апарт\w*)\s+/i;
@@ -174,22 +175,8 @@ async function reverse(lat, lon) {
   return { address: j.display_name || '', road: a.road || '', house: (a.house_number || '').toLowerCase() };
 }
 
-// --- Yandex forward geocode (по названию) -----------------------------------
-// Спрашиваем «где в Москве объект с таким названием», сравниваем с нашей
-// координатой. Ловит класс «не та башня»: имя привязано, а координата/адрес
-// указывают в другое место. bbox сужает поиск до Москвы.
-async function yandexGeocode(query, key) {
-  const url = `https://geocode-maps.yandex.ru/1.x/?apikey=${key}&geocode=${encodeURIComponent(query)}`
-    + `&format=json&results=1&lang=ru_RU&bbox=36.80,55.14~37.97,56.03&rspn=1`;
-  const res = await fetch(url, { signal: AbortSignal.timeout(20000) });
-  if (!res.ok) throw new Error('yandex ' + res.status);
-  const members = res.status === 200 ? (await res.json()).response.GeoObjectCollection.featureMember : [];
-  if (!members || !members.length) return null;
-  const o = members[0].GeoObject;
-  const [lon, lat] = o.Point.pos.split(' ').map(Number);
-  const meta = o.metaDataProperty.GeocoderMetaData;
-  return { name: o.name || '', address: meta.text || '', lat, lon, precision: meta.precision || '' };
-}
+// Yandex forward geocode вынесен в ../src/lib/yandex.js — там жёсткий дневной
+// лимит (900/сут) и кэш. Здесь используем импорт yandexGeo().
 
 export async function auditAll(r, { geo = 0 } = {}) {
   // ключи Базы для кросс-сверки «На проверку»
@@ -227,15 +214,16 @@ export async function auditAll(r, { geo = 0 } = {}) {
     geoQueue.sort((a, b) => b.pri - a.pri);
     const pick = geoQueue.slice(0, geo);
     const YKEY = process.env.YANDEX_GEOCODER_KEY;
-    const mode = YKEY ? 'Yandex forward (по названию)' : 'Nominatim reverse';
+    const mode = YKEY ? `Yandex forward (лимит ${DAILY_CAP}/сут, сегодня использовано ${budgetUsed()}, осталось ${budgetLeft()})` : 'Nominatim reverse';
     console.log(`\n════════ ГЕО-СВЕРКА (${mode}, ${pick.length} строк) ════════`);
+    if (YKEY && budgetLeft() <= 0) { console.log('  суточный лимit Яндекса исчерпан — гео-сверка пропущена'); }
     let mism = 0, notfound = 0;
     for (let i = 0; i < pick.length; i++) {
       const { cfg, x } = pick[i];
       try {
         if (YKEY) {
-          // forward: где справочник видит объект с таким названием
-          const hit = await yandexGeocode(`Москва, ${x.name}`, YKEY);
+          // forward: где справочник видит объект с таким названием (кэш+лимит внутри)
+          const hit = await yandexGeo(`Москва, ${x.name}`);
           if (!hit) { notfound++; }
           else {
             const d = distM(x.lat, x.lon, hit.lat, hit.lon);
@@ -264,10 +252,14 @@ export async function auditAll(r, { geo = 0 } = {}) {
           }
           await new Promise((s) => setTimeout(s, 1100));
         }
-      } catch (e) { if (/\b40[13]\b/.test(e.message)) { console.log(`  ✗ ключ Яндекса отклонён (${e.message}) — стоп`); break; } }
+      } catch (e) {
+        if (e.message.startsWith('YANDEX_BUDGET')) { console.log(`  ⛔ ${e.message} — гео-сверка остановлена, лимит бережём`); break; }
+        if (/\b40[13]\b/.test(e.message)) { console.log(`  ✗ ключ Яндекса отклонён (${e.message}) — стоп`); break; }
+      }
       if ((i + 1) % 50 === 0) console.log(`   …${i + 1}/${pick.length}`);
     }
     console.log(`\nнаходок гео: ${mism}${notfound ? `, не найдено справочником: ${notfound}` : ''} из ${pick.length}`);
+    if (YKEY) console.log(`Яндекс сегодня: использовано ${budgetUsed()}/${DAILY_CAP}, осталось ${budgetLeft()}`);
   }
   return all;
 }
