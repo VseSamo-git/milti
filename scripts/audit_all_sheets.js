@@ -224,20 +224,25 @@ export async function auditAll(r, { geo = 0 } = {}) {
         if (YKEY) {
           // forward: где справочник видит объект с таким названием (кэш+лимит внутри)
           const hit = await yandexGeo(`Москва, ${x.name}`);
-          if (!hit) { notfound++; }
+          // precision 'other' = справочник не нашёл объект, вернул центр города/района —
+          // сравнивать координату с таким нельзя (даст ложное «не сошлось»)
+          if (!hit || hit.precision === 'other') { notfound++; }
           else {
             const d = distM(x.lat, x.lon, hit.lat, hit.lon);
             x.geo = hit.address;
+            // расстояние сравниваем только при точной привязке (дом/подъезд); при
+            // 'street'/'range' координата справочника — центр улицы, далёкое d ложно
+            const precise = ['exact', 'number', 'near'].includes(hit.precision);
             const bb = baseHouse(x.addr), hb = baseHouse(hit.address);
             const houseDiff = bb && hb && bb.d !== hb.d ? ` дом ${bb.d}${bb.l}≠${hb.d}${hb.l}` : '';
-            if (d >= 1500) {
+            if (precise && d >= 1500) {
               mism++; x.flags.push('НЕ_СОШЛОСЬ');
               x.geoNote = `имя ведёт в другое место (${(d / 1000).toFixed(1)} км): ${hit.address}`;
               console.log(`  [НЕ СОШЛОСЬ ${(d / 1000).toFixed(1)}км] [${cfg}] ${String(x.name).slice(0, 38)} | база «${x.addr}» ↔ Я «${hit.address}»`);
-            } else if (d >= 300 || houseDiff) {
+            } else if ((precise && d >= 300) || houseDiff) {
               mism++; x.flags.push('РАЗНОЧТЕНИЕ_ГЕО');
-              x.geoNote = `расхождение ${Math.round(d)} м${houseDiff}: ${hit.address}`;
-              console.log(`  [РАЗН ${Math.round(d)}м${houseDiff}] [${cfg}] ${String(x.name).slice(0, 38)} | «${x.addr}» ↔ Я «${hit.address}»`);
+              x.geoNote = `расхождение ${precise ? Math.round(d) + ' м' : ''}${houseDiff}: ${hit.address}`;
+              console.log(`  [РАЗН ${precise ? Math.round(d) + 'м' : ''}${houseDiff}] [${cfg}] ${String(x.name).slice(0, 38)} | «${x.addr}» ↔ Я «${hit.address}»`);
             }
           }
           await new Promise((s) => setTimeout(s, 200));
