@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>МИЛТИ — база, вопросы, идеи. 31 июля 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;800&family=Golos+Text:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f6f1e7; --paper-2:#efe7d9; --ink:#1c1a17; --ink-2:#4a453d; --ink-3:#7d766a;
+    --rule:#ddd2bd; --accent:#c2451f; --accent-soft:#f2d9cf; --gold:#a8813a; --green:#3f6b47;
+    --shadow:0 1px 0 rgba(28,26,23,.04), 0 12px 32px -18px rgba(28,26,23,.35);
+    --display:"Unbounded","Golos Text","Segoe UI",sans-serif;
+    --body:"Golos Text","Segoe UI",-apple-system,sans-serif;
+    --measure:38rem;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --paper:#151412; --paper-2:#1e1c19; --ink:#f0ebe1; --ink-2:#c3bcae; --ink-3:#8d8578;
+      --rule:#332f29; --accent:#ef6b3f; --accent-soft:#3a2018; --gold:#c9a04e; --green:#7fae86;
+      --shadow:0 1px 0 rgba(0,0,0,.3), 0 12px 32px -18px rgba(0,0,0,.8);
+    }
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0; background:var(--paper); color:var(--ink);
+    font-family:var(--body); font-size:17px; line-height:1.6;
+    background-image:
+      radial-gradient(1200px 600px at 85% -10%, rgba(194,69,31,.06), transparent 60%),
+      radial-gradient(900px 500px at -10% 20%, rgba(168,129,58,.07), transparent 60%);
+    background-attachment:fixed;
+  }
+  .wrap{max-width:68rem; margin:0 auto; padding:0 clamp(1.1rem,4vw,3rem)}
+
+  header.top{padding:clamp(2.2rem,6vw,4.5rem) 0 clamp(1.2rem,2.5vw,2rem)}
+  .eyebrow{display:flex;flex-wrap:wrap;gap:.6rem 1.4rem;align-items:baseline;
+    font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3);font-weight:600}
+  .eyebrow .dot{width:6px;height:6px;border-radius:50%;background:var(--accent);display:inline-block;margin-right:.5rem;vertical-align:middle}
+  h1{font-family:var(--display);font-weight:800;letter-spacing:-.02em;
+    font-size:clamp(2rem,5.6vw,3.8rem);line-height:1.03;margin:1.4rem 0 0;max-width:16ch}
+  h1 em{font-style:normal;color:var(--accent)}
+  .rule{height:1px;background:var(--rule);margin:clamp(1.6rem,3vw,2.4rem) 0}
+  nav.toc{display:flex;flex-wrap:wrap;gap:.5rem}
+  nav.toc a{font-size:.78rem;text-decoration:none;color:var(--ink-2);border:1px solid var(--rule);
+    border-radius:100px;padding:.42rem .9rem;background:var(--paper-2);transition:.18s ease}
+  nav.toc a b{color:var(--accent);font-weight:700;margin-right:.35rem}
+  nav.toc a:hover{border-color:var(--accent);color:var(--ink);transform:translateY(-1px)}
+
+  section{padding:clamp(2.2rem,5vw,3.8rem) 0;border-top:1px solid var(--rule)}
+  .sec-grid{display:grid;grid-template-columns:5.5rem minmax(0,1fr);gap:clamp(1rem,3vw,2.2rem);align-items:start}
+  .num{font-family:var(--display);font-weight:800;font-size:clamp(2.2rem,4.5vw,3.2rem);line-height:.85;
+    color:transparent;-webkit-text-stroke:1.5px var(--rule);position:sticky;top:2rem}
+  h2{font-family:var(--display);font-weight:600;letter-spacing:-.01em;
+    font-size:clamp(1.35rem,2.6vw,1.9rem);line-height:1.15;margin:0 0 1.3rem}
+  h3{font-weight:700;font-size:1rem;margin:0 0 .4rem}
+  p{margin:0 0 .9rem;max-width:var(--measure)}
+  .muted{color:var(--ink-3)}
+
+  .metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(8.5rem,1fr));gap:1px;
+    background:var(--rule);border:1px solid var(--rule);border-radius:14px;overflow:hidden;margin:0 0 1.6rem}
+  .metric{background:var(--paper-2);padding:1rem 1.1rem}
+  .metric b{display:block;font-family:var(--display);font-weight:600;font-size:1.6rem;line-height:1.1;letter-spacing:-.02em}
+  .metric span{display:block;font-size:.76rem;color:var(--ink-3);margin-top:.3rem;line-height:1.35}
+
+  ul.done{list-style:none;padding:0;margin:0;max-width:var(--measure)}
+  ul.done li{position:relative;padding:.55rem 0 .55rem 1.7rem;border-bottom:1px dashed var(--rule)}
+  ul.done li:last-child{border-bottom:none}
+  ul.done li::before{content:"";position:absolute;left:.15rem;top:1.05rem;width:.62rem;height:.34rem;
+    border-left:2px solid var(--green);border-bottom:2px solid var(--green);transform:rotate(-45deg)}
+
+  .cards{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(17rem,1fr))}
+  .card{background:var(--paper-2);border:1px solid var(--rule);border-radius:14px;
+    padding:1.2rem 1.3rem 1.3rem;box-shadow:var(--shadow)}
+  .card .tag{display:inline-block;font-size:.68rem;letter-spacing:.13em;text-transform:uppercase;
+    font-weight:700;color:var(--accent);background:var(--accent-soft);padding:.24rem .6rem;border-radius:100px;margin-bottom:.7rem}
+  .card p{margin:0;font-size:.95rem;color:var(--ink-2)}
+  .card p + p{margin-top:.55rem}
+  .card .why{font-size:.85rem;color:var(--accent);font-weight:600;margin-top:.65rem}
+
+  ol.qs{list-style:none;counter-reset:q;padding:0;margin:0;display:grid;gap:.85rem}
+  ol.qs li{counter-increment:q;background:var(--paper-2);border:1px solid var(--rule);border-radius:14px;
+    padding:1.1rem 1.3rem 1.2rem 3.5rem;position:relative;box-shadow:var(--shadow)}
+  ol.qs li::before{content:counter(q);position:absolute;left:1.25rem;top:1.05rem;
+    font-family:var(--display);font-weight:600;font-size:1.05rem;color:var(--accent)}
+  ol.qs p{font-size:.94rem;color:var(--ink-2);margin:0}
+  .proposal{display:flex;gap:.55rem;align-items:baseline;margin-top:.75rem;padding-top:.7rem;
+    border-top:1px dashed var(--rule);font-size:.92rem}
+  .proposal span{flex:none;font-size:.66rem;letter-spacing:.11em;text-transform:uppercase;font-weight:700;
+    color:var(--green);border:1px solid currentColor;border-radius:100px;padding:.18rem .55rem}
+  .proposal b{font-weight:600;color:var(--ink)}
+
+  .ideas{display:grid;gap:1.1rem;grid-template-columns:repeat(auto-fit,minmax(16rem,1fr))}
+  .idea{border-top:2px solid var(--gold);padding-top:.9rem}
+  .idea h3{font-family:var(--display);font-weight:600;font-size:1rem;margin-bottom:.45rem}
+  .idea p{font-size:.92rem;color:var(--ink-2);margin:0}
+
+  footer{padding:clamp(2rem,5vw,3.2rem) 0 clamp(2.5rem,7vw,5rem);border-top:1px solid var(--rule)}
+  .signoff{font-family:var(--display);font-weight:600;letter-spacing:-.01em;
+    font-size:clamp(1.2rem,3vw,1.75rem);line-height:1.25;max-width:24ch;margin:0}
+  .signoff em{font-style:normal;color:var(--accent)}
+
+  @media (prefers-reduced-motion:no-preference){
+    .fade{opacity:0;transform:translateY(10px);animation:rise .65s cubic-bezier(.22,.68,.36,1) forwards}
+    @keyframes rise{to{opacity:1;transform:none}}
+  }
+  @media (max-width:640px){
+    .sec-grid{grid-template-columns:1fr;gap:.5rem}
+    .num{position:static;font-size:2rem;margin-bottom:.2rem}
+  }
+  @media print{
+    body{background:#fff;color:#000;font-size:11.5pt}
+    nav.toc{display:none}
+    section{padding:1rem 0;break-inside:avoid}
+    .card,ol.qs li{box-shadow:none;background:#fff;border:1px solid #ccc;break-inside:avoid}
+    .num{-webkit-text-stroke:1px #bbb}
+    h1{font-size:24pt}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="top fade">
+    <div class="eyebrow">
+      <span><span class="dot"></span>МИЛТИ · развитие сети</span>
+      <span>31 июля 2026</span>
+    </div>
+    <h1>База, вопросы, <em>идеи</em></h1>
+    <div class="rule"></div>
+    <nav class="toc">
+      <a href="#s1"><b>01</b>Что уже есть</a>
+      <a href="#s2"><b>02</b>Что нужно от тебя</a>
+      <a href="#s3"><b>03</b>На согласование</a>
+      <a href="#s4"><b>04</b>Идеи</a>
+    </nav>
+  </header>
+
+  <section id="s1" class="fade" style="animation-delay:.06s">
+    <div class="sec-grid">
+      <div class="num">01</div>
+      <div>
+        <h2>Что уже есть</h2>
+        <div class="metrics">
+          <div class="metric"><b>2 227</b><span>объектов в единой «Базе»</span></div>
+          <div class="metric"><b>1 293</b><span>ТЦ с продуктовым</span></div>
+          <div class="metric"><b>707</b><span>адресов конкурентов</span></div>
+          <div class="metric"><b>609</b><span>наших адресов вычтено</span></div>
+        </div>
+        <ul class="done">
+          <li><strong>Единый лист «База»</strong> со столбцом «Тип объекта»: БЦ, офисные здания, НИИ, ВУЗы, колледжи — вместо семи разрозненных списков.</li>
+          <li><strong>Работающие и закрытые точки МИЛТИ вычтены</strong> — 609 адресов: 226 по работающим, 383 по закрытым. Сверка по адресу и по расстоянию, переучёт раз в три месяца одной командой.</li>
+          <li><strong>Площади из Росреестра</strong> — обработано 21,5 тысячи зданий из 23. Это то, что отсекает всё мельче 10 000 м².</li>
+          <li><strong>Конкуренты по 11 сетям</strong> — 707 адресов, обновляются еженедельно, с детекцией закрывшихся точек.</li>
+          <li><strong>Торговые центры с продуктовым супермаркетом</strong> — 1 293 объекта отдельным листом.</li>
+          <li><strong>Справочник метро — 225 станций</strong>, чтобы к каждому адресу подставлять ближайшую.</li>
+          <li><strong>Решение ОК / Хуй прямо в NocoDB</strong> — выбор в выпадающем списке подхватывается базой, бот для этого не нужен.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="s2" class="fade" style="animation-delay:.1s">
+    <div class="sec-grid">
+      <div class="num">02</div>
+      <div>
+        <h2>Что нужно от тебя</h2>
+        <div class="cards">
+          <div class="card">
+            <span class="tag">Секторы</span>
+            <p>Границы секторов Москвы в пределах МКАД — в любом виде: список районов на сектор, описание словами или скриншот с разметкой.</p>
+            <p class="why">Без этого маршруты не поедут</p>
+          </div>
+          <div class="card">
+            <span class="tag">Ящик для Avito и Cian</span>
+            <p>Новый почтовый ящик, на который подписаны твои сохранённые поиски — уведомления о новых объявлениях разбираются автоматически.</p>
+            <p><span class="muted">«Новые» — за сутки? Только аренда или продажа тоже?</span></p>
+          </div>
+          <div class="card">
+            <span class="tag">Очередь «На проверку» — 725</span>
+            <p>Объекты с неясным профилем и внешние каталоги. В NocoDB, столбец «Решение»: ОК или Хуй.</p>
+            <p>Решений сейчас ноль — это треть потенциальной базы, которая не участвует в маршрутах.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="s3" class="fade" style="animation-delay:.14s">
+    <div class="sec-grid">
+      <div class="num">03</div>
+      <div>
+        <h2>На согласование</h2>
+        <ol class="qs">
+          <li>
+            <h3>С какого расстояния наша точка мешает нашей же?</h3>
+            <p>Сейчас вычитаются адреса в радиусе 30 метров. Точка в 200 метрах от действующей отъедает выручку у себя же. Чем больше радиус — тем больше строк уходит из базы.</p>
+            <div class="proposal"><span>Предлагаю</span><b>150 метров</b></div>
+          </li>
+          <li>
+            <h3>Колледжи — 286 штук</h3>
+            <p>В ТЗ их нет, там ВУЗы. В базе лежат.</p>
+            <div class="proposal"><span>Предлагаю</span><b>в маршруты не ставить, держать отдельно</b></div>
+          </li>
+          <li>
+            <h3>Подмосковье</h3>
+            <p>БЦ Химок, Красногорска, Мытищ больше 10 000 м² нужны. Но секторы — в пределах МКАД, и область в них не попадает.</p>
+            <div class="proposal"><span>Предлагаю</span><b>отдельный сектор, выдавать по запросу</b></div>
+          </li>
+          <li>
+            <h3>БЦ от 5 до 10 тысяч м² — 228 штук</h3>
+            <p>Ниже порога, лежат про запас. Подмешивать, когда в секторе не набирается 10 адресов?</p>
+            <div class="proposal"><span>Предлагаю</span><b>да, с пометкой «меньше 10к»</b></div>
+          </li>
+          <li>
+            <h3>Кто подтверждает объекты</h3>
+            <p>Объект из официального реестра — сразу в базе, подтверждать не надо. ОК нужен только для внешних каталогов и очереди «На проверку», иначе пришлось бы вручную одобрить 4 000 строк. Хуй в любом листе удаляет навсегда.</p>
+            <div class="proposal"><span>Подтверди</span><b>что так правильно</b></div>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section id="s4" class="fade" style="animation-delay:.18s">
+    <div class="sec-grid">
+      <div class="num">04</div>
+      <div>
+        <h2>Идеи</h2>
+        <div class="ideas">
+          <div class="idea">
+            <h3>Кучный маршрут</h3>
+            <p>Не 10 случайных адресов по сектору, а опорный объект и 9 ближайших к нему. На практике это 3–4 станции метро и переходы пешком вместо дня в метро. К маршруту — картинка карты с 10 пронумерованными точками: плотность видна до одобрения.</p>
+          </div>
+          <div class="idea">
+            <h3>Новые БЦ — первыми</h3>
+            <p>Здание, сданное месяц назад, — единственный момент, когда первый этаж ещё не разобран. Через полгода там уже сидит Prime. Отслеживать вводы в эксплуатацию по новостям: этих адресов нет ни в одном реестре.</p>
+          </div>
+          <div class="idea">
+            <h3>Повтор через три месяца</h3>
+            <p>Возвращать другим менеджерам не всё подряд, а именно те здания, где ответили «свободных площадей нет» — аренда там как раз переподписывается. В маршруте пометка: «повтор, в апреле сказали — мест нет».</p>
+          </div>
+          <div class="idea">
+            <h3>Индекс голодного здания</h3>
+            <p>Сколько кофеен и общепита приходится на каждые 10 000 м² офисов в радиусе 300 метров. Есть и площади, и 707 адресов конкурентов. Здание на 40 000 м², вокруг которого пусто, — лучший лид, какой может быть.</p>
+          </div>
+          <div class="idea">
+            <h3>Учиться на закрытых точках</h3>
+            <p>460 работающих и 985 закрытых адресов. Посчитать для тех и других одинаковые признаки — офисная площадь вокруг, метро, конкуренты рядом — и увидеть, чем выжившие отличаются от закрытых. Этим отсортировать всю базу. Ни у кого на рынке нет 985 задокументированных провалов.</p>
+          </div>
+          <div class="idea">
+            <h3>Заходить в управляющую компанию</h3>
+            <p>У одной УК бывает по 10 бизнес-центров. Если сгруппировать здания по собственнику, вместо десяти холодных визитов получается одна встреча. Меняет не маршрут, а воронку.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="fade" style="animation-delay:.22s">
+    <p class="signoff">Ответь по пунктам — где согласен, достаточно <em>«согласен»</em>.</p>
+  </footer>
+
+</div>
+</body>
+</html>
