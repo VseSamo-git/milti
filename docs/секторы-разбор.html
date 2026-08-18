@@ -1,0 +1,228 @@
+<title>Что в секторах</title>
+<style>
+  :root {
+    --ground: #f5f6f9; --panel: #ffffff; --ink: #13171d; --soft: #5f6875;
+    --line: #dce0e8; --accent: #8c2f1e; --heat-base: 140 47 30;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ground: #0d1015; --panel: #151920; --ink: #e6eaf1; --soft: #949eac;
+      --line: #272e38; --accent: #e07a5b; --heat-base: 224 122 91;
+    }
+  }
+  :root[data-theme="dark"] {
+    --ground: #0d1015; --panel: #151920; --ink: #e6eaf1; --soft: #949eac;
+    --line: #272e38; --accent: #e07a5b; --heat-base: 224 122 91;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--ground); color: var(--ink);
+    font: 16px/1.6 -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-variant-numeric: tabular-nums;
+  }
+  .wrap { max-width: 940px; margin: 0 auto; padding: 44px 22px 80px; display: flex; flex-direction: column; gap: 40px; }
+  .eyebrow { text-transform: uppercase; letter-spacing: 0.14em; font-size: 12px; color: var(--soft); }
+  h1 { font-family: Georgia, "Times New Roman", serif; font-weight: 400; font-size: clamp(29px, 4.2vw, 44px); margin: 8px 0 0; letter-spacing: -0.01em; text-wrap: balance; }
+  h2 { font-family: Georgia, "Times New Roman", serif; font-weight: 400; font-size: 25px; margin: 0 0 4px; }
+  p { margin: 0; max-width: 66ch; }
+  .soft { color: var(--soft); }
+  section { display: flex; flex-direction: column; gap: 14px; }
+  .verdict { border-left: 3px solid var(--accent); padding: 4px 0 4px 18px; display: flex; flex-direction: column; gap: 8px; }
+  .verdict b { font-family: Georgia, serif; font-weight: 400; font-size: 21px; }
+  .figures { display: flex; flex-wrap: wrap; gap: 10px; }
+  .fig { background: var(--panel); border: 1px solid var(--line); border-radius: 3px; padding: 13px 18px; min-width: 146px; }
+  .fig b { display: block; font-family: Georgia, serif; font-size: 29px; font-weight: 400; line-height: 1.15; }
+  .fig span { font-size: 13px; color: var(--soft); }
+  .fig.alarm { border-color: var(--accent); }
+  .fig.alarm b { color: var(--accent); }
+  .scroll { overflow-x: auto; background: var(--panel); border: 1px solid var(--line); border-radius: 3px; }
+  table { border-collapse: collapse; width: 100%; font-size: 14.5px; }
+  th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  thead th { font-size: 11.5px; text-transform: uppercase; letter-spacing: 0.09em; color: var(--soft); font-weight: 600; white-space: nowrap; }
+  tbody tr:last-child td, tbody tr:last-child th { border-bottom: none; }
+  .idx { font-family: Georgia, serif; font-size: 17px; color: var(--soft); width: 34px; }
+  .words { min-width: 240px; }
+  .warn-inline { display: block; font-size: 12px; color: var(--accent); margin-top: 2px; }
+  .n { text-align: right; font-family: Georgia, serif; font-size: 18px; white-space: nowrap; }
+  .types { color: var(--soft); font-size: 13px; min-width: 180px; }
+  .anchor { min-width: 190px; }
+  .anchor i { display: block; font-style: normal; color: var(--soft); font-size: 12.5px; }
+  .matrix th[scope="row"] { white-space: nowrap; font-weight: 400; color: var(--soft); }
+  .matrix thead th { text-align: center; }
+  .cell { text-align: center; padding: 0; }
+  .cell span { display: block; padding: 11px 8px; background: rgb(var(--heat-base) / var(--heat)); color: #fff; font-weight: 600; }
+  .cell.empty { background: transparent; }
+  ol.asks { margin: 0; padding-left: 22px; display: flex; flex-direction: column; gap: 10px; }
+  ol.asks li { padding-left: 4px; }
+  footer { color: var(--soft); font-size: 13px; border-top: 1px solid var(--line); padding-top: 16px; }
+  @media (max-width: 600px) { .words, .types, .anchor { min-width: 0; } table { font-size: 13.5px; } }
+</style>
+<div class="wrap">
+  <header>
+    <span class="eyebrow">МИЛТИ · разбор нарезки Димы · 18 августа 2026</span>
+    <h1>Что лежит в секторах и чего в них нет</h1>
+  </header>
+
+  <section class="verdict">
+    <b>Нарезка кончится примерно через 10 рабочих дней.</b>
+    <p class="soft">В 14 секторов Димы попало 530 объектов Базы из 1839. Пять менеджеров
+      берут 50 адресов в день — значит, около 10 дней работы, и адреса в секторах исчерпаны.
+      Остальные 1 304 объектов лежат вне всех секторов, в основном между ТТК и МКАД.</p>
+  </section>
+
+  <div class="figures">
+    <div class="fig"><b>530</b><span>внутри секторов</span></div>
+    <div class="fig alarm"><b>1 304</b><span>вне нарезки</span></div>
+    <div class="fig"><b>108</b><span>в самом полном (№8)</span></div>
+    <div class="fig"><b>7</b><span>в самом пустом (№14)</span></div>
+  </div>
+
+  <section>
+    <h2>Секторы</h2>
+    <p class="soft">Слова — дословно от Димы. Последняя колонка: крупнейший по площади объект внутри,
+      чтобы было видно, ради чего туда ехать.</p>
+    <div class="scroll">
+      <table>
+        <thead><tr><th>№</th><th>Границы со слов Димы</th><th>Объектов</th><th>Из них</th><th>Крупнейший объект</th></tr></thead>
+        <tbody>
+    <tr>
+      <td class="idx">1</td>
+      <td class="words">б полянка, озерковская и кадашевская набережные, садовое кольцо<span class="warn-inline">без названия: 2</span></td>
+      <td class="n">30</td>
+      <td class="types">НИИ&nbsp;11, БЦ&nbsp;8, Офисное здание&nbsp;6, ВУЗ&nbsp;5</td>
+      <td class="anchor">Бизнес-центр Lighthouse <i>42 856 м²</i></td>
+    </tr>
+    <tr>
+      <td class="idx">2</td>
+      <td class="words">б серпух и павловская, павелец + дербен + данил наб, сад кольцо<span class="warn-inline">без названия: 1</span></td>
+      <td class="n">30</td>
+      <td class="types">БЦ&nbsp;13, Офисное здание&nbsp;9, ВУЗ&nbsp;6, НИИ&nbsp;2</td>
+      <td class="anchor">БЦ Новоспасский <i>112 000 м²</i></td>
+    </tr>
+    <tr>
+      <td class="idx">3</td>
+      <td class="words">технопарк и зил<span class="warn-inline">без названия: 1</span></td>
+      <td class="n">22</td>
+      <td class="types">БЦ&nbsp;11, Офисное здание&nbsp;8, ВУЗ&nbsp;2, НИИ&nbsp;1</td>
+      <td class="anchor">Бизнес-центр "Омега-Плаза" <i>90 741 м²</i></td>
+    </tr>
+    <tr>
+      <td class="idx">4</td>
+      <td class="words">область на авто между точками: марксистская, кожуховская, текстильщики, нижегородская, римская<span class="warn-inline">без названия: 8</span></td>
+      <td class="n">51</td>
+      <td class="types">БЦ&nbsp;19, Офисное здание&nbsp;17, ВУЗ&nbsp;11, НИИ&nbsp;4</td>
+      <td class="anchor">Технопарк Москва <i>350 000 м²</i></td>
+    </tr>
+    <tr>
+      <td class="idx">5</td>
+      <td class="words">садовое от чкаловской до кр ворот, лефорт тоннель, краснопрудная<span class="warn-inline">без названия: 1</span></td>
+      <td class="n">83</td>
+      <td class="types">БЦ&nbsp;24, Офисное здание&nbsp;22, ВУЗ&nbsp;20, НИИ&nbsp;17</td>
+      <td class="anchor">Деловой центр "Ситидел" <i>91 385 м²</i></td>
+    </tr>
+    <tr>
+      <td class="idx">6</td>
+      <td class="words">от лен вокзала вверх по жд до рижской, справа ТТК<span class="warn-inline">без названия: 2</span></td>
+      <td class="n">14</td>
+      <td class="types">Офисное здание&nbsp;5, БЦ&nbsp;4, НИИ&nbsp;3, ВУЗ&nbsp;2</td>
+      <td class="anchor">Бизнес-центр «Красносельский» <i>30 823 м²</i></td>
+    </tr>
+    <tr>
+      <td class="idx">7</td>
+      <td class="words">бутырская, дмитровка слева, справа пр мира, низ ТТК, верх ак королева<span class="warn-inline">без названия: 3</span></td>
+      <td class="n">50</td>
+      <td class="types">БЦ&nbsp;20, Офисное здание&nbsp;19, ВУЗ&nbsp;7, НИИ&nbsp;4</td>
+      <td class="anchor">Медиацентр телекомпании НТВ <i>76 621 м²</i></td>
+    </tr>
+    <tr>
+      <td class="idx">8</td>
+      <td class="words">между дмитровкой и ленинградкой<span class="warn-inline">без названия: 6</span></td>
+      <td class="n">108</td>
+      <td class="types">БЦ&nbsp;31, НИИ&nbsp;31, ВУЗ&nbsp;27, Офисное здание&nbsp;19</td>
+      <td class="anchor">Северное Сияние <i>37 815 м²</i></td>
+    </tr>
+    <tr>
+      <td class="idx">9</td>
+      <td class="words">между ленинградкой и звенигородкой от ТТК до СЗХ<span class="warn-inline">без названия: 4</span></td>
+      <td class="n">21</td>
+      <td class="types">Офисное здание&nbsp;10, БЦ&nbsp;5, ВУЗ&nbsp;4, НИИ&nbsp;2</td>
+      <td class="anchor">Бизнес-центр "Линкор" <i>61 146 м²</i></td>
+    </tr>
+    <tr>
+      <td class="idx">10</td>
+      <td class="words">между ТТК и садовым (сити, краснопресненская)<span class="warn-inline">без названия: 1</span></td>
+      <td class="n">29</td>
+      <td class="types">БЦ&nbsp;14, Офисное здание&nbsp;9, НИИ&nbsp;4, ВУЗ&nbsp;2</td>
+      <td class="anchor">Меркурий Сити Тауэр <i>173 960 м²</i></td>
+    </tr>
+    <tr>
+      <td class="idx">11</td>
+      <td class="words">белка - маяковка, долгоруковская, баррикадная<span class="warn-inline">без названия: 5</span></td>
+      <td class="n">37</td>
+      <td class="types">БЦ&nbsp;17, Офисное здание&nbsp;12, ВУЗ&nbsp;6, НИИ&nbsp;2</td>
+      <td class="anchor">White Gardens (Белые Сады) <i>53 083 м²</i></td>
+    </tr>
+    <tr>
+      <td class="idx">12</td>
+      <td class="words">смоленская, киевская, кутуза, парк победы, фили, багратион<span class="warn-inline">без названия: 2</span></td>
+      <td class="n">23</td>
+      <td class="types">БЦ&nbsp;11, Офисное здание&nbsp;8, ВУЗ&nbsp;4</td>
+      <td class="anchor">Башня Империя <i>198 713 м²</i></td>
+    </tr>
+    <tr>
+      <td class="idx">13</td>
+      <td class="words">парк культуры, фрунзенская, спортивная<span class="warn-inline">без названия: 1</span></td>
+      <td class="n">25</td>
+      <td class="types">БЦ&nbsp;9, ВУЗ&nbsp;8, НИИ&nbsp;7, Офисное здание&nbsp;1</td>
+      <td class="anchor">Бизнес-центр "Морозов" <i>59 149 м²</i></td>
+    </tr>
+    <tr>
+      <td class="idx">14</td>
+      <td class="words">от красного октября до БП аврора</td>
+      <td class="n">7</td>
+      <td class="types">Офисное здание&nbsp;4, БЦ&nbsp;3</td>
+      <td class="anchor">Бизнес-центр «Аврора» <i>48 215 м²</i></td>
+    </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h2>Где дыры</h2>
+    <p class="soft">Объекты вне нарезки, разложенные по кольцам и направлению от Кремля.
+      Округ в адресе есть только у 18 строк, а координата — почти у всех, поэтому считаем по географии.
+      Чем темнее клетка, тем больше пропущено.</p>
+    <div class="scroll">
+      <table class="matrix">
+        <thead><tr><th></th><th>С</th><th>СВ</th><th>В</th><th>ЮВ</th><th>Ю</th><th>ЮЗ</th><th>З</th><th>СЗ</th><th class="n">всего</th></tr></thead>
+        <tbody>
+      <tr><th scope="row">внутри Садового</th><td class="cell" style="--heat:0.27"><span>35</span></td><td class="cell" style="--heat:0.24"><span>30</span></td><td class="cell" style="--heat:0.16"><span>12</span></td><td class="cell" style="--heat:0.18"><span>17</span></td><td class="cell" style="--heat:0.16"><span>13</span></td><td class="cell" style="--heat:0.16"><span>12</span></td><td class="cell" style="--heat:0.21"><span>24</span></td><td class="cell" style="--heat:0.25"><span>32</span></td><td class="n">175</td></tr>
+      <tr><th scope="row">Садовое — ТТК</th><td class="cell" style="--heat:0.35"><span>52</span></td><td class="cell" style="--heat:0.29"><span>40</span></td><td class="cell" style="--heat:0.31"><span>44</span></td><td class="cell" style="--heat:0.23"><span>28</span></td><td class="cell" style="--heat:0.34"><span>50</span></td><td class="cell" style="--heat:0.25"><span>32</span></td><td class="cell" style="--heat:0.14"><span>9</span></td><td class="cell" style="--heat:0.21"><span>24</span></td><td class="n">279</td></tr>
+      <tr><th scope="row">ТТК — МКАД</th><td class="cell" style="--heat:0.63"><span>110</span></td><td class="cell" style="--heat:0.53"><span>90</span></td><td class="cell" style="--heat:0.45"><span>74</span></td><td class="cell" style="--heat:0.30"><span>42</span></td><td class="cell" style="--heat:0.74"><span>134</span></td><td class="cell" style="--heat:0.95"><span>178</span></td><td class="cell" style="--heat:0.34"><span>50</span></td><td class="cell" style="--heat:0.57"><span>98</span></td><td class="n">776</td></tr>
+      <tr><th scope="row">за МКАД</th><td class="cell" style="--heat:0.11"><span>2</span></td><td class="cell" style="--heat:0.14"><span>8</span></td><td class="cell empty"></td><td class="cell" style="--heat:0.15"><span>10</span></td><td class="cell" style="--heat:0.21"><span>22</span></td><td class="cell" style="--heat:0.18"><span>17</span></td><td class="cell empty"></td><td class="cell" style="--heat:0.17"><span>15</span></td><td class="n">74</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="soft">Кольцо «ТТК — МКАД» не покрыто ни одним сектором целиком: там 776 объектов
+      во все стороны. Внутри Садового и между Садовым и ТТК дыры точечные — там нарезка работает.</p>
+  </section>
+
+  <section>
+    <h2>Что решить</h2>
+    <ol class="asks">
+      <li><b>Резать дальше или выпускать за секторы.</b> Сейчас маршрут можно собрать примерно
+        на 10 дней. Либо Дима режет вторую очередь — прежде всего ЮЗ и Ю между ТТК и МКАД,
+        либо разрешает добирать объекты вне секторов, когда десяти в секторе не набралось.</li>
+      <li><b>Границы.</b> Полигоны нарисованы по его словам и в спорных местах наверняка не там.
+        Правки принимаются по номеру сектора и названию улицы.</li>
+      <li><b>Новая Москва и Зеленоград.</b> Формально Москва, фактически за МКАД и вне секторов:
+        удалять, как Подмосковье, или держать отдельным списком.</li>
+    </ol>
+  </section>
+
+  <footer>
+    Считано по живой базе, 1839 строк листа «База»; 5 строк без координат не попали никуда — им нужна геопривязка.
+    Колледжи, Подмосковье и БЦ 5–10 тыс. м² уже вычтены по решению Димы.
+  </footer>
+</div>
