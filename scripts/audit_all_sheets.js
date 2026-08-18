@@ -77,7 +77,6 @@ function hitHouse(h) {
 const SHEETS = [
   { v: 'База',              name: 'Название',        addr: 'Адрес', area: 'Площадь, м²',       floors: 'Этажей', key: 'Ключ', coords: 'Координаты', minArea: 10000 },
   { v: 'На проверку',       name: 'Название',        addr: 'Адрес', area: 'Площадь, м²',       floors: 'Этажей', key: 'Ключ', coords: 'Координаты', minArea: 0, xBaza: true },
-  { v: 'БЦ средние 5-10к',  name: 'Название БЦ',     addr: 'Адрес', area: 'Общая площадь, м²', floors: 'Этажей', key: 'Ключ', minArea: 5000 },
   { v: 'ТЦ с супермаркетом',name: 'Название ТЦ',     addr: 'Адрес', area: 'Общая площадь, м²', floors: 'Этажей', key: 'Ключ', minArea: 0 },
   { v: 'Конкуренты',        name: 'Сеть',            addr: 'Адрес', key: 'Ключ', minArea: 0, chain: true },
   { v: 'Открытые точки',    name: 'Название',        addr: 'Адрес', coords: 'Координаты', minArea: 0, ref: true },

@@ -29,7 +29,6 @@ const DECISION_SHEETS = [
   { sheet: 'На проверку',        keyCol: 'Ключ', decisionCol: 'Решение (ОК / Хуй)' },
   { sheet: 'ТЦ с супермаркетом', keyCol: 'Ключ', decisionCol: 'Решение (ОК / Хуй)' },
   { sheet: 'Конкуренты',         keyCol: 'Ключ', decisionCol: 'Решение (ОК / Хуй)' },
-  { sheet: 'БЦ средние 5-10к',   keyCol: 'Ключ', decisionCol: 'Решение (ОК / Хуй)' },
 ];
 const MAP = { 'ОК': 'интересно', 'Хуй': 'отказ' };
 const AUTHOR = 'дима (NocoDB)';
