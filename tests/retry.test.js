@@ -98,3 +98,32 @@ test('isTransient НЕ повторяет клиентские HTTP-ошибки
   assert.equal(isTransient(new Error('data.mos.ru отдал HTTP 400 на выгрузку')), false);
   assert.equal(isTransient(new Error('data.mos.ru отдал HTTP 404 на выгрузку')), false);
 });
+
+test('HTTP 502 от NocoDB считается временным — раньше эта ветка была мёртвой', async () => {
+  // Проверка ответа стояла СНАРУЖИ withRetry, а fetch на 502 не бросает —
+  // он возвращает ответ. Поэтому 429/500/502/503/504 никогда не доходили
+  // до isTransient, и рестарт контейнера NocoDB убивал пересборку витрины.
+  let calls = 0;
+  const result = await withRetry(
+    async () => {
+      calls++;
+      if (calls < 3) throw new Error('NocoDB GET /api/v2/tables/x/records: HTTP 502 Bad Gateway');
+      return 'готово';
+    },
+    { attempts: 4, backoffMs: 1, sleep: async () => {} }
+  );
+  assert.equal(result, 'готово');
+  assert.equal(calls, 3);
+});
+
+test('пометка noRetry запрещает повтор даже сетевой ошибки', async () => {
+  // Так помечены записи в NocoDB: ответ мог потеряться уже ПОСЛЕ вставки,
+  // и повтор продублировал бы строки в листе Димы.
+  let calls = 0;
+  const error = Object.assign(new Error('fetch failed'), { noRetry: true });
+  await assert.rejects(
+    () => withRetry(async () => { calls++; throw error; }, { attempts: 4, backoffMs: 1, sleep: async () => {} }),
+    /fetch failed/
+  );
+  assert.equal(calls, 1, 'запись повторять нельзя');
+});

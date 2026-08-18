@@ -71,3 +71,19 @@ test('records останавливается на последней стран�
     assert.deepEqual(asked, [0, 100, 200, 300, 400]);  // шестого запроса быть не должно
   } finally { globalThis.fetch = original; }
 });
+
+test('запись не повторяется по коду ответа: повтор продублировал бы строки', async () => {
+  // GET на 502 повторяем (см. retry.test.js), а POST — нет: NocoDB мог
+  // применить вставку и потерять ответ. Один вызов, и ошибка наверх.
+  let calls = 0;
+  const client = new NocodbClient({ nocodbUrl: 'http://x', nocodbToken: 't', nocodbBase: 'b' });
+  const original = globalThis.fetch;
+  globalThis.fetch = async () => {
+    calls++;
+    return { ok: false, status: 503, text: async () => 'Service Unavailable' };
+  };
+  try {
+    await assert.rejects(() => client.update('tbl', [{ Id: 1, 'Название': 'x' }]), /HTTP 503/);
+    assert.equal(calls, 1, 'запись повторяться не должна');
+  } finally { globalThis.fetch = original; }
+});

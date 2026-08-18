@@ -36,6 +36,9 @@ const TRANSIENT_HTTP = /http (429|500|502|503|504)\b/;
  */
 export function isTransient(error) {
   if (!error) return false;
+  // Вызывающий может сказать «эту ошибку не повторять» — так помечены
+  // записи в NocoDB: повтор после потерянного ответа продублировал бы строки.
+  if (error.noRetry) return false;
   if (error.code && TRANSIENT_CODES.has(error.code)) return true;
   const message = String(error.message || '').toLowerCase();
   if (TRANSIENT_HTTP.test(message)) return true;

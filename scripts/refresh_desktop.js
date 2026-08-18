@@ -40,10 +40,15 @@ export async function refreshDesktop(cfg, { mode = 'quick' } = {}) {
   } else {
     console.log('\nновых решений нет — сверку и пересборку пропускаем');
   }
+  if (r.broken?.length) {
+    console.log(`
+⚠ листы, которые не удалось прочитать: ${r.broken.map((b) => b.sheet).join(', ')}`);
+  }
   return r;
 }
 
 if (isMain(import.meta.url)) {
   const mode = process.argv[2] === 'full' ? 'full' : 'quick';
-  await refreshDesktop(loadConfig(), { mode });
+  const result = await refreshDesktop(loadConfig(), { mode });
+  if (result.broken?.length) process.exitCode = 1;
 }

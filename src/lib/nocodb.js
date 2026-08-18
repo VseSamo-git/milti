@@ -33,15 +33,26 @@ export class NocodbClient {
   }
 
   async #call(path, init = {}) {
-    const response = await withRetry(
-      () => fetch(`${this.host}${path}`, { ...init, headers: this.headers }),
-      { attempts: 4, backoffMs: 1500 }
-    );
-    if (!response.ok) {
-      const body = await response.text();
-      throw new Error(`NocoDB ${init.method || 'GET'} ${path}: HTTP ${response.status} ${body.slice(0, 200)}`);
-    }
-    return response.status === 204 ? null : response.json();
+    const method = init.method || 'GET';
+    // Проверку ответа держим ВНУТРИ withRetry. Раньше она стояла снаружи, и
+    // повтор ловил только обрыв соединения: fetch на HTTP 502 не бросает, он
+    // возвращает ответ. Из-за этого ветка «429/500/502/503/504 — повторяем»
+    // в retry.js была мёртвой, а NocoDB переживает рестарты контейнера
+    // (watchtower по воскресеньям) и такие коды отдаёт.
+    //
+    // Повторяем по статусу ТОЛЬКО чтение: GET идемпотентен. На POST/PATCH/
+    // DELETE ответ мог потеряться уже после записи, и повтор продублировал бы
+    // строки — там оставляем прежнее поведение, повтор лишь на уровне сети.
+    return withRetry(async () => {
+      const response = await fetch(`${this.host}${path}`, { ...init, headers: this.headers });
+      if (!response.ok) {
+        const body = await response.text();
+        const error = new Error(`NocoDB ${method} ${path}: HTTP ${response.status} ${body.slice(0, 200)}`);
+        if (method !== 'GET') error.noRetry = true;
+        throw error;
+      }
+      return response.status === 204 ? null : response.json();
+    }, { attempts: 4, backoffMs: 1500 });
   }
 
   /** Таблицы базы: заголовок -> id. */

@@ -39,21 +39,39 @@ export async function syncVerdicts(cfg, { apply = false } = {}) {
   try {
     const tables = await client.tables();
     const picks = [];
+    const broken = [];
     for (const s of DECISION_SHEETS) {
       const tableId = tables.get(s.sheet);
       if (!tableId) { console.log(`лист «${s.sheet}» не найден в NocoDB — пропуск`); continue; }
-      const rows = await client.records(tableId, { fields: [s.keyCol, s.decisionCol] });
-      for (const r of rows) {
-        const dec = r[s.decisionCol];
-        const key = r[s.keyCol];
-        if (!dec || !key) continue;
-        const verdict = MAP[String(dec).trim()];
-        if (!verdict) { console.log(`  ? неизвестное решение «${dec}» у ${key}`); continue; }
-        picks.push({ key: String(key).trim(), decision: String(dec).trim(), verdict });
+      // Каждый лист читается сам по себе. Раньше исключение на одном листе
+      // выбрасывало из всего цикла, и решения по ОСТАЛЬНЫМ листам не
+      // записывались вообще. Так и вышло: очередь «На проверку» доросла до
+      // ровных 500 строк, чтение падало на пагинации — и 499 решений Димы
+      // лежали в NocoDB, пока это не заметили. Один сломанный лист не имеет
+      // права уносить остальные.
+      try {
+        const rows = await client.records(tableId, { fields: [s.keyCol, s.decisionCol] });
+        for (const r of rows) {
+          const dec = r[s.decisionCol];
+          const key = r[s.keyCol];
+          if (!dec || !key) continue;
+          const verdict = MAP[String(dec).trim()];
+          if (!verdict) { console.log(`  ? неизвестное решение «${dec}» у ${key}`); continue; }
+          picks.push({ key: String(key).trim(), decision: String(dec).trim(), verdict });
+        }
+      } catch (e) {
+        console.log(`  ✗ лист «${s.sheet}» не прочитан: ${e.message}`);
+        broken.push({ sheet: s.sheet, error: e.message });
       }
     }
     console.log(`решений в NocoDB: ${picks.length}`);
-    if (!picks.length) return { picks: 0, applied: 0 };
+    // Инвариант «частичный сбой не молчит»: сводка отдельной строкой, чтобы
+    // это было видно в логе без раскопок, и наверх — кодом возврата.
+    if (broken.length) {
+      console.log(`⚠ НЕ ПРОЧИТАНО ЛИСТОВ: ${broken.length} — ${broken.map((b) => b.sheet).join(', ')}`);
+      console.log('  решения из них не записаны; остальные листы обработаны');
+    }
+    if (!picks.length) return { picks: 0, applied: 0, broken };
 
     // Дедуп по последнему вердикту: плашка стоит до пересборки, без этого
     // каждый прогон плодил бы одинаковые вердикты.
@@ -67,7 +85,7 @@ export async function syncVerdicts(cfg, { apply = false } = {}) {
     console.log(`к записи (новые/изменённые): ${todo.length}`);
     for (const p of todo) console.log(`  ${p.decision} → ${p.verdict}  [${p.key}]`);
 
-    if (!apply) { console.log('\n(dry-run: --apply чтобы записать вердикты)'); return { picks: picks.length, pending: todo.length }; }
+    if (!apply) { console.log('\n(dry-run: --apply чтобы записать вердикты)'); return { picks: picks.length, pending: todo.length, broken }; }
 
     let ok = 0, fail = 0;
     for (const p of todo) {
@@ -80,7 +98,7 @@ export async function syncVerdicts(cfg, { apply = false } = {}) {
       } catch (e) { console.log(`  ✗ ${p.key}: ${e.message}`); fail++; }
     }
     console.log(`\nзаписано вердиктов: ${ok}${fail ? `, ошибок: ${fail}` : ''}`);
-    return { picks: picks.length, applied: ok, failed: fail };
+    return { picks: picks.length, applied: ok, failed: fail, broken };
   } finally {
     await registry.close();
   }
@@ -88,5 +106,8 @@ export async function syncVerdicts(cfg, { apply = false } = {}) {
 
 if (isMain(import.meta.url)) {
   const apply = process.argv.includes('--apply');
-  await syncVerdicts(loadConfig(), { apply });
+  const result = await syncVerdicts(loadConfig(), { apply });
+  // Непрочитанный лист — это молча потерянные решения Димы. Код возврата
+  // делает сбой видимым крону и человеку, читающему лог хвостом.
+  if (result.broken?.length) process.exitCode = 1;
 }
