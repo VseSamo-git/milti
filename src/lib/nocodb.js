@@ -159,6 +159,13 @@ export class NocodbClient {
       const page = await this.#call(`/api/v2/tables/${tableId}/records?${qs.toString()}`);
       const list = page.list || [];
       out.push(...list);
+      // Полная последняя страница — не признак «есть ещё». Если строк ровно
+      // кратно pageSize (500 при 100), следующий offset уже за пределом, и
+      // NocoDB отвечает 422 ERR_INVALID_OFFSET_VALUE вместо пустого списка.
+      // Верим pageInfo, длину страницы держим запасным признаком.
+      const info = page.pageInfo || {};
+      if (info.isLastPage) return out;
+      if (info.totalRows != null && out.length >= info.totalRows) return out;
       if (list.length < pageSize) return out;
     }
   }
